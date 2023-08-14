@@ -11,7 +11,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.14",
-    "eslint": "^7.32.0",
+    "eslint": "^8.47.0",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.24",
     "react": "^17.0.2",
