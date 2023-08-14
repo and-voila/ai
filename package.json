@@ -6,14 +6,28 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui:add": "pnpm --filter ui ui:add"
+    "format": "prettier --write \"**/*.{ts,tsx,md,mdx}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx}\"",
+    "ui:add": "pnpm --filter ui ui:add",
+    "release": "standard-version"
+  },
+  "lint-staged": {
+    "apps/*/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint"
+    ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
     "@turbo/gen": "^1.10.12",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.47.0",
     "eslint-config-custom": "workspace:*",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.0",
     "prettier": "^3.0.1",
+    "standard-version": "^9.5.0",
     "turbo": "^1.10.12"
   },
   "packageManager": "pnpm@7.15.0"
