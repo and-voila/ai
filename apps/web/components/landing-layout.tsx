@@ -77,9 +77,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <Button variant="default" className="rounded-md">
-            {/* <Link href={isSignedIn ? '/dashboard' : '/sign-up'}>
-              Get Started
-            </Link> */}
+            <Link href={'/sign-up'}>Get Started</Link>
           </Button>
           <Button
             variant="menu"
