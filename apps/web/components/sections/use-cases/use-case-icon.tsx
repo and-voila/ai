@@ -1,4 +1,5 @@
-import * as ReactIcon from 'ui';
+import * as React from 'react';
+import { ReactIcon } from 'ui';
 
 interface UseCaseIconProps {
   iconName: string;
@@ -11,7 +12,7 @@ const UseCaseIcon: React.FC<UseCaseIconProps> = ({ iconName }) => {
     : null;
 
   return IconComponent ? (
-    <IconComponent value="" className="h-8 w-8 text-muted-foreground" />
+    <IconComponent className="h-8 w-8 text-muted-foreground" />
   ) : null;
 };
 

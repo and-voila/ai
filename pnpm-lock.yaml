@@ -176,6 +176,9 @@ importers:
       '@clerk/nextjs':
         specifier: ^4.23.2
         version: 4.23.2(next@13.4.1)(react-dom@18.2.0)(react@18.2.0)
+      '@hookform/resolvers':
+        specifier: ^3.2.0
+        version: 3.2.0(react-hook-form@7.45.4)
       contentlayer:
         specifier: ^0.3.4
         version: 0.3.4(esbuild@0.19.2)
@@ -197,9 +200,18 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.45.4
+        version: 7.45.4(react@18.2.0)
+      react-turnstile:
+        specifier: ^1.1.1
+        version: 1.1.1(react-dom@18.2.0)(react@18.2.0)
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
+      zod:
+        specifier: ^3.21.4
+        version: 3.21.4
     devDependencies:
       '@types/node':
         specifier: ^17.0.12
@@ -1138,6 +1150,14 @@ packages:
       long: 4.0.0
       protobufjs: 7.2.4
       yargs: 17.7.2
+    dev: false
+
+  /@hookform/resolvers@3.2.0(react-hook-form@7.45.4):
+    resolution: {integrity: sha512-skXQHhLxq0Sz2xDwCyv5dygBCtXJe1GmWwxDzfdtl0X6agD6qcyTG8HrZWkjJoy8AkiLARqYvSYJ8z7+Nwmi7w==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.45.4(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
@@ -7487,6 +7507,16 @@ packages:
       invariant: 2.2.4
       react: 18.2.0
       tslib: 2.6.1
+    dev: false
+
+  /react-turnstile@1.1.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-oUxMFUKmYm655yqbGDreqshyMtzgNdpmeKprRGpEzsTfhE1lXO0MmSBpiRS+6TxXYxLEipwnS7vR9Q88dbeHWg==}
+    peerDependencies:
+      react: '>= 17.0.0'
+      react-dom: '>= 17.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react@18.2.0:
