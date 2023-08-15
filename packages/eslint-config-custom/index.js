@@ -4,7 +4,6 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  root: true,
   extends: [
     'next',
     'turbo',
@@ -22,6 +21,9 @@ module.exports = {
     },
     ecmaVersion: 12,
     sourceType: 'module',
+    babelOptions: {
+      presets: [require.resolve('next/babel')],
+    },
   },
   settings: {
     react: {
@@ -45,13 +47,4 @@ module.exports = {
     'simple-import-sort/imports': 'warn',
     'simple-import-sort/exports': 'warn',
   },
-  overrides: [
-    {
-      files: ['*.js', '*.ts', '*.tsx'],
-      parser: 'espree',
-      parserOptions: {
-        ecmaVersion: 2020,
-      },
-    },
-  ],
 };
