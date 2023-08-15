@@ -19,9 +19,10 @@
       "@/*": ["./*"],
       "@ui/*": ["../../packages/ui/*"],
       "@ui/components/*": ["../../packages/ui/components/ui/*"],
-      "@ui/components/ui/*": ["../../packages/ui/components/ui/*"]
+      "@ui/components/ui/*": ["../../packages/ui/components/ui/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": ["apps", "next-env.d.ts"],
+  "include": ["apps", "next-env.d.ts", ".contentlayer/generated"],
   "exclude": ["node_modules"]
 }
