@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  root: true,
   extends: [
     'next',
     'turbo',
@@ -21,9 +22,6 @@ module.exports = {
     },
     ecmaVersion: 12,
     sourceType: 'module',
-    babelOptions: {
-      presets: [require.resolve('next/babel')],
-    },
   },
   settings: {
     react: {
@@ -32,7 +30,7 @@ module.exports = {
   },
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
-    'no-unused-vars': 'off',
+    'no-unused-vars': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     'prettier/prettier': 'error',
     semi: ['error', 'always'],
@@ -47,4 +45,13 @@ module.exports = {
     'simple-import-sort/imports': 'warn',
     'simple-import-sort/exports': 'warn',
   },
+  overrides: [
+    {
+      files: ['*.js', '*.ts', '*.tsx'],
+      parser: 'espree',
+      parserOptions: {
+        ecmaVersion: 2020,
+      },
+    },
+  ],
 };
