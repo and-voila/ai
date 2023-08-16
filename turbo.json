@@ -1,11 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDotEnv": [".env"],
-  "globalEnv": ["NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY"],
-  "globalDependencies": ["$NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build", "$NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY"],
+      "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
       "dotEnv": [
         ".env.production.local",
@@ -13,6 +11,34 @@
         ".env.production",
         ".env"
       ]
+    },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY",
+        "CLOUDFLARE_TURNSTILE_SECRET"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "dash#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "CLERK_SECRET_KEY",
+        "DATABASE_URL",
+        "INTERCOM_APP_ID",
+        "NEXT_PUBLIC_APP_URL",
+        "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL",
+        "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL",
+        "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
+        "NEXT_PUBLIC_CLERK_SIGN_IN_URL",
+        "NEXT_PUBLIC_CLERK_SIGN_UP_URL",
+        "NODE_ENV",
+        "OPENAI_API_KEY",
+        "REPLICATE_API_KEY",
+        "STRIPE_API_KEY",
+        "STRIPE_WEBHOOK_SECRET"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {},
     "dev": {
