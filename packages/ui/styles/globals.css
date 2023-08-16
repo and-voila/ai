@@ -114,7 +114,3 @@ body,
     @apply bg-background text-foreground;
   }
 }
-
-article {
-  @apply prose dark:prose-invert lg:prose-lg;
-}

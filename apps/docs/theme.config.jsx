@@ -82,5 +82,4 @@ export default {
     ),
   },
   navigation: true,
-  font: false,
 };
