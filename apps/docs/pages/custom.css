@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 article {
-  @apply prose dark:prose-invert lg:prose-lg;
+  @apply prose-slate dark:prose-invert lg:prose-lg;
 }
 
 @font-face {
@@ -22,5 +22,5 @@ body,
 }
 
 article {
-  @apply prose dark:prose-invert lg:prose-lg;
+  @apply prose-slate dark:prose-invert lg:prose-lg;
 }

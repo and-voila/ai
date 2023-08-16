@@ -1,6 +1,6 @@
 'use client';
 
-import { MAX_FREE_COUNTS } from 'constants';
+import { MAX_FREE_COUNTS } from '@/constants';
 import { useProModal } from 'hooks/use-pro-modal';
 import { useEffect, useState } from 'react';
 import { MagicWandIcon } from 'ui';
