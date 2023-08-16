@@ -1,8 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import Turnstile from 'react-turnstile';
 
-const CLOUDFLARE_SITE_KEY: string = process.env
-  .NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY as string;
+const CLOUDFLARE_SITE_KEY: string = '';
 
 interface Props {
   setVerified: Dispatch<SetStateAction<boolean>>;
