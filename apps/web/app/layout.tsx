@@ -1,3 +1,4 @@
+import LandingLayout from '@/components/landing-layout';
 import '@ui/styles/globals.css';
 
 import type { Metadata } from 'next';
@@ -63,9 +64,10 @@ export default function RootLayout({
     <html lang="en" className="h-full text-base antialiased">
       <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
+          <LandingLayout>{children}</LandingLayout>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
