@@ -1,6 +1,7 @@
 import LandingLayout from '@/components/landing-layout';
 import '@ui/styles/globals.css';
 
+
 import type { Metadata } from 'next';
 
 import { ThemeProvider } from '@/components/theme-provider';
@@ -61,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full text-base antialiased">
+    <html lang="en">
       <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <LandingLayout>{children}</LandingLayout>
