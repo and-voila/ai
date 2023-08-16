@@ -1,5 +1,5 @@
-import { HeartFilledIcon } from 'ui';
 import Link from 'next/link';
+import { HeartFilledIcon } from 'ui';
 
 import { Divider } from '@/components/divider';
 import { FadeIn } from '@/components/fade-in';

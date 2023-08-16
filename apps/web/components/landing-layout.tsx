@@ -2,7 +2,6 @@
 
 /* eslint-disable prefer-const */
 // import { useAuth } from '@clerk/nextjs';
-import { Button, Cross1Icon, HamburgerMenuIcon } from 'ui';
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,14 +13,16 @@ import React, {
   useId,
   useState,
 } from 'react';
+import { Button, Cross1Icon, HamburgerMenuIcon } from 'ui';
 
-import { Footer } from './footer';
+import { Container } from '@/components/container';
 import { GridPattern } from '@/components/grid-pattern';
 import Navigation from '@/components/landing-navigation';
 import { Logo, Logomark } from '@/components/logo';
 import { Offices } from '@/components/offices';
 import { SocialMedia } from '@/components/social-media';
-import { Container } from '@/components/container';
+
+import { Footer } from './footer';
 
 interface LandingLayoutContextType {
   logoHovered: boolean;

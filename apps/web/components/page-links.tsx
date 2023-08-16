@@ -1,5 +1,5 @@
-import { ArrowRightIcon, cn } from 'ui';
 import Link from 'next/link';
+import { ArrowRightIcon, cn } from 'ui';
 
 import { Container } from '@/components/container';
 import { Divider } from '@/components/divider';

@@ -2,11 +2,11 @@
 
 /* eslint-disable prefer-const */
 import Image from 'next/image';
+import { cn } from 'ui';
 
 import { Container } from '@/components/container';
 import { FadeIn } from '@/components/fade-in';
 import { GridPattern } from '@/components/grid-pattern';
-import { cn } from 'ui';
 
 interface TestimonialProps {
   children: React.ReactNode;

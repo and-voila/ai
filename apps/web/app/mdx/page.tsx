@@ -1,6 +1,6 @@
-import { Button, MagicWandIcon } from 'ui';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Button, MagicWandIcon } from 'ui';
 
 import { allPosts } from '@/.contentlayer/generated';
 import { Container } from '@/components/container';

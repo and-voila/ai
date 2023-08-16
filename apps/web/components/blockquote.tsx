@@ -1,7 +1,7 @@
 import Image from 'next/image';
+import { cn } from 'ui';
 
 import { Divider } from '@/components/divider';
-import { cn } from 'ui';
 
 interface BlockquoteProps {
   author: {

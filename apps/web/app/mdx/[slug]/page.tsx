@@ -1,5 +1,5 @@
-import { MagicWandIcon } from 'ui';
 import React from 'react';
+import { MagicWandIcon } from 'ui';
 
 import { allPosts } from '@/.contentlayer/generated';
 import { Container } from '@/components/container';

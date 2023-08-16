@@ -1,6 +1,6 @@
-import { ReactIcon, Button } from 'ui';
 import Link from 'next/link';
 import React from 'react';
+import { Button, ReactIcon } from 'ui';
 
 import { UseCase } from '@/.contentlayer/generated';
 import { Blockquote } from '@/components/blockquote';

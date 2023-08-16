@@ -1,6 +1,7 @@
+import { cn } from 'ui';
+
 import { Container } from '@/components/container';
 import { FadeIn } from '@/components/fade-in';
-import { cn } from 'ui';
 
 interface SectionIntroProps {
   eyebrow?: string;

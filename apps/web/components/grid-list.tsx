@@ -1,9 +1,9 @@
 import { FC } from 'react';
+import { cn } from 'ui';
 
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
 
 import { Divider } from './divider';
-import { cn } from 'ui';
 
 interface GridListProps {
   className?: string;

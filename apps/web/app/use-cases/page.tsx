@@ -1,5 +1,5 @@
-import { MagicWandIcon } from 'ui';
 import React from 'react';
+import { MagicWandIcon } from 'ui';
 
 import { allUseCases } from '@/.contentlayer/generated';
 import Cta from '@/components/cta';
