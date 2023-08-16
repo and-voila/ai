@@ -1,7 +1,6 @@
 import LandingLayout from '@/components/landing-layout';
 import '@ui/styles/globals.css';
 
-
 import type { Metadata } from 'next';
 
 import { ThemeProvider } from '@/components/theme-provider';
