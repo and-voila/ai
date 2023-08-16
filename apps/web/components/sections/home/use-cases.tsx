@@ -94,8 +94,8 @@ export default function UseCases() {
         className="mt-24 text-foreground sm:mt-32 lg:mt-40"
       >
         <p className="text-muted-foreground">
-          And Voila AI&trade; helps visionaries like you make the synthetic
-          world ahead, less boring.
+          And Voila AI helps visionaries like you make the synthetic world
+          ahead, less boring.
         </p>
         <h3 className="mt-16 font-display text-2xl font-semibold">
           See how creators are using it to:

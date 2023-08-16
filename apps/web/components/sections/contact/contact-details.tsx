@@ -54,7 +54,7 @@ export default function ContactDetails() {
         Our offices
       </h2>
       <p className="mt-6 text-base text-muted-foreground lg:text-lg">
-        Our company is based in Los Angeles. And Voila AI&trade; is made with{' '}
+        Our company is based in Los Angeles. And Voila AI is made with{' '}
         <span className="inline-flex items-center">
           <HeartFilledIcon className="mr-1 h-4 w-4 text-primary" /> from around
           the world.
