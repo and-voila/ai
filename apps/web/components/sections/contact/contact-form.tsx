@@ -82,11 +82,12 @@ function TextInput({ label, className, error, ...props }: TextInputProps) {
 
 export default function ContactForm() {
   const form = useForm<ContactFormFields>({
-    resolver: zodResolver<any>(schema),
+    resolver: zodResolver(schema),
   });
   const [verified, setVerified] = useState<boolean>(false);
 
   async function onSubmit(data: ContactFormFields) {
+    // eslint-disable-next-line no-console
     console.log(`HEY: ${data.name}`);
   }
 

@@ -1,12 +1,13 @@
 'use client';
 
-import { MAX_FREE_COUNTS } from '@/constants';
 import { useProModal } from 'hooks/use-pro-modal';
 import { useEffect, useState } from 'react';
 import { MagicWandIcon } from 'ui';
 import { Button } from 'ui';
 import { Card, CardContent } from 'ui';
 import { Progress } from 'ui';
+
+import { MAX_FREE_COUNTS } from '@/constants';
 
 interface FreeCounterProps {
   apiLimitCount: number;
