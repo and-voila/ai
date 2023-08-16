@@ -125,7 +125,7 @@ const PricingTier: FC<PricingTierProps> = ({ tier }) => (
         {tier.features.map((feature) => (
           <li key={feature} className="flex gap-x-3">
             <CheckIcon
-              className="h-6 w-5 flex-none text-brand"
+              className="h-6 w-5 flex-none text-primary"
               aria-hidden="true"
             />
             {feature}

@@ -38,8 +38,8 @@ export function SocialMedia({
   className = '',
   invert = false,
 }: SocialMediaProps) {
-  const defaultColor = invert ? 'text-gray-50' : 'text-foreground';
-  const hoverColor = invert ? 'text-gray-400' : 'text-muted-foreground';
+  const defaultColor = invert ? 'text-slate-50' : 'text-foreground';
+  const hoverColor = invert ? 'text-slate-400' : 'text-muted-foreground';
 
   return (
     <ul role="list" className={`mt-4 flex gap-x-10 ${className}`}>

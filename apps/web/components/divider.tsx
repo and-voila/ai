@@ -18,7 +18,7 @@ export function Divider({
       className={cn(
         className,
         'relative text-lg text-muted-foreground before:absolute after:absolute',
-        'before:bg-brand before:opacity-80 after:bg-brand after:opacity-40',
+        'before:bg-primary before:opacity-80 after:bg-primary after:opacity-40',
         position === 'top' &&
           'before:left-0 before:top-0 before:h-px before:w-6 after:left-8 after:right-0 after:top-0 after:h-px',
         position === 'left' &&

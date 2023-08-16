@@ -30,7 +30,7 @@ export function Mdx({ code }: MdxProps) {
           a: (props) => (
             <a
               {...props}
-              className="hover text-brand decoration-2 underline-offset-4"
+              className="hover text-primary decoration-2 underline-offset-4"
             />
           ),
           blockquote: (props) => (

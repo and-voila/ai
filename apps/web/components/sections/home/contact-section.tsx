@@ -8,10 +8,10 @@ import { Button } from 'ui';
 export function ContactSection() {
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn className="-mx-6 rounded-[40px] bg-brand px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
+      <FadeIn className="-mx-6 rounded-[40px] bg-primary px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
-            <h2 className="font-display text-3xl font-medium text-gray-50 [text-wrap:balance] sm:text-4xl">
+            <h2 className="font-display text-3xl font-medium text-slate-50 [text-wrap:balance] sm:text-4xl">
               Have a question?
             </h2>
             <div className="mt-6 flex">
@@ -19,8 +19,8 @@ export function ContactSection() {
                 <Link href="/contact">Say Aloha</Link>
               </Button>
             </div>
-            <div className="mt-10 border-t border-gray-500 pt-10">
-              <h3 className="text-base font-semibold text-gray-50 dark:text-gray-50">
+            <div className="mt-10 border-t border-slate-500 pt-10">
+              <h3 className="text-base font-semibold text-slate-50 dark:text-slate-50">
                 Our offices
               </h3>
               <Offices

@@ -54,7 +54,7 @@ export function GridListItem({
           className={cn(
             'pl-8',
             textColor,
-            'before:bg-brand before:opacity-80 after:bg-brand after:opacity-70',
+            'before:bg-primary before:opacity-80 after:bg-primary after:opacity-70',
           )}
         >
           {title && (

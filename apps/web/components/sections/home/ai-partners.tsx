@@ -19,13 +19,13 @@ const partners = [
 
 export default function AiPartners() {
   return (
-    <div className="mt-32 rounded-[40px] bg-brand py-20 sm:py-32 md:mt-56 lg:mt-72">
+    <div className="mt-32 rounded-[40px] bg-primary py-20 sm:py-32 md:mt-56 lg:mt-72">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-lg font-semibold tracking-wider text-gray-50 sm:text-left">
+          <h2 className="text-center font-display text-lg font-semibold tracking-wider text-slate-50 sm:text-left">
             Private access by default, not at a premium.
           </h2>
-          <div className="h-px flex-auto bg-gray-500" />
+          <div className="h-px flex-auto bg-slate-500" />
         </FadeIn>
         <FadeInStagger faster>
           <ul

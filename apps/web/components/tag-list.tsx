@@ -22,7 +22,7 @@ export function TagListItem({ className, children }: TagListItemProps) {
   return (
     <li
       className={cn(
-        'rounded-full bg-brand px-4 py-2 text-sm text-gray-100 md:text-base',
+        'rounded-full bg-muted-foreground px-4 py-2 text-sm text-primary-foreground md:text-base',
         className,
       )}
     >

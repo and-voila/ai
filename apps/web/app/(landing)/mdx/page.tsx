@@ -57,7 +57,7 @@ export default function MdxPage() {
                         </dd>
                         <dt className="sr-only">Author</dt>
                         <dd className="mt-6 flex gap-x-4">
-                          <div className="flex-none overflow-hidden rounded-xl bg-gray-800">
+                          <div className="flex-none overflow-hidden rounded-xl bg-slate-800">
                             <Image
                               alt="And Voila Team Icon"
                               src="/av-icon-light.png"

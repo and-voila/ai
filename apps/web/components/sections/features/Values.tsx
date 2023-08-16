@@ -8,7 +8,7 @@ export default function Values() {
     <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">
       <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-primary">
         <GridPattern
-          className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-brand stroke-gray-50/20 opacity-25 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+          className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-primary stroke-slate-50/20 opacity-25 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
           yOffset={-270}
           interactive
         />

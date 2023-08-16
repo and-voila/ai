@@ -24,13 +24,13 @@ const Cta: React.FC<CtaProps> = ({
 }) => {
   return (
     <Container>
-      <FadeIn className="mt-24 rounded-[40px] bg-brand sm:mt-32 lg:mt-40">
+      <FadeIn className="mt-24 rounded-[40px] bg-primary sm:mt-32 lg:mt-40">
         <div className="px-6 py-24 sm:mx-0 sm:px-6 sm:py-32 md:px-12 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-4xl font-medium text-gray-50 sm:text-6xl">
+            <h2 className="font-display text-4xl font-medium text-slate-50 sm:text-6xl">
               {title}
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-100 md:text-xl ">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-100 md:text-xl ">
               {text}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -47,7 +47,7 @@ const Cta: React.FC<CtaProps> = ({
                 </Button>
               </Link>
             </div>
-            <p className="mx-auto mt-6 max-w-xl text-xs text-gray-100 md:text-sm">
+            <p className="mx-auto mt-6 max-w-xl text-xs text-slate-100 md:text-sm">
               {footerText}
             </p>
           </div>

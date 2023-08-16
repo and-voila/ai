@@ -8,12 +8,12 @@ function Office({ name, children, invert }: OfficeProps) {
   return (
     <address
       className={`text-base not-italic ${
-        invert ? 'text-gray-100' : 'text-muted-foreground'
+        invert ? 'text-slate-100' : 'text-muted-foreground'
       }`}
     >
       <span
         className={`font-display text-base font-semibold ${
-          invert ? 'text-gray-50' : 'text-foreground'
+          invert ? 'text-slate-50' : 'text-foreground'
         }`}
       >
         {name}

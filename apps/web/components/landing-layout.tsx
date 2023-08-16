@@ -76,7 +76,7 @@ function Header({
           />
         </Link>
         <div className="flex items-center gap-x-8">
-          <Button variant="default" className="rounded-md">
+          <Button variant="navbar" className="rounded-md">
             <Link href={'/sign-up'}>Get Started</Link>
           </Button>
           <Button
@@ -88,7 +88,7 @@ function Header({
           >
             <Icon
               className={`h-6 w-6 ${
-                Icon === Cross1Icon ? 'text-gray-50' : 'text-foreground'
+                Icon === Cross1Icon ? 'text-slate-50' : 'text-foreground'
               }`}
             />
           </Button>
@@ -152,14 +152,14 @@ function LandingLayoutInner({ children }: RootLayoutInnerProps) {
           layout
           id={panelId}
           style={{ height: expanded ? 'auto' : '0.5rem' }}
-          className="relative z-50 overflow-hidden bg-brand pt-2"
+          className="relative z-50 overflow-hidden bg-primary pt-2"
           aria-hidden={expanded ? undefined : 'true'}
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           //  @ts-ignore
           inert={expanded ? undefined : ''}
         >
-          <motion.div layout className="bg-gray-50">
-            <div ref={navRef} className="bg-brand pb-16 pt-14">
+          <motion.div layout className="bg-slate-50">
+            <div ref={navRef} className="bg-primary pb-16 pt-14">
               <Header
                 invert
                 icon={
@@ -176,11 +176,11 @@ function LandingLayoutInner({ children }: RootLayoutInnerProps) {
               />
             </div>
             <Navigation />
-            <div className="relative bg-brand before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-gray-50">
+            <div className="relative bg-primary before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-slate-50">
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
-                    <h2 className="font-display text-lg font-semibold text-gray-50">
+                    <h2 className="font-display text-lg font-semibold text-slate-50">
                       We&apos;re remote friendly
                     </h2>
                     <Offices
@@ -189,7 +189,7 @@ function LandingLayoutInner({ children }: RootLayoutInnerProps) {
                     />
                   </div>
                   <div className="sm:border-l sm:border-transparent sm:pl-16">
-                    <h2 className="font-display text-lg font-semibold text-gray-50">
+                    <h2 className="font-display text-lg font-semibold text-slate-50">
                       Follow us
                     </h2>
                     <SocialMedia invert className="mt-6" />
@@ -202,7 +202,7 @@ function LandingLayoutInner({ children }: RootLayoutInnerProps) {
       </header>
 
       <div className="relative">
-        <div className="absolute inset-0 bg-brand" />
+        <div className="absolute inset-0 bg-primary" />
         <motion.div
           layout
           style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
@@ -213,7 +213,7 @@ function LandingLayoutInner({ children }: RootLayoutInnerProps) {
             className="relative isolate flex w-full flex-col pt-9"
           >
             <GridPattern
-              className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-gray-100 stroke-gray-100 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] dark:fill-brand dark:stroke-gray-500 dark:opacity-10"
+              className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-slate-100 stroke-slate-100 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] dark:fill-primary dark:stroke-slate-500 dark:opacity-10"
               yOffset={-96}
               interactive
             />

@@ -38,9 +38,8 @@ const navigation: {
     links: [
       { title: 'Blog', href: '/mdx' },
       { title: 'About', href: '/about' },
-      { title: 'Manifesto', href: '/manifesto' },
       { title: 'Contact', href: '/contact' },
-      { title: 'Inspiration', href: '/' },
+      { title: 'Built With', href: '/' },
     ].map((link) => ({ ...link, external: false })),
   },
   {
