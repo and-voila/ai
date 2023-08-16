@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useConfig } from 'nextra-theme-docs';
+import { Logomark, Logo } from '@/components/logo';
 
 const HeadComponent = () => {
   const { asPath, defaultLocale, locale } = useRouter();
@@ -28,7 +29,11 @@ const HeadComponent = () => {
 
 export default {
   head: HeadComponent,
-  logo: <strong>And Voila Docs</strong>,
+  logo: (
+    <div>
+      <Logo className="hidden h-8 sm:block" fillOnHover />
+    </div>
+  ),
   project: {
     link: 'https://github.com/and-voila/and-voila/tree/main/apps/docs',
   },

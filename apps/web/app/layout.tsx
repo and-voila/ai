@@ -4,7 +4,6 @@ import '@ui/styles/globals.css';
 import type { Metadata } from 'next';
 
 import { ThemeProvider } from '@/components/theme-provider';
-// import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://andvoila.ai'),
