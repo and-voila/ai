@@ -5,14 +5,9 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [
-        ".env.production.local",
-        ".env.local",
-        ".env.production",
-        ".env"
-      ]
+      "dotEnv": [".env.local", ".env.production", ".env"]
     },
-    "web#build": {
+    "@and-voila/web#build": {
       "dependsOn": ["^build"],
       "env": [
         "NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY",
@@ -20,7 +15,7 @@
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
-    "dash#build": {
+    "@and-voila/dash#build": {
       "dependsOn": ["^build"],
       "env": [
         "CLERK_SECRET_KEY",
@@ -44,12 +39,7 @@
     "dev": {
       "cache": false,
       "persistent": true,
-      "dotEnv": [
-        ".env.production.local",
-        ".env.local",
-        ".env.production",
-        ".env"
-      ]
+      "dotEnv": [".env.local", ".env.production", ".env"]
     }
   }
 }
