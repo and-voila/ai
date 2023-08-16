@@ -82,7 +82,7 @@ function TextInput({ label, className, error, ...props }: TextInputProps) {
 
 export default function ContactForm() {
   const form = useForm<ContactFormFields>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver<any>(schema),
   });
   const [verified, setVerified] = useState<boolean>(false);
 

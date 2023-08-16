@@ -1,18 +1,29 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDotEnv": [".env"],
-  "globalEnv": ["NODE_ENV", "STRIPE_API_KEY", "NEXT_PUBLIC_APP_URL"],
+  "globalEnv": ["NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY"],
+  "globalDependencies": ["$NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "$NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "dotEnv": [".env.production", ".env.local", ".env"]
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ]
     },
     "lint": {},
     "dev": {
       "cache": false,
       "persistent": true,
-      "dotEnv": [".env.development", ".env.local", ".env"]
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ]
     }
   }
 }
