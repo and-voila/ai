@@ -1,5 +1,5 @@
-import { MagicWandIcon } from 'ui';
 import React from 'react';
+import { MagicWandIcon } from 'ui';
 
 import Cta from '@/components/cta';
 import { PageIntro } from '@/components/page-intro';

@@ -1,9 +1,8 @@
 import { auth } from '@clerk/nextjs';
-import { NextResponse } from 'next/server';
-import Replicate from 'replicate';
-
 import { checkApiLimit, increaseApiLimit } from 'lib/api-limit';
 import { checkSubscription } from 'lib/subscription';
+import { NextResponse } from 'next/server';
+import Replicate from 'replicate';
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_KEY || '',

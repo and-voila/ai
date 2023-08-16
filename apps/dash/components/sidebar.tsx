@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   CodeIcon,
   DashboardIcon,
@@ -9,9 +11,6 @@ import {
   SpeakerLoudIcon,
   VideoIcon,
 } from 'ui';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-
 import { cn } from 'ui';
 
 import { FreeCounter } from './free-counter';

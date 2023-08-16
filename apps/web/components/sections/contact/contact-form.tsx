@@ -2,20 +2,20 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-
-import { FadeIn } from '@/components/fade-in';
-import ReactTurnstile from '@/components/react-turnstile';
 import {
   Button,
-  Label,
+  cn,
   Form,
   FormControl,
   FormField,
   FormItem,
   Input,
-  cn,
+  Label,
 } from 'ui';
+import { z } from 'zod';
+
+import { FadeIn } from '@/components/fade-in';
+import ReactTurnstile from '@/components/react-turnstile';
 
 const schema = z.object({
   email: z

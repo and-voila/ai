@@ -1,12 +1,12 @@
 import Link from 'next/link';
+import { Button, Input } from 'ui';
 
 import { Container } from '@/components/container';
 import { FadeIn } from '@/components/fade-in';
+import { Logo, Logomark } from '@/components/logo';
 import { socialMediaProfiles } from '@/components/social-media';
 
-import { Logo, Logomark } from '@/components/logo';
 import { ModeToggle } from './mode-toggle';
-import { Button, Input } from 'ui';
 
 const navigation: {
   title: string;

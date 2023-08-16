@@ -1,7 +1,6 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { CodeIcon, ExclamationTriangleIcon } from 'ui';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { ChatCompletionRequestMessage } from 'openai';
@@ -9,20 +8,21 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import ReactMarkdown from 'react-markdown';
+import { CodeIcon, ExclamationTriangleIcon } from 'ui';
+import { Button } from 'ui';
+import { Form, FormControl, FormField, FormItem } from 'ui';
+import { Input } from 'ui';
+import { cn } from 'ui';
 import * as z from 'zod';
 
+import { BotAvatar } from '@/components/bot-avatar';
 import CodeBlock from '@/components/code-block';
 import { Empty } from '@/components/empty';
 import { Heading } from '@/components/heading';
 import { Loader } from '@/components/loader';
-import { Button } from 'ui';
-import { Form, FormControl, FormField, FormItem } from 'ui';
-import { Input } from 'ui';
 import { UserAvatar } from '@/components/user-avatar';
 import { useProModal } from '@/hooks/use-pro-modal';
-import { cn } from 'ui';
 
-import { BotAvatar } from '@/components/bot-avatar';
 import { formSchema } from './constants';
 
 const CodePage = () => {

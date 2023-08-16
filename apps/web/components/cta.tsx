@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
+import { Button } from 'ui';
 
 import { Container } from './container';
 import { FadeIn } from './fade-in';
-import { Button } from 'ui';
 
 interface CtaProps {
   title: string;

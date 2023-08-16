@@ -1,9 +1,8 @@
 'use client';
 
-import { Button, MoonIcon, SunIcon } from 'ui';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
-
+import { Button, MoonIcon, SunIcon } from 'ui';
 import {
   DropdownMenu,
   DropdownMenuContent,

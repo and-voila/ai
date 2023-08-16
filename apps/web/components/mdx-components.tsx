@@ -1,7 +1,7 @@
-import * as React from 'react';
-
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import * as React from 'react';
 import { ImgHTMLAttributes } from 'react';
+import { cn } from 'ui';
 
 import { Divider } from './divider';
 import {
@@ -14,7 +14,6 @@ import {
   StatListItemProps,
   StatListProps,
 } from './stat-list';
-import { cn } from 'ui';
 
 interface MdxProps {
   code: string;

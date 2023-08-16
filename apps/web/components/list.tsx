@@ -1,6 +1,7 @@
+import { cn } from 'ui';
+
 import { Divider } from '@/components/divider';
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
-import { cn } from 'ui';
 
 interface ListProps {
   className?: string;

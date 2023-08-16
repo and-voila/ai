@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import { FC } from 'react';
-
 import {
-  CheckIcon,
-  HeartIcon,
-  MagicWandIcon,
   Button,
   Card,
   CardContent,
@@ -12,6 +8,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  CheckIcon,
+  HeartIcon,
+  MagicWandIcon,
 } from 'ui';
 
 interface Tier {

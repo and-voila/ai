@@ -1,11 +1,11 @@
 import { FC } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui';
 
 import Faq from '@/components/sections/pricing/faq';
 import PricingTier, {
   DiscountedTier,
   tiers,
 } from '@/components/sections/pricing/pricing-tiers';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui';
 
 const Pricing: FC = () => {
   const uniqueTiers = tiers

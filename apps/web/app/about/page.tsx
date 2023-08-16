@@ -1,14 +1,14 @@
-import { FaceIcon } from 'ui';
 import React from 'react';
+import { FaceIcon } from 'ui';
 
 import { allPosts } from '@/.contentlayer/generated';
 import { Container } from '@/components/container';
 import Cta from '@/components/cta';
 import Features from '@/components/features';
-import { ContactSection } from '@/components/sections/home/contact-section';
 import { PageIntro } from '@/components/page-intro';
-import Culture from '@/components/sections/about/culture';
 import { PageLinks } from '@/components/page-links';
+import Culture from '@/components/sections/about/culture';
+import { ContactSection } from '@/components/sections/home/contact-section';
 
 export const metadata = {
   title: 'About Us',

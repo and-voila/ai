@@ -1,10 +1,10 @@
+import Link from 'next/link';
 import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
   NotionLogoIcon,
   TwitterLogoIcon,
 } from 'ui';
-import Link from 'next/link';
 
 export const socialMediaProfiles = [
   {

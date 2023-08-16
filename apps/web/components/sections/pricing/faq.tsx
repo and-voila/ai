@@ -1,10 +1,11 @@
-import { SectionIntro } from '@/components/section-intro';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from 'ui';
+
+import { SectionIntro } from '@/components/section-intro';
 
 const Faq = () => {
   return (

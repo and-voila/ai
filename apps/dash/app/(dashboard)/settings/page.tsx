@@ -1,10 +1,9 @@
 import { CreateOrganization, UserProfile } from '@clerk/nextjs';
-import { GearIcon } from 'ui';
-
 import { Heading } from 'components/heading';
 import { SubscriptionButton } from 'components/subscription-button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui';
 import { checkSubscription } from 'lib/subscription';
+import { GearIcon } from 'ui';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui';
 
 const SettingsPage = async () => {
   const isPro = await checkSubscription();

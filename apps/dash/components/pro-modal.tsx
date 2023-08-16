@@ -1,5 +1,9 @@
 'use client';
 
+import axios from 'axios';
+import { useProModal } from 'hooks/use-pro-modal';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 import {
   CheckIcon,
   CodeIcon,
@@ -9,10 +13,6 @@ import {
   SpeakerLoudIcon,
   VideoIcon,
 } from 'ui';
-import axios from 'axios';
-import { useState } from 'react';
-import toast from 'react-hot-toast';
-
 import { Badge } from 'ui';
 import { Button } from 'ui';
 import { Card } from 'ui';
@@ -24,7 +24,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from 'ui';
-import { useProModal } from 'hooks/use-pro-modal';
 
 const tools = [
   {

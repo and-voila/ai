@@ -1,9 +1,8 @@
 'use client';
 
-import { HamburgerMenuIcon } from 'ui';
-import { useEffect, useState } from 'react';
-
 import Sidebar from 'components/sidebar';
+import { useEffect, useState } from 'react';
+import { HamburgerMenuIcon } from 'ui';
 import { Sheet, SheetContent, SheetTrigger } from 'ui';
 
 interface MobileSidebarProps {

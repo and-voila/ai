@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import {
   ArrowRightIcon,
   CodeIcon,
@@ -8,8 +9,6 @@ import {
   SpeakerLoudIcon,
   VideoIcon,
 } from 'ui';
-import { useRouter } from 'next/navigation';
-
 import { Button } from 'ui';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from 'ui';
 import { cn } from 'ui';

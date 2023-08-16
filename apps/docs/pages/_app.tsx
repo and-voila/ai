@@ -1,6 +1,7 @@
-import type { AppProps } from 'next/app';
 import '@ui/styles/globals.css';
 import './custom.css';
+
+import type { AppProps } from 'next/app';
 
 export default function Docs({ Component, pageProps }: AppProps) {
   return (

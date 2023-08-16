@@ -1,4 +1,3 @@
-import { CheckIcon, CopyIcon } from 'ui';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -7,6 +6,7 @@ import {
   coldarkCold,
   coldarkDark,
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { CheckIcon, CopyIcon } from 'ui';
 
 type CodeBlockProps = {
   language: string;

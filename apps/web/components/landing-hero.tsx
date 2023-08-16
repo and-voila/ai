@@ -1,7 +1,7 @@
 'use client';
+import Link from 'next/link';
 import React from 'react';
 import { RocketIcon } from 'ui';
-import Link from 'next/link';
 
 import { Container } from './container';
 import { FadeIn } from './fade-in';

@@ -1,5 +1,5 @@
-import { cn } from 'ui';
 import { useId } from 'react';
+import { cn } from 'ui';
 
 interface LogomarkProps extends React.SVGProps<SVGSVGElement> {
   invert?: boolean;

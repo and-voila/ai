@@ -1,8 +1,8 @@
-import LandingLayout from '@/components/landing-layout';
 import '@ui/styles/globals.css';
 
 import type { Metadata } from 'next';
 
+import LandingLayout from '@/components/landing-layout';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {

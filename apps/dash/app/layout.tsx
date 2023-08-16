@@ -1,7 +1,9 @@
-import { ClerkProvider } from '@clerk/nextjs';
 import '../../../packages/ui/styles/globals.css';
-import { ThemeProvider } from '../components/theme-provider';
+
+import { ClerkProvider } from '@clerk/nextjs';
+
 import { ModalProvider } from '../components/modal-provider';
+import { ThemeProvider } from '../components/theme-provider';
 import { ToasterProvider } from '../components/toaster-provider';
 
 export default function RootLayout({

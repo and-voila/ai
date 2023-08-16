@@ -1,5 +1,4 @@
 import { useUser } from '@clerk/nextjs';
-
 import { Avatar, AvatarFallback, AvatarImage } from 'ui';
 
 export const UserAvatar = () => {

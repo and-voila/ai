@@ -1,10 +1,9 @@
 'use client';
 
-import { MagicWandIcon } from 'ui';
 import axios from 'axios';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
-
+import { MagicWandIcon } from 'ui';
 import { Button } from 'ui';
 
 export const SubscriptionButton = ({ isPro = false }: { isPro: boolean }) => {
