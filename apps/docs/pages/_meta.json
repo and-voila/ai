@@ -1,0 +1,22 @@
+{
+  "index": {
+    "title": "Home",
+    "type": "page"
+  },
+  "user-guides": {
+    "title": "User Guides",
+    "type": "page"
+  },
+  "developers": {
+    "title": "Developers",
+    "type": "page"
+  },
+  "support": {
+    "title": "Support",
+    "type": "page"
+  },
+  "internal": {
+    "title": "Internal",
+    "type": "page"
+  }
+}
