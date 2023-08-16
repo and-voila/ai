@@ -24,7 +24,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <div className="prose dark:prose-invert md:prose-lg">
+    <div className="prose-slate dark:prose-invert md:prose-lg">
       <Component
         components={{
           a: (props) => (

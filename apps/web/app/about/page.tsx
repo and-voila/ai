@@ -21,7 +21,7 @@ const featuresSection = {
   title: 'Not Just Talking the Talk',
   className: 'mt-24 sm:mt-32 lg:mt-40',
   intro: [
-    ' Enough with the status quo. At Voila AI&trade;, we&apos;re disrupting tech with our unique blend of 100% open-source and team ownership. Profit matters, but not at the expense of our stakeholders or the planet. We proudly commit 1% of our gross revenue to fight climate change.',
+    ' Enough with the status quo. At Voila AI, we&apos;re disrupting tech with our unique blend of 100% open-source and team ownership. Profit matters, but not at the expense of our stakeholders or the planet. We proudly commit 1% of our gross revenue to fight climate change.',
     'After all, doing good is the first step to doing well.',
   ],
   listItems: [
