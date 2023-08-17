@@ -1,30 +1,19 @@
-## Getting Started
+# Enlightening Minds: The And Voila Docs Hub
 
-First, run the development server:
+Our centralized documentation hub powered by [**Nextra**](https://nextra.site/) is the lighthouse guiding users and developers.
 
-```bash
-yarn dev
-```
+Built with [**MDX**](https://mdxjs.com/), our docs source their wisdom directly from markdown files. Like Charlie's flourishing coaching skills, contributions can come from the community through GitHub.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[**Tailwind CSS**](https://tailwindcss.com/) brings its utility-first design for a stylish yet minimalist look. The content shines while the UI gets out of the way.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Within the sleek docs site, you'll find:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **User Guides**: Curated walkthroughs for new users to upskill quickly.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Developer Docs**: Technical reference for building on our platform.
 
-## Learn More
+- **Internal Docs**: Resources for our team to align efforts and knowledge.
 
-To learn more about Next.js, take a look at the following resources:
+Nextra helps us tame documentation sprawl with its structured approach. And with markdown, the barrier to contribute is low - no need to have React skills like Mac mastering martial arts.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Our `/docs` workspace enlightens minds across the And Voila ecosystem. Let it guide you to the information you seek!
