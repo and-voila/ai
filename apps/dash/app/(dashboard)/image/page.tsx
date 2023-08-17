@@ -1,6 +1,6 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
+import { valibotResolver } from '@hookform/resolvers/valibot';
 import axios from 'axios';
 import { Empty } from 'components/empty';
 import { Heading } from 'components/heading';
@@ -23,19 +23,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from 'ui';
-import * as z from 'zod';
 
-import { amountOptions, formSchema, resolutionOptions } from './constants';
+import {
+  amountOptions,
+  ImageFormDataType,
+  imageFormSchema,
+  resolutionOptions,
+} from './constants';
 
 const ImagePage = () => {
   const proModal = useProModal();
   const router = useRouter();
   const [images, setImages] = useState<string[]>([]);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ImageFormDataType>({
+    resolver: valibotResolver(imageFormSchema),
     defaultValues: {
-      prompt: '',
       amount: '1',
       resolution: '512x512',
     },
@@ -44,7 +47,7 @@ const ImagePage = () => {
   const isLoading = form.formState.isSubmitting;
 
   // eslint-disable-next-line space-before-function-paren
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: ImageFormDataType) => {
     try {
       setImages([]);
       const response = await axios.post('/api/image', values);
@@ -151,6 +154,7 @@ const ImagePage = () => {
             <Button
               className="col-span-12 w-full lg:col-span-2 "
               disabled={isLoading}
+              type="submit"
             >
               Generate
             </Button>
@@ -158,7 +162,10 @@ const ImagePage = () => {
           <div className="flex items-center px-6 py-3 text-xs text-muted-foreground">
             <ExclamationTriangleIcon className="mr-2 h-3 w-3 text-muted-foreground" />
             AI may unintentionally mirror human biases. We&apos;re trying to fix
-            that.
+            that.{' '}
+            <div className="text-xs text-red-500">
+              {form.formState.errors.prompt?.message}
+            </div>
           </div>
         </Form>
       </div>

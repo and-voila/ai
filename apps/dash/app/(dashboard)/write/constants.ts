@@ -1,5 +1,7 @@
-import * as z from 'zod';
+import { minLength, object, Output, string } from 'valibot';
 
-export const formSchema = z.object({
-  prompt: z.string().min(1, { message: 'Prompt is required' }),
+export const writeFormSchema = object({
+  prompt: string([minLength(3, 'Prompt is required')]),
 });
+
+export type WriteFormDataType = Output<typeof writeFormSchema>;

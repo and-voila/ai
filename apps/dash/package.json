@@ -27,7 +27,7 @@
     "replicate": "^0.16.1",
     "stripe": "^12.18.0",
     "ui": "workspace:*",
-    "zod": "^3.21.4",
+    "valibot": "^0.12.0",
     "zustand": "^4.4.1"
   },
   "devDependencies": {

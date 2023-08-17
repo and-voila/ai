@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
+import { valibotResolver } from '@hookform/resolvers/valibot';
 import axios from 'axios';
 import { BotAvatar } from 'components/bot-avatar';
 import CodeBlock from 'components/code-block';
@@ -21,17 +21,16 @@ import { Button } from 'ui';
 import { Form, FormControl, FormField, FormItem } from 'ui';
 import { Input } from 'ui';
 import { cn } from 'ui';
-import * as z from 'zod';
 
-import { formSchema } from './constants';
+import { WriteFormDataType, writeFormSchema } from './constants';
 
 const WritePage = () => {
   const proModal = useProModal();
   const router = useRouter();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<WriteFormDataType>({
+    resolver: valibotResolver(writeFormSchema),
     defaultValues: {
       prompt: '',
     },
@@ -40,7 +39,7 @@ const WritePage = () => {
   const isLoading = form.formState.isSubmitting;
 
   // eslint-disable-next-line space-before-function-paren
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: WriteFormDataType) => {
     try {
       const userMessage: ChatCompletionRequestMessage = {
         role: 'user',
@@ -106,6 +105,10 @@ const WritePage = () => {
             <ExclamationTriangleIcon className="mr-2 h-3 w-3 text-muted-foreground" />
             AI may produce inaccurate information about people, places, or
             facts.
+            <span className="text-red-500">
+              {form.formState.errors.prompt &&
+                form.formState.errors.prompt.message}
+            </span>
           </div>
         </Form>
       </div>
