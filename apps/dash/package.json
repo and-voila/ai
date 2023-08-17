@@ -28,7 +28,6 @@
     "stripe": "^12.18.0",
     "ui": "workspace:*",
     "valibot": "^0.12.0",
-    "zod": "^3.21.4",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
