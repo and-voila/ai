@@ -14,7 +14,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "theme.config.jsx"
+    "theme.config.jsx",
+    "pages/_app.mdx"
   ],
   "exclude": ["node_modules"]
 }
