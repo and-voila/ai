@@ -159,6 +159,9 @@ importers:
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
+      valibot:
+        specifier: ^0.12.0
+        version: 0.12.0
       zod:
         specifier: ^3.21.4
         version: 3.22.1
