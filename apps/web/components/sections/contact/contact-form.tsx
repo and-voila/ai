@@ -1,4 +1,5 @@
 'use client';
+import { valibotResolver } from '@hookform/resolvers/valibot';
 import { useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
@@ -11,40 +12,10 @@ import {
   Input,
   Label,
 } from 'ui';
-import { z } from 'zod';
 
+import { ContactFormDataType, contactFormSchema } from '@/app/contact/constant';
 import { FadeIn } from '@/components/fade-in';
 import ReactTurnstile from '@/components/react-turnstile';
-
-const schema = z.object({
-  email: z
-    .string({
-      required_error: 'Email is required',
-    })
-    .nonempty('Email is required')
-    .email('Invalid email address'),
-  name: z
-    .string({
-      required_error: 'Name is required',
-    })
-    .nonempty('Name is required'),
-  company: z
-    .string({
-      required_error: 'Company name is required',
-    })
-    .nonempty('Company name is required'),
-  phone: z.string().refine((val) => {
-    const phoneRegex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-    return phoneRegex.test(val);
-  }),
-  message: z
-    .string({
-      required_error: 'Message is required',
-    })
-    .nonempty('Message is required'),
-});
-
-type ContactFormFields = z.infer<typeof schema>;
 
 type TextInputProps = {
   label: string;
@@ -80,14 +51,14 @@ function TextInput({ label, className, error, ...props }: TextInputProps) {
 }
 
 export default function ContactForm() {
-  const form = useForm<ContactFormFields>({
-    // resolver: zodResolver(schema),
+  const form = useForm<ContactFormDataType>({
+    resolver: valibotResolver(contactFormSchema),
   });
   const [verified, setVerified] = useState<boolean>(false);
 
-  async function onSubmit(data: ContactFormFields) {
+  async function onSubmit(data: ContactFormDataType) {
     // eslint-disable-next-line no-console
-    console.log(`HEY: ${data.name}`);
+    alert(`HEY: ${data.name}`);
   }
 
   return (
