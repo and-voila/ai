@@ -1,5 +1,4 @@
 'use client';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
@@ -82,7 +81,7 @@ function TextInput({ label, className, error, ...props }: TextInputProps) {
 
 export default function ContactForm() {
   const form = useForm<ContactFormFields>({
-    resolver: zodResolver(schema),
+    // resolver: zodResolver(schema),
   });
   const [verified, setVerified] = useState<boolean>(false);
 

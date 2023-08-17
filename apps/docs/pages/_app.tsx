@@ -7,7 +7,7 @@ export default function Docs({ Component, pageProps }: AppProps) {
   return (
     <>
       <main lang="en" className="h-full text-base antialiased">
-        <style global>{`
+        <style jsx global>{`
           html {
             font-family: 'Mona Sans';
             font-weight: 200 900;
