@@ -1,6 +1,7 @@
 import '@ui/styles/globals.css';
 
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import LandingLayout from '@/components/landing-layout';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -63,7 +64,11 @@ export default function RootLayout({
     <html lang="en" className="h-full text-base antialiased">
       <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <LandingLayout>{children}</LandingLayout>
+          <LandingLayout>
+            <Suspense>
+              <main>{children}</main>
+            </Suspense>
+          </LandingLayout>
         </ThemeProvider>
       </body>
     </html>

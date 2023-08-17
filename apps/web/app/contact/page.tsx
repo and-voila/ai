@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { Container } from '@/components/container';
 import { PageIntro } from '@/components/page-intro';
 import ContactDetails from '@/components/sections/contact/contact-details';
@@ -20,7 +22,9 @@ export default function Contact() {
       </PageIntro>
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
-          <ContactForm />
+          <Suspense fallback={<div>loading..</div>}>
+            <ContactForm />
+          </Suspense>
           <ContactDetails />
         </div>
       </Container>

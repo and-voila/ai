@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Button, ReactIcon } from 'ui';
 
 import { UseCase } from '@/.contentlayer/generated';
@@ -7,6 +7,7 @@ import { Blockquote } from '@/components/blockquote';
 import { Container } from '@/components/container';
 import { Divider } from '@/components/divider';
 import { FadeIn } from '@/components/fade-in';
+import { MDXListLoader } from '@/components/loaders';
 import { formattedDate } from '@/components/utils';
 
 const UseCaseHeader: React.FC<{ useCase: UseCase }> = ({ useCase }) => {
@@ -99,9 +100,11 @@ const UseCases: React.FC<{ useCases: UseCase[] }> = ({ useCases }) => {
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
-        {sortedUseCases.map((useCase) => (
-          <UseCaseArticle useCase={useCase} key={useCase._id} />
-        ))}
+        <Suspense fallback={<MDXListLoader />}>
+          {sortedUseCases.map((useCase) => (
+            <UseCaseArticle useCase={useCase} key={useCase._id} />
+          ))}
+        </Suspense>
       </div>
     </Container>
   );

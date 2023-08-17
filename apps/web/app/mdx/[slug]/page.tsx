@@ -1,13 +1,18 @@
-import React from 'react';
+import dynamic from 'next/dynamic';
+import React, { Suspense } from 'react';
 import { MagicWandIcon } from 'ui';
 
 import { allPosts } from '@/.contentlayer/generated';
 import { Container } from '@/components/container';
 import Cta from '@/components/cta';
 import { FadeIn } from '@/components/fade-in';
+import { ArticleLoader } from '@/components/loaders';
 import { Mdx } from '@/components/mdx-components';
-import { PageLinks } from '@/components/page-links';
 import { formattedDate } from '@/components/utils';
+
+const PageLinks = dynamic(() =>
+  import('@/components/page-links').then((mod) => mod.PageLinks),
+);
 
 interface MdxSlugPageProps {
   params: {
@@ -20,30 +25,32 @@ function MdxSlugPage({ params }: MdxSlugPageProps) {
   const moreMdx = allPosts.filter((doc) => doc.slug !== params.slug);
   return (
     <>
-      <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
-        <FadeIn>
-          <header className="mx-auto flex max-w-5xl flex-col text-center">
-            <h1 className="mt-6 font-display text-5xl font-medium tracking-tight text-foreground [text-wrap:balance] sm:text-7xl">
-              {mdx?.title}
-            </h1>
-            <time
-              dateTime={mdx?.date}
-              className="order-first text-sm text-muted-foreground"
-            >
-              {mdx?.date && formattedDate(mdx.date)}{' '}
-            </time>
-            <p className="mt-6 text-sm font-medium text-muted-foreground">
-              by And Voila • Team
-            </p>
-          </header>
-        </FadeIn>
+      <Suspense fallback={<ArticleLoader />}>
+        <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
+          <FadeIn>
+            <header className="mx-auto flex max-w-5xl flex-col text-center">
+              <h1 className="mt-6 font-display text-5xl font-medium tracking-tight text-foreground [text-wrap:balance] sm:text-7xl">
+                {mdx?.title}
+              </h1>
+              <time
+                dateTime={mdx?.date}
+                className="order-first text-sm text-muted-foreground"
+              >
+                {mdx?.date && formattedDate(mdx.date)}{' '}
+              </time>
+              <p className="mt-6 text-sm font-medium text-muted-foreground">
+                by And Voila • Team
+              </p>
+            </header>
+          </FadeIn>
 
-        <FadeIn>
-          <div className="prose mx-auto mt-16 dark:prose-invert md:prose-lg sm:mt-24">
-            <Mdx code={mdx?.body.code ?? ''} />
-          </div>
-        </FadeIn>
-      </Container>
+          <FadeIn>
+            <div className="prose mx-auto mt-16 dark:prose-invert md:prose-lg sm:mt-24">
+              <Mdx code={mdx?.body.code ?? ''} />
+            </div>
+          </FadeIn>
+        </Container>
+      </Suspense>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>

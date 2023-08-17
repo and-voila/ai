@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import { cn } from 'ui';
 
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
 
 import { Divider } from './divider';
+import { GridListItemLoader } from './loaders';
 
 interface GridListProps {
   className?: string;
@@ -81,9 +82,11 @@ interface GridListItemGroupProps {
 export const GridListItemGroup: FC<GridListItemGroupProps> = ({ items }) => {
   return (
     <>
-      {items.map((item) => (
-        <GridListItem key={item.title} {...item} />
-      ))}
+      <Suspense fallback={<GridListItemLoader />}>
+        {items.map((item) => (
+          <GridListItem key={item.title} {...item} />
+        ))}
+      </Suspense>
     </>
   );
 };

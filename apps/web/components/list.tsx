@@ -1,7 +1,10 @@
+import { Suspense } from 'react';
 import { cn } from 'ui';
 
 import { Divider } from '@/components/divider';
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
+
+import { ListItemLoader } from './loaders';
 
 interface ListProps {
   className?: string;
@@ -50,11 +53,13 @@ interface ListItemGroupProps {
 export function ListItemGroup({ items }: ListItemGroupProps) {
   return (
     <List>
-      {items.map((item, index) => (
-        <ListItem key={index} title={item.title}>
-          {item.content}
-        </ListItem>
-      ))}
+      <Suspense fallback={<ListItemLoader />}>
+        {items.map((item, index) => (
+          <ListItem key={index} title={item.title}>
+            {item.content}
+          </ListItem>
+        ))}
+      </Suspense>
     </List>
   );
 }

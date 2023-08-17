@@ -29,14 +29,16 @@ const Features: React.FC<FeaturesProps> = ({ section }) => {
         title={section.title}
         className={section.className}
       >
-        {section.intro.map((paragraph, index) => (
-          <p
-            key={index}
-            className={`text-muted-foreground ${index > 0 ? 'mt-6' : ''}`}
-          >
-            {paragraph}
-          </p>
-        ))}
+        <React.Suspense fallback={<div>loading...</div>}>
+          {section.intro.map((paragraph, index) => (
+            <p
+              key={index}
+              className={`text-muted-foreground ${index > 0 ? 'mt-6' : ''}`}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </React.Suspense>
       </SectionIntro>
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">

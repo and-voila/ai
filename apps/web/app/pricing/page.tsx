@@ -1,11 +1,19 @@
-import { FC } from 'react';
+import dynamic from 'next/dynamic';
+import { FC, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui';
 
+import { PricingTierLoader, PricingTitleLoader } from '@/components/loaders';
 import Faq from '@/components/sections/pricing/faq';
-import PricingTier, {
+import {
   DiscountedTier,
   tiers,
 } from '@/components/sections/pricing/pricing-tiers';
+
+const PricingTier = dynamic(() =>
+  import('@/components/sections/pricing/pricing-tiers').then((mod) => {
+    return mod.default;
+  }),
+);
 
 const Pricing: FC = () => {
   const uniqueTiers = tiers
@@ -36,22 +44,26 @@ const Pricing: FC = () => {
         <div className="mx-auto -mt-80 max-w-6xl">
           <Tabs defaultValue="Annual" className="mx-auto max-w-4xl gap-8">
             <TabsList className="mx-auto  mb-10 flex w-full md:w-1/2">
-              {uniqueTiers.map((tier) => (
-                <TabsTrigger value={tier} key={tier} className="w-full">
-                  {tier}
-                </TabsTrigger>
-              ))}
+              <Suspense fallback={<PricingTitleLoader />}>
+                {uniqueTiers.map((tier) => (
+                  <TabsTrigger value={tier} key={tier} className="w-full">
+                    {tier}
+                  </TabsTrigger>
+                ))}
+              </Suspense>
             </TabsList>
             {uniqueTiers.map((tier) => (
               <TabsContent value={tier} key={tier}>
                 <div className="flex flex-col justify-center space-y-8 sm:flex-row sm:space-x-8 sm:space-y-0">
-                  {tiers
-                    .filter((t) => t.tier === tier)
-                    .map((t) => (
-                      <div className="h-full flex-1" key={t.id}>
-                        <PricingTier tier={t} />
-                      </div>
-                    ))}
+                  <Suspense fallback={<PricingTierLoader />}>
+                    {tiers
+                      .filter((t) => t.tier === tier)
+                      .map((t) => (
+                        <div className="h-full flex-1" key={t.id}>
+                          <PricingTier tier={t} />
+                        </div>
+                      ))}
+                  </Suspense>
                 </div>
               </TabsContent>
             ))}
