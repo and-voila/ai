@@ -33,7 +33,8 @@
         "OPENAI_API_KEY",
         "REPLICATE_API_KEY",
         "STRIPE_API_KEY",
-        "STRIPE_WEBHOOK_SECRET"
+        "STRIPE_WEBHOOK_SECRET",
+        "WG_PUBLIC_NODE_URL"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },

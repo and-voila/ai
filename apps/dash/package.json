@@ -13,6 +13,8 @@
     "@clerk/nextjs": "^4.23.2",
     "@hookform/resolvers": "^3.2.0",
     "@prisma/client": "^5.1.1",
+    "@wundergraph/nextjs": "^0.13.9",
+    "@wundergraph/sdk": "^0.174.4",
     "axios": "^1.4.0",
     "next": "^13.4.1",
     "next-themes": "^0.2.1",
@@ -26,6 +28,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "replicate": "^0.16.1",
     "stripe": "^12.18.0",
+    "swr": "^2.2.1",
     "ui": "workspace:*",
     "valibot": "^0.12.0",
     "zustand": "^4.4.1"
