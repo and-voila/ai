@@ -56,7 +56,7 @@ async function sendToSlack(message: Message) {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: `\n\n\n\n${message.name} just submitted a form on rebekah-radice page. Please reach out to them.`,
+            text: `\n\n\n\n${message.name} just submitted a form on contact page. Please reach out to them.`,
           },
         },
         {
