@@ -57,10 +57,25 @@ export default function ContactForm() {
     resolver: valibotResolver(contactFormSchema),
   });
   const [verified, setVerified] = useState<boolean>(false);
+  const [messageSent, setMessageSent] = useState<boolean>(false);
 
   async function onSubmit(data: ContactFormDataType) {
-    // eslint-disable-next-line no-console
-    alert(`HEY: ${data.name}`);
+    await fetch('/api/slack-message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        message: data.message,
+        phone: data.phone,
+      }),
+    }).then(() => {
+      setMessageSent(true);
+      form.reset();
+    });
   }
 
   return (
@@ -158,7 +173,7 @@ export default function ContactForm() {
               type="submit"
               className="mt-10"
             >
-              Contact And Voila
+              {messageSent ? 'Message sent!' : 'Send message'}
             </Button>
           </form>
         </Form>
