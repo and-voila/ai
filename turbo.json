@@ -23,6 +23,8 @@
         "CLERK_SECRET_KEY",
         "DATABASE_URL",
         "INTERCOM_APP_ID",
+        "INNGEST_EVENT_KEY",
+        "INNGEST_SIGNING_KEY",
         "NEXT_PUBLIC_APP_URL",
         "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL",
         "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL",
@@ -36,7 +38,8 @@
         "STRIPE_WEBHOOK_SECRET",
         "WG_PUBLIC_NODE_URL",
         "UPSTASH_REDIS_REST_TOKEN",
-        "CLERK_JWKS_URL"
+        "CLERK_JWKS_URL",
+        "UPSTASH_REDIS_REST_TOKEN"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
