@@ -9,6 +9,7 @@ import { FadeIn } from '@/components/fade-in';
 import { ArticleLoader } from '@/components/loaders';
 import { Mdx } from '@/components/mdx-components';
 import { formattedDate } from '@/components/utils';
+import { SITE_URL } from '@/lib/constants';
 
 const PageLinks = dynamic(() =>
   import('@/components/page-links').then((mod) => mod.PageLinks),
@@ -17,6 +18,33 @@ const PageLinks = dynamic(() =>
 interface MdxSlugPageProps {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: MdxSlugPageProps) {
+  const mdx = allPosts.find((doc) => doc.slug === params.slug);
+
+  const title = mdx?.title ?? 'Blog';
+  const description =
+    mdx?.description ??
+    "Stay up to date with the latest tips, tricks, and insights from the And Voila Team. We'll help you unlock your creativity with AI to delight your audience.";
+  const url = `${SITE_URL}/mdx/${params.slug}`;
+  const openGraphImage = '/open-graph.jpg';
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      images: openGraphImage,
+    },
+    twitter: {
+      title,
+      description,
+      images: openGraphImage,
+    },
   };
 }
 

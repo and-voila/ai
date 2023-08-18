@@ -11,7 +11,8 @@
       "dependsOn": ["^build"],
       "env": [
         "NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY",
-        "CLOUDFLARE_TURNSTILE_SECRET"
+        "CLOUDFLARE_TURNSTILE_SECRET",
+        "NEXT_PUBLIC_APP_URL"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },

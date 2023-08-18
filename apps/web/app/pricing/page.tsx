@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { FC, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'ui';
@@ -8,6 +9,7 @@ import {
   DiscountedTier,
   tiers,
 } from '@/components/sections/pricing/pricing-tiers';
+import { SITE_URL } from '@/lib/constants';
 
 const PricingTier = dynamic(() =>
   import('@/components/sections/pricing/pricing-tiers').then((mod) => {
@@ -81,3 +83,27 @@ const Pricing: FC = () => {
 };
 
 export default Pricing;
+
+export function generateMetadata(): Metadata {
+  const title = 'Pricing';
+  const description =
+    'And Voila equips creators with an AI assistant to level up their content and scale their brand. Use it free or upgrade to unlock mind blowing features.';
+
+  const url = `${SITE_URL}/pricing`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}

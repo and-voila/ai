@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import React from 'react';
 import { MagicWandIcon } from 'ui';
 
@@ -10,12 +11,31 @@ import Multimedia from '@/components/sections/features/mulltimedia';
 import Multiplayer from '@/components/sections/features/multiplayer';
 import Privacy from '@/components/sections/features/privacy';
 import Writing from '@/components/sections/features/writing';
+import { SITE_URL } from '@/lib/constants';
 
-export const metadata = {
-  title: 'Features',
-  description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
-};
+export function generateMetadata(): Metadata {
+  const title = 'Features';
+  const description =
+    'You need an AI suite purpose-built for your creative process. One that helps you do what you do best. Create content that makes your audience go whoop!';
+
+  const url = `${SITE_URL}/features`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}
 
 function Features() {
   return (

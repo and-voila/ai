@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
@@ -11,12 +12,31 @@ import { FadeIn } from '@/components/fade-in';
 import { MDXListLoader } from '@/components/loaders';
 import { PageIntro } from '@/components/page-intro';
 import { formattedDate } from '@/components/utils';
+import { SITE_URL } from '@/lib/constants';
 
-export const metadata = {
-  title: 'Blog',
-  description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
-};
+export function generateMetadata(): Metadata {
+  const title = 'Blog';
+  const description =
+    "Stay up to date with the latest tips, tricks, and insights from the And Voila Team. We'll help you unlock your creativity with AI to delight your audience.";
+
+  const url = `${SITE_URL}/mdx`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}
 
 export default function MdxPage() {
   const sortedPosts = allPosts.slice().sort((a, b) => {

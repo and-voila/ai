@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import React, { Suspense } from 'react';
 import { MagicWandIcon } from 'ui';
 
@@ -5,12 +6,31 @@ import { allUseCases } from '@/.contentlayer/generated';
 import Cta from '@/components/cta';
 import { PageIntro } from '@/components/page-intro';
 import UseCases from '@/components/sections/use-cases/use-cases';
+import { SITE_URL } from '@/lib/constants';
 
-export const metadata = {
-  title: 'Use Cases',
-  description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
-};
+export function generateMetadata(): Metadata {
+  const title = 'Use Cases';
+  const description =
+    "See how the world's top creators use And Voila to glow up their content, save time, and keep their IP safe. Your ideas supercharged, all the way to the bank.";
+
+  const url = `${SITE_URL}/use-cases`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}
 
 function UseCase() {
   return (

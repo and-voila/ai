@@ -11,6 +11,7 @@ import { ArticleLoader } from '@/components/loaders';
 import { Mdx } from '@/components/mdx-components';
 import { PageIntro } from '@/components/page-intro';
 import { formattedDate } from '@/components/utils';
+import { SITE_URL } from '@/lib/constants';
 
 const PageLinks = dynamic(() =>
   import('@/components/page-links').then((mod) => mod.PageLinks),
@@ -137,3 +138,33 @@ function UseCaseSlugPage({ params }: UseCaseSlugPageProps) {
 }
 
 export default UseCaseSlugPage;
+
+export async function generateMetadata({ params }: UseCaseSlugPageProps) {
+  const doc = allUseCases.find((doc) => doc.slug === params.slug);
+
+  const title = doc?.title ?? 'Use Case';
+  const description =
+    doc?.description ?? 'Detailed description of the use case.';
+  const url = `${SITE_URL}/use-case/${params.slug}`;
+  const openGraphImage = '/open-graph.jpg';
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [
+        {
+          url: openGraphImage,
+        },
+      ],
+    },
+    twitter: {
+      title,
+      description,
+      images: openGraphImage,
+    },
+  };
+}
