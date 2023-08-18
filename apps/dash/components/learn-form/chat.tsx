@@ -1,4 +1,9 @@
+'use client';
+import { useAuth } from '@clerk/nextjs';
+import { useCallback, useEffect } from 'react';
 import { Avatar, cn, Separator } from 'ui';
+
+import { getUserWrittingRedis } from '@/lib/handleInngest';
 
 import { Logomark } from '../logo';
 import { MemoizedReactMarkdown } from '../markdown';
@@ -16,6 +21,11 @@ export interface ChatList {
     content: string;
   }[];
 }
+
+type ResponseRedis = {
+  status: 'pending' | 'completed';
+  blogPost: string;
+};
 
 export function ChatMessage({ message, ...props }: ChatMessageProps) {
   return (
@@ -68,12 +78,29 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
 }
 
 export function ChatList({ messages }: ChatList) {
-  if (!messages.length) {
-    return null;
-  }
+  const { userId } = useAuth();
+
+  const analysizedSample = useCallback(async () => {
+    let response: ResponseRedis;
+    do {
+      const res = await getUserWrittingRedis(userId);
+      if (res.status === 'completed') {
+        response = res;
+      }
+    } while (response.status !== 'completed');
+
+    messages.push({
+      role: 'bot',
+      content: response.blogPost,
+    });
+  }, [messages, userId]);
+
+  useEffect(() => {
+    analysizedSample();
+  }, [analysizedSample]);
 
   return (
-    <div className="px-4 lg:px-8">
+    <div className="relative mx-auto max-w-2xl px-4">
       {messages.map((message, index) => (
         <div key={index}>
           <ChatMessage message={message} />

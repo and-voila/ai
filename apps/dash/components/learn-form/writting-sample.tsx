@@ -1,5 +1,5 @@
 'use client';
-
+import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -10,8 +10,10 @@ import {
   writtingSampleSchema,
   writtingSampleSteps,
 } from '@/app/(dashboard)/learn/constant';
+import { handleWritingAnalysis } from '@/lib/handleInngest';
 
 export function WrittingSample() {
+  const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
 
   const form = useForm<WrittingSampleDataType>({
@@ -24,9 +26,16 @@ export function WrittingSample() {
     },
   });
 
-  function onSubmit(values: WrittingSampleDataType) {
-    // eslint-disable-next-line no-console
-    console.log(values);
+  async function onSubmit(values: WrittingSampleDataType) {
+    await handleWritingAnalysis({
+      userId: userId,
+      samples: [
+        values.writtingSample1,
+        values.writtingSample2,
+        values.writtingSample3,
+        values.writtingSample4,
+      ],
+    });
   }
 
   const currentStepConfig = writtingSampleSteps[currentStep];
