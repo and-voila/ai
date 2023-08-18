@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: MdxSlugPageProps) {
     mdx?.description ??
     "Stay up to date with the latest tips, tricks, and insights from the And Voila Team. We'll help you unlock your creativity with AI to delight your audience.";
   const url = `${SITE_URL}/mdx/${params.slug}`;
-  const openGraphImage = '/open-graph.jpg';
+  const openGraphImage = `${SITE_URL}/open-graph.jpg`;
 
   return {
     title,

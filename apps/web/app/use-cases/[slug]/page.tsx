@@ -146,7 +146,7 @@ export async function generateMetadata({ params }: UseCaseSlugPageProps) {
   const description =
     doc?.description ?? 'Detailed description of the use case.';
   const url = `${SITE_URL}/use-case/${params.slug}`;
-  const openGraphImage = '/open-graph.jpg';
+  const openGraphImage = `${SITE_URL}/open-graph.jpg`;
 
   return {
     title,
