@@ -48,9 +48,13 @@ Handling content outside React is smooth thanks to [ContentLayer](https://www.co
 
 User login and management done elegantly by [Clerk](https://clerk.dev/) right out of the box.
 
-### Drizzle ORM Rigor
+### Prisma's Type-Safe Magic
 
-[Drizzle ORM](https://orm.drizzle.team/) brings maximum type safety to SQL with its TS ORM.
+[Prisma](https://www.prisma.io/) brings maximum type safety to SQL with its TypeScript ORM.
+
+### Drizzle ORM on the wish list
+
+We want to explore [Drizzle ORM](https://orm.drizzle.team/) for possible performance gains, but chickened out for now.
 
 ### Neon Postgres Order
 
