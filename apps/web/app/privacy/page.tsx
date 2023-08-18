@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import React, { Suspense } from 'react';
 
 import { allLegals } from '@/.contentlayer/generated';
@@ -7,11 +8,31 @@ import { ArticleLoader } from '@/components/loaders';
 import { Mdx } from '@/components/mdx-components';
 import { PageIntro } from '@/components/page-intro';
 import { ContactSection } from '@/components/sections/home/contact-section';
+import { SITE_URL } from '@/lib/constants';
 
-export const metadata = {
-  title: 'Privacy',
-  description: 'Our Privacy',
-};
+export function generateMetadata(): Metadata {
+  const title = 'Privacy';
+  const description =
+    'And Voila AI, Inc. is a privacy-first company. We are committed to protecting your creative process, data, and IP. Learn more about our privacy policy.';
+
+  const url = `${SITE_URL}/privacy`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}
 
 function Privacy() {
   const privacy = allLegals.find((doc) => doc.slug === 'privacy');

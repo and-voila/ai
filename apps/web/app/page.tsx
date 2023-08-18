@@ -66,7 +66,7 @@ const LandingPage = () => {
         <Cta
           title="Power up your creativity"
           text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
-          linkHref="/sign-up"
+          linkHref="https://app.andvoila.ai/sign-up"
           buttonText="Sign Up Free"
           buttonIcon={<MagicWandIcon />}
           footerText="No credit card required"

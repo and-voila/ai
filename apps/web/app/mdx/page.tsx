@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
@@ -11,12 +12,34 @@ import { FadeIn } from '@/components/fade-in';
 import { MDXListLoader } from '@/components/loaders';
 import { PageIntro } from '@/components/page-intro';
 import { formattedDate } from '@/components/utils';
+import { SITE_URL } from '@/lib/constants';
 
-export const metadata = {
-  title: 'Blog',
-  description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
-};
+export function generateMetadata(): Metadata {
+  const title = 'Blog';
+  const description =
+    "Stay up to date with the latest tips, tricks, and insights from the And Voila Team. We'll help you unlock your creativity with AI to delight your audience.";
+
+  const url = `${SITE_URL}/mdx`;
+  const openGraphImage = '/open-graph.jpg';
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      images: openGraphImage,
+    },
+    twitter: {
+      title,
+      description,
+      images: openGraphImage,
+    },
+  };
+
+  return metadata;
+}
 
 export default function MdxPage() {
   const sortedPosts = allPosts.slice().sort((a, b) => {
@@ -102,7 +125,7 @@ export default function MdxPage() {
       <Cta
         title="Power up your creativity"
         text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
-        linkHref="/sign-up"
+        linkHref="https://app.andvoila.ai/sign-up"
         buttonText="Sign Up Free"
         buttonIcon={<MagicWandIcon />}
         footerText="No credit card required"

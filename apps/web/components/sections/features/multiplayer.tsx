@@ -1,4 +1,4 @@
-import { Section } from '@/components/sections';
+import { Section } from '@/components/section';
 import { TagList, TagListItem } from '@/components/tag-list';
 
 export default function Multiplayer() {

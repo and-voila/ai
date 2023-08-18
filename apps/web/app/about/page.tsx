@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import React, { Suspense } from 'react';
 import { FaceIcon } from 'ui';
@@ -9,16 +10,35 @@ import Features from '@/components/features';
 import { PageIntro } from '@/components/page-intro';
 import Culture from '@/components/sections/about/culture';
 import { ContactSection } from '@/components/sections/home/contact-section';
+import { SITE_URL } from '@/lib/constants';
 
 const PageLinks = dynamic(() =>
   import('@/components/page-links').then((mod) => mod.PageLinks),
 );
 
-export const metadata = {
-  title: 'About Us',
-  description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
-};
+export function generateMetadata(): Metadata {
+  const title = 'About Us';
+  const description =
+    'And Voila AI helps your create unique AI content that stands out from the generative noise. Protect your IP from the bots and posers with an AI assisted flow.';
+
+  const url = `${SITE_URL}/about`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}
 
 const featuresSection = {
   eyebrow: 'We Stand for Transparency and Sustainability',

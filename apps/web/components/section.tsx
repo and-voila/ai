@@ -13,7 +13,7 @@ export function Section({ title, image, children }: SectionProp) {
     <Container className="group/section [counter-increment:section]">
       <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="flex justify-center">
-          <FadeIn className="w-[33.75rem] flex-none lg:w-[40rem]">
+          <FadeIn className="w-[22rem] flex-none md:w-[33.75rem] lg:w-[40rem]">
             <StylizedImage {...image} />
           </FadeIn>
         </div>
