@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import React, { Suspense } from 'react';
 
 import { allLegals } from '@/.contentlayer/generated';
@@ -7,6 +8,31 @@ import { ArticleLoader } from '@/components/loaders';
 import { Mdx } from '@/components/mdx-components';
 import { PageIntro } from '@/components/page-intro';
 import { ContactSection } from '@/components/sections/home/contact-section';
+import { SITE_URL } from '@/lib/constants';
+
+export function generateMetadata(): Metadata {
+  const title = 'Accessibility';
+  const description =
+    'And Voila AI is committed to continuously improve to meeting WCAG 2.1 AA standards for accessibility to ensure our website is inclusive and usable by all.';
+
+  const url = `${SITE_URL}/accessibility`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}
 
 function Accessibility() {
   const accessibility = allLegals.find((doc) => doc.slug === 'accessibility');
