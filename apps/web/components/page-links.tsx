@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { ArrowRightIcon, cn } from 'ui';
 
 import { Container } from '@/components/container';
@@ -7,6 +8,7 @@ import { FadeIn, FadeInStagger } from '@/components/fade-in';
 import { GridPattern } from '@/components/grid-pattern';
 import { SectionIntro } from '@/components/section-intro';
 
+import { PageLinksLoader } from './loaders';
 import { formattedDate } from './utils';
 
 interface PageLinkProps {
@@ -82,11 +84,13 @@ export function PageLinks({ title, intro, pages, className }: PageLinksProps) {
 
       <Container className={intro ? 'mt-24' : 'mt-16'}>
         <FadeInStagger className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-          {recentPages.map((page) => (
-            <FadeIn key={page.slug}>
-              <PageLink {...page} />
-            </FadeIn>
-          ))}
+          <Suspense fallback={<PageLinksLoader />}>
+            {recentPages.map((page) => (
+              <FadeIn key={page.slug}>
+                <PageLink {...page} />
+              </FadeIn>
+            ))}
+          </Suspense>
         </FadeInStagger>
       </Container>
     </div>

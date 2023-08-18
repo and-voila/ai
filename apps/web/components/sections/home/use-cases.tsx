@@ -1,7 +1,7 @@
 // import { CodeIcon, ImageIcon, Pencil1Icon } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import { Fragment } from 'react';
-import { Button, ReaderIcon } from 'ui';
+import { Fragment, Suspense } from 'react';
+import { Button, ReaderIcon, Skeleton } from 'ui';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from 'ui';
 
 import { allUseCases, UseCase as UseCaseType } from '@/.contentlayer/generated';
@@ -46,6 +46,12 @@ function UseCase({
         </Link>
       </FadeIn>
     </Fragment>
+  );
+}
+
+function UseCaseLoader() {
+  return (
+    <Skeleton className="flex h-64 flex-col justify-between rounded p-6 transition hover:bg-muted sm:p-8" />
   );
 }
 
@@ -111,9 +117,11 @@ export default function UseCases() {
           Check out some Use Cases:
         </h2>
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {allUseCases.slice(0, 3).map((props) => (
-            <UseCase key={props._id} {...props} />
-          ))}
+          <Suspense fallback={<UseCaseLoader />}>
+            {allUseCases.slice(0, 3).map((props) => (
+              <UseCase key={props._id} {...props} />
+            ))}
+          </Suspense>
         </FadeInStagger>
       </Container>
     </>

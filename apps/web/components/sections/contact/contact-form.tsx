@@ -1,7 +1,7 @@
 'use client';
 
 import { valibotResolver } from '@hookform/resolvers/valibot';
-import { useId, useState } from 'react';
+import { Suspense, useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   Button,
@@ -16,6 +16,7 @@ import {
 
 import { ContactFormDataType, contactFormSchema } from '@/app/contact/constant';
 import { FadeIn } from '@/components/fade-in';
+import { FormLoader } from '@/components/loaders';
 import ReactTurnstile from '@/components/react-turnstile';
 
 type TextInputProps = {
@@ -64,102 +65,104 @@ export default function ContactForm() {
 
   return (
     <FadeIn className="lg:order-last">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
-          <h2 className="font-display text-lg font-semibold text-foreground lg:text-xl">
-            Drop us a line
-          </h2>
-          <div className="isolate mt-6 -space-y-px rounded-md">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Name"
-                      {...field}
-                      error={form.formState.errors.name?.message}
-                      className="!rounded-t-2xl"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="E-mail"
-                      {...field}
-                      error={form.formState.errors.email?.message}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="company"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Company"
-                      {...field}
-                      error={form.formState.errors.company?.message}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Phone"
-                      {...field}
-                      error={form.formState.errors.phone?.message}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Message"
-                      {...field}
-                      error={form.formState.errors.message?.message}
-                      className="!rounded-b-2xl"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
+      <Suspense fallback={<FormLoader />}>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
+            <h2 className="font-display text-lg font-semibold text-foreground lg:text-xl">
+              Drop us a line
+            </h2>
+            <div className="isolate mt-6 -space-y-px rounded-md">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Name"
+                        {...field}
+                        error={form.formState.errors.name?.message}
+                        className="!rounded-t-2xl"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="E-mail"
+                        {...field}
+                        error={form.formState.errors.email?.message}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Company"
+                        {...field}
+                        error={form.formState.errors.company?.message}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Phone"
+                        {...field}
+                        error={form.formState.errors.phone?.message}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Message"
+                        {...field}
+                        error={form.formState.errors.message?.message}
+                        className="!rounded-b-2xl"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
 
-          <ReactTurnstile setVerified={setVerified} />
-          <Button
-            variant="default"
-            disabled={verified == false}
-            type="submit"
-            className="mt-10"
-          >
-            Contact And Voila
-          </Button>
-        </form>
-      </Form>
+            <ReactTurnstile setVerified={setVerified} />
+            <Button
+              variant="default"
+              disabled={verified == false}
+              type="submit"
+              className="mt-10"
+            >
+              Contact And Voila
+            </Button>
+          </form>
+        </Form>
+      </Suspense>
     </FadeIn>
   );
 }

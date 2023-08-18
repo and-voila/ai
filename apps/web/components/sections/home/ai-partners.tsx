@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { Suspense } from 'react';
+import { Skeleton } from 'ui';
 
 import { Container } from '@/components/container';
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
@@ -17,6 +19,12 @@ const partners = [
   ],
 ];
 
+function PartnersLoader() {
+  return (
+    <Skeleton className="flex h-full w-full flex-col justify-between rounded p-6 transition hover:bg-muted sm:p-8" />
+  );
+}
+
 export default function AiPartners() {
   return (
     <div className="mt-32 rounded-[40px] bg-primary py-20 sm:py-32 md:mt-56 lg:mt-72">
@@ -32,15 +40,22 @@ export default function AiPartners() {
             role="list"
             className="mt-10 grid grid-cols-1 items-center justify-items-center gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4"
           >
-            {partners.map(([partners, logo]) => (
-              <li key={partners}>
-                <FadeIn>
-                  <div className="w-30 flex h-20 items-center justify-center rounded-lg bg-transparent p-3">
-                    <Image src={logo} alt={partners} width={200} height={200} />
-                  </div>
-                </FadeIn>
-              </li>
-            ))}
+            <Suspense fallback={<PartnersLoader />}>
+              {partners.map(([partners, logo]) => (
+                <li key={partners}>
+                  <FadeIn>
+                    <div className="w-30 flex h-20 items-center justify-center rounded-lg bg-transparent p-3">
+                      <Image
+                        src={logo}
+                        alt={partners}
+                        width={200}
+                        height={200}
+                      />
+                    </div>
+                  </FadeIn>
+                </li>
+              ))}
+            </Suspense>
           </ul>
         </FadeInStagger>
       </Container>
