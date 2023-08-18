@@ -12,6 +12,7 @@
       "env": [
         "NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY",
         "CLOUDFLARE_TURNSTILE_SECRET",
+        "SLACK_ACCESS_TOKEN",
         "NEXT_PUBLIC_APP_URL"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
