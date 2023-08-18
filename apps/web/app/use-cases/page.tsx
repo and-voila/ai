@@ -14,6 +14,7 @@ export function generateMetadata(): Metadata {
     "See how the world's top creators use And Voila to glow up their content, save time, and keep their IP safe. Your ideas supercharged, all the way to the bank.";
 
   const url = `${SITE_URL}/use-cases`;
+  const openGraphImage = '/open-graph.jpg';
 
   const metadata = {
     title,
@@ -22,10 +23,12 @@ export function generateMetadata(): Metadata {
       title,
       description,
       url,
+      images: openGraphImage,
     },
     twitter: {
       title,
       description,
+      images: openGraphImage,
     },
   };
 
@@ -54,7 +57,7 @@ function UseCase() {
         <Cta
           title="Power up your creativity"
           text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
-          linkHref="/sign-up"
+          linkHref="https://app.andvoila.ai/sign-up"
           buttonText="Sign Up Free"
           buttonIcon={<MagicWandIcon />}
           footerText="No credit card required"

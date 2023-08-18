@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: MdxSlugPageProps) {
     mdx?.description ??
     "Stay up to date with the latest tips, tricks, and insights from the And Voila Team. We'll help you unlock your creativity with AI to delight your audience.";
   const url = `${SITE_URL}/mdx/${params.slug}`;
-  const openGraphImage = `${SITE_URL}/open-graph.jpg`;
+  const openGraphImage = '/open-graph.jpg';
 
   return {
     title,
@@ -86,7 +86,7 @@ function MdxSlugPage({ params }: MdxSlugPageProps) {
             <Cta
               title="Power up your creativity"
               text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
-              linkHref="/sign-up"
+              linkHref="https://app.andvoila.ai/sign-up"
               buttonText="Sign Up Free"
               buttonIcon={<MagicWandIcon />}
               footerText="No credit card required"

@@ -20,6 +20,7 @@ export function generateMetadata(): Metadata {
     "Stay up to date with the latest tips, tricks, and insights from the And Voila Team. We'll help you unlock your creativity with AI to delight your audience.";
 
   const url = `${SITE_URL}/mdx`;
+  const openGraphImage = '/open-graph.jpg';
 
   const metadata = {
     title,
@@ -28,10 +29,12 @@ export function generateMetadata(): Metadata {
       title,
       description,
       url,
+      images: openGraphImage,
     },
     twitter: {
       title,
       description,
+      images: openGraphImage,
     },
   };
 
@@ -122,7 +125,7 @@ export default function MdxPage() {
       <Cta
         title="Power up your creativity"
         text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
-        linkHref="/sign-up"
+        linkHref="https://app.andvoila.ai/sign-up"
         buttonText="Sign Up Free"
         buttonIcon={<MagicWandIcon />}
         footerText="No credit card required"

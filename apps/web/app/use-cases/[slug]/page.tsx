@@ -117,7 +117,7 @@ function UseCaseSlugPage({ params }: UseCaseSlugPageProps) {
             <Cta
               title="Power up your creativity"
               text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
-              linkHref="/sign-up"
+              linkHref="https://app.andvoila.ai/sign-up"
               buttonText="Sign Up Free"
               buttonIcon={<MagicWandIcon />}
               footerText="No credit card required"
@@ -146,7 +146,7 @@ export async function generateMetadata({ params }: UseCaseSlugPageProps) {
   const description =
     doc?.description ?? 'Detailed description of the use case.';
   const url = `${SITE_URL}/use-case/${params.slug}`;
-  const openGraphImage = `${SITE_URL}/open-graph.jpg`;
+  const openGraphImage = '/open-graph.jpg';
 
   return {
     title,
@@ -155,11 +155,7 @@ export async function generateMetadata({ params }: UseCaseSlugPageProps) {
       title,
       description,
       url,
-      images: [
-        {
-          url: openGraphImage,
-        },
-      ],
+      images: openGraphImage,
     },
     twitter: {
       title,
