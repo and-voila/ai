@@ -1,0 +1,2933 @@
+
+ƒ‚Ú§ÙÄ%
+Queryprisma_findFirstUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprismaâ,
+Query#prisma_findFirstUserApiLimitOrThrow>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_2Å$
+Queryprisma_findManyUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_3Ç%
+Queryprisma_aggregateUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_4Ä#
+Queryprisma_groupByUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_5É&
+Queryprisma_findUniqueUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_6ä-
+Query$prisma_findUniqueUserApiLimitOrThrow>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_7Ü)
+Query prisma_findFirstUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_8ç0
+Query'prisma_findFirstUserSubscriptionOrThrow>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Zprisma_9Ü(
+Queryprisma_findManyUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_10á)
+Query prisma_aggregateUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_11Ö'
+Queryprisma_groupByUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_12à*
+Query!prisma_findUniqueUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_13è1
+Query(prisma_findUniqueUserSubscriptionOrThrow>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_14ˆ
+Queryprisma_queryRaw>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_15˙
+Queryprisma_queryRawJSON>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_16Ü(
+Mutationprisma_createOneUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_17Ü(
+Mutationprisma_upsertOneUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_18á)
+Mutationprisma_createManyUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_19Ü(
+Mutationprisma_deleteOneUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_20Ü(
+Mutationprisma_updateOneUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_21á)
+Mutationprisma_updateManyUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_22á)
+Mutationprisma_deleteManyUserApiLimit>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_23ä,
+Mutation prisma_createOneUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_24ä,
+Mutation prisma_upsertOneUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_25ã-
+Mutation!prisma_createManyUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_26ä,
+Mutation prisma_deleteOneUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_27ä,
+Mutation prisma_updateOneUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_28ã-
+Mutation!prisma_updateManyUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_29ã-
+Mutation!prisma_deleteManyUserSubscription>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_30˚
+Mutationprisma_executeRaw>
+prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
++prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
+)prisma_UserApiLimitAvgAggregateOutputTypecount2
+)prisma_UserApiLimitSumAggregateOutputTypecountT
+)prisma_UserApiLimitMinAggregateOutputTypeiduserIdcount	createdAt	updatedAtT
+)prisma_UserApiLimitMaxAggregateOutputTypeiduserIdcount	createdAt	updatedAt>
+prisma_AggregateUserApiLimit_count_avg_sum_min_maxo
+$prisma_UserApiLimitGroupByOutputTypeiduserIdcount	createdAt	updatedAt_count_avg_sum_min_maxt
+prisma_UserSubscriptioniduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndí
+/prisma_UserSubscriptionCountAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_allä
+-prisma_UserSubscriptionMinAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEndä
+-prisma_UserSubscriptionMaxAggregateOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd6
+ prisma_AggregateUserSubscription_count_min_maxô
+(prisma_UserSubscriptionGroupByOutputTypeiduserIdstripeCustomerIdstripeSubscriptionIdstripePriceIdstripeCurrentPeriodEnd_count_min_max"
+prisma_AffectedRowsOutputcount’
+prisma__RowIDIntFloatStringBooleanDateTimeJSONObjectArray
+OptionalIDOptionalIntOptionalFloatOptionalStringOptionalBooleanOptionalDateTimeOptionalJSONOptionalObjectOptionalArrayBu
+../prisma/schema.prisma*
+(b87d6511bbafabde500bbcead5823c2996cae41b*
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1 Z	prisma_31&
+prisma_UserApiLimit_join:
+{}>4
++prisma_UserApiLimitCountAggregateOutputType_join:
+{}<2
+)prisma_UserApiLimitAvgAggregateOutputType_join:
+{}<2
+)prisma_UserApiLimitSumAggregateOutputType_join:
+{}<2
+)prisma_UserApiLimitMinAggregateOutputType_join:
+{}<2
+)prisma_UserApiLimitMaxAggregateOutputType_join:
+{}/%
+prisma_AggregateUserApiLimit_join:
+{}7-
+$prisma_UserApiLimitGroupByOutputType_join:
+{}* 
+prisma_UserSubscription_join:
+{}B8
+/prisma_UserSubscriptionCountAggregateOutputType_join:
+{}@6
+-prisma_UserSubscriptionMinAggregateOutputType_join:
+{}@6
+-prisma_UserSubscriptionMaxAggregateOutputType_join:
+{}3)
+ prisma_AggregateUserSubscription_join:
+{};1
+(prisma_UserSubscriptionGroupByOutputType_join:
+{},"
+prisma_AffectedRowsOutput_join:
+{}
+_Row_join:
+{}Ç
+Queryprisma_findFirstUserApiLimit"findFirstUserApiLimit2	
+where2
+orderBy2
+
+cursor2
+take2
+skip2
+distinctê
+Query#prisma_findFirstUserApiLimitOrThrow"findFirstUserApiLimitOrThrow2	
+where2
+orderBy2
+
+cursor2
+take2
+skip2
+distinctÄ
+Queryprisma_findManyUserApiLimit"findManyUserApiLimit2	
+where2
+orderBy2
+
+cursor2
+take2
+skip2
+distinctt
+Queryprisma_aggregateUserApiLimit"aggregateUserApiLimit2	
+where2
+orderBy2
+
+cursor2
+take2
+skipx
+Queryprisma_groupByUserApiLimit"groupByUserApiLimit2	
+where2
+orderBy2
+by2
+
+having2
+take2
+skipI
+Queryprisma_findUniqueUserApiLimit"findUniqueUserApiLimit2	
+whereW
+Query$prisma_findUniqueUserApiLimitOrThrow"findUniqueUserApiLimitOrThrow2	
+whereä
+Query prisma_findFirstUserSubscription"findFirstUserSubscription2	
+where2
+orderBy2
+
+cursor2
+take2
+skip2
+distinctò
+Query'prisma_findFirstUserSubscriptionOrThrow" findFirstUserSubscriptionOrThrow2	
+where2
+orderBy2
+
+cursor2
+take2
+skip2
+distinctà
+Queryprisma_findManyUserSubscription"findManyUserSubscription2	
+where2
+orderBy2
+
+cursor2
+take2
+skip2
+distinct|
+Query prisma_aggregateUserSubscription"aggregateUserSubscription2	
+where2
+orderBy2
+
+cursor2
+take2
+skipÄ
+Queryprisma_groupByUserSubscription"groupByUserSubscription2	
+where2
+orderBy2
+by2
+
+having2
+take2
+skipQ
+Query!prisma_findUniqueUserSubscription"findUniqueUserSubscription2	
+where_
+Query(prisma_findUniqueUserSubscriptionOrThrow"!findUniqueUserSubscriptionOrThrow2	
+where=
+Queryprisma_queryRaw"queryRaw2	
+query2
+
+parametersG
+Queryprisma_queryRawJSON"queryRawJSON2	
+query2
+
+parameters@I
+Mutationprisma_createOneUserApiLimit"createOneUserApiLimit2
+datab
+Mutationprisma_upsertOneUserApiLimit"upsertOneUserApiLimit2	
+where2
+
+create2
+
+update_
+Mutationprisma_createManyUserApiLimit"createManyUserApiLimit2
+data2
+skipDuplicatesJ
+Mutationprisma_deleteOneUserApiLimit"deleteOneUserApiLimit2	
+whereT
+Mutationprisma_updateOneUserApiLimit"updateOneUserApiLimit2
+data2	
+whereV
+Mutationprisma_updateManyUserApiLimit"updateManyUserApiLimit2
+data2	
+whereL
+Mutationprisma_deleteManyUserApiLimit"deleteManyUserApiLimit2	
+whereQ
+Mutation prisma_createOneUserSubscription"createOneUserSubscription2
+dataj
+Mutation prisma_upsertOneUserSubscription"upsertOneUserSubscription2	
+where2
+
+create2
+
+updateg
+Mutation!prisma_createManyUserSubscription"createManyUserSubscription2
+data2
+skipDuplicatesR
+Mutation prisma_deleteOneUserSubscription"deleteOneUserSubscription2	
+where\
+Mutation prisma_updateOneUserSubscription"updateOneUserSubscription2
+data2	
+where^
+Mutation!prisma_updateManyUserSubscription"updateManyUserSubscription2
+data2	
+whereT
+Mutation!prisma_deleteManyUserSubscription"deleteManyUserSubscription2	
+whereF
+Mutationprisma_executeRaw"
+executeRaw2	
+query2
+
+parameters@
+prisma__RowJSON"JSON@+
+prisma__RowOptionalJSON"OptionalJSON@'
+Mutationprisma_queryRaw"queryRaw@%
+prisma_UserApiLimit_join"_join=
++prisma_UserApiLimitCountAggregateOutputType_join"_join;
+)prisma_UserApiLimitAvgAggregateOutputType_join"_join;
+)prisma_UserApiLimitSumAggregateOutputType_join"_join;
+)prisma_UserApiLimitMinAggregateOutputType_join"_join;
+)prisma_UserApiLimitMaxAggregateOutputType_join"_join.
+prisma_AggregateUserApiLimit_join"_join6
+$prisma_UserApiLimitGroupByOutputType_join"_join)
+prisma_UserSubscription_join"_joinA
+/prisma_UserSubscriptionCountAggregateOutputType_join"_join?
+-prisma_UserSubscriptionMinAggregateOutputType_join"_join?
+-prisma_UserSubscriptionMaxAggregateOutputType_join"_join2
+ prisma_AggregateUserSubscription_join"_join:
+(prisma_UserSubscriptionGroupByOutputType_join"_join+
+prisma_AffectedRowsOutput_join"_join
+_Row_join"_join"ˇÅschema {
+  query: Query
+  mutation: Mutation
+}
+
+"""
+The @removeNullVariables directive allows you to remove variables with null value from your GraphQL Query or Mutation Operations.
+
+A potential use-case could be that you have a graphql upstream which is not accepting null values for variables.
+By enabling this directive all variables with null values will be removed from upstream query.
+
+query ($say: String, $name: String) @removeNullVariables {
+	hello(say: $say, name: $name)
+}
+
+Directive will transform variables json and remove top level null values.
+{ "say": null, "name": "world" }
+
+So upstream will receive the following variables:
+
+{ "name": "world" }
+"""
+directive @removeNullVariables on QUERY | MUTATION
+
+directive @hooksVariable on VARIABLE_DEFINITION
+
+directive @jsonSchema(
+  """
+  The value of both of these keywords MUST be a string.
+  
+  Both of these keywords can be used to decorate a user interface with
+  information about the data produced by this user interface.  A title
+  will preferably be short, whereas a description will provide
+  explanation about the purpose of the instance described by this
+  schema.
+  """
+  title: String
+  """
+  The value of both of these keywords MUST be a string.
+  
+  Both of these keywords can be used to decorate a user interface with
+  information about the data produced by this user interface.  A title
+  will preferably be short, whereas a description will provide
+  explanation about the purpose of the instance described by this
+  schema.
+  """
+  description: String
+  """
+  The value of "multipleOf" MUST be a number, strictly greater than 0.
+  
+  A numeric instance is valid only if division by this keyword's value
+  results in an integer.
+  """
+  multipleOf: Int
+  """
+  The value of "maximum" MUST be a number, representing an inclusive
+  upper limit for a numeric instance.
+  
+  If the instance is a number, then this keyword validates only if the
+  instance is less than or exactly equal to "maximum".
+  """
+  maximum: Int
+  """
+  The value of "exclusiveMaximum" MUST be number, representing an
+  exclusive upper limit for a numeric instance.
+  
+  If the instance is a number, then the instance is valid only if it
+  has a value strictly less than (not equal to) "exclusiveMaximum".
+  """
+  exclusiveMaximum: Int
+  """
+  The value of "minimum" MUST be a number, representing an inclusive
+  lower limit for a numeric instance.
+  
+  If the instance is a number, then this keyword validates only if the
+  instance is greater than or exactly equal to "minimum".
+  """
+  minimum: Int
+  """
+  The value of "exclusiveMinimum" MUST be number, representing an
+  exclusive lower limit for a numeric instance.
+  
+  If the instance is a number, then the instance is valid only if it
+  has a value strictly greater than (not equal to) "exclusiveMinimum".
+  """
+  exclusiveMinimum: Int
+  """
+  The value of this keyword MUST be a non-negative integer.
+  
+  A string instance is valid against this keyword if its length is less
+  than, or equal to, the value of this keyword.
+  
+  The length of a string instance is defined as the number of its
+  characters as defined by RFC 7159 [RFC7159].
+  """
+  maxLength: Int
+  """
+  The value of this keyword MUST be a non-negative integer.
+  
+  A string instance is valid against this keyword if its length is
+  greater than, or equal to, the value of this keyword.
+  
+  The length of a string instance is defined as the number of its
+  characters as defined by RFC 7159 [RFC7159].
+  
+  Omitting this keyword has the same behavior as a value of 0.
+  """
+  minLength: Int
+  """
+  The value of this keyword MUST be a string.  This string SHOULD be a
+  valid regular expression, according to the ECMA 262 regular
+  expression dialect.
+  
+  A string instance is considered valid if the regular expression
+  matches the instance successfully.  Recall: regular expressions are
+  not implicitly anchored.
+  """
+  pattern: String
+  """
+  The value of this keyword MUST be a non-negative integer.
+  
+  An array instance is valid against "maxItems" if its size is less
+  than, or equal to, the value of this keyword.
+  """
+  maxItems: Int
+  """
+  The value of this keyword MUST be a non-negative integer.
+  
+  An array instance is valid against "minItems" if its size is greater
+  than, or equal to, the value of this keyword.
+  
+  Omitting this keyword has the same behavior as a value of 0.
+  """
+  minItems: Int
+  """
+  The value of this keyword MUST be a boolean.
+  
+  If this keyword has boolean value false, the instance validates
+  successfully.  If it has boolean value true, the instance validates
+  successfully if all of its elements are unique.
+  
+  Omitting this keyword has the same behavior as a value of false.
+  """
+  uniqueItems: Boolean
+  commonPattern: COMMON_REGEX_PATTERN
+  """Optional field to apply the JSON schema to"""
+  on: String
+) repeatable on VARIABLE_DEFINITION
+
+directive @rbac(
+  "the user must match all roles"
+  requireMatchAll: [WG_ROLE]
+  "the user must match at least one of the roles"
+  requireMatchAny: [WG_ROLE]
+  "the user must not match all of the roles"
+  denyMatchAll: [WG_ROLE]
+  "the user must not match any of the roles"
+  denyMatchAny: [WG_ROLE]
+) on QUERY | MUTATION | SUBSCRIPTION
+
+"""
+The @fromClaim directive sets the variable to the value retrieved from the given a claim.
+Adding this directive makes the operation require authentication.
+"""
+directive @fromClaim(name: WG_CLAIM, on: String = "") repeatable on VARIABLE_DEFINITION
+
+"""
+The directive @injectCurrentDateTime injects a DateTime string of the current date and time into the variable.
+This variable MUST be a string compatible scalar. 
+
+The default format, is: ISO 8601
+If no format is chosen, the default format is used.
+Custom formats are allowed by specifying a format conforming to the Golang specification for specifying a date time format.
+"""
+directive @injectCurrentDateTime(
+  format: WunderGraphDateTimeFormat = ISO8601
+  """
+  customFormat must conform to the Golang specification for specifying a date time format
+  """
+  customFormat: String
+  on: String = ""
+) repeatable on VARIABLE_DEFINITION
+
+"""
+The directive @injectGeneratedUUID injects a generated UUID into the variable.
+This variable MUST be a string.
+At the same time, it removes the variable from the input definition,
+disallowing the user to supply it.
+
+This means, the UUID is 100% generated server-side and can be considered untempered.
+"""
+directive @injectGeneratedUUID(on: String = "") repeatable on VARIABLE_DEFINITION
+
+"""
+The @internalOperation Directive marks an Operation as internal.
+By doing so, the Operation is no longer accessible from the public API.
+It can only be accessed by internal services, like hooks.
+"""
+directive @internalOperation on QUERY | MUTATION | SUBSCRIPTION
+
+"""
+The directive @injectEnvironmentVariable allows you to inject an environment variable into the variable definition.
+"""
+directive @injectEnvironmentVariable(name: String!, on: String = "") repeatable on VARIABLE_DEFINITION
+
+"""
+The @export directive instructs the Execution Planner to export the field during the execution into the variable of the 'as' argument.
+As the execution is depth first, a field can only be used after it has been exported.
+Additionally, a field can only be used after using the '_join' field or on a different data source.
+It's not possible to export a field and use it in for the same data source.
+
+Note that the @export directive only works on fields that return a single value.
+It's not possible to export a list or object field.
+"""
+directive @export(
+  """The argument 'as' is the name of the variable to export the field to."""
+  as: String!
+) on FIELD
+
+"""
+The directive @internal marks a variable definition as internal so that clients can't access it.
+The field is also not visible in the public API.
+It's only being used as an internal variable to export fields into.
+"""
+directive @internal on VARIABLE_DEFINITION
+
+"""
+The @transform directive allows to apply transformations to the response.
+By applying the directive, the shape of the response can be altered,
+which will also modify the JSON-Schema of the response.
+That is, you will keep full type safety and code-generation for transformed fields.
+"""
+directive @transform(
+  """
+  Using the 'get' transformation allows you to extract a nested field using a JSON path.
+  This is useful to unnest data, e.g. when using the '_join' field, which adds an extra layer of nesting.
+  
+  Example:
+  
+  query GetName {
+      name: me @transform(get: "info.name") {
+          info {
+              name
+          }
+      }
+  }
+  
+  Before the transformation, the resolve looks like this:
+  
+  {
+      "name": {
+          "info": {
+              "name": "John Doe"
+          }
+      }
+  }
+  
+  With the transformation applied, the response will be reshaped like this:
+  
+  {
+      "name": "John Doe"
+  }
+  """
+  get: String
+) on FIELD
+
+"""
+The @requireAuthentication Directive marks an Operation to require authentication.
+Without authentication, the operation will return an Unauthorized error with status code 401.
+"""
+directive @requireAuthentication on QUERY | MUTATION | SUBSCRIPTION
+
+enum prisma_QueryMode {
+  default
+  insensitive
+}
+
+input prisma_NestedStringFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: prisma_NestedStringFilter
+}
+
+input prisma_StringFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: prisma_QueryMode
+  not: prisma_NestedStringFilter
+}
+
+input prisma_NestedIntFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: prisma_NestedIntFilter
+}
+
+input prisma_IntFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: prisma_NestedIntFilter
+}
+
+input prisma_NestedDateTimeFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeFilter
+}
+
+input prisma_DateTimeFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeFilter
+}
+
+input prisma_UserApiLimitWhereInput {
+  AND: prisma_UserApiLimitWhereInput
+  OR: [prisma_UserApiLimitWhereInput]
+  NOT: prisma_UserApiLimitWhereInput
+  id: prisma_StringFilter
+  userId: prisma_StringFilter
+  count: prisma_IntFilter
+  createdAt: prisma_DateTimeFilter
+  updatedAt: prisma_DateTimeFilter
+}
+
+enum prisma_SortOrder {
+  asc
+  desc
+}
+
+input prisma_UserApiLimitOrderByWithRelationInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  count: prisma_SortOrder
+  createdAt: prisma_SortOrder
+  updatedAt: prisma_SortOrder
+}
+
+input prisma_UserApiLimitWhereUniqueInput {
+  id: String
+  userId: String
+}
+
+enum prisma_UserApiLimitScalarFieldEnum {
+  id
+  userId
+  count
+  createdAt
+  updatedAt
+}
+
+type prisma_UserApiLimit {
+  id: String!
+  userId: String!
+  count: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  _join: Query!
+}
+
+type prisma_UserApiLimitCountAggregateOutputType {
+  id: Int!
+  userId: Int!
+  count: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+  _join: Query!
+}
+
+type prisma_UserApiLimitAvgAggregateOutputType {
+  count: Float
+  _join: Query!
+}
+
+type prisma_UserApiLimitSumAggregateOutputType {
+  count: Int
+  _join: Query!
+}
+
+type prisma_UserApiLimitMinAggregateOutputType {
+  id: String
+  userId: String
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+  _join: Query!
+}
+
+type prisma_UserApiLimitMaxAggregateOutputType {
+  id: String
+  userId: String
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+  _join: Query!
+}
+
+type prisma_AggregateUserApiLimit {
+  _count: prisma_UserApiLimitCountAggregateOutputType
+  _avg: prisma_UserApiLimitAvgAggregateOutputType
+  _sum: prisma_UserApiLimitSumAggregateOutputType
+  _min: prisma_UserApiLimitMinAggregateOutputType
+  _max: prisma_UserApiLimitMaxAggregateOutputType
+  _join: Query!
+}
+
+input prisma_UserApiLimitCountOrderByAggregateInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  count: prisma_SortOrder
+  createdAt: prisma_SortOrder
+  updatedAt: prisma_SortOrder
+}
+
+input prisma_UserApiLimitAvgOrderByAggregateInput {
+  count: prisma_SortOrder
+}
+
+input prisma_UserApiLimitMaxOrderByAggregateInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  count: prisma_SortOrder
+  createdAt: prisma_SortOrder
+  updatedAt: prisma_SortOrder
+}
+
+input prisma_UserApiLimitMinOrderByAggregateInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  count: prisma_SortOrder
+  createdAt: prisma_SortOrder
+  updatedAt: prisma_SortOrder
+}
+
+input prisma_UserApiLimitSumOrderByAggregateInput {
+  count: prisma_SortOrder
+}
+
+input prisma_UserApiLimitOrderByWithAggregationInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  count: prisma_SortOrder
+  createdAt: prisma_SortOrder
+  updatedAt: prisma_SortOrder
+  _count: prisma_UserApiLimitCountOrderByAggregateInput
+  _avg: prisma_UserApiLimitAvgOrderByAggregateInput
+  _max: prisma_UserApiLimitMaxOrderByAggregateInput
+  _min: prisma_UserApiLimitMinOrderByAggregateInput
+  _sum: prisma_UserApiLimitSumOrderByAggregateInput
+}
+
+input prisma_NestedStringWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: prisma_NestedStringWithAggregatesFilter
+  _count: prisma_NestedIntFilter
+  _min: prisma_NestedStringFilter
+  _max: prisma_NestedStringFilter
+}
+
+input prisma_StringWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: prisma_QueryMode
+  not: prisma_NestedStringWithAggregatesFilter
+  _count: prisma_NestedIntFilter
+  _min: prisma_NestedStringFilter
+  _max: prisma_NestedStringFilter
+}
+
+input prisma_NestedFloatFilter {
+  equals: Float
+  in: [Float]
+  notIn: [Float]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: prisma_NestedFloatFilter
+}
+
+input prisma_NestedIntWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: prisma_NestedIntWithAggregatesFilter
+  _count: prisma_NestedIntFilter
+  _avg: prisma_NestedFloatFilter
+  _sum: prisma_NestedIntFilter
+  _min: prisma_NestedIntFilter
+  _max: prisma_NestedIntFilter
+}
+
+input prisma_IntWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: prisma_NestedIntWithAggregatesFilter
+  _count: prisma_NestedIntFilter
+  _avg: prisma_NestedFloatFilter
+  _sum: prisma_NestedIntFilter
+  _min: prisma_NestedIntFilter
+  _max: prisma_NestedIntFilter
+}
+
+input prisma_NestedDateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeWithAggregatesFilter
+  _count: prisma_NestedIntFilter
+  _min: prisma_NestedDateTimeFilter
+  _max: prisma_NestedDateTimeFilter
+}
+
+input prisma_DateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeWithAggregatesFilter
+  _count: prisma_NestedIntFilter
+  _min: prisma_NestedDateTimeFilter
+  _max: prisma_NestedDateTimeFilter
+}
+
+input prisma_UserApiLimitScalarWhereWithAggregatesInput {
+  AND: prisma_UserApiLimitScalarWhereWithAggregatesInput
+  OR: [prisma_UserApiLimitScalarWhereWithAggregatesInput]
+  NOT: prisma_UserApiLimitScalarWhereWithAggregatesInput
+  id: prisma_StringWithAggregatesFilter
+  userId: prisma_StringWithAggregatesFilter
+  count: prisma_IntWithAggregatesFilter
+  createdAt: prisma_DateTimeWithAggregatesFilter
+  updatedAt: prisma_DateTimeWithAggregatesFilter
+}
+
+type prisma_UserApiLimitGroupByOutputType {
+  id: String!
+  userId: String!
+  count: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  _count: prisma_UserApiLimitCountAggregateOutputType
+  _avg: prisma_UserApiLimitAvgAggregateOutputType
+  _sum: prisma_UserApiLimitSumAggregateOutputType
+  _min: prisma_UserApiLimitMinAggregateOutputType
+  _max: prisma_UserApiLimitMaxAggregateOutputType
+  _join: Query!
+}
+
+input prisma_NestedStringNullableFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: prisma_NestedStringNullableFilter
+}
+
+input prisma_StringNullableFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: prisma_QueryMode
+  not: prisma_NestedStringNullableFilter
+}
+
+input prisma_NestedDateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeNullableFilter
+}
+
+input prisma_DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeNullableFilter
+}
+
+input prisma_UserSubscriptionWhereInput {
+  AND: prisma_UserSubscriptionWhereInput
+  OR: [prisma_UserSubscriptionWhereInput]
+  NOT: prisma_UserSubscriptionWhereInput
+  id: prisma_StringFilter
+  userId: prisma_StringFilter
+  stripeCustomerId: prisma_StringNullableFilter
+  stripeSubscriptionId: prisma_StringNullableFilter
+  stripePriceId: prisma_StringNullableFilter
+  stripeCurrentPeriodEnd: prisma_DateTimeNullableFilter
+}
+
+input prisma_UserSubscriptionOrderByWithRelationInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  stripeCustomerId: prisma_SortOrder
+  stripeSubscriptionId: prisma_SortOrder
+  stripePriceId: prisma_SortOrder
+  stripeCurrentPeriodEnd: prisma_SortOrder
+}
+
+input prisma_UserSubscriptionWhereUniqueInput {
+  id: String
+  userId: String
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+}
+
+enum prisma_UserSubscriptionScalarFieldEnum {
+  id
+  userId
+  stripeCustomerId
+  stripeSubscriptionId
+  stripePriceId
+  stripeCurrentPeriodEnd
+}
+
+type prisma_UserSubscription {
+  id: String!
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+  _join: Query!
+}
+
+type prisma_UserSubscriptionCountAggregateOutputType {
+  id: Int!
+  userId: Int!
+  stripeCustomerId: Int!
+  stripeSubscriptionId: Int!
+  stripePriceId: Int!
+  stripeCurrentPeriodEnd: Int!
+  _all: Int!
+  _join: Query!
+}
+
+type prisma_UserSubscriptionMinAggregateOutputType {
+  id: String
+  userId: String
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+  _join: Query!
+}
+
+type prisma_UserSubscriptionMaxAggregateOutputType {
+  id: String
+  userId: String
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+  _join: Query!
+}
+
+type prisma_AggregateUserSubscription {
+  _count: prisma_UserSubscriptionCountAggregateOutputType
+  _min: prisma_UserSubscriptionMinAggregateOutputType
+  _max: prisma_UserSubscriptionMaxAggregateOutputType
+  _join: Query!
+}
+
+input prisma_UserSubscriptionCountOrderByAggregateInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  stripeCustomerId: prisma_SortOrder
+  stripeSubscriptionId: prisma_SortOrder
+  stripePriceId: prisma_SortOrder
+  stripeCurrentPeriodEnd: prisma_SortOrder
+}
+
+input prisma_UserSubscriptionMaxOrderByAggregateInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  stripeCustomerId: prisma_SortOrder
+  stripeSubscriptionId: prisma_SortOrder
+  stripePriceId: prisma_SortOrder
+  stripeCurrentPeriodEnd: prisma_SortOrder
+}
+
+input prisma_UserSubscriptionMinOrderByAggregateInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  stripeCustomerId: prisma_SortOrder
+  stripeSubscriptionId: prisma_SortOrder
+  stripePriceId: prisma_SortOrder
+  stripeCurrentPeriodEnd: prisma_SortOrder
+}
+
+input prisma_UserSubscriptionOrderByWithAggregationInput {
+  id: prisma_SortOrder
+  userId: prisma_SortOrder
+  stripeCustomerId: prisma_SortOrder
+  stripeSubscriptionId: prisma_SortOrder
+  stripePriceId: prisma_SortOrder
+  stripeCurrentPeriodEnd: prisma_SortOrder
+  _count: prisma_UserSubscriptionCountOrderByAggregateInput
+  _max: prisma_UserSubscriptionMaxOrderByAggregateInput
+  _min: prisma_UserSubscriptionMinOrderByAggregateInput
+}
+
+input prisma_NestedIntNullableFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: prisma_NestedIntNullableFilter
+}
+
+input prisma_NestedStringNullableWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: prisma_NestedStringNullableWithAggregatesFilter
+  _count: prisma_NestedIntNullableFilter
+  _min: prisma_NestedStringNullableFilter
+  _max: prisma_NestedStringNullableFilter
+}
+
+input prisma_StringNullableWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: prisma_QueryMode
+  not: prisma_NestedStringNullableWithAggregatesFilter
+  _count: prisma_NestedIntNullableFilter
+  _min: prisma_NestedStringNullableFilter
+  _max: prisma_NestedStringNullableFilter
+}
+
+input prisma_NestedDateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeNullableWithAggregatesFilter
+  _count: prisma_NestedIntNullableFilter
+  _min: prisma_NestedDateTimeNullableFilter
+  _max: prisma_NestedDateTimeNullableFilter
+}
+
+input prisma_DateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: prisma_NestedDateTimeNullableWithAggregatesFilter
+  _count: prisma_NestedIntNullableFilter
+  _min: prisma_NestedDateTimeNullableFilter
+  _max: prisma_NestedDateTimeNullableFilter
+}
+
+input prisma_UserSubscriptionScalarWhereWithAggregatesInput {
+  AND: prisma_UserSubscriptionScalarWhereWithAggregatesInput
+  OR: [prisma_UserSubscriptionScalarWhereWithAggregatesInput]
+  NOT: prisma_UserSubscriptionScalarWhereWithAggregatesInput
+  id: prisma_StringWithAggregatesFilter
+  userId: prisma_StringWithAggregatesFilter
+  stripeCustomerId: prisma_StringNullableWithAggregatesFilter
+  stripeSubscriptionId: prisma_StringNullableWithAggregatesFilter
+  stripePriceId: prisma_StringNullableWithAggregatesFilter
+  stripeCurrentPeriodEnd: prisma_DateTimeNullableWithAggregatesFilter
+}
+
+type prisma_UserSubscriptionGroupByOutputType {
+  id: String!
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+  _count: prisma_UserSubscriptionCountAggregateOutputType
+  _min: prisma_UserSubscriptionMinAggregateOutputType
+  _max: prisma_UserSubscriptionMaxAggregateOutputType
+  _join: Query!
+}
+
+type Query {
+  prisma_findFirstUserApiLimit(where: prisma_UserApiLimitWhereInput, orderBy: [prisma_UserApiLimitOrderByWithRelationInput], cursor: prisma_UserApiLimitWhereUniqueInput, take: Int, skip: Int, distinct: [prisma_UserApiLimitScalarFieldEnum]): prisma_UserApiLimit
+  prisma_findFirstUserApiLimitOrThrow(where: prisma_UserApiLimitWhereInput, orderBy: [prisma_UserApiLimitOrderByWithRelationInput], cursor: prisma_UserApiLimitWhereUniqueInput, take: Int, skip: Int, distinct: [prisma_UserApiLimitScalarFieldEnum]): prisma_UserApiLimit
+  prisma_findManyUserApiLimit(where: prisma_UserApiLimitWhereInput, orderBy: [prisma_UserApiLimitOrderByWithRelationInput], cursor: prisma_UserApiLimitWhereUniqueInput, take: Int, skip: Int, distinct: [prisma_UserApiLimitScalarFieldEnum]): [prisma_UserApiLimit]!
+  prisma_aggregateUserApiLimit(where: prisma_UserApiLimitWhereInput, orderBy: [prisma_UserApiLimitOrderByWithRelationInput], cursor: prisma_UserApiLimitWhereUniqueInput, take: Int, skip: Int): prisma_AggregateUserApiLimit!
+  prisma_groupByUserApiLimit(where: prisma_UserApiLimitWhereInput, orderBy: [prisma_UserApiLimitOrderByWithAggregationInput], by: [prisma_UserApiLimitScalarFieldEnum]!, having: prisma_UserApiLimitScalarWhereWithAggregatesInput, take: Int, skip: Int): [prisma_UserApiLimitGroupByOutputType]!
+  prisma_findUniqueUserApiLimit(where: prisma_UserApiLimitWhereUniqueInput!): prisma_UserApiLimit
+  prisma_findUniqueUserApiLimitOrThrow(where: prisma_UserApiLimitWhereUniqueInput!): prisma_UserApiLimit
+  prisma_findFirstUserSubscription(where: prisma_UserSubscriptionWhereInput, orderBy: [prisma_UserSubscriptionOrderByWithRelationInput], cursor: prisma_UserSubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [prisma_UserSubscriptionScalarFieldEnum]): prisma_UserSubscription
+  prisma_findFirstUserSubscriptionOrThrow(where: prisma_UserSubscriptionWhereInput, orderBy: [prisma_UserSubscriptionOrderByWithRelationInput], cursor: prisma_UserSubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [prisma_UserSubscriptionScalarFieldEnum]): prisma_UserSubscription
+  prisma_findManyUserSubscription(where: prisma_UserSubscriptionWhereInput, orderBy: [prisma_UserSubscriptionOrderByWithRelationInput], cursor: prisma_UserSubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [prisma_UserSubscriptionScalarFieldEnum]): [prisma_UserSubscription]!
+  prisma_aggregateUserSubscription(where: prisma_UserSubscriptionWhereInput, orderBy: [prisma_UserSubscriptionOrderByWithRelationInput], cursor: prisma_UserSubscriptionWhereUniqueInput, take: Int, skip: Int): prisma_AggregateUserSubscription!
+  prisma_groupByUserSubscription(where: prisma_UserSubscriptionWhereInput, orderBy: [prisma_UserSubscriptionOrderByWithAggregationInput], by: [prisma_UserSubscriptionScalarFieldEnum]!, having: prisma_UserSubscriptionScalarWhereWithAggregatesInput, take: Int, skip: Int): [prisma_UserSubscriptionGroupByOutputType]!
+  prisma_findUniqueUserSubscription(where: prisma_UserSubscriptionWhereUniqueInput!): prisma_UserSubscription
+  prisma_findUniqueUserSubscriptionOrThrow(where: prisma_UserSubscriptionWhereUniqueInput!): prisma_UserSubscription
+  prisma_queryRaw(query: String!, parameters: [String]): [_Row!]!
+  prisma_queryRawJSON(query: String!, parameters: [String]): JSON
+}
+
+input prisma_UserApiLimitCreateInput {
+  id: String
+  userId: String!
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input prisma_StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input prisma_IntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+input prisma_DateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input prisma_UserApiLimitUpdateInput {
+  id: prisma_StringFieldUpdateOperationsInput
+  userId: prisma_StringFieldUpdateOperationsInput
+  count: prisma_IntFieldUpdateOperationsInput
+  createdAt: prisma_DateTimeFieldUpdateOperationsInput
+  updatedAt: prisma_DateTimeFieldUpdateOperationsInput
+}
+
+input prisma_UserApiLimitCreateManyInput {
+  id: String
+  userId: String!
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type prisma_AffectedRowsOutput {
+  count: Int!
+  _join: Query!
+}
+
+input prisma_UserApiLimitUpdateManyMutationInput {
+  id: prisma_StringFieldUpdateOperationsInput
+  userId: prisma_StringFieldUpdateOperationsInput
+  count: prisma_IntFieldUpdateOperationsInput
+  createdAt: prisma_DateTimeFieldUpdateOperationsInput
+  updatedAt: prisma_DateTimeFieldUpdateOperationsInput
+}
+
+input prisma_UserSubscriptionCreateInput {
+  id: String
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+}
+
+input prisma_NullableStringFieldUpdateOperationsInput {
+  set: String
+}
+
+input prisma_NullableDateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input prisma_UserSubscriptionUpdateInput {
+  id: prisma_StringFieldUpdateOperationsInput
+  userId: prisma_StringFieldUpdateOperationsInput
+  stripeCustomerId: prisma_NullableStringFieldUpdateOperationsInput
+  stripeSubscriptionId: prisma_NullableStringFieldUpdateOperationsInput
+  stripePriceId: prisma_NullableStringFieldUpdateOperationsInput
+  stripeCurrentPeriodEnd: prisma_NullableDateTimeFieldUpdateOperationsInput
+}
+
+input prisma_UserSubscriptionCreateManyInput {
+  id: String
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+}
+
+input prisma_UserSubscriptionUpdateManyMutationInput {
+  id: prisma_StringFieldUpdateOperationsInput
+  userId: prisma_StringFieldUpdateOperationsInput
+  stripeCustomerId: prisma_NullableStringFieldUpdateOperationsInput
+  stripeSubscriptionId: prisma_NullableStringFieldUpdateOperationsInput
+  stripePriceId: prisma_NullableStringFieldUpdateOperationsInput
+  stripeCurrentPeriodEnd: prisma_NullableDateTimeFieldUpdateOperationsInput
+}
+
+type Mutation {
+  prisma_createOneUserApiLimit(data: prisma_UserApiLimitCreateInput!): prisma_UserApiLimit
+  prisma_upsertOneUserApiLimit(where: prisma_UserApiLimitWhereUniqueInput!, create: prisma_UserApiLimitCreateInput!, update: prisma_UserApiLimitUpdateInput!): prisma_UserApiLimit
+  prisma_createManyUserApiLimit(data: [prisma_UserApiLimitCreateManyInput]!, skipDuplicates: Boolean): prisma_AffectedRowsOutput
+  prisma_deleteOneUserApiLimit(where: prisma_UserApiLimitWhereUniqueInput!): prisma_UserApiLimit
+  prisma_updateOneUserApiLimit(data: prisma_UserApiLimitUpdateInput!, where: prisma_UserApiLimitWhereUniqueInput!): prisma_UserApiLimit
+  prisma_updateManyUserApiLimit(data: prisma_UserApiLimitUpdateManyMutationInput!, where: prisma_UserApiLimitWhereInput): prisma_AffectedRowsOutput
+  prisma_deleteManyUserApiLimit(where: prisma_UserApiLimitWhereInput): prisma_AffectedRowsOutput
+  prisma_createOneUserSubscription(data: prisma_UserSubscriptionCreateInput!): prisma_UserSubscription
+  prisma_upsertOneUserSubscription(where: prisma_UserSubscriptionWhereUniqueInput!, create: prisma_UserSubscriptionCreateInput!, update: prisma_UserSubscriptionUpdateInput!): prisma_UserSubscription
+  prisma_createManyUserSubscription(data: [prisma_UserSubscriptionCreateManyInput]!, skipDuplicates: Boolean): prisma_AffectedRowsOutput
+  prisma_deleteOneUserSubscription(where: prisma_UserSubscriptionWhereUniqueInput!): prisma_UserSubscription
+  prisma_updateOneUserSubscription(data: prisma_UserSubscriptionUpdateInput!, where: prisma_UserSubscriptionWhereUniqueInput!): prisma_UserSubscription
+  prisma_updateManyUserSubscription(data: prisma_UserSubscriptionUpdateManyMutationInput!, where: prisma_UserSubscriptionWhereInput): prisma_AffectedRowsOutput
+  prisma_deleteManyUserSubscription(where: prisma_UserSubscriptionWhereInput): prisma_AffectedRowsOutput
+  prisma_executeRaw(query: String!, parameters: [String]): Int!
+}
+
+scalar DateTime
+
+scalar JSON
+
+scalar UUID
+
+scalar BigInt
+
+scalar prisma_Bytes
+
+type _Row {
+  ID: ID!
+  Int: Int!
+  Float: Float!
+  String: String!
+  Boolean: Boolean!
+  DateTime: DateTime!
+  JSON: JSON!
+  Object: _Row!
+  Array: [_Row!]!
+  OptionalID: ID
+  OptionalInt: Int
+  OptionalFloat: Float
+  OptionalString: String
+  OptionalBoolean: Boolean
+  OptionalDateTime: DateTime
+  OptionalJSON: JSON
+  OptionalObject: _Row
+  OptionalArray: [_Row!]
+  _join: Query!
+}
+
+enum COMMON_REGEX_PATTERN {
+  EMAIL
+  DOMAIN
+}
+
+enum WG_ROLE {
+  admin
+  user
+}
+
+"""Well known claims - https://www.iana.org/assignments/jwt/jwt.xhtml"""
+enum WG_CLAIM {
+  """iss"""
+  ISSUER
+  """deprecated alias for ISSUER"""
+  PROVIDER
+  """sub"""
+  SUBJECT
+  """alias for sub"""
+  USERID
+  """name"""
+  NAME
+  """given_name"""
+  GIVEN_NAME
+  """family_name"""
+  FAMILY_NAME
+  """middle_name"""
+  MIDDLE_NAME
+  """nickname"""
+  NICKNAME
+  """preferred_username"""
+  PREFERRED_USERNAME
+  """profile"""
+  PROFILE
+  """picture"""
+  PICTURE
+  """website"""
+  WEBSITE
+  """email"""
+  EMAIL
+  """email_verified"""
+  EMAIL_VERIFIED
+  """gender"""
+  GENDER
+  """birthdate"""
+  BIRTH_DATE
+  """zoneinfo"""
+  ZONE_INFO
+  """locale"""
+  LOCALE
+  """location"""
+  LOCATION
+}
+
+enum WunderGraphDateTimeFormat {
+  "2006-01-02T15:04:05-0700"
+  ISO8601
+  "Mon Jan _2 15:04:05 2006"
+  ANSIC
+  "Mon Jan _2 15:04:05 MST 2006"
+  UnixDate
+  "Mon Jan 02 15:04:05 -0700 2006"
+  RubyDate
+  "02 Jan 06 15:04 MST"
+  RFC822
+  "02 Jan 06 15:04 -0700"
+  RFC822Z
+  "Monday, 02-Jan-06 15:04:05 MST"
+  RFC850
+  "Mon, 02 Jan 2006 15:04:05 MST"
+  RFC1123
+  "Mon, 02 Jan 2006 15:04:05 -0700"
+  RFC1123Z
+  "2006-01-02T15:04:05Z07:00"
+  RFC3339
+  "2006-01-02T15:04:05.999999999Z07:00"
+  RFC3339Nano
+  "3:04PM"
+  Kitchen
+  "Jan _2 15:04:05"
+  Stamp
+  "Jan _2 15:04:05.000"
+  StampMilli
+  "Jan _2 15:04:05.000000"
+  StampMicro
+  "Jan _2 15:04:05.000000000"
+  StampNano
+}*
+prisma_QueryMode	QueryMode*/
+prisma_NestedStringFilterNestedStringFilter*#
+prisma_StringFilterStringFilter*)
+prisma_NestedIntFilterNestedIntFilter*
+prisma_IntFilter	IntFilter*3
+prisma_NestedDateTimeFilterNestedDateTimeFilter*'
+prisma_DateTimeFilterDateTimeFilter*7
+prisma_UserApiLimitWhereInputUserApiLimitWhereInput*
+prisma_SortOrder	SortOrder*S
++prisma_UserApiLimitOrderByWithRelationInput$UserApiLimitOrderByWithRelationInput*C
+#prisma_UserApiLimitWhereUniqueInputUserApiLimitWhereUniqueInput*A
+"prisma_UserApiLimitScalarFieldEnumUserApiLimitScalarFieldEnum*#
+prisma_UserApiLimitUserApiLimit*S
++prisma_UserApiLimitCountAggregateOutputType$UserApiLimitCountAggregateOutputType*O
+)prisma_UserApiLimitAvgAggregateOutputType"UserApiLimitAvgAggregateOutputType*O
+)prisma_UserApiLimitSumAggregateOutputType"UserApiLimitSumAggregateOutputType*O
+)prisma_UserApiLimitMinAggregateOutputType"UserApiLimitMinAggregateOutputType*O
+)prisma_UserApiLimitMaxAggregateOutputType"UserApiLimitMaxAggregateOutputType*5
+prisma_AggregateUserApiLimitAggregateUserApiLimit*W
+-prisma_UserApiLimitCountOrderByAggregateInput&UserApiLimitCountOrderByAggregateInput*S
++prisma_UserApiLimitAvgOrderByAggregateInput$UserApiLimitAvgOrderByAggregateInput*S
++prisma_UserApiLimitMaxOrderByAggregateInput$UserApiLimitMaxOrderByAggregateInput*S
++prisma_UserApiLimitMinOrderByAggregateInput$UserApiLimitMinOrderByAggregateInput*S
++prisma_UserApiLimitSumOrderByAggregateInput$UserApiLimitSumOrderByAggregateInput*Y
+.prisma_UserApiLimitOrderByWithAggregationInput'UserApiLimitOrderByWithAggregationInput*K
+'prisma_NestedStringWithAggregatesFilter NestedStringWithAggregatesFilter*?
+!prisma_StringWithAggregatesFilterStringWithAggregatesFilter*-
+prisma_NestedFloatFilterNestedFloatFilter*E
+$prisma_NestedIntWithAggregatesFilterNestedIntWithAggregatesFilter*9
+prisma_IntWithAggregatesFilterIntWithAggregatesFilter*O
+)prisma_NestedDateTimeWithAggregatesFilter"NestedDateTimeWithAggregatesFilter*C
+#prisma_DateTimeWithAggregatesFilterDateTimeWithAggregatesFilter*_
+1prisma_UserApiLimitScalarWhereWithAggregatesInput*UserApiLimitScalarWhereWithAggregatesInput*E
+$prisma_UserApiLimitGroupByOutputTypeUserApiLimitGroupByOutputType*?
+!prisma_NestedStringNullableFilterNestedStringNullableFilter*3
+prisma_StringNullableFilterStringNullableFilter*C
+#prisma_NestedDateTimeNullableFilterNestedDateTimeNullableFilter*7
+prisma_DateTimeNullableFilterDateTimeNullableFilter*?
+!prisma_UserSubscriptionWhereInputUserSubscriptionWhereInput*[
+/prisma_UserSubscriptionOrderByWithRelationInput(UserSubscriptionOrderByWithRelationInput*K
+'prisma_UserSubscriptionWhereUniqueInput UserSubscriptionWhereUniqueInput*I
+&prisma_UserSubscriptionScalarFieldEnumUserSubscriptionScalarFieldEnum*+
+prisma_UserSubscriptionUserSubscription*[
+/prisma_UserSubscriptionCountAggregateOutputType(UserSubscriptionCountAggregateOutputType*W
+-prisma_UserSubscriptionMinAggregateOutputType&UserSubscriptionMinAggregateOutputType*W
+-prisma_UserSubscriptionMaxAggregateOutputType&UserSubscriptionMaxAggregateOutputType*=
+ prisma_AggregateUserSubscriptionAggregateUserSubscription*_
+1prisma_UserSubscriptionCountOrderByAggregateInput*UserSubscriptionCountOrderByAggregateInput*[
+/prisma_UserSubscriptionMaxOrderByAggregateInput(UserSubscriptionMaxOrderByAggregateInput*[
+/prisma_UserSubscriptionMinOrderByAggregateInput(UserSubscriptionMinOrderByAggregateInput*a
+2prisma_UserSubscriptionOrderByWithAggregationInput+UserSubscriptionOrderByWithAggregationInput*9
+prisma_NestedIntNullableFilterNestedIntNullableFilter*[
+/prisma_NestedStringNullableWithAggregatesFilter(NestedStringNullableWithAggregatesFilter*O
+)prisma_StringNullableWithAggregatesFilter"StringNullableWithAggregatesFilter*_
+1prisma_NestedDateTimeNullableWithAggregatesFilter*NestedDateTimeNullableWithAggregatesFilter*S
++prisma_DateTimeNullableWithAggregatesFilter$DateTimeNullableWithAggregatesFilter*g
+5prisma_UserSubscriptionScalarWhereWithAggregatesInput.UserSubscriptionScalarWhereWithAggregatesInput*M
+(prisma_UserSubscriptionGroupByOutputType!UserSubscriptionGroupByOutputType*9
+prisma_UserApiLimitCreateInputUserApiLimitCreateInput*K
+'prisma_StringFieldUpdateOperationsInput StringFieldUpdateOperationsInput*E
+$prisma_IntFieldUpdateOperationsInputIntFieldUpdateOperationsInput*O
+)prisma_DateTimeFieldUpdateOperationsInput"DateTimeFieldUpdateOperationsInput*9
+prisma_UserApiLimitUpdateInputUserApiLimitUpdateInput*A
+"prisma_UserApiLimitCreateManyInputUserApiLimitCreateManyInput*/
+prisma_AffectedRowsOutputAffectedRowsOutput*Q
+*prisma_UserApiLimitUpdateManyMutationInput#UserApiLimitUpdateManyMutationInput*A
+"prisma_UserSubscriptionCreateInputUserSubscriptionCreateInput*[
+/prisma_NullableStringFieldUpdateOperationsInput(NullableStringFieldUpdateOperationsInput*_
+1prisma_NullableDateTimeFieldUpdateOperationsInput*NullableDateTimeFieldUpdateOperationsInput*A
+"prisma_UserSubscriptionUpdateInputUserSubscriptionUpdateInput*I
+&prisma_UserSubscriptionCreateManyInputUserSubscriptionCreateManyInput*Y
+.prisma_UserSubscriptionUpdateManyMutationInput'UserSubscriptionUpdateManyMutationInput*
+prisma_BytesBytes2É
+(b87d6511bbafabde500bbcead5823c2996cae41b÷generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url   = env("DATABASE_URL")
+}
+
+model UserApiLimit {
+  id        String      @id @default(cuid())
+  userId    String   @unique
+  count     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserSubscription {
+  id        String      @id @default(cuid())
+  userId    String   @unique
+  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId          String?   @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+}
+2∆ò
+(8f6d0973b7a7033c3dfb3b1ea1639f23cf39fed1òòschema {
+  query: Query
+  mutation: Mutation
+}
+
+enum QueryMode {
+  default
+  insensitive
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input StringFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedDateTimeFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input DateTimeFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input UserApiLimitWhereInput {
+  AND: UserApiLimitWhereInput
+  OR: [UserApiLimitWhereInput]
+  NOT: UserApiLimitWhereInput
+  id: StringFilter
+  userId: StringFilter
+  count: IntFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input UserApiLimitOrderByWithRelationInput {
+  id: SortOrder
+  userId: SortOrder
+  count: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input UserApiLimitWhereUniqueInput {
+  id: String
+  userId: String
+}
+
+enum UserApiLimitScalarFieldEnum {
+  id
+  userId
+  count
+  createdAt
+  updatedAt
+}
+
+type UserApiLimit {
+  id: String!
+  userId: String!
+  count: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type UserApiLimitCountAggregateOutputType {
+  id: Int!
+  userId: Int!
+  count: Int!
+  createdAt: Int!
+  updatedAt: Int!
+  _all: Int!
+}
+
+type UserApiLimitAvgAggregateOutputType {
+  count: Float
+}
+
+type UserApiLimitSumAggregateOutputType {
+  count: Int
+}
+
+type UserApiLimitMinAggregateOutputType {
+  id: String
+  userId: String
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type UserApiLimitMaxAggregateOutputType {
+  id: String
+  userId: String
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type AggregateUserApiLimit {
+  _count: UserApiLimitCountAggregateOutputType
+  _avg: UserApiLimitAvgAggregateOutputType
+  _sum: UserApiLimitSumAggregateOutputType
+  _min: UserApiLimitMinAggregateOutputType
+  _max: UserApiLimitMaxAggregateOutputType
+}
+
+input UserApiLimitCountOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  count: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input UserApiLimitAvgOrderByAggregateInput {
+  count: SortOrder
+}
+
+input UserApiLimitMaxOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  count: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input UserApiLimitMinOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  count: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input UserApiLimitSumOrderByAggregateInput {
+  count: SortOrder
+}
+
+input UserApiLimitOrderByWithAggregationInput {
+  id: SortOrder
+  userId: SortOrder
+  count: SortOrder
+  createdAt: SortOrder
+  updatedAt: SortOrder
+  _count: UserApiLimitCountOrderByAggregateInput
+  _avg: UserApiLimitAvgOrderByAggregateInput
+  _max: UserApiLimitMaxOrderByAggregateInput
+  _min: UserApiLimitMinOrderByAggregateInput
+  _sum: UserApiLimitSumOrderByAggregateInput
+}
+
+input NestedStringWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+input StringWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedStringFilter
+  _max: NestedStringFilter
+}
+
+input NestedFloatFilter {
+  equals: Float
+  in: [Float]
+  notIn: [Float]
+  lt: Float
+  lte: Float
+  gt: Float
+  gte: Float
+  not: NestedFloatFilter
+}
+
+input NestedIntWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+input IntWithAggregatesFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntWithAggregatesFilter
+  _count: NestedIntFilter
+  _avg: NestedFloatFilter
+  _sum: NestedIntFilter
+  _min: NestedIntFilter
+  _max: NestedIntFilter
+}
+
+input NestedDateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+input DateTimeWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeWithAggregatesFilter
+  _count: NestedIntFilter
+  _min: NestedDateTimeFilter
+  _max: NestedDateTimeFilter
+}
+
+input UserApiLimitScalarWhereWithAggregatesInput {
+  AND: UserApiLimitScalarWhereWithAggregatesInput
+  OR: [UserApiLimitScalarWhereWithAggregatesInput]
+  NOT: UserApiLimitScalarWhereWithAggregatesInput
+  id: StringWithAggregatesFilter
+  userId: StringWithAggregatesFilter
+  count: IntWithAggregatesFilter
+  createdAt: DateTimeWithAggregatesFilter
+  updatedAt: DateTimeWithAggregatesFilter
+}
+
+type UserApiLimitGroupByOutputType {
+  id: String!
+  userId: String!
+  count: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  _count: UserApiLimitCountAggregateOutputType
+  _avg: UserApiLimitAvgAggregateOutputType
+  _sum: UserApiLimitSumAggregateOutputType
+  _min: UserApiLimitMinAggregateOutputType
+  _max: UserApiLimitMaxAggregateOutputType
+}
+
+input NestedStringNullableFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringNullableFilter
+}
+
+input NestedDateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+}
+
+input DateTimeNullableFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableFilter
+}
+
+input UserSubscriptionWhereInput {
+  AND: UserSubscriptionWhereInput
+  OR: [UserSubscriptionWhereInput]
+  NOT: UserSubscriptionWhereInput
+  id: StringFilter
+  userId: StringFilter
+  stripeCustomerId: StringNullableFilter
+  stripeSubscriptionId: StringNullableFilter
+  stripePriceId: StringNullableFilter
+  stripeCurrentPeriodEnd: DateTimeNullableFilter
+}
+
+input UserSubscriptionOrderByWithRelationInput {
+  id: SortOrder
+  userId: SortOrder
+  stripeCustomerId: SortOrder
+  stripeSubscriptionId: SortOrder
+  stripePriceId: SortOrder
+  stripeCurrentPeriodEnd: SortOrder
+}
+
+input UserSubscriptionWhereUniqueInput {
+  id: String
+  userId: String
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+}
+
+enum UserSubscriptionScalarFieldEnum {
+  id
+  userId
+  stripeCustomerId
+  stripeSubscriptionId
+  stripePriceId
+  stripeCurrentPeriodEnd
+}
+
+type UserSubscription {
+  id: String!
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+}
+
+type UserSubscriptionCountAggregateOutputType {
+  id: Int!
+  userId: Int!
+  stripeCustomerId: Int!
+  stripeSubscriptionId: Int!
+  stripePriceId: Int!
+  stripeCurrentPeriodEnd: Int!
+  _all: Int!
+}
+
+type UserSubscriptionMinAggregateOutputType {
+  id: String
+  userId: String
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+}
+
+type UserSubscriptionMaxAggregateOutputType {
+  id: String
+  userId: String
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+}
+
+type AggregateUserSubscription {
+  _count: UserSubscriptionCountAggregateOutputType
+  _min: UserSubscriptionMinAggregateOutputType
+  _max: UserSubscriptionMaxAggregateOutputType
+}
+
+input UserSubscriptionCountOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  stripeCustomerId: SortOrder
+  stripeSubscriptionId: SortOrder
+  stripePriceId: SortOrder
+  stripeCurrentPeriodEnd: SortOrder
+}
+
+input UserSubscriptionMaxOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  stripeCustomerId: SortOrder
+  stripeSubscriptionId: SortOrder
+  stripePriceId: SortOrder
+  stripeCurrentPeriodEnd: SortOrder
+}
+
+input UserSubscriptionMinOrderByAggregateInput {
+  id: SortOrder
+  userId: SortOrder
+  stripeCustomerId: SortOrder
+  stripeSubscriptionId: SortOrder
+  stripePriceId: SortOrder
+  stripeCurrentPeriodEnd: SortOrder
+}
+
+input UserSubscriptionOrderByWithAggregationInput {
+  id: SortOrder
+  userId: SortOrder
+  stripeCustomerId: SortOrder
+  stripeSubscriptionId: SortOrder
+  stripePriceId: SortOrder
+  stripeCurrentPeriodEnd: SortOrder
+  _count: UserSubscriptionCountOrderByAggregateInput
+  _max: UserSubscriptionMaxOrderByAggregateInput
+  _min: UserSubscriptionMinOrderByAggregateInput
+}
+
+input NestedIntNullableFilter {
+  equals: Int
+  in: [Int]
+  notIn: [Int]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntNullableFilter
+}
+
+input NestedStringNullableWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+}
+
+input StringNullableWithAggregatesFilter {
+  equals: String
+  in: [String]
+  notIn: [String]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: NestedStringNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedStringNullableFilter
+  _max: NestedStringNullableFilter
+}
+
+input NestedDateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedDateTimeNullableFilter
+  _max: NestedDateTimeNullableFilter
+}
+
+input DateTimeNullableWithAggregatesFilter {
+  equals: DateTime
+  in: [DateTime]
+  notIn: [DateTime]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeNullableWithAggregatesFilter
+  _count: NestedIntNullableFilter
+  _min: NestedDateTimeNullableFilter
+  _max: NestedDateTimeNullableFilter
+}
+
+input UserSubscriptionScalarWhereWithAggregatesInput {
+  AND: UserSubscriptionScalarWhereWithAggregatesInput
+  OR: [UserSubscriptionScalarWhereWithAggregatesInput]
+  NOT: UserSubscriptionScalarWhereWithAggregatesInput
+  id: StringWithAggregatesFilter
+  userId: StringWithAggregatesFilter
+  stripeCustomerId: StringNullableWithAggregatesFilter
+  stripeSubscriptionId: StringNullableWithAggregatesFilter
+  stripePriceId: StringNullableWithAggregatesFilter
+  stripeCurrentPeriodEnd: DateTimeNullableWithAggregatesFilter
+}
+
+type UserSubscriptionGroupByOutputType {
+  id: String!
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+  _count: UserSubscriptionCountAggregateOutputType
+  _min: UserSubscriptionMinAggregateOutputType
+  _max: UserSubscriptionMaxAggregateOutputType
+}
+
+type Query {
+  findFirstUserApiLimit(where: UserApiLimitWhereInput, orderBy: [UserApiLimitOrderByWithRelationInput], cursor: UserApiLimitWhereUniqueInput, take: Int, skip: Int, distinct: [UserApiLimitScalarFieldEnum]): UserApiLimit
+  findFirstUserApiLimitOrThrow(where: UserApiLimitWhereInput, orderBy: [UserApiLimitOrderByWithRelationInput], cursor: UserApiLimitWhereUniqueInput, take: Int, skip: Int, distinct: [UserApiLimitScalarFieldEnum]): UserApiLimit
+  findManyUserApiLimit(where: UserApiLimitWhereInput, orderBy: [UserApiLimitOrderByWithRelationInput], cursor: UserApiLimitWhereUniqueInput, take: Int, skip: Int, distinct: [UserApiLimitScalarFieldEnum]): [UserApiLimit]!
+  aggregateUserApiLimit(where: UserApiLimitWhereInput, orderBy: [UserApiLimitOrderByWithRelationInput], cursor: UserApiLimitWhereUniqueInput, take: Int, skip: Int): AggregateUserApiLimit!
+  groupByUserApiLimit(where: UserApiLimitWhereInput, orderBy: [UserApiLimitOrderByWithAggregationInput], by: [UserApiLimitScalarFieldEnum]!, having: UserApiLimitScalarWhereWithAggregatesInput, take: Int, skip: Int): [UserApiLimitGroupByOutputType]!
+  findUniqueUserApiLimit(where: UserApiLimitWhereUniqueInput!): UserApiLimit
+  findUniqueUserApiLimitOrThrow(where: UserApiLimitWhereUniqueInput!): UserApiLimit
+  findFirstUserSubscription(where: UserSubscriptionWhereInput, orderBy: [UserSubscriptionOrderByWithRelationInput], cursor: UserSubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [UserSubscriptionScalarFieldEnum]): UserSubscription
+  findFirstUserSubscriptionOrThrow(where: UserSubscriptionWhereInput, orderBy: [UserSubscriptionOrderByWithRelationInput], cursor: UserSubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [UserSubscriptionScalarFieldEnum]): UserSubscription
+  findManyUserSubscription(where: UserSubscriptionWhereInput, orderBy: [UserSubscriptionOrderByWithRelationInput], cursor: UserSubscriptionWhereUniqueInput, take: Int, skip: Int, distinct: [UserSubscriptionScalarFieldEnum]): [UserSubscription]!
+  aggregateUserSubscription(where: UserSubscriptionWhereInput, orderBy: [UserSubscriptionOrderByWithRelationInput], cursor: UserSubscriptionWhereUniqueInput, take: Int, skip: Int): AggregateUserSubscription!
+  groupByUserSubscription(where: UserSubscriptionWhereInput, orderBy: [UserSubscriptionOrderByWithAggregationInput], by: [UserSubscriptionScalarFieldEnum]!, having: UserSubscriptionScalarWhereWithAggregatesInput, take: Int, skip: Int): [UserSubscriptionGroupByOutputType]!
+  findUniqueUserSubscription(where: UserSubscriptionWhereUniqueInput!): UserSubscription
+  findUniqueUserSubscriptionOrThrow(where: UserSubscriptionWhereUniqueInput!): UserSubscription
+  queryRaw(query: String!, parameters: [String]): [_Row!]!
+  queryRawJSON(query: String!, parameters: [String]): JSON
+}
+
+input UserApiLimitCreateInput {
+  id: String
+  userId: String!
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+input StringFieldUpdateOperationsInput {
+  set: String
+}
+
+input IntFieldUpdateOperationsInput {
+  set: Int
+  increment: Int
+  decrement: Int
+  multiply: Int
+  divide: Int
+}
+
+input DateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input UserApiLimitUpdateInput {
+  id: StringFieldUpdateOperationsInput
+  userId: StringFieldUpdateOperationsInput
+  count: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input UserApiLimitCreateManyInput {
+  id: String
+  userId: String!
+  count: Int
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type AffectedRowsOutput {
+  count: Int!
+}
+
+input UserApiLimitUpdateManyMutationInput {
+  id: StringFieldUpdateOperationsInput
+  userId: StringFieldUpdateOperationsInput
+  count: IntFieldUpdateOperationsInput
+  createdAt: DateTimeFieldUpdateOperationsInput
+  updatedAt: DateTimeFieldUpdateOperationsInput
+}
+
+input UserSubscriptionCreateInput {
+  id: String
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+}
+
+input NullableStringFieldUpdateOperationsInput {
+  set: String
+}
+
+input NullableDateTimeFieldUpdateOperationsInput {
+  set: DateTime
+}
+
+input UserSubscriptionUpdateInput {
+  id: StringFieldUpdateOperationsInput
+  userId: StringFieldUpdateOperationsInput
+  stripeCustomerId: NullableStringFieldUpdateOperationsInput
+  stripeSubscriptionId: NullableStringFieldUpdateOperationsInput
+  stripePriceId: NullableStringFieldUpdateOperationsInput
+  stripeCurrentPeriodEnd: NullableDateTimeFieldUpdateOperationsInput
+}
+
+input UserSubscriptionCreateManyInput {
+  id: String
+  userId: String!
+  stripeCustomerId: String
+  stripeSubscriptionId: String
+  stripePriceId: String
+  stripeCurrentPeriodEnd: DateTime
+}
+
+input UserSubscriptionUpdateManyMutationInput {
+  id: StringFieldUpdateOperationsInput
+  userId: StringFieldUpdateOperationsInput
+  stripeCustomerId: NullableStringFieldUpdateOperationsInput
+  stripeSubscriptionId: NullableStringFieldUpdateOperationsInput
+  stripePriceId: NullableStringFieldUpdateOperationsInput
+  stripeCurrentPeriodEnd: NullableDateTimeFieldUpdateOperationsInput
+}
+
+type Mutation {
+  createOneUserApiLimit(data: UserApiLimitCreateInput!): UserApiLimit
+  upsertOneUserApiLimit(where: UserApiLimitWhereUniqueInput!, create: UserApiLimitCreateInput!, update: UserApiLimitUpdateInput!): UserApiLimit
+  createManyUserApiLimit(data: [UserApiLimitCreateManyInput]!, skipDuplicates: Boolean): AffectedRowsOutput
+  deleteOneUserApiLimit(where: UserApiLimitWhereUniqueInput!): UserApiLimit
+  updateOneUserApiLimit(data: UserApiLimitUpdateInput!, where: UserApiLimitWhereUniqueInput!): UserApiLimit
+  updateManyUserApiLimit(data: UserApiLimitUpdateManyMutationInput!, where: UserApiLimitWhereInput): AffectedRowsOutput
+  deleteManyUserApiLimit(where: UserApiLimitWhereInput): AffectedRowsOutput
+  createOneUserSubscription(data: UserSubscriptionCreateInput!): UserSubscription
+  upsertOneUserSubscription(where: UserSubscriptionWhereUniqueInput!, create: UserSubscriptionCreateInput!, update: UserSubscriptionUpdateInput!): UserSubscription
+  createManyUserSubscription(data: [UserSubscriptionCreateManyInput]!, skipDuplicates: Boolean): AffectedRowsOutput
+  deleteOneUserSubscription(where: UserSubscriptionWhereUniqueInput!): UserSubscription
+  updateOneUserSubscription(data: UserSubscriptionUpdateInput!, where: UserSubscriptionWhereUniqueInput!): UserSubscription
+  updateManyUserSubscription(data: UserSubscriptionUpdateManyMutationInput!, where: UserSubscriptionWhereInput): AffectedRowsOutput
+  deleteManyUserSubscription(where: UserSubscriptionWhereInput): AffectedRowsOutput
+  executeRaw(query: String!, parameters: [String]): Int!
+}
+
+scalar DateTime
+
+scalar JSON
+
+scalar UUID
+
+scalar BigInt
+
+scalar Bytes
+
+type _Row {
+  ID: ID!
+  Int: Int!
+  Float: Float!
+  String: String!
+  Boolean: Boolean!
+  DateTime: DateTime!
+  JSON: JSON!
+  Object: _Row!
+  Array: [_Row!]!
+  OptionalID: ID
+  OptionalInt: Int
+  OptionalFloat: Float
+  OptionalString: String
+  OptionalBoolean: Boolean
+  OptionalDateTime: DateTime
+  OptionalJSON: JSON
+  OptionalObject: _Row
+  OptionalArray: [_Row!]
+}2Ñ
+AllApiLimitsëquery AllApiLimits {
+  apiLimits: prisma_findManyUserApiLimit(orderBy: {id: asc}) {
+    id
+    userId
+    count
+    createdAt
+    updatedAt
+  }
+}">{"type":"object","properties":{},"additionalProperties":false}*¬{"type":"object","properties":{"data":{"type":"object","properties":{"apiLimits":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"userId":{"type":"string"},"count":{"type":"integer"},"createdAt":{"type":"string"},"updatedAt":{"type":"string"}},"additionalProperties":false,"required":["id","userId","count","createdAt","updatedAt"]}}},"additionalProperties":false,"required":["apiLimits"]}},"additionalProperties":false}B R Z* b r>{"type":"object","properties":{},"additionalProperties":false}äallApiLimits2˘
+AllSubscriptions“query AllSubscriptions {
+  subscriptions: prisma_findManyUserSubscription(orderBy: {id: asc}) {
+    id
+    userId
+    stripeCustomerId
+    stripeSubscriptionId
+    stripePriceId
+    stripeCurrentPeriodEnd
+  }
+}">{"type":"object","properties":{},"additionalProperties":false}*Ó{"type":"object","properties":{"data":{"type":"object","properties":{"subscriptions":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"userId":{"type":"string"},"stripeCustomerId":{"type":"string"},"stripeSubscriptionId":{"type":"string"},"stripePriceId":{"type":"string"},"stripeCurrentPeriodEnd":{"type":"string"}},"additionalProperties":false,"required":["id","userId"]}}},"additionalProperties":false,"required":["subscriptions"]}},"additionalProperties":false}B R Z* b r>{"type":"object","properties":{},"additionalProperties":false}äallSubscriptions2Ù
+CreateApiLimitèmutation CreateApiLimit($userId: String!, $count: Int!) {
+  prisma_createOneUserApiLimit(data: {userId: $userId, count: $count}) {
+    id
+  }
+}"ë{"type":"object","properties":{"userId":{"type":"string"},"count":{"type":"integer"}},"additionalProperties":false,"required":["userId","count"]}*à{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_createOneUserApiLimit":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b rë{"type":"object","properties":{"userId":{"type":"string"},"count":{"type":"integer"}},"additionalProperties":false,"required":["userId","count"]}äcreateApiLimit2¬
+
+CreateSubscriptionômutation CreateSubscription($userId: String!, $stripeCustomerId: String, $stripeSubscriptionId: String, $stripePriceId: String, $stripeCurrentPeriodEnd: DateTime) {
+  prisma_createOneUserSubscription(
+    data: {userId: $userId, stripeCustomerId: $stripeCustomerId, stripeSubscriptionId: $stripeSubscriptionId, stripePriceId: $stripePriceId, stripeCurrentPeriodEnd: $stripeCurrentPeriodEnd}
+  ) {
+    id
+  }
+}"≠{"type":"object","properties":{"userId":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["userId"]}*å{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_createOneUserSubscription":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b r≠{"type":"object","properties":{"userId":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["userId"]}äcreateSubscription2Û
+DeleteApiLimitgmutation DeleteApiLimit($id: String!) {
+  prisma_deleteOneUserApiLimit(where: {id: $id}) {
+    id
+  }
+}"f{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}*à{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_deleteOneUserApiLimit":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b rf{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}ädeleteApiLimit2á
+DeleteSubscriptionomutation DeleteSubscription($id: String!) {
+  prisma_deleteOneUserSubscription(where: {id: $id}) {
+    id
+  }
+}"f{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}*å{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_deleteOneUserSubscription":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b rf{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}ädeleteSubscription2ï
+UpdateApiLimitùmutation UpdateApiLimit($id: String!, $count: Int!) {
+  prisma_updateOneUserApiLimit(where: {id: $id}, data: {count: {set: $count}}) {
+    id
+    count
+  }
+}"â{"type":"object","properties":{"id":{"type":"string"},"count":{"type":"integer"}},"additionalProperties":false,"required":["id","count"]}*´{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_updateOneUserApiLimit":{"type":"object","properties":{"id":{"type":"string"},"count":{"type":"integer"}},"additionalProperties":false,"required":["id","count"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b râ{"type":"object","properties":{"id":{"type":"string"},"count":{"type":"integer"}},"additionalProperties":false,"required":["id","count"]}äupdateApiLimit2Œ
+
+UpdateSubscriptionµmutation UpdateSubscription($id: String!, $stripeCustomerId: String, $stripeSubscriptionId: String, $stripePriceId: String, $stripeCurrentPeriodEnd: DateTime) {
+  prisma_updateOneUserSubscription(
+    where: {id: $id}
+    data: {stripeCustomerId: {set: $stripeCustomerId}, stripeSubscriptionId: {set: $stripeSubscriptionId}, stripePriceId: {set: $stripePriceId}, stripeCurrentPeriodEnd: {set: $stripeCurrentPeriodEnd}}
+  ) {
+    id
+  }
+}"•{"type":"object","properties":{"id":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["id"]}*å{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_updateOneUserSubscription":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b r•{"type":"object","properties":{"id":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["id"]}äupdateSubscription:.
+http://localhost:3000GETPOST*"*(x0B
+" * 2 :0  r
+(WG_SERVER_URL"http://localhost:99929
+WG_SERVER_HOST"	localhostWG_SERVER_PORT"9992
+WG_LOG_LEVEL"infoz‹
+&WG_NODE_URL"http://localhost:9991"-WG_PUBLIC_NODE_URL"http://localhost:99915
+WG_NODE_HOST"	localhostWG_NODE_PORT"9991
+WG_LOG_LEVEL"info2!
+WG_NODE_INTERNAL_PORT"9993:/WG_NODE_INTERNAL_URL"http://localhost:9993BWG_HTTP_PROXYJâ
+WG_OTEL_ENABLED"false9WG_OTEL_EXPORTER_HTTP_ENDPOINT"http://localhost:4318WG_OTEL_SAMPLER"1.0"WG_OTEL_AUTH_TOKENR?
+WG_PROMETHEUS_ENABLED"trueWG_PROMETHEUS_PORT"8881ä   *379d83732

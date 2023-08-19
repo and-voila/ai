@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../wundergraph.server.ts"],
+  "sourcesContent": ["import { configureWunderGraphServer } from '@wundergraph/sdk/server';\n\nexport default configureWunderGraphServer(() => ({\n  hooks: {\n    queries: {},\n    mutations: {},\n  },\n}));\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,oBAA2C;AAE3C,IAAO,iCAAQ,0CAA2B,OAAO;AAAA,EAC/C,OAAO;AAAA,IACL,SAAS,CAAC;AAAA,IACV,WAAW,CAAC;AAAA,EACd;AACF,EAAE;",
+  "names": []
+}

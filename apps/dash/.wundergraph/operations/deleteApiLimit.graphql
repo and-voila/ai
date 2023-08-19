@@ -1,0 +1,5 @@
+mutation DeleteApiLimit($id: String!) {
+  prisma_deleteOneUserApiLimit(where: { id: $id }) {
+    id
+  }
+}

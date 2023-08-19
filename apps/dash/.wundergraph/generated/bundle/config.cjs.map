@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../wundergraph.config.ts"],
+  "sourcesContent": ["import {\n  configureWunderGraphApplication,\n  cors,\n  introspect,\n} from '@wundergraph/sdk';\n\nconst prismaDB = introspect.prisma({\n  apiNamespace: 'prisma',\n  prismaFilePath: '../prisma/schema.prisma',\n  introspection: {\n    disableCache: true,\n  },\n});\n\nconfigureWunderGraphApplication({\n  apis: [prismaDB],\n  cors: {\n    ...cors.allowAll,\n    allowedOrigins:\n      process.env.NODE_ENV === 'production'\n        ? [\n            // Change this before deploying to production to the actual domain where you're deploying your app\n            'http://localhost:3000',\n          ]\n        : ['http://localhost:3000'],\n  },\n  security: {\n    enableGraphQLEndpoint: process.env.NODE_ENV !== 'production',\n  },\n});\n"],
+  "mappings": ";AAAA,iBAIO;AAEP,IAAM,WAAW,sBAAW,OAAO;AAAA,EACjC,cAAc;AAAA,EACd,gBAAgB;AAAA,EAChB,eAAe;AAAA,IACb,cAAc;AAAA,EAChB;AACF,CAAC;AAAA,IAED,4CAAgC;AAAA,EAC9B,MAAM,CAAC,QAAQ;AAAA,EACf,MAAM;AAAA,IACJ,GAAG,gBAAK;AAAA,IACR,gBACE,QAAQ,IAAI,aAAa,eACrB;AAAA,MAEE;AAAA,IACF,IACA,CAAC,uBAAuB;AAAA,EAChC;AAAA,EACA,UAAU;AAAA,IACR,uBAAuB,QAAQ,IAAI,aAAa;AAAA,EAClD;AACF,CAAC;",
+  "names": []
+}
