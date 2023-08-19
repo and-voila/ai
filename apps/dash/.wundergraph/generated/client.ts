@@ -22,10 +22,6 @@ import type { OperationErrors } from "./ts-operation-errors";
 
 import type { PublicCustomClaims } from "./claims";
 import type {
-	AllApiLimitsResponse,
-	AllApiLimitsResponseData,
-	AllSubscriptionsResponse,
-	AllSubscriptionsResponseData,
 	CreateApiLimitResponse,
 	CreateApiLimitInput,
 	CreateApiLimitResponseData,
@@ -38,6 +34,12 @@ import type {
 	DeleteSubscriptionResponse,
 	DeleteSubscriptionInput,
 	DeleteSubscriptionResponseData,
+	GetUserApiLimitResponse,
+	GetUserApiLimitInput,
+	GetUserApiLimitResponseData,
+	GetUserSubscriptionResponse,
+	GetUserSubscriptionInput,
+	GetUserSubscriptionResponseData,
 	UpdateApiLimitResponse,
 	UpdateApiLimitInput,
 	UpdateApiLimitResponseData,
@@ -51,18 +53,12 @@ export const WUNDERGRAPH_S3_ENABLED = false;
 export const WUNDERGRAPH_AUTH_ENABLED = false;
 
 export const defaultClientConfig: ClientConfig = {
-	applicationHash: "379d8373",
+	applicationHash: "f1b3a71d",
 	baseURL: "https://andvoila.wundergraph.dev",
 	sdkVersion: "0.174.4",
 };
 
 export const operationMetadata: OperationMetadata = {
-	allApiLimits: {
-		requiresAuthentication: false,
-	},
-	allSubscriptions: {
-		requiresAuthentication: false,
-	},
 	createApiLimit: {
 		requiresAuthentication: false,
 	},
@@ -73,6 +69,12 @@ export const operationMetadata: OperationMetadata = {
 		requiresAuthentication: false,
 	},
 	deleteSubscription: {
+		requiresAuthentication: false,
+	},
+	getUserApiLimit: {
+		requiresAuthentication: false,
+	},
+	getUserSubscription: {
 		requiresAuthentication: false,
 	},
 	updateApiLimit: {
@@ -132,14 +134,14 @@ export const createClient = (config?: CreateClientConfig) => {
 };
 
 export type Queries = {
-	allApiLimits: {
-		input?: undefined;
-		response: { data?: AllApiLimitsResponse["data"]; error?: ClientOperationErrors };
+	getUserApiLimit: {
+		input: GetUserApiLimitInput;
+		response: { data?: GetUserApiLimitResponse["data"]; error?: ClientOperationErrors };
 		requiresAuthentication: false;
 	};
-	allSubscriptions: {
-		input?: undefined;
-		response: { data?: AllSubscriptionsResponse["data"]; error?: ClientOperationErrors };
+	getUserSubscription: {
+		input: GetUserSubscriptionInput;
+		response: { data?: GetUserSubscriptionResponse["data"]; error?: ClientOperationErrors };
 		requiresAuthentication: false;
 	};
 };

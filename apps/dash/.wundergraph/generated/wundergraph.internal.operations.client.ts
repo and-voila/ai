@@ -4,10 +4,6 @@ import type { OperationsClient, InternalOperationsDefinition } from "@wundergrap
 import type { ClientOperationErrors } from "@wundergraph/sdk/client";
 import type { OperationErrors } from "./ts-operation-errors";
 import {
-	AllApiLimitsResponse,
-	AllApiLimitsResponseData,
-	AllSubscriptionsResponse,
-	AllSubscriptionsResponseData,
 	CreateApiLimitResponse,
 	CreateApiLimitInput,
 	CreateApiLimitInputInternal,
@@ -28,6 +24,16 @@ import {
 	DeleteSubscriptionInputInternal,
 	DeleteSubscriptionInputInjected,
 	DeleteSubscriptionResponseData,
+	GetUserApiLimitResponse,
+	GetUserApiLimitInput,
+	GetUserApiLimitInputInternal,
+	GetUserApiLimitInputInjected,
+	GetUserApiLimitResponseData,
+	GetUserSubscriptionResponse,
+	GetUserSubscriptionInput,
+	GetUserSubscriptionInputInternal,
+	GetUserSubscriptionInputInjected,
+	GetUserSubscriptionResponseData,
 	UpdateApiLimitResponse,
 	UpdateApiLimitInput,
 	UpdateApiLimitInputInternal,
@@ -41,13 +47,13 @@ import {
 } from "./models";
 
 export type Queries = {
-	allApiLimits: {
-		input: undefined;
-		response: { data?: AllApiLimitsResponse["data"]; error?: ClientOperationErrors };
+	getUserApiLimit: {
+		input: GetUserApiLimitInputInternal;
+		response: { data?: GetUserApiLimitResponse["data"]; error?: ClientOperationErrors };
 	};
-	allSubscriptions: {
-		input: undefined;
-		response: { data?: AllSubscriptionsResponse["data"]; error?: ClientOperationErrors };
+	getUserSubscription: {
+		input: GetUserSubscriptionInputInternal;
+		response: { data?: GetUserSubscriptionResponse["data"]; error?: ClientOperationErrors };
 	};
 };
 

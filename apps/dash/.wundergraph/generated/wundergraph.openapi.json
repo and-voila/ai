@@ -10,152 +10,6 @@
     }
   ],
   "paths": {
-    "/allApiLimits": {
-      "get": {
-        "operationId": "AllApiLimits",
-        "x-wundergraph-operation-type": "query",
-        "x-wundergraph-requires-authentication": false,
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "apiLimits": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "string"
-                              },
-                              "userId": {
-                                "type": "string"
-                              },
-                              "count": {
-                                "type": "integer"
-                              },
-                              "createdAt": {
-                                "type": "string"
-                              },
-                              "updatedAt": {
-                                "type": "string"
-                              }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                              "id",
-                              "userId",
-                              "count",
-                              "createdAt",
-                              "updatedAt"
-                            ]
-                          }
-                        }
-                      },
-                      "additionalProperties": false,
-                      "required": [
-                        "apiLimits"
-                      ]
-                    }
-                  },
-                  "additionalProperties": false
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid input",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InvalidInputError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/allSubscriptions": {
-      "get": {
-        "operationId": "AllSubscriptions",
-        "x-wundergraph-operation-type": "query",
-        "x-wundergraph-requires-authentication": false,
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "object",
-                      "properties": {
-                        "subscriptions": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "string"
-                              },
-                              "userId": {
-                                "type": "string"
-                              },
-                              "stripeCustomerId": {
-                                "type": "string"
-                              },
-                              "stripeSubscriptionId": {
-                                "type": "string"
-                              },
-                              "stripePriceId": {
-                                "type": "string"
-                              },
-                              "stripeCurrentPeriodEnd": {
-                                "type": "string"
-                              }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                              "id",
-                              "userId"
-                            ]
-                          }
-                        }
-                      },
-                      "additionalProperties": false,
-                      "required": [
-                        "subscriptions"
-                      ]
-                    }
-                  },
-                  "additionalProperties": false
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid input",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/InvalidInputError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/createApiLimit": {
       "post": {
         "operationId": "CreateApiLimit",
@@ -436,6 +290,162 @@
                           "additionalProperties": false,
                           "required": [
                             "id"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvalidInputError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getUserApiLimit": {
+      "get": {
+        "operationId": "GetUserApiLimit",
+        "x-wundergraph-operation-type": "query",
+        "x-wundergraph-requires-authentication": false,
+        "parameters": [
+          {
+            "name": "userId",
+            "description": "Type: string",
+            "in": "query",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "apiLimit": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "userId": {
+                              "type": "string"
+                            },
+                            "count": {
+                              "type": "integer"
+                            },
+                            "createdAt": {
+                              "type": "string"
+                            },
+                            "updatedAt": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "id",
+                            "userId",
+                            "count",
+                            "createdAt",
+                            "updatedAt"
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvalidInputError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/getUserSubscription": {
+      "get": {
+        "operationId": "GetUserSubscription",
+        "x-wundergraph-operation-type": "query",
+        "x-wundergraph-requires-authentication": false,
+        "parameters": [
+          {
+            "name": "userId",
+            "description": "Type: string",
+            "in": "query",
+            "required": true,
+            "allowEmptyValue": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "subscription": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "userId": {
+                              "type": "string"
+                            },
+                            "stripeCustomerId": {
+                              "type": "string"
+                            },
+                            "stripeSubscriptionId": {
+                              "type": "string"
+                            },
+                            "stripePriceId": {
+                              "type": "string"
+                            },
+                            "stripeCurrentPeriodEnd": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "id",
+                            "userId"
                           ]
                         }
                       },

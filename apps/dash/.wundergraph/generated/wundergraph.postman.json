@@ -8,58 +8,6 @@
       "name": "operations",
       "item": [
         {
-          "id": "allApiLimits",
-          "name": "allApiLimits",
-          "request": {
-            "url": {
-              "path": [
-                "operations",
-                "allApiLimits"
-              ],
-              "host": [
-                "{{apiBaseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET"
-          },
-          "response": [],
-          "event": []
-        },
-        {
-          "id": "allSubscriptions",
-          "name": "allSubscriptions",
-          "request": {
-            "url": {
-              "path": [
-                "operations",
-                "allSubscriptions"
-              ],
-              "host": [
-                "{{apiBaseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET"
-          },
-          "response": [],
-          "event": []
-        },
-        {
           "id": "CreateApiLimit",
           "name": "createApiLimit",
           "request": {
@@ -236,6 +184,78 @@
                 }
               ]
             }
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "getUserApiLimit",
+          "name": "getUserApiLimit",
+          "request": {
+            "url": {
+              "path": [
+                "operations",
+                "getUserApiLimit"
+              ],
+              "host": [
+                "{{apiBaseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Type string, Optional",
+                    "type": "text/plain"
+                  },
+                  "key": "userId",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [],
+          "event": []
+        },
+        {
+          "id": "getUserSubscription",
+          "name": "getUserSubscription",
+          "request": {
+            "url": {
+              "path": [
+                "operations",
+                "getUserSubscription"
+              ],
+              "host": [
+                "{{apiBaseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Type string, Optional",
+                    "type": "text/plain"
+                  },
+                  "key": "userId",
+                  "value": ""
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
           },
           "response": [],
           "event": []

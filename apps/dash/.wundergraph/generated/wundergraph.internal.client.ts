@@ -3,10 +3,6 @@
 import type { OperationArgsWithInput, InternalClient as BaseClient } from "@wundergraph/sdk/server";
 import type { OperationErrors } from "./ts-operation-errors";
 import {
-	AllApiLimitsResponse,
-	AllApiLimitsResponseData,
-	AllSubscriptionsResponse,
-	AllSubscriptionsResponseData,
 	CreateApiLimitResponse,
 	CreateApiLimitInput,
 	CreateApiLimitInputInternal,
@@ -27,6 +23,16 @@ import {
 	DeleteSubscriptionInputInternal,
 	DeleteSubscriptionInputInjected,
 	DeleteSubscriptionResponseData,
+	GetUserApiLimitResponse,
+	GetUserApiLimitInput,
+	GetUserApiLimitInputInternal,
+	GetUserApiLimitInputInjected,
+	GetUserApiLimitResponseData,
+	GetUserSubscriptionResponse,
+	GetUserSubscriptionInput,
+	GetUserSubscriptionInputInternal,
+	GetUserSubscriptionInputInjected,
+	GetUserSubscriptionResponseData,
 	UpdateApiLimitResponse,
 	UpdateApiLimitInput,
 	UpdateApiLimitInputInternal,
@@ -40,13 +46,14 @@ import {
 } from "./models";
 
 export interface Queries {
-	AllApiLimits: () => Promise<{
-		data?: AllApiLimitsResponse["data"];
-		errors?: Required<AllApiLimitsResponse>["errors"];
-	}>;
-	AllSubscriptions: () => Promise<{
-		data?: AllSubscriptionsResponse["data"];
-		errors?: Required<AllSubscriptionsResponse>["errors"];
+	GetUserApiLimit: (
+		options: OperationArgsWithInput<GetUserApiLimitInputInternal>
+	) => Promise<{ data?: GetUserApiLimitResponse["data"]; errors?: Required<GetUserApiLimitResponse>["errors"] }>;
+	GetUserSubscription: (
+		options: OperationArgsWithInput<GetUserSubscriptionInputInternal>
+	) => Promise<{
+		data?: GetUserSubscriptionResponse["data"];
+		errors?: Required<GetUserSubscriptionResponse>["errors"];
 	}>;
 }
 

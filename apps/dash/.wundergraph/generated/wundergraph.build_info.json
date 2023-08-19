@@ -21,6 +21,6 @@
     "hasUploadProvider": false,
     "totalOperations": 8,
     "totalWebhooks": 0,
-    "hasAuthenticationProvider": false
+    "hasAuthenticationProvider": true
   }
 }

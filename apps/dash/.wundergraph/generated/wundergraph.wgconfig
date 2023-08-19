@@ -1,5 +1,5 @@
 
-ƒ‚Ú§ÙÄ%
+®‰Ú§ÙÄ%
 Queryprisma_findFirstUserApiLimit>
 prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
 +prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
@@ -2862,26 +2862,7 @@ type _Row {
   OptionalJSON: JSON
   OptionalObject: _Row
   OptionalArray: [_Row!]
-}2Ñ
-AllApiLimitsëquery AllApiLimits {
-  apiLimits: prisma_findManyUserApiLimit(orderBy: {id: asc}) {
-    id
-    userId
-    count
-    createdAt
-    updatedAt
-  }
-}">{"type":"object","properties":{},"additionalProperties":false}*¬{"type":"object","properties":{"data":{"type":"object","properties":{"apiLimits":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"userId":{"type":"string"},"count":{"type":"integer"},"createdAt":{"type":"string"},"updatedAt":{"type":"string"}},"additionalProperties":false,"required":["id","userId","count","createdAt","updatedAt"]}}},"additionalProperties":false,"required":["apiLimits"]}},"additionalProperties":false}B R Z* b r>{"type":"object","properties":{},"additionalProperties":false}äallApiLimits2˘
-AllSubscriptions“query AllSubscriptions {
-  subscriptions: prisma_findManyUserSubscription(orderBy: {id: asc}) {
-    id
-    userId
-    stripeCustomerId
-    stripeSubscriptionId
-    stripePriceId
-    stripeCurrentPeriodEnd
-  }
-}">{"type":"object","properties":{},"additionalProperties":false}*Ó{"type":"object","properties":{"data":{"type":"object","properties":{"subscriptions":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"userId":{"type":"string"},"stripeCustomerId":{"type":"string"},"stripeSubscriptionId":{"type":"string"},"stripePriceId":{"type":"string"},"stripeCurrentPeriodEnd":{"type":"string"}},"additionalProperties":false,"required":["id","userId"]}}},"additionalProperties":false,"required":["subscriptions"]}},"additionalProperties":false}B R Z* b r>{"type":"object","properties":{},"additionalProperties":false}äallSubscriptions2Ù
+}2Ù
 CreateApiLimitèmutation CreateApiLimit($userId: String!, $count: Int!) {
   prisma_createOneUserApiLimit(data: {userId: $userId, count: $count}) {
     id
@@ -2904,7 +2885,26 @@ type _Row {
   prisma_deleteOneUserSubscription(where: {id: $id}) {
     id
   }
-}"f{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}*å{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_deleteOneUserSubscription":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b rf{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}ädeleteSubscription2ï
+}"f{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}*å{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_deleteOneUserSubscription":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b rf{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}ädeleteSubscription2”
+GetUserApiLimit≠query GetUserApiLimit($userId: String!) {
+  apiLimit: prisma_findUniqueUserApiLimit(where: {userId: $userId}) {
+    id
+    userId
+    count
+    createdAt
+    updatedAt
+  }
+}"n{"type":"object","properties":{"userId":{"type":"string"}},"additionalProperties":false,"required":["userId"]}*è{"type":"object","properties":{"data":{"type":"object","properties":{"apiLimit":{"type":"object","properties":{"id":{"type":"string"},"userId":{"type":"string"},"count":{"type":"integer"},"createdAt":{"type":"string"},"updatedAt":{"type":"string"}},"additionalProperties":false,"required":["id","userId","count","createdAt","updatedAt"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b rn{"type":"object","properties":{"userId":{"type":"string"}},"additionalProperties":false,"required":["userId"]}ägetUserApiLimit2ƒ
+GetUserSubscriptionÓquery GetUserSubscription($userId: String!) {
+  subscription: prisma_findUniqueUserSubscription(where: {userId: $userId}) {
+    id
+    userId
+    stripeCustomerId
+    stripeSubscriptionId
+    stripePriceId
+    stripeCurrentPeriodEnd
+  }
+}"n{"type":"object","properties":{"userId":{"type":"string"}},"additionalProperties":false,"required":["userId"]}*∑{"type":"object","properties":{"data":{"type":"object","properties":{"subscription":{"type":"object","properties":{"id":{"type":"string"},"userId":{"type":"string"},"stripeCustomerId":{"type":"string"},"stripeSubscriptionId":{"type":"string"},"stripePriceId":{"type":"string"},"stripeCurrentPeriodEnd":{"type":"string"}},"additionalProperties":false,"required":["id","userId"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b rn{"type":"object","properties":{"userId":{"type":"string"}},"additionalProperties":false,"required":["userId"]}ägetUserSubscription2ï
 UpdateApiLimitùmutation UpdateApiLimit($id: String!, $count: Int!) {
   prisma_updateOneUserApiLimit(where: {id: $id}, data: {count: {set: $count}}) {
     id
@@ -2920,8 +2920,10 @@ type _Row {
     id
   }
 }"•{"type":"object","properties":{"id":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["id"]}*å{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_updateOneUserSubscription":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b r•{"type":"object","properties":{"id":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["id"]}äupdateSubscription:.
-http://localhost:3000GETPOST*"*(x0B
-" * 2 :0  r
+http://localhost:3000GETPOST*"*(x0B[
+" * 2 :0 J
+H
+?=https://daring-ox-57.clerk.accounts.dev/.well-known/jwks.json   êr
 (WG_SERVER_URL"http://localhost:99929
 WG_SERVER_HOST"	localhostWG_SERVER_PORT"9992
 WG_LOG_LEVEL"infoz‹
@@ -2930,4 +2932,4 @@ type _Row {
 WG_LOG_LEVEL"info2!
 WG_NODE_INTERNAL_PORT"9993:/WG_NODE_INTERNAL_URL"http://localhost:9993BWG_HTTP_PROXYJâ
 WG_OTEL_ENABLED"false9WG_OTEL_EXPORTER_HTTP_ENDPOINT"http://localhost:4318WG_OTEL_SAMPLER"1.0"WG_OTEL_AUTH_TOKENR?
-WG_PROMETHEUS_ENABLED"trueWG_PROMETHEUS_PORT"8881ä   *379d83732
+WG_PROMETHEUS_ENABLED"trueWG_PROMETHEUS_PORT"8881ä   *f1b3a71d2

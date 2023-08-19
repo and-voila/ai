@@ -9,6 +9,15 @@ var prismaDB = import_sdk.introspect.prisma({
 });
 (0, import_sdk.configureWunderGraphApplication)({
   apis: [prismaDB],
+  authentication: {
+    tokenBased: {
+      providers: [
+        {
+          jwksURL: process.env.CLERK_JWKS_URL
+        }
+      ]
+    }
+  },
   cors: {
     ...import_sdk.cors.allowAll,
     allowedOrigins: process.env.NODE_ENV === "production" ? [

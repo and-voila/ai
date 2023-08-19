@@ -11,13 +11,13 @@ declare module "json-schema" {
 }
 
 export interface Queries {
-	allApiLimits: {
+	getUserApiLimit: {
 		input: JSONSchema7;
 		response: JSONSchema7;
 		operationType: string;
 		description: string;
 	};
-	allSubscriptions: {
+	getUserSubscription: {
 		input: JSONSchema7;
 		response: JSONSchema7;
 		operationType: string;
@@ -69,32 +69,33 @@ export interface Subscriptions {}
 export type Schema = Queries & Mutations & Subscriptions;
 
 const jsonSchema: Schema = {
-	allApiLimits: {
-		input: { type: "object", properties: {}, additionalProperties: false },
+	getUserApiLimit: {
+		input: {
+			type: "object",
+			properties: { userId: { type: "string" } },
+			additionalProperties: false,
+			required: ["userId"],
+		},
 		response: {
 			type: "object",
 			properties: {
 				data: {
 					type: "object",
 					properties: {
-						apiLimits: {
-							type: "array",
-							items: {
-								type: "object",
-								properties: {
-									id: { type: "string" },
-									userId: { type: "string" },
-									count: { type: "integer" },
-									createdAt: { type: "string" },
-									updatedAt: { type: "string" },
-								},
-								additionalProperties: false,
-								required: ["id", "userId", "count", "createdAt", "updatedAt"],
+						apiLimit: {
+							type: "object",
+							properties: {
+								id: { type: "string" },
+								userId: { type: "string" },
+								count: { type: "integer" },
+								createdAt: { type: "string" },
+								updatedAt: { type: "string" },
 							},
+							additionalProperties: false,
+							required: ["id", "userId", "count", "createdAt", "updatedAt"],
 						},
 					},
 					additionalProperties: false,
-					required: ["apiLimits"],
 				},
 			},
 			additionalProperties: false,
@@ -102,33 +103,34 @@ const jsonSchema: Schema = {
 		operationType: "QUERY",
 		description: "",
 	},
-	allSubscriptions: {
-		input: { type: "object", properties: {}, additionalProperties: false },
+	getUserSubscription: {
+		input: {
+			type: "object",
+			properties: { userId: { type: "string" } },
+			additionalProperties: false,
+			required: ["userId"],
+		},
 		response: {
 			type: "object",
 			properties: {
 				data: {
 					type: "object",
 					properties: {
-						subscriptions: {
-							type: "array",
-							items: {
-								type: "object",
-								properties: {
-									id: { type: "string" },
-									userId: { type: "string" },
-									stripeCustomerId: { type: "string" },
-									stripeSubscriptionId: { type: "string" },
-									stripePriceId: { type: "string" },
-									stripeCurrentPeriodEnd: { type: "string" },
-								},
-								additionalProperties: false,
-								required: ["id", "userId"],
+						subscription: {
+							type: "object",
+							properties: {
+								id: { type: "string" },
+								userId: { type: "string" },
+								stripeCustomerId: { type: "string" },
+								stripeSubscriptionId: { type: "string" },
+								stripePriceId: { type: "string" },
+								stripeCurrentPeriodEnd: { type: "string" },
 							},
+							additionalProperties: false,
+							required: ["id", "userId"],
 						},
 					},
 					additionalProperties: false,
-					required: ["subscriptions"],
 				},
 			},
 			additionalProperties: false,
@@ -308,7 +310,7 @@ const jsonSchema: Schema = {
 	},
 };
 
-export type QueryNames = "allApiLimits" | "allSubscriptions";
+export type QueryNames = "getUserApiLimit" | "getUserSubscription";
 
 export type MutationNames =
 	| "createApiLimit"

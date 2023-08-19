@@ -29,12 +29,12 @@ export interface OperationsConfiguration {
 	// custom allows you to override settings for each individual operation
 	// the input config is the default config + the query/mutation/subscription extra config
 	custom?: {
-		AllApiLimits?: CustomizeQuery;
-		AllSubscriptions?: CustomizeQuery;
 		CreateApiLimit?: CustomizeMutation;
 		CreateSubscription?: CustomizeMutation;
 		DeleteApiLimit?: CustomizeMutation;
 		DeleteSubscription?: CustomizeMutation;
+		GetUserApiLimit?: CustomizeQuery;
+		GetUserSubscription?: CustomizeQuery;
 		UpdateApiLimit?: CustomizeMutation;
 		UpdateSubscription?: CustomizeMutation;
 	};
@@ -42,12 +42,12 @@ export interface OperationsConfiguration {
 
 declare module "@wundergraph/sdk" {
 	interface CustomOperationsConfiguration {
-		AllApiLimits?: Partial<QueryConfiguration>;
-		AllSubscriptions?: Partial<QueryConfiguration>;
 		CreateApiLimit?: Partial<MutationConfiguration>;
 		CreateSubscription?: Partial<MutationConfiguration>;
 		DeleteApiLimit?: Partial<MutationConfiguration>;
 		DeleteSubscription?: Partial<MutationConfiguration>;
+		GetUserApiLimit?: Partial<QueryConfiguration>;
+		GetUserSubscription?: Partial<QueryConfiguration>;
 		UpdateApiLimit?: Partial<MutationConfiguration>;
 		UpdateSubscription?: Partial<MutationConfiguration>;
 	}

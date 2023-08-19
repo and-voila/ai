@@ -1,18 +1,6 @@
 {
 "graphql_operation_files": [
 {
-"operation_name": "AllApiLimits",
-"api_mount_path": "allApiLimits",
-"file_path": "allApiLimits.graphql",
-"content": "query AllApiLimits {apiLimits: prisma_findManyUserApiLimit(orderBy: {id: asc}){id userId count createdAt updatedAt}}"
-},
-{
-"operation_name": "AllSubscriptions",
-"api_mount_path": "allSubscriptions",
-"file_path": "allSubscriptions.graphql",
-"content": "query AllSubscriptions {subscriptions: prisma_findManyUserSubscription(orderBy: {id: asc}){id userId stripeCustomerId stripeSubscriptionId stripePriceId stripeCurrentPeriodEnd}}"
-},
-{
 "operation_name": "CreateApiLimit",
 "api_mount_path": "createApiLimit",
 "file_path": "createApiLimit.graphql",
@@ -35,6 +23,18 @@
 "api_mount_path": "deleteSubscription",
 "file_path": "deleteSubscription.graphql",
 "content": "mutation DeleteSubscription($id: String!){prisma_deleteOneUserSubscription(where: {id: $id}){id}}"
+},
+{
+"operation_name": "GetUserApiLimit",
+"api_mount_path": "getUserApiLimit",
+"file_path": "getUserApiLimit.graphql",
+"content": "query GetUserApiLimit($userId: String!){apiLimit: prisma_findUniqueUserApiLimit(where: {userId: $userId}){id userId count createdAt updatedAt}}"
+},
+{
+"operation_name": "GetUserSubscription",
+"api_mount_path": "getUserSubscription",
+"file_path": "getUserSubscription.graphql",
+"content": "query GetUserSubscription($userId: String!){subscription: prisma_findUniqueUserSubscription(where: {userId: $userId}){id userId stripeCustomerId stripeSubscriptionId stripePriceId stripeCurrentPeriodEnd}}"
 },
 {
 "operation_name": "UpdateApiLimit",

@@ -27,6 +27,14 @@ export interface DeleteSubscriptionInput {
 	id: string;
 }
 
+export interface GetUserApiLimitInput {
+	userId: string;
+}
+
+export interface GetUserSubscriptionInput {
+	userId: string;
+}
+
 export interface UpdateApiLimitInput {
 	id: string;
 	count: number;
@@ -59,6 +67,14 @@ export interface DeleteApiLimitInputInternal {
 
 export interface DeleteSubscriptionInputInternal {
 	id: string;
+}
+
+export interface GetUserApiLimitInputInternal {
+	userId: string;
+}
+
+export interface GetUserSubscriptionInputInternal {
+	userId: string;
 }
 
 export interface UpdateApiLimitInputInternal {
@@ -95,6 +111,14 @@ export interface DeleteSubscriptionInputInjected {
 	id: string;
 }
 
+export interface GetUserApiLimitInputInjected {
+	userId: string;
+}
+
+export interface GetUserSubscriptionInputInjected {
+	userId: string;
+}
+
 export interface UpdateApiLimitInputInjected {
 	id: string;
 	count: number;
@@ -106,16 +130,6 @@ export interface UpdateSubscriptionInputInjected {
 	stripeSubscriptionId?: string;
 	stripePriceId?: string;
 	stripeCurrentPeriodEnd?: string;
-}
-
-export interface AllApiLimitsResponse {
-	data?: AllApiLimitsResponseData;
-	errors?: GraphQLError[];
-}
-
-export interface AllSubscriptionsResponse {
-	data?: AllSubscriptionsResponseData;
-	errors?: GraphQLError[];
 }
 
 export interface CreateApiLimitResponse {
@@ -138,6 +152,16 @@ export interface DeleteSubscriptionResponse {
 	errors?: GraphQLError[];
 }
 
+export interface GetUserApiLimitResponse {
+	data?: GetUserApiLimitResponseData;
+	errors?: GraphQLError[];
+}
+
+export interface GetUserSubscriptionResponse {
+	data?: GetUserSubscriptionResponseData;
+	errors?: GraphQLError[];
+}
+
 export interface UpdateApiLimitResponse {
 	data?: UpdateApiLimitResponseData;
 	errors?: GraphQLError[];
@@ -146,27 +170,6 @@ export interface UpdateApiLimitResponse {
 export interface UpdateSubscriptionResponse {
 	data?: UpdateSubscriptionResponseData;
 	errors?: GraphQLError[];
-}
-
-export interface AllApiLimitsResponseData {
-	apiLimits: {
-		id: string;
-		userId: string;
-		count: number;
-		createdAt: string;
-		updatedAt: string;
-	}[];
-}
-
-export interface AllSubscriptionsResponseData {
-	subscriptions: {
-		id: string;
-		userId: string;
-		stripeCustomerId?: string;
-		stripeSubscriptionId?: string;
-		stripePriceId?: string;
-		stripeCurrentPeriodEnd?: string;
-	}[];
 }
 
 export interface CreateApiLimitResponseData {
@@ -190,6 +193,27 @@ export interface DeleteApiLimitResponseData {
 export interface DeleteSubscriptionResponseData {
 	prisma_deleteOneUserSubscription?: {
 		id: string;
+	};
+}
+
+export interface GetUserApiLimitResponseData {
+	apiLimit?: {
+		id: string;
+		userId: string;
+		count: number;
+		createdAt: string;
+		updatedAt: string;
+	};
+}
+
+export interface GetUserSubscriptionResponseData {
+	subscription?: {
+		id: string;
+		userId: string;
+		stripeCustomerId?: string;
+		stripeSubscriptionId?: string;
+		stripePriceId?: string;
+		stripeCurrentPeriodEnd?: string;
 	};
 }
 
