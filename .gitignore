@@ -8,6 +8,10 @@ node_modules
 # testing
 coverage
 
+# Wundergraph
+.wundergraph/cache
+.wundergraph/generated
+
 # next.js
 .next/
 out/

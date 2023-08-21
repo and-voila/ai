@@ -6,14 +6,14 @@
 .pnp.js
 
 # WunderGraph build output
-/.wundergraph/cache
-/.wundergraph/generated
+.wundergraph/cache
+.wundergraph/generated
 
 # testing
 /coverage
 
 # next.js
-/.next/
+# /.next/
 /out/
 
 # production

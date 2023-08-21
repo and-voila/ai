@@ -43,7 +43,6 @@ export async function POST(req: Request) {
       const id = json.id;
       const createdAt = Date.now();
       const path = `/chat/${id}`;
-      // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
       const payload = {
         id,
         title,
