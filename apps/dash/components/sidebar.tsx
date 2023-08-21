@@ -8,6 +8,7 @@ import {
   GearIcon,
   ImageIcon,
   Pencil1Icon,
+  ReaderIcon,
   SpeakerLoudIcon,
   VideoIcon,
 } from 'ui';
@@ -46,6 +47,11 @@ const routes = [
     label: 'Code',
     icon: CodeIcon,
     href: '/code',
+  },
+  {
+    label: 'Learn',
+    icon: ReaderIcon,
+    href: '/learn',
   },
   {
     label: 'Settings',
