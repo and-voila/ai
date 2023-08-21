@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+# WunderGraph build output
+/.wundergraph/cache
+/.wundergraph/generated
+
 # testing
 /coverage
 

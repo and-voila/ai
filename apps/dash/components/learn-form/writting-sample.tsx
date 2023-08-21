@@ -1,7 +1,7 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
 
@@ -72,12 +72,6 @@ export function WrittingSample({
       }
     }
   };
-
-  useEffect(() => {
-    (async () => {
-      await removeWrittingRedis(userId);
-    })();
-  }, [userId]);
 
   return (
     <div className="px-4 lg:px-8">

@@ -1,8 +1,9 @@
-import prismadb from 'lib/prismadb';
 import { stripe } from 'lib/stripe';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
+
+import { client } from '@/lib/wundergraph';
 
 export async function POST(req: Request) {
   const body = await req.text();
@@ -32,15 +33,16 @@ export async function POST(req: Request) {
       return new NextResponse('User id is required', { status: 400 });
     }
 
-    await prismadb.userSubscription.create({
-      data: {
+    await client.mutate({
+      operationName: 'createSubscription',
+      input: {
         userId: session?.metadata?.userId,
         stripeSubscriptionId: subscription.id,
         stripeCustomerId: subscription.customer as string,
         stripePriceId: subscription.items.data[0].price.id,
         stripeCurrentPeriodEnd: new Date(
           subscription.current_period_end * 1000,
-        ),
+        ) as unknown as string,
       },
     });
   }
@@ -50,15 +52,14 @@ export async function POST(req: Request) {
       session.subscription as string,
     );
 
-    await prismadb.userSubscription.update({
-      where: {
-        stripeSubscriptionId: subscription.id,
-      },
-      data: {
+    await client.mutate({
+      operationName: 'updateSubscription',
+      input: {
+        id: session?.metadata?.userId,
         stripePriceId: subscription.items.data[0].price.id,
         stripeCurrentPeriodEnd: new Date(
           subscription.current_period_end * 1000,
-        ),
+        ) as unknown as string,
       },
     });
   }

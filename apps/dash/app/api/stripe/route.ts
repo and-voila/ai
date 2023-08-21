@@ -1,8 +1,9 @@
 import { auth, currentUser } from '@clerk/nextjs';
-import prismadb from 'lib/prismadb';
 import { stripe } from 'lib/stripe';
 import { absoluteUrl } from 'lib/utils';
 import { NextResponse } from 'next/server';
+
+import { client } from '@/lib/wundergraph';
 
 const settingsUrl = absoluteUrl('/settings');
 
@@ -15,15 +16,19 @@ export async function GET() {
       return new NextResponse('Unauthorized', { status: 401 });
     }
 
-    const userSubscription = await prismadb.userSubscription.findUnique({
-      where: {
-        userId,
+    const userSubscription = await client.query({
+      operationName: 'getUserSubscription',
+      input: {
+        userId: userId,
       },
     });
 
-    if (userSubscription && userSubscription.stripeCustomerId) {
+    if (
+      userSubscription &&
+      userSubscription.data.subscription.stripeCustomerId
+    ) {
       const stripeSession = await stripe.billingPortal.sessions.create({
-        customer: userSubscription.stripeCustomerId,
+        customer: userSubscription.data.subscription.stripeCustomerId,
         return_url: settingsUrl,
       });
 

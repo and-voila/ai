@@ -1,5 +1,6 @@
 import { auth } from '@clerk/nextjs';
-import prismadb from 'lib/prismadb';
+
+import { client } from '@/lib/wundergraph';
 
 const DAY_IN_MS = 86_400_000;
 
@@ -10,26 +11,33 @@ export const checkSubscription = async () => {
     return false;
   }
 
-  const userSubscription = await prismadb.userSubscription.findUnique({
-    where: {
+  const userSubscription = await client.query({
+    operationName: 'getUserSubscription',
+    input: {
       userId: userId,
     },
-    select: {
-      stripeSubscriptionId: true,
-      stripeCurrentPeriodEnd: true,
-      stripeCustomerId: true,
-      stripePriceId: true,
-    },
   });
+
+  // const userSubscription = await prismadb.userSubscription.findUnique({
+  //   where: {
+  //     userId: userId,
+  //   },
+  //   select: {
+  //     stripeSubscriptionId: true,
+  //     stripeCurrentPeriodEnd: true,
+  //     stripeCustomerId: true,
+  //     stripePriceId: true,
+  //   },
+  // });
 
   if (!userSubscription) {
     return false;
   }
 
   const isValid =
-    userSubscription.stripePriceId &&
-    // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-    userSubscription.stripeCurrentPeriodEnd?.getTime()! + DAY_IN_MS >
+    userSubscription.data.subscription?.stripeCurrentPeriodEnd &&
+    parseInt(userSubscription.data.subscription.stripeCurrentPeriodEnd, 10) +
+      DAY_IN_MS >
       Date.now();
 
   return !!isValid;
