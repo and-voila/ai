@@ -27,7 +27,7 @@
     "replicate": "^0.16.1",
     "stripe": "^12.18.0",
     "ui": "workspace:*",
-    "zod": "^3.21.4",
+    "zod": "^3.22.2",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
