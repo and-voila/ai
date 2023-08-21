@@ -381,7 +381,7 @@
   "variable": [
     {
       "type": "string",
-      "value": "https://andvoila.wundergraph.dev",
+      "value": "http://localhost:9991",
       "key": "apiBaseUrl"
     }
   ],

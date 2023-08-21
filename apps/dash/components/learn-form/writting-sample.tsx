@@ -1,7 +1,7 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
 
@@ -10,9 +10,16 @@ import {
   writtingSampleSchema,
   writtingSampleSteps,
 } from '@/app/(dashboard)/learn/constant';
-import { handleWritingAnalysis } from '@/lib/handleInngest';
+import {
+  handleWritingAnalysis,
+  removeWrittingRedis,
+} from '@/lib/handleInngest';
 
-export function WrittingSample() {
+export function WrittingSample({
+  analyzedSample,
+}: {
+  analyzedSample: () => Promise<void>;
+}) {
   const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -27,6 +34,7 @@ export function WrittingSample() {
   });
 
   async function onSubmit(values: WrittingSampleDataType) {
+    await removeWrittingRedis(userId);
     await handleWritingAnalysis({
       userId: userId,
       samples: [
@@ -36,6 +44,7 @@ export function WrittingSample() {
         values.writtingSample4,
       ],
     });
+    await analyzedSample();
   }
 
   const currentStepConfig = writtingSampleSteps[currentStep];
@@ -63,6 +72,12 @@ export function WrittingSample() {
       }
     }
   };
+
+  useEffect(() => {
+    (async () => {
+      await removeWrittingRedis(userId);
+    })();
+  }, [userId]);
 
   return (
     <div className="px-4 lg:px-8">

@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "https://andvoila.wundergraph.dev/operations"
+      "url": "http://localhost:9991/operations"
     }
   ],
   "paths": {

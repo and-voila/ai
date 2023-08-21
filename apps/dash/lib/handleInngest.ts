@@ -2,6 +2,8 @@
 import { Redis } from '@upstash/redis/nodejs';
 import { Inngest } from 'inngest';
 
+import { WritingStyleType } from '@/inngest/functions';
+
 const inngest = new Inngest({
   name: 'Writing assistant',
   eventKey: process.env.INNGEST_EVENT_KEY!,
@@ -9,7 +11,12 @@ const inngest = new Inngest({
 
 type ResponseRedis = {
   status: 'pending' | 'completed';
-  blogPost: string;
+  writtingAnalysis: WritingStyleType;
+  messages?: {
+    id: string;
+    role: 'system' | 'user';
+    content: string;
+  }[];
 };
 
 const redis = new Redis({
@@ -28,7 +35,7 @@ export async function handleWritingAnalysis({
     name: 'app/writing-analysis',
     data: {
       userId: userId,
-      samples: samples,
+      samples: [samples[0]],
     },
   });
 }
@@ -51,5 +58,11 @@ export async function handleBlogPostGenerator({
 
 export async function getUserWrittingRedis(userId: string) {
   const res = (await redis.get(userId)) as ResponseRedis;
+  console.log(res);
+  return res;
+}
+
+export async function removeWrittingRedis(userId: string) {
+  const res = await redis.del(userId);
   return res;
 }

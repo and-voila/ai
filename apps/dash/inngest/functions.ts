@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { Redis } from '@upstash/redis';
+import { nanoid } from 'ai';
 import { Inngest } from 'inngest';
 import { OpenAI } from 'langchain/llms/openai';
 import { StructuredOutputParser } from 'langchain/output_parsers';
@@ -52,8 +53,7 @@ export const inngest = new Inngest({
 
 const redis = new Redis({
   url: 'https://adapted-feline-44562.upstash.io',
-  token:
-    'Aa4SACQgODk1MGFmNWMtZTgwZS00NjgxLTllMjQtOGEwNjY5MTNiYTNlM2NiNjM1ODRjMjgzNDk0OWI4ZWZhMWFiMGVhN2QzYWQ=',
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
 const parserString = (key: string) =>
@@ -103,6 +103,11 @@ const promptGenerateBlogpost = new PromptTemplate({
 type ResponseRedis = {
   status: 'pending' | 'completed';
   writtingAnalysis: WritingStyleType;
+  messages?: {
+    id: string;
+    role: 'system' | 'user';
+    content: string;
+  }[];
 };
 
 // first step analysis four blog posts
@@ -136,7 +141,6 @@ export const createWritingAnalysis = inngest.createFunction(
               sample: sample,
             });
             const response = await llm.call(input);
-            console.log('ANALYSIS', response);
             return response;
           },
         );
@@ -174,13 +178,32 @@ export const createWritingAnalysis = inngest.createFunction(
           }
         } catch (error) {
           console.error('Error parsing JSON:', error);
-          console.log('Problematic JSON sample:', sample);
         }
       });
+
+      const writtingAnalysisString = await Promise.all(
+        Object.entries(writtingAnalysis).map(async ([key, values]) => {
+          const formattedValues = values.map((value) =>
+            value.replace(/ \(excerpt\)/g, ''),
+          );
+          return `${key
+            .replace(/([A-Z])/g, ' $1')
+            .trim()}: ${formattedValues.join(', ')}`;
+        }),
+      );
+
+      const formattedAnalysis = writtingAnalysisString.join('\n\n');
 
       await redis.set(userId, {
         status: 'completed',
         writtingAnalysis: writtingAnalysis,
+        messages: [
+          {
+            id: nanoid(),
+            role: 'system',
+            content: formattedAnalysis,
+          },
+        ],
       });
     });
   },
@@ -224,10 +247,18 @@ export const createBlogPostGenerator = inngest.createFunction(
         idea: idea,
       });
       const response = await llm.call(input);
-      console.log('BLOG POST', response);
+
       await redis.set(userId, {
         status: 'completed',
-        blogPost: response,
+        writtingAnalysis: userData.writtingAnalysis,
+        messages: [
+          ...(userData.messages || []),
+          {
+            id: nanoid(),
+            role: 'system',
+            content: response,
+          },
+        ],
       });
       return response;
     });

@@ -1,4 +1,5 @@
 import { auth } from '@clerk/nextjs';
+import { Redis } from '@upstash/redis';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 import { Configuration, OpenAIApi } from 'openai-edge';
 
@@ -9,6 +10,10 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
+const redis = new Redis({
+  url: 'https://adapted-feline-44562.upstash.io',
+  token: process.env.UPSTASH_REDIS_REST_TOKEN,
+});
 
 export async function POST(req: Request) {
   const json = await req.json();
@@ -33,27 +38,29 @@ export async function POST(req: Request) {
   });
 
   const stream = OpenAIStream(res, {
-    // async onCompletion(completion) {
-    //   const title = json.messages[0].content.substring(0, 100);
-    //   const id = json.id;
-    //   const createdAt = Date.now();
-    //   const path = `/chat/${id}`;
-    //   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-    //   const payload = {
-    //     id,
-    //     title,
-    //     userId,
-    //     createdAt,
-    //     path,
-    //     messages: [
-    //       ...messages,
-    //       {
-    //         content: completion,
-    //         role: 'assistant',
-    //       },
-    //     ],
-    //   };
-    // },
+    async onCompletion(completion) {
+      const title = json.messages[0].content.substring(0, 100);
+      const id = json.id;
+      const createdAt = Date.now();
+      const path = `/chat/${id}`;
+      // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+      const payload = {
+        id,
+        title,
+        userId,
+        createdAt,
+        path,
+        messages: [
+          ...messages,
+          {
+            content: completion,
+            role: 'assistant',
+          },
+        ],
+      };
+
+      await redis.set(userId, payload);
+    },
   });
 
   return new StreamingTextResponse(stream);

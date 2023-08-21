@@ -1,5 +1,5 @@
 
-®‰Ú§ÙÄ%
+È„Ú§ÙÄ%
 Queryprisma_findFirstUserApiLimit>
 prisma_UserApiLimitiduserIdcount	createdAt	updatedAt\
 +prisma_UserApiLimitCountAggregateOutputTypeiduserIdcount	createdAt	updatedAt_all2
@@ -2920,10 +2920,10 @@ type _Row {
     id
   }
 }"•{"type":"object","properties":{"id":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["id"]}*å{"type":"object","properties":{"data":{"type":"object","properties":{"prisma_updateOneUserSubscription":{"type":"object","properties":{"id":{"type":"string"}},"additionalProperties":false,"required":["id"]}},"additionalProperties":false}},"additionalProperties":false}B R Z* b r•{"type":"object","properties":{"id":{"type":"string"},"stripeCustomerId":{"type":["string","null"]},"stripeSubscriptionId":{"type":["string","null"]},"stripePriceId":{"type":["string","null"]},"stripeCurrentPeriodEnd":{"type":["string","null"]}},"additionalProperties":false,"required":["id"]}äupdateSubscription:.
-http://localhost:3000GETPOST*"*(x0B[
-" * 2 :0 J
-H
-?=https://daring-ox-57.clerk.accounts.dev/.well-known/jwks.json   êr
+http://localhost:3000GETPOST*"*(x0B
+" * 2 :0 
+	
+    êr
 (WG_SERVER_URL"http://localhost:99929
 WG_SERVER_HOST"	localhostWG_SERVER_PORT"9992
 WG_LOG_LEVEL"infoz‹
@@ -2932,4 +2932,4 @@ H
 WG_LOG_LEVEL"info2!
 WG_NODE_INTERNAL_PORT"9993:/WG_NODE_INTERNAL_URL"http://localhost:9993BWG_HTTP_PROXYJâ
 WG_OTEL_ENABLED"false9WG_OTEL_EXPORTER_HTTP_ENDPOINT"http://localhost:4318WG_OTEL_SAMPLER"1.0"WG_OTEL_AUTH_TOKENR?
-WG_PROMETHEUS_ENABLED"trueWG_PROMETHEUS_PORT"8881ä   *f1b3a71d2
+WG_PROMETHEUS_ENABLED"trueWG_PROMETHEUS_PORT"8881ä   *e16920d42

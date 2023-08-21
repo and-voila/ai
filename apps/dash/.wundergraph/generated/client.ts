@@ -53,8 +53,8 @@ export const WUNDERGRAPH_S3_ENABLED = false;
 export const WUNDERGRAPH_AUTH_ENABLED = false;
 
 export const defaultClientConfig: ClientConfig = {
-	applicationHash: "f1b3a71d",
-	baseURL: "https://andvoila.wundergraph.dev",
+	applicationHash: "e16920d4",
+	baseURL: "http://localhost:9991",
 	sdkVersion: "0.174.4",
 };
 
