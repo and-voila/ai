@@ -3,4 +3,4 @@ target/
 .next/
 build/
 dist/
-apps/dash/.wundergraph/generated/client.ts
+apps/dash/.wundergraph/generated/
