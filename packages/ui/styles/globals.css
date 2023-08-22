@@ -17,91 +17,90 @@ body,
   height: 100%;
 }
 
-/* And Voila Colors */
-/* CSS HSL 
---slate-950: hsla(224, 71%, 4%, 1);
---slate-900: hsla(221, 40%, 8%, 1);
---slate-800: hsla(214, 28%, 16%, 1);
---slate-500: hsla(219, 9%, 44%, 1);
---slate-400: hsla(218, 11%, 65%, 1);
---slate-200 hsla(220, 13%, 91%, 1);
---slate-100: hsla(220, 14%, 96%, 1);
---slate-50: hsla(210, 20%, 98%, 1);
+/* And Voila Colors
+--rich-black-950: hsla(240, 90%, 4%, 1);
+--oxford-blue-900: hsla(214, 95%, 6%, 1);
+--deep-blue-800: hsla(214, 94%, 8%, 1);
+--slate-gray-500: hsla(225, 14%, 48%, 1);
+--cadet-gray-400: hsla(224, 14%, 68%, 1);
+--french-gray-200: hsla(220, 15%, 84%, 1);
+--platinum-100: hsla(220, 15%, 88%, 1);
+--antiflash-white-50: hsla(220, 14%, 96%, 1);
 --white: hsla(0, 0%, 100%, 1);
---brand: hsla(238, 98%, 51%, 1);
-*/
+--brabd: hsla(238, 98%, 51%, 1);
+ */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%; /* white */
+    --foreground: 240, 90%, 4%; /* 950 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* white */
+    --card-foreground: 240, 90%, 4%; /* 950 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* white */
+    --popover-foreground: 240, 90%, 4%; /* 950 */
 
-    --primary: 238, 98%, 51%, 1;
-    --primary-foreground: 210 40% 98%;
+    --primary: 238, 98%, 51%; /* brand */
+    --primary-foreground: 220, 14%, 96%; /* 50 */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220, 15%, 88%; /* 100 */
+    --secondary-foreground: 214, 95%, 6%; /* 900 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220, 15%, 88%; /* 100 */
+    --muted-foreground: 225, 14%, 48%; /* 500 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220, 15%, 88%; /* 100 */
+    --accent-foreground: 214, 95%, 6%; /* 900 */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 220, 14%, 96%; /* 50 */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 220, 15%, 84%; /* 200 */
+    --input: 220, 15%, 84%; /* 200 */
 
-    --ring: 238, 98%, 51%, 1;
+    --ring: 238, 98%, 51%; /* brand */
 
     --radius: 0.5rem;
 
-    --brand: 238, 98%, 51%, 1;
+    --brand: 238, 98%, 51%; /* brand */
 
-    --sidebar: 229, 81%, 4%, 1;
+    --sidebar: 220, 14%, 96%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 240, 90%, 4%; /* 950 */
+    --foreground: 220, 14%, 96%; /* 50 */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240, 90%, 4%; /* 950 */
+    --card-foreground: 220, 14%, 96%; /* 50 */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240, 90%, 4%; /* 950 */
+    --popover-foreground: 220, 14%, 96%; /* 50 */
 
-    --primary: 238, 98%, 51%, 1;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 238, 98%, 51%; /* brand */
+    --primary-foreground: 214, 95%, 6%; /* 900 */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 214, 94%, 8%; /* 800 */
+    --secondary-foreground: 220, 14%, 96%; /* 50 */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 214, 94%, 8%; /* 800 */
+    --muted-foreground: 224, 14%, 68%; /* 400 */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 214, 94%, 8%; /* 800 */
+    --accent-foreground: 220, 14%, 96%; /* 50 */
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 220, 14%, 96%; /* 50 */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 214, 94%, 8%; /* 800 */
+    --input: 214, 94%, 8%; /* 800 */
 
-    --ring: 238, 98%, 51%, 1;
+    --ring: 238, 98%, 51%; /* brand */
 
-    --brand: 238, 98%, 51%, 1;
+    --brand: 238, 98%, 51%; /* brand */
 
-    --sidebar: 229, 81%, 4%, 1;
+    --sidebar: 240, 90%, 2%;
   }
 }
 
