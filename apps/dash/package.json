@@ -20,6 +20,7 @@
     "@wundergraph/sdk": "^0.174.4",
     "ai": "^2.2.2",
     "axios": "^1.4.0",
+    "framer-motion": "^10.16.0",
     "inngest": "^2.5.0",
     "langchain": "^0.0.130",
     "next": "^13.4.1",
