@@ -1,9 +1,9 @@
-mutation UpdateApiLimit($id: String!, $count: Int!) {
+mutation UpdateApiLimit($userId: String!, $count: Int!) {
   prisma_updateOneUserApiLimit(
-    where: { id: $id }
+    where: { userId: $userId }
     data: { count: { set: $count } }
   ) {
-    id
+    userId
     count
   }
 }
