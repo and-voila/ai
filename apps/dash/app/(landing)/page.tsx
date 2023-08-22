@@ -1,29 +1,25 @@
-import Link from 'next/link';
-import { Button } from 'ui';
+import { Container } from '@/components/landing/container';
+import { GridPattern } from '@/components/landing/grid-pattern';
+import LandingFooter from '@/components/landing/landing-footer';
+import LandingHero from '@/components/landing/landing-hero';
+import { Logo, Logomark } from '@/components/logo';
 
-const LandingPage = () => {
+export default async function DashboardLanding(): Promise<React.ReactElement | null> {
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="mt-10 text-center font-display text-2xl font-semibold text-foreground">
-          Dashboard
-        </h2>
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <div className="flex justify-center space-x-4">
-            <Link href="/sign-in">
-              <Button>Sign In</Button>
-            </Link>
-            <Link href="/sign-up">
-              <Button>Sign Up</Button>
-            </Link>
-          </div>
-          <p className="mt-10 text-center text-sm text-muted-foreground">
-            This is what building in public looks like.
-          </p>
+    <>
+      <Container className="mt-24 sm:mt-32 md:mt-56">
+        <div className="relative mb-10 mr-2 h-8 w-8">
+          <Logomark className="h-8 w-8 sm:hidden" />
+          <Logo className="hidden h-8 w-auto sm:block " fillOnHover />
         </div>
-      </div>
-    </div>
+        <GridPattern
+          className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-slate-100 stroke-slate-100 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] dark:fill-primary dark:stroke-slate-500 dark:opacity-10"
+          yOffset={-96}
+          interactive
+        />
+        <LandingHero />
+        <LandingFooter />
+      </Container>
+    </>
   );
-};
-
-export default LandingPage;
+}
