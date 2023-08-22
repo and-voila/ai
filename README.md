@@ -24,7 +24,6 @@ We've moved to a monorepo using [Turborepo](https://turborepo.com) to organize o
 
 - [Next JS](https://nextjs.org): The heartbeat powering fast, seamless user experiences.
 - [TypeScript](https://www.typescriptlang.org): Our safety net, ensuring robust code through strong typing.
-- [Drizzle ORM](https://orm.drizzle.team): SQL's best buds in TypeScript, bringing type safety to our databases.
 - [Wundergraph](https://wundergraph.com): Streamlining workflows with its next-gen BFF framework, making APIs a breeze.
 - [Upstash](https://upstash.com): The Serverless Data Platform of the future, with speed of a hare and cost of a tortoise.
 - [Neon Serverless Postgres](https://neon.tech): Postgres goes serverless with autoscaling and branching possibilities.
