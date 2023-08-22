@@ -19,8 +19,8 @@ body,
 
 /* And Voila Colors
 --rich-black-950: hsla(240, 90%, 4%, 1);
---oxford-blue-900: hsla(214, 95%, 8%, 1);
---deep-blue-800: hsla(214, 94%, 12%, 1);
+--oxford-blue-900: hsla(214, 95%, 6%, 1);
+--deep-blue-800: hsla(214, 94%, 8%, 1);
 --slate-gray-500: hsla(225, 14%, 48%, 1);
 --cadet-gray-400: hsla(224, 14%, 68%, 1);
 --french-gray-200: hsla(220, 15%, 84%, 1);
@@ -45,13 +45,13 @@ body,
     --primary-foreground: 220, 14%, 96%; /* 50 */
 
     --secondary: 220, 15%, 88%; /* 100 */
-    --secondary-foreground: 214, 95%, 8%; /* 900 */
+    --secondary-foreground: 214, 95%, 6%; /* 900 */
 
     --muted: 220, 15%, 88%; /* 100 */
     --muted-foreground: 225, 14%, 48%; /* 500 */
 
     --accent: 220, 15%, 88%; /* 100 */
-    --accent-foreground: 214, 95%, 8%; /* 900 */
+    --accent-foreground: 214, 95%, 6%; /* 900 */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 220, 14%, 96%; /* 50 */
@@ -79,28 +79,28 @@ body,
     --popover-foreground: 220, 14%, 96%; /* 50 */
 
     --primary: 238, 98%, 51%; /* brand */
-    --primary-foreground: 214, 95%, 8%; /* 900 */
+    --primary-foreground: 214, 95%, 6%; /* 900 */
 
-    --secondary: 214, 94%, 12%; /* 800 */
+    --secondary: 214, 94%, 8%; /* 800 */
     --secondary-foreground: 220, 14%, 96%; /* 50 */
 
-    --muted: 214, 94%, 12%; /* 800 */
+    --muted: 214, 94%, 8%; /* 800 */
     --muted-foreground: 224, 14%, 68%; /* 400 */
 
-    --accent: 214, 94%, 12%; /* 800 */
+    --accent: 214, 94%, 8%; /* 800 */
     --accent-foreground: 220, 14%, 96%; /* 50 */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 220, 14%, 96%; /* 50 */
 
-    --border: 214, 94%, 12%; /* 800 */
-    --input: 214, 94%, 12%; /* 800 */
+    --border: 214, 94%, 8%; /* 800 */
+    --input: 214, 94%, 8%; /* 800 */
 
     --ring: 238, 98%, 51%; /* brand */
 
     --brand: 238, 98%, 51%; /* brand */
 
-    --sidebar: 0, 0%, 0%;
+    --sidebar: 240, 90%, 2%;
   }
 }
 
