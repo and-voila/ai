@@ -58,6 +58,7 @@ export async function handleBlogPostGenerator({
 
 export async function getUserWrittingRedis(userId: string) {
   const res = (await redis.get(userId)) as ResponseRedis;
+  // eslint-disable-next-line no-console
   console.log(res);
   return res;
 }

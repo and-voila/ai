@@ -1,7 +1,7 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { Message } from 'ai';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Avatar, Button, cn, Separator } from 'ui';
 
 import { WritingStyleType } from '@/inngest/functions';
@@ -157,10 +157,6 @@ export function ChatList() {
       }
     }
   }, [userId, processedMessageIds]);
-
-  useEffect(() => {
-    analyzedSample();
-  }, [analyzedSample]);
 
   return (
     <div className="relative mx-auto px-4">
