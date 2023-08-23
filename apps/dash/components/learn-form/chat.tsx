@@ -5,9 +5,9 @@ import { Avatar, cn, Separator } from 'ui';
 
 import { Logomark } from '../logo';
 import { MemoizedReactMarkdown } from '../markdown';
-import GenerateBlog from './generate-blog';
-import { WrittingSample } from './writting-sample';
 import ConfirmComponent from './confirm';
+import GenerateBlog from './generate-blog';
+import { WritingSample } from './writing-sample';
 
 export interface ChatMessageProps {
   message: Message;
@@ -77,7 +77,7 @@ export function ChatList() {
   function renderStep() {
     switch (step) {
       case 0:
-        return <WrittingSample setStep={setStep} />;
+        return <WritingSample setStep={setStep} />;
       case 1:
         return (
           <ConfirmComponent

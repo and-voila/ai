@@ -6,7 +6,7 @@ import { Button } from 'ui';
 
 import { WritingStyleType } from '@/inngest/functions';
 import {
-  getUserWrittingRedis,
+  getUserWritingRedis,
   handleBlogPostGenerator,
 } from '@/lib/handleInngest';
 
@@ -35,7 +35,7 @@ const generateOptions = [
 
 type ResponseRedis = {
   status: 'pending' | 'completed';
-  writtingAnalysis: WritingStyleType;
+  writingAnalysis: WritingStyleType;
   messages?: {
     id: string;
     role: 'system' | 'user';
@@ -56,7 +56,7 @@ function GenerateBlog({
     let response: ResponseRedis | null = null;
 
     do {
-      const res = await getUserWrittingRedis(userId);
+      const res = await getUserWritingRedis(userId);
       response = res; // Update the response based on API result
 
       if (response?.status === 'pending') {

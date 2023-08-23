@@ -6,13 +6,13 @@ import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
 
 import {
-  WrittingSampleDataType,
-  writtingSampleSchema,
-  writtingSampleSteps,
+  WritingSampleDataType,
+  writingSampleSchema,
+  writingSampleSteps,
 } from '@/app/(dashboard)/learn/constant';
 import { handleWritingAnalysis } from '@/lib/handleInngest';
 
-export function WrittingSample({
+export function WritingSample({
   setStep,
 }: {
   setStep: Dispatch<SetStateAction<number>>;
@@ -20,30 +20,30 @@ export function WrittingSample({
   const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
 
-  const form = useForm<WrittingSampleDataType>({
-    resolver: valibotResolver(writtingSampleSchema),
+  const form = useForm<WritingSampleDataType>({
+    resolver: valibotResolver(writingSampleSchema),
     defaultValues: {
-      writtingSample1: '',
-      writtingSample2: '',
-      writtingSample3: '',
-      writtingSample4: '',
+      writingSample1: '',
+      writingSample2: '',
+      writingSample3: '',
+      writingSample4: '',
     },
   });
 
-  async function onSubmit(values: WrittingSampleDataType) {
+  async function onSubmit(values: WritingSampleDataType) {
     await handleWritingAnalysis({
       userId: userId,
       samples: [
-        values.writtingSample1,
-        values.writtingSample2,
-        values.writtingSample3,
-        values.writtingSample4,
+        values.writingSample1,
+        values.writingSample2,
+        values.writingSample3,
+        values.writingSample4,
       ],
     });
     setStep((prevStep) => prevStep + 1);
   }
 
-  const currentStepConfig = writtingSampleSteps[currentStep];
+  const currentStepConfig = writingSampleSteps[currentStep];
 
   const moveToNextStep = async () => {
     const fieldName = currentStepConfig.fieldName;
@@ -52,8 +52,8 @@ export function WrittingSample({
     if (isValid) {
       form.setValue(fieldName, form.getValues(fieldName));
 
-      if (currentStep < writtingSampleSteps.length - 1) {
-        form.setValue(writtingSampleSteps[currentStep + 1].fieldName, '');
+      if (currentStep < writingSampleSteps.length - 1) {
+        form.setValue(writingSampleSteps[currentStep + 1].fieldName, '');
         setCurrentStep((prevStep) => prevStep + 1);
       }
     }
@@ -67,7 +67,7 @@ export function WrittingSample({
           onSubmit={form.handleSubmit(onSubmit)}
           className="grid w-full grid-cols-12 gap-2 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6"
         >
-          {writtingSampleSteps.map((step, index) => (
+          {writingSampleSteps.map((step, index) => (
             <div
               key={step.fieldName}
               className={cn(
@@ -93,7 +93,7 @@ export function WrittingSample({
             </div>
           ))}
 
-          {currentStep === writtingSampleSteps.length - 1 ? (
+          {currentStep === writingSampleSteps.length - 1 ? (
             <Button className="col-span-12 w-full lg:col-span-2 " type="submit">
               Submit
             </Button>

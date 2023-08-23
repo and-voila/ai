@@ -4,11 +4,11 @@ import React, { Dispatch, SetStateAction } from 'react';
 import { Button } from 'ui';
 
 import { WritingStyleType } from '@/inngest/functions';
-import { getUserWrittingRedis } from '@/lib/handleInngest';
+import { getUserWritingRedis } from '@/lib/handleInngest';
 
 type ResponseRedis = {
   status: 'pending' | 'completed';
-  writtingAnalysis: WritingStyleType;
+  writingAnalysis: WritingStyleType;
   messages?: {
     id: string;
     role: 'system' | 'user';
@@ -28,7 +28,7 @@ const ConfirmComponent = ({
     let response: ResponseRedis | null = null;
 
     do {
-      const res = await getUserWrittingRedis(userId);
+      const res = await getUserWritingRedis(userId);
       response = res; // Update the response based on API result
 
       if (response?.status === 'pending') {
