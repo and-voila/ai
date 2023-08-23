@@ -121,11 +121,11 @@ importers:
         specifier: ^1.22.0
         version: 1.22.0
       '@wundergraph/nextjs':
-        specifier: ^0.13.9
-        version: 0.13.9(@wundergraph/sdk@0.174.4)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1)
+        specifier: ^0.13.10
+        version: 0.13.10(@wundergraph/sdk@0.174.5)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1)
       '@wundergraph/sdk':
-        specifier: ^0.174.4
-        version: 0.174.4(react-native@0.72.4)
+        specifier: ^0.174.5
+        version: 0.174.5(react-native@0.72.4)
       ai:
         specifier: ^2.2.8
         version: 2.2.8(react@18.2.0)(solid-js@1.7.11)(svelte@4.2.0)(vue@3.3.4)
@@ -3032,7 +3032,7 @@ packages:
       '@types/long': 4.0.2
       lodash.camelcase: 4.3.0
       long: 4.0.0
-      protobufjs: 7.2.4
+      protobufjs: 7.2.5
       yargs: 17.7.2
     dev: false
 
@@ -3792,7 +3792,7 @@ packages:
       '@opentelemetry/api': 1.4.1
       '@opentelemetry/core': 1.13.0(@opentelemetry/api@1.4.1)
       '@opentelemetry/otlp-exporter-base': 0.39.1(@opentelemetry/api@1.4.1)
-      protobufjs: 7.2.4
+      protobufjs: 7.2.5
     dev: false
 
   /@opentelemetry/otlp-proto-exporter-base@0.39.1(@opentelemetry/api@1.4.1):
@@ -6027,8 +6027,8 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /@wundergraph/nextjs@0.13.9(@wundergraph/sdk@0.174.4)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1):
-    resolution: {integrity: sha512-GUHY7/bWrFHnCoe6Yks4VJLE/TQCG/AQ138HWdvn3brxTRexm8CIonGHRZPpLYExjDBjRJBbIUVsXzurG00w3Q==}
+  /@wundergraph/nextjs@0.13.10(@wundergraph/sdk@0.174.5)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1):
+    resolution: {integrity: sha512-NzjU7wJzl4/GO61z7o84Mg0CjCuCLkWI2FmjrH5D9o48R58OfWGv36vBd76CQ5n2g+MKMslvhJo8cusZEnRlOA==}
     peerDependencies:
       '@wundergraph/sdk': '>=0.91.0'
       next: ^12.1.0 || ^13.0.0
@@ -6036,9 +6036,9 @@ packages:
       react-dom: ^16.8.0 || ^17.0.2 || ^18.0.0
       swr: ^2.2.0
     dependencies:
-      '@wundergraph/protobuf': 0.118.1
-      '@wundergraph/sdk': 0.174.4(react-native@0.72.4)
-      '@wundergraph/swr': 0.17.9(@wundergraph/sdk@0.174.4)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1)
+      '@wundergraph/protobuf': 0.118.2
+      '@wundergraph/sdk': 0.174.5(react-native@0.72.4)
+      '@wundergraph/swr': 0.17.10(@wundergraph/sdk@0.174.5)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1)
       handlebars: 4.7.8
       next: 13.4.19(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       object-hash: 2.2.0
@@ -6062,16 +6062,16 @@ packages:
       type-fest: 3.13.1
     dev: false
 
-  /@wundergraph/protobuf@0.118.1:
-    resolution: {integrity: sha512-05HNB3/ZSH75IWtHDX8fdWFL6tM04OwfnVCcP5Ohi7OX8KeXcBaQW79GnkyjYttfSs5daduYNVoFLljh6G6YbQ==}
+  /@wundergraph/protobuf@0.118.2:
+    resolution: {integrity: sha512-tW2tevRuGsG1GEL5bKSFta83eELmrhv3fFfMhXUDR/Wn+uZz3Qnnzxt0mbcKyv5gNgsVMC7gAGC9mcWa83PL2A==}
     dependencies:
       long: 5.2.3
-      protobufjs: 7.2.4
+      protobufjs: 7.2.5
       ts-proto: 1.156.7
     dev: false
 
-  /@wundergraph/sdk@0.174.4(react-native@0.72.4):
-    resolution: {integrity: sha512-KPEKG9v+70a0vg2dz0Ya0uVKPADjMyaJuHzScptePpKs71Gb0RlDvC5wPosZ+ZLBIX1Ervd9cgP8SLMWISopfA==}
+  /@wundergraph/sdk@0.174.5(react-native@0.72.4):
+    resolution: {integrity: sha512-LApS/xJsEQrWTaq/NFaVKg2PaZL1a67bvt+SC5GJpBkFi3dOyD8xGjS0H23xfGl+0pKMgrx/0s+//GxErUqZGQ==}
     hasBin: true
     dependencies:
       '@fastify/formbody': 7.4.0
@@ -6095,9 +6095,9 @@ packages:
       '@prisma/generator-helper': 3.15.2
       '@whatwg-node/fetch': 0.9.9
       '@wundergraph/orm': 0.3.1
-      '@wundergraph/protobuf': 0.118.1
+      '@wundergraph/protobuf': 0.118.2
       '@wundergraph/straightforward': 4.2.5
-      '@wundergraph/wunderctl': 0.169.3
+      '@wundergraph/wunderctl': 0.170.0
       axios: 0.26.1(debug@4.3.4)
       axios-retry: 3.6.0
       close-with-grace: 1.2.0
@@ -6156,23 +6156,23 @@ packages:
       - supports-color
     dev: false
 
-  /@wundergraph/swr@0.17.9(@wundergraph/sdk@0.174.4)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1):
-    resolution: {integrity: sha512-SLvXObXhxxmjXxrRyp8g3PnGXwpUBDDil078luAw9tJ9/xMRmaHIp8yKl612HXOuuPfoxKa7jKWddLeL9PoHwQ==}
+  /@wundergraph/swr@0.17.10(@wundergraph/sdk@0.174.5)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1):
+    resolution: {integrity: sha512-WuQt9K57uuL2KZ2fA98DLoM+1H4zkUK7OGdCfcCL+P6lQkfg34XIvJOeQcSS6Q6cSh/kjA4QlMo3aCkzpH/lAw==}
     peerDependencies:
       '@wundergraph/sdk': '>=0.110.0'
       react: ^16.8.0 || ^17.0.2 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.2 || ^18.0.0
       swr: ^2.2.0
     dependencies:
-      '@wundergraph/sdk': 0.174.4(react-native@0.72.4)
+      '@wundergraph/sdk': 0.174.5(react-native@0.72.4)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-ssr-prepass: 1.5.0(react@18.2.0)
       swr: 2.2.1(react@18.2.0)
     dev: false
 
-  /@wundergraph/wunderctl@0.169.3:
-    resolution: {integrity: sha512-uraPz0LQeQYFqWu+yGoKofNcEGo+hov2ycWg4Bco7t4mZA2U93EoeJvrPDiLhWPxai9o/kLnWbpO9Wp7jdC4oA==}
+  /@wundergraph/wunderctl@0.170.0:
+    resolution: {integrity: sha512-N/cAZZ2G55eLZQDDWx+HgGXLj++3fPukzUoz2D4KPw/uPsTYgGfWIo2+4BPLiJ0KMJD6+DaCeEBXmMwy3M1Jog==}
     hasBin: true
     requiresBuild: true
     dependencies:
@@ -14982,6 +14982,25 @@ packages:
       long: 5.2.3
     dev: false
 
+  /protobufjs@7.2.5:
+    resolution: {integrity: sha512-gGXRSXvxQ7UiPgfw8gevrfRWcTlSbOFg+p/N+JVJEK5VhueL2miT6qTymqAmjr1Q5WbOCyJbyrk6JfWKwlFn6A==}
+    engines: {node: '>=12.0.0'}
+    requiresBuild: true
+    dependencies:
+      '@protobufjs/aspromise': 1.1.2
+      '@protobufjs/base64': 1.1.2
+      '@protobufjs/codegen': 2.0.4
+      '@protobufjs/eventemitter': 1.1.0
+      '@protobufjs/fetch': 1.1.0
+      '@protobufjs/float': 1.0.2
+      '@protobufjs/inquire': 1.1.0
+      '@protobufjs/path': 1.1.2
+      '@protobufjs/pool': 1.1.0
+      '@protobufjs/utf8': 1.1.0
+      '@types/node': 20.5.3
+      long: 5.2.3
+    dev: false
+
   /protocols@2.0.1:
     resolution: {integrity: sha512-/XJ368cyBJ7fzLMwLKv1e4vLxOju2MNAIokcr7meSaNcVbWz/CPcW22cP04mwxOErdA5mwjA8Q6w/cdAQxVn7Q==}
     dev: false
@@ -17085,7 +17104,7 @@ packages:
     resolution: {integrity: sha512-TYyJ7+H+7Jsqawdv+mfsEpZPTIj9siDHS6EMCzG/z3b/PZiphsX+mWtqFfFVe5/N0Th6V3elK9lQqjnrgTOfrg==}
     dependencies:
       long: 5.2.3
-      protobufjs: 7.2.4
+      protobufjs: 7.2.5
     dev: false
 
   /ts-proto@1.156.7:
@@ -17093,7 +17112,7 @@ packages:
     hasBin: true
     dependencies:
       case-anything: 2.1.13
-      protobufjs: 7.2.4
+      protobufjs: 7.2.5
       ts-poet: 6.5.0
       ts-proto-descriptors: 1.15.0
     dev: false
