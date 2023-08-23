@@ -35,7 +35,7 @@ export async function handleWritingAnalysis({
     name: 'app/writing-analysis',
     data: {
       userId: userId,
-      samples: [samples[0]],
+      samples: samples,
     },
   });
 }
