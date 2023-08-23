@@ -207,12 +207,6 @@ export const createWritingAnalysis = inngest.createFunction(
         ],
       });
     });
-
-    await step.run('start blog', async () => {
-      await redis.set(userId, {
-        status: 'pending',
-      });
-    });
   },
 );
 
@@ -230,14 +224,12 @@ export const createBlogPostGenerator = inngest.createFunction(
       idea: string;
     };
 
-    await step.run('start analysis', async () => {
-      await redis.set(userId, {
-        status: 'pending',
-      });
-    });
-
     const userData = await step.run('get user data', async () => {
       const res = (await redis.get(userId)) as ResponseRedis;
+      await redis.set(userId, {
+        status: 'pending',
+        messages: res.messages,
+      });
       return res;
     });
 
@@ -254,6 +246,8 @@ export const createBlogPostGenerator = inngest.createFunction(
 
     await step.run('generate blog post', async () => {
       const formattedPrompt = writingAnalysis.join('\n\n');
+
+      console.log('writtingstyle', formattedPrompt);
 
       const input = await promptGenerateBlogpost.format({
         writingstyle: formattedPrompt,

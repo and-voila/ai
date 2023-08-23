@@ -54,10 +54,13 @@ function GenerateBlog({
 
   async function analyzedSample() {
     let response: ResponseRedis | null = null;
+    await new Promise((resolve) => setTimeout(resolve, 10000));
 
     do {
       const res = await getUserWritingRedis(userId);
       response = res; // Update the response based on API result
+      // eslint-disable-next-line no-console
+      console.log(response);
 
       if (response?.status === 'pending') {
         await new Promise((resolve) => setTimeout(resolve, 10000));
