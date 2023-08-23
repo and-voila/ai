@@ -1,0 +1,5 @@
+mutation DeleteSubscription($userId: String!) {
+  prisma_deleteOneUserSubscription(where: { userId: $userId }) {
+    userId
+  }
+}

@@ -1,0 +1,10 @@
+query GetUserSubscription($userId: String!) {
+  subscription: prisma_findUniqueUserSubscription(where: { userId: $userId }) {
+    id
+    userId
+    stripeCustomerId
+    stripeSubscriptionId
+    stripePriceId
+    stripeCurrentPeriodEnd
+  }
+}

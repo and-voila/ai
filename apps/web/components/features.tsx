@@ -29,19 +29,21 @@ const Features: React.FC<FeaturesProps> = ({ section }) => {
         title={section.title}
         className={section.className}
       >
-        {section.intro.map((paragraph, index) => (
-          <p
-            key={index}
-            className={`text-muted-foreground ${index > 0 ? 'mt-6' : ''}`}
-          >
-            {paragraph}
-          </p>
-        ))}
+        <React.Suspense fallback={<div>loading...</div>}>
+          {section.intro.map((paragraph, index) => (
+            <p
+              key={index}
+              className={`text-muted-foreground ${index > 0 ? 'mt-6' : ''}`}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </React.Suspense>
       </SectionIntro>
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
           <div className="my-24 flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
-            <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+            <FadeIn className="w-[22rem] flex-none md:w-[33.75rem] lg:w-[45rem]">
               <StylizedImage
                 alt="An illustration like Where's Waldo to find the cute Shih Tzu dog."
                 src="/images/home-features.jpg"

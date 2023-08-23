@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { MagicWandIcon } from 'ui';
 
 import Cta from '@/components/cta';
@@ -47,29 +48,30 @@ const featuresSection = {
 const LandingPage = () => {
   return (
     <div className="h-full">
-      <LandingHero />
-      <AiPartners />
-      <CaseStudies />
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{
-          name: 'Rebekah Radice',
-          logo: '/images/rebekah-radice.jpg',
-        }}
-      >
-        I love it so much that I begged them to take my money to invest. Total.
-        Game. Changer.
-      </Testimonial>
-
-      <Features section={featuresSection} />
-      <Cta
-        title="Power up your creativity"
-        text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
-        linkHref="/sign-up"
-        buttonText="Sign Up Free"
-        buttonIcon={<MagicWandIcon />}
-        footerText="No credit card required"
-      />
+      <Suspense fallback={<div>getting rebekah attention</div>}>
+        <LandingHero />
+        <AiPartners />
+        <CaseStudies />
+        <Testimonial
+          className="mt-24 sm:mt-32 lg:mt-40"
+          client={{
+            name: 'Rebekah Radice',
+            logo: '/images/rebekah-radice.jpg',
+          }}
+        >
+          I love it so much that I begged them to take my money to invest.
+          Total. Game. Changer.
+        </Testimonial>
+        <Features section={featuresSection} />
+        <Cta
+          title="Power up your creativity"
+          text="See firsthand how And Voila AI can enhance your creative process. Sign up now and try for yourself."
+          linkHref="https://app.andvoila.ai/sign-up"
+          buttonText="Sign Up Free"
+          buttonIcon={<MagicWandIcon />}
+          footerText="No credit card required"
+        />
+      </Suspense>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 'use client';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useId, useState } from 'react';
+
+import { valibotResolver } from '@hookform/resolvers/valibot';
+import { Suspense, useId, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   Button,
@@ -12,40 +13,11 @@ import {
   Input,
   Label,
 } from 'ui';
-import { z } from 'zod';
 
+import { ContactFormDataType, contactFormSchema } from '@/app/contact/constant';
 import { FadeIn } from '@/components/fade-in';
+import { FormLoader } from '@/components/loaders';
 import ReactTurnstile from '@/components/react-turnstile';
-
-const schema = z.object({
-  email: z
-    .string({
-      required_error: 'Email is required',
-    })
-    .nonempty('Email is required')
-    .email('Invalid email address'),
-  name: z
-    .string({
-      required_error: 'Name is required',
-    })
-    .nonempty('Name is required'),
-  company: z
-    .string({
-      required_error: 'Company name is required',
-    })
-    .nonempty('Company name is required'),
-  phone: z.string().refine((val) => {
-    const phoneRegex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-    return phoneRegex.test(val);
-  }),
-  message: z
-    .string({
-      required_error: 'Message is required',
-    })
-    .nonempty('Message is required'),
-});
-
-type ContactFormFields = z.infer<typeof schema>;
 
 type TextInputProps = {
   label: string;
@@ -81,114 +53,131 @@ function TextInput({ label, className, error, ...props }: TextInputProps) {
 }
 
 export default function ContactForm() {
-  const form = useForm<ContactFormFields>({
-    resolver: zodResolver(schema),
+  const form = useForm<ContactFormDataType>({
+    resolver: valibotResolver(contactFormSchema),
   });
   const [verified, setVerified] = useState<boolean>(false);
+  const [messageSent, setMessageSent] = useState<boolean>(false);
 
-  async function onSubmit(data: ContactFormFields) {
-    // eslint-disable-next-line no-console
-    console.log(`HEY: ${data.name}`);
+  async function onSubmit(data: ContactFormDataType) {
+    await fetch('/api/slack-message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        message: data.message,
+        phone: data.phone,
+      }),
+    }).then(() => {
+      setMessageSent(true);
+      form.reset();
+    });
   }
 
   return (
     <FadeIn className="lg:order-last">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
-          <h2 className="font-display text-lg font-semibold text-foreground lg:text-xl">
-            Drop us a line
-          </h2>
-          <div className="isolate mt-6 -space-y-px rounded-md">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Name"
-                      {...field}
-                      error={form.formState.errors.name?.message}
-                      className="!rounded-t-2xl"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="E-mail"
-                      {...field}
-                      error={form.formState.errors.email?.message}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="company"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Company"
-                      {...field}
-                      error={form.formState.errors.company?.message}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Phone"
-                      {...field}
-                      error={form.formState.errors.phone?.message}
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <TextInput
-                      label="Message"
-                      {...field}
-                      error={form.formState.errors.message?.message}
-                      className="!rounded-b-2xl"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
+      <Suspense fallback={<FormLoader />}>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
+            <h2 className="font-display text-lg font-semibold text-foreground lg:text-xl">
+              Drop us a line
+            </h2>
+            <div className="isolate mt-6 -space-y-px rounded-md">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Name"
+                        {...field}
+                        error={form.formState.errors.name?.message}
+                        className="!rounded-t-2xl"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="E-mail"
+                        {...field}
+                        error={form.formState.errors.email?.message}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Company"
+                        {...field}
+                        error={form.formState.errors.company?.message}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Phone"
+                        {...field}
+                        error={form.formState.errors.phone?.message}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <TextInput
+                        label="Message"
+                        {...field}
+                        error={form.formState.errors.message?.message}
+                        className="!rounded-b-2xl"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
 
-          <ReactTurnstile setVerified={setVerified} />
-          <Button
-            variant="default"
-            disabled={verified == false}
-            type="submit"
-            className="mt-10"
-          >
-            Contact And Voila
-          </Button>
-        </form>
-      </Form>
+            <ReactTurnstile setVerified={setVerified} />
+            <Button
+              variant="default"
+              disabled={verified == false}
+              type="submit"
+              className="mt-10"
+            >
+              {messageSent ? 'Message sent!' : 'Send message'}
+            </Button>
+          </form>
+        </Form>
+      </Suspense>
     </FadeIn>
   );
 }

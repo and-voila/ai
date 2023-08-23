@@ -3,17 +3,16 @@ module.exports = {
   plugins: [
     {
       rules: {
-        'linear-issue-number': (parsed) => {
+        'github-issue-number': (parsed) => {
           const { header, body, footer } = parsed;
-          const regex =
-            /(close[sd]?|fix(es|ed)?|resolve[sd]?|complete[sd]?)?\s*AV-\d{1,7}/i;
+          const regex = /(#\d{1,6})/i;
           const isValid =
             regex.test(header) || regex.test(body) || regex.test(footer);
 
           if (!isValid) {
             return [
               false,
-              "Message must include a Linear issue number with any of the magic words in the format 'AV-#######', 'Close AV-#######', 'Fix AV-#######', 'Resolve AV-#######', 'Complete AV-#######', or simply 'AV-#######'",
+              "Message must include a GitHub issue number with a hash sign plus up to a 6-digit issue key, e.g. '#123456'",
             ];
           }
           return [true, ''];
@@ -32,7 +31,7 @@ module.exports = {
     'subject-case': [2, 'always', 'lower-case'],
     'body-max-line-length': [2, 'always', Infinity],
     'body-leading-blank': [2, 'always'],
-    'linear-issue-number': [2, 'always'],
+    'github-issue-number': [2, 'always'],
     'footer-leading-blank': [2, 'always'],
   },
 };

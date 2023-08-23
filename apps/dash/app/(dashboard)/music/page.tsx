@@ -1,6 +1,6 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
+import { valibotResolver } from '@hookform/resolvers/valibot';
 import axios from 'axios';
 import { Empty } from 'components/empty';
 import { Heading } from 'components/heading';
@@ -14,17 +14,16 @@ import { ExclamationTriangleIcon, SpeakerLoudIcon } from 'ui';
 import { Button } from 'ui';
 import { Form, FormControl, FormField, FormItem } from 'ui';
 import { Input } from 'ui';
-import * as z from 'zod';
 
-import { formSchema } from './constants';
+import { MusicFormDataType, musicFormSchema } from './constants';
 
 const MusicPage = () => {
   const proModal = useProModal();
   const router = useRouter();
   const [music, setMusic] = useState<string>();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<MusicFormDataType>({
+    resolver: valibotResolver(musicFormSchema),
     defaultValues: {
       prompt: '',
     },
@@ -33,7 +32,7 @@ const MusicPage = () => {
   const isLoading = form.formState.isSubmitting;
 
   // eslint-disable-next-line space-before-function-paren
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: MusicFormDataType) => {
     try {
       setMusic(undefined);
 
@@ -85,6 +84,7 @@ const MusicPage = () => {
             <Button
               className="col-span-12 w-full lg:col-span-2 "
               disabled={isLoading}
+              type="submit"
             >
               Generate
             </Button>
@@ -92,7 +92,10 @@ const MusicPage = () => {
           <div className="flex items-center px-6 py-3 text-xs text-muted-foreground">
             <ExclamationTriangleIcon className="mr-2 h-3 w-3 text-muted-foreground" />
             AI can compose catchy jingles but can&apos;t guarantee a
-            chart-topper.
+            chart-topper.{' '}
+            <span className="text-red-500">
+              {form.formState.errors.prompt?.message}
+            </span>
           </div>
         </Form>
       </div>

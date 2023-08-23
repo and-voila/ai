@@ -1,9 +1,9 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+
+# WunderGraph build output
+.wundergraph/cache
+.wundergraph/generated
 
 # testing
 /coverage
@@ -11,8 +11,6 @@
 # next.js
 /.next/
 /out/
-
-# production
 /build
 
 # misc
@@ -20,12 +18,13 @@
 *.pem
 
 # debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log* # Specific to PNPM
 
 # local env files
-.env*
+.env
+.env.local
+.env.production
+.env.development
 
 # vercel
 .vercel

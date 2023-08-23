@@ -8,6 +8,7 @@ import {
   GearIcon,
   ImageIcon,
   Pencil1Icon,
+  ReaderIcon,
   SpeakerLoudIcon,
   VideoIcon,
 } from 'ui';
@@ -48,6 +49,11 @@ const routes = [
     href: '/code',
   },
   {
+    label: 'Learn',
+    icon: ReaderIcon,
+    href: '/learn',
+  },
+  {
     label: 'Settings',
     icon: GearIcon,
     href: '/settings',
@@ -62,7 +68,7 @@ interface SidebarProps {
 const Sidebar = ({ apiLimitCount, isPro = false }: SidebarProps) => {
   const pathname = usePathname();
   return (
-    <div className="flex h-full flex-col space-y-4 border-r bg-slate-200 py-4 dark:bg-background">
+    <div className="flex h-full flex-col space-y-4 bg-sidebar py-4">
       <div className="flex-1 px-3 py-2">
         <Link href="/dashboard" className="mb-14 flex items-center pl-3">
           <div className="relative mr-2 h-8 w-8">
@@ -78,7 +84,7 @@ const Sidebar = ({ apiLimitCount, isPro = false }: SidebarProps) => {
               className={cn(
                 'group flex w-full cursor-pointer justify-start rounded-lg p-3 transition hover:bg-muted-foreground hover:text-primary-foreground',
                 pathname === route.href
-                  ? 'bg-muted-foreground/30 text-foreground'
+                  ? 'bg-muted text-foreground'
                   : 'text-foreground',
               )}
             >

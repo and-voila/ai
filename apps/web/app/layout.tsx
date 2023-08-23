@@ -1,6 +1,7 @@
 import '@ui/styles/globals.css';
 
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import LandingLayout from '@/components/landing-layout';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -15,26 +16,26 @@ export const metadata: Metadata = {
     template: '%s | And Voila AI',
   },
   description:
-    "AI for creators—Transform your content with And Voila's AI.Building a less boring future for creators and influencers.Join us, we're hiring! 🍩",
+    'Get started with purpose-built AI for Creators that learns your unique creative style, keeps your process private, and protects your IP. Imagine and voila!',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://andvoila.ai',
     title: 'And Voila AI | AI for creators',
     description:
-      "AI for creators—Transform your content with And Voila's AI.Building a less boring future for creators and influencers.Join us, we're hiring! 🍩",
+      'Get started with purpose-built AI for Creators that learns your unique creative style, keeps your process private, and protects your IP. Imagine and voila!',
     siteName: 'And Voila AI',
-    images: '/og.png',
+    images: 'open-graph.jpg',
   },
   referrer: 'origin-when-cross-origin',
   viewport: 'width=device-width, initial-scale=1.0',
   authors: [
     {
-      name: 'And Voila AI',
+      name: 'Team And Voila',
       url: 'https://andvoila.ai',
     },
   ],
-  keywords: ['ChatGPT newsletter', 'AI newsletter', 'artifical intelligence'],
+  keywords: ['AI for Creators', 'Personalized AI', 'Unique AI Content'],
   creator: 'And Voila AI',
   publisher: 'And Voila AI, Inc.',
   twitter: {
@@ -42,16 +43,47 @@ export const metadata: Metadata = {
     site: 'AndVoilaAI',
     title: 'And Voila AI | AI for creators',
     description:
-      "AI for creators—Transform your content with And Voila's AI.Building a less boring future for creators and influencers.Join us, we're hiring! 🍩",
+      'Get started with purpose-built AI for Creators that learns your unique creative style, keeps your process private, and protects your IP. Imagine and voila!',
     creator: 'AndVoilaAI',
-    images: '/og.png',
+    images: '/open-graph.jpg',
   },
   icons: [
     {
       rel: 'icon',
-      url: '/app/favicon.ico',
+      url: '/favicon.ico',
+    },
+    {
+      rel: 'apple',
+      url: '/apple-touch-icon.png',
+    },
+    {
+      rel: 'icon',
+      url: '/favicon-16x16.png',
+      sizes: '16x16',
+    },
+    {
+      rel: 'icon',
+      url: '/favicon-32x32.png',
+      sizes: '32x32',
+    },
+    {
+      rel: 'icon',
+      url: '/favicon-194x194.png',
+      sizes: '194x194',
+    },
+    {
+      rel: 'icon',
+      url: '/android-chrome-192x192.png',
+      sizes: '194x194',
+    },
+    {
+      rel: 'mask-icon',
+      url: '/safari-pinned-tab.svg',
+      color: '#0811FD',
     },
   ],
+  manifest: '/site.webmanifest',
+  category: 'technology',
 };
 
 export default function RootLayout({
@@ -63,7 +95,11 @@ export default function RootLayout({
     <html lang="en" className="h-full text-base antialiased">
       <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <LandingLayout>{children}</LandingLayout>
+          <LandingLayout>
+            <Suspense>
+              <main>{children}</main>
+            </Suspense>
+          </LandingLayout>
         </ThemeProvider>
       </body>
     </html>

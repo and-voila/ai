@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
+import { valibotResolver } from '@hookform/resolvers/valibot';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { ChatCompletionRequestMessage } from 'openai';
@@ -13,7 +13,6 @@ import { Button, CodeIcon, ExclamationTriangleIcon } from 'ui';
 import { Form, FormControl, FormField, FormItem } from 'ui';
 import { Input } from 'ui';
 import { cn } from 'ui';
-import * as z from 'zod';
 
 import { BotAvatar } from '@/components/bot-avatar';
 import CodeBlock from '@/components/code-block';
@@ -23,24 +22,21 @@ import { Loader } from '@/components/loader';
 import { UserAvatar } from '@/components/user-avatar';
 import { useProModal } from '@/hooks/use-pro-modal';
 
-import { formSchema } from './constants';
+import { CodeFormDataType, codeFormSchema } from './constants';
 
 const CodePage = () => {
   const proModal = useProModal();
   const router = useRouter();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      prompt: '',
-    },
+  const form = useForm<CodeFormDataType>({
+    resolver: valibotResolver(codeFormSchema),
   });
 
   const isLoading = form.formState.isSubmitting;
 
   // eslint-disable-next-line space-before-function-paren
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: CodeFormDataType) => {
     try {
       const userMessage: ChatCompletionRequestMessage = {
         role: 'user',
@@ -97,6 +93,7 @@ const CodePage = () => {
               )}
             />
             <Button
+              type="submit"
               className="col-span-12 w-full lg:col-span-2 "
               disabled={isLoading}
             >
@@ -107,6 +104,10 @@ const CodePage = () => {
             <ExclamationTriangleIcon className="mr-2 h-3 w-3 text-muted-foreground" />
             AI writes neat code, yet great code needs human touch and thorough
             review.
+            <span className="text-red-500">
+              {form.formState.errors.prompt &&
+                form.formState.errors.prompt.message}
+            </span>
           </div>
         </Form>
       </div>

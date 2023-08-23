@@ -1,12 +1,35 @@
+import { Metadata } from 'next';
+import { Suspense } from 'react';
+
 import { Container } from '@/components/container';
 import { PageIntro } from '@/components/page-intro';
 import ContactDetails from '@/components/sections/contact/contact-details';
 import ContactForm from '@/components/sections/contact/contact-form';
+import { SITE_URL } from '@/lib/constants';
 
-export const metadata = {
-  title: 'Contact Us',
-  description: 'Let’s work together. We can’t wait to hear from you.',
-};
+export function generateMetadata(): Metadata {
+  const title = 'Contact';
+  const description =
+    'Want to get in touch? We would love to hear from you. Send us a message and we will get back to you as soon as possible.';
+
+  const url = `${SITE_URL}/contact`;
+
+  const metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
+  };
+
+  return metadata;
+}
 
 export default function Contact() {
   return (
@@ -20,7 +43,9 @@ export default function Contact() {
       </PageIntro>
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
-          <ContactForm />
+          <Suspense fallback={<div>loading..</div>}>
+            <ContactForm />
+          </Suspense>
           <ContactDetails />
         </div>
       </Container>

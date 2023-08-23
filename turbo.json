@@ -11,7 +11,9 @@
       "dependsOn": ["^build"],
       "env": [
         "NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY",
-        "CLOUDFLARE_TURNSTILE_SECRET"
+        "CLOUDFLARE_TURNSTILE_SECRET",
+        "SLACK_ACCESS_TOKEN",
+        "NEXT_PUBLIC_APP_URL"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -21,6 +23,8 @@
         "CLERK_SECRET_KEY",
         "DATABASE_URL",
         "INTERCOM_APP_ID",
+        "INNGEST_EVENT_KEY",
+        "INNGEST_SIGNING_KEY",
         "NEXT_PUBLIC_APP_URL",
         "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL",
         "NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL",
@@ -31,7 +35,13 @@
         "OPENAI_API_KEY",
         "REPLICATE_API_KEY",
         "STRIPE_API_KEY",
-        "STRIPE_WEBHOOK_SECRET"
+        "STRIPE_WEBHOOK_SECRET",
+        "WG_PUBLIC_NODE_URL",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "CLERK_JWKS_URL",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "INNGEST_EVENT_KEY",
+        "INNGEST_SIGNING_KEY"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },

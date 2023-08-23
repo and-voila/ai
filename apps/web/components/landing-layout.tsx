@@ -78,7 +78,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <Button variant="navbar" className="rounded-md">
-            <Link href={'/sign-up'}>Get Started</Link>
+            <Link href={'https://app.andvoila.ai/sign-up'}>Get Started</Link>
           </Button>
           <Button
             variant="menu"
