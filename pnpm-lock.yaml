@@ -67,7 +67,7 @@ importers:
     dependencies:
       next:
         specifier: ^13.4.19
-        version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
+        version: 13.4.19(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -110,7 +110,7 @@ importers:
     dependencies:
       '@clerk/nextjs':
         specifier: ^4.23.2
-        version: 4.23.2(next@13.4.16)(react-dom@18.2.0)(react@18.2.0)
+        version: 4.23.2(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
       '@hookform/resolvers':
         specifier: ^3.2.0
         version: 3.2.0(react-hook-form@7.45.4)
@@ -122,7 +122,7 @@ importers:
         version: 1.22.0
       '@wundergraph/nextjs':
         specifier: ^0.13.9
-        version: 0.13.9(@wundergraph/sdk@0.174.4)(next@13.4.16)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1)
+        version: 0.13.9(@wundergraph/sdk@0.174.4)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1)
       '@wundergraph/sdk':
         specifier: ^0.174.4
         version: 0.174.4(react-native@0.72.4)
@@ -142,11 +142,11 @@ importers:
         specifier: ^0.0.130
         version: 0.0.130(@upstash/redis@1.22.0)(axios@1.4.0)(replicate@0.16.1)
       next:
-        specifier: ^13.4.1
-        version: 13.4.16(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^13.4.19
+        version: 13.4.19(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       next-themes:
         specifier: ^0.2.1
-        version: 0.2.1(next@13.4.16)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.2.1(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
       openai:
         specifier: ^3.3.0
         version: 3.3.0(debug@4.3.4)
@@ -1989,7 +1989,26 @@ packages:
       '@clerk/clerk-react': 4.23.2(react@18.2.0)
       '@clerk/clerk-sdk-node': 4.12.2
       '@clerk/types': 3.49.0
-      next: 13.4.16(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.4.16(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
+      path-to-regexp: 6.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.4.1
+    dev: false
+
+  /@clerk/nextjs@4.23.2(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-99bSVu9r1E9MxybO/6mmPAufSKq4KU7SFeMVkylX7UF8sy5t/LE9cLHyc+9jitcCGgZNai9Om4sj1WIgkNOP8w==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      next: '>=10'
+      react: ^17.0.2 || ^18.0.0-0
+      react-dom: ^17.0.2 || ^18.0.0-0
+    dependencies:
+      '@clerk/backend': 0.27.0
+      '@clerk/clerk-react': 4.23.2(react@18.2.0)
+      '@clerk/clerk-sdk-node': 4.12.2
+      '@clerk/types': 3.49.0
+      next: 13.4.19(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       path-to-regexp: 6.2.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2110,7 +2129,7 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@20.4.7)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.5.3)(typescript@5.1.6)
       typescript: 5.1.6
     transitivePeerDependencies:
       - '@swc/core'
@@ -6003,7 +6022,7 @@ packages:
       tslib: 2.6.1
     dev: false
 
-  /@wundergraph/nextjs@0.13.9(@wundergraph/sdk@0.174.4)(next@13.4.16)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1):
+  /@wundergraph/nextjs@0.13.9(@wundergraph/sdk@0.174.4)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1):
     resolution: {integrity: sha512-GUHY7/bWrFHnCoe6Yks4VJLE/TQCG/AQ138HWdvn3brxTRexm8CIonGHRZPpLYExjDBjRJBbIUVsXzurG00w3Q==}
     peerDependencies:
       '@wundergraph/sdk': '>=0.91.0'
@@ -6016,7 +6035,7 @@ packages:
       '@wundergraph/sdk': 0.174.4(react-native@0.72.4)
       '@wundergraph/swr': 0.17.9(@wundergraph/sdk@0.174.4)(react-dom@18.2.0)(react@18.2.0)(swr@2.2.1)
       handlebars: 4.7.8
-      next: 13.4.16(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.4.19(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       object-hash: 2.2.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -7773,7 +7792,7 @@ packages:
     dependencies:
       '@types/node': 20.4.7
       cosmiconfig: 8.2.0
-      ts-node: 10.9.1(@types/node@20.4.7)(typescript@5.1.6)
+      ts-node: 10.9.1(@types/node@20.5.3)(typescript@5.1.6)
       typescript: 5.1.6
     dev: true
 
@@ -13608,54 +13627,25 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 13.4.16(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.4.16(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /next-themes@0.2.1(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==}
+    peerDependencies:
+      next: '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      next: 13.4.19(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /next-tick@1.1.0:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
-    dev: false
-
-  /next@13.4.16(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-1xaA/5DrfpPu0eV31Iro7JfPeqO8uxQWb1zYNTe+KDKdzqkAGapLcDYHMLNKXKB7lHjZ7LfKUOf9dyuzcibrhA==}
-    engines: {node: '>=16.8.0'}
-    hasBin: true
-    peerDependencies:
-      '@opentelemetry/api': ^1.1.0
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      sass: ^1.3.0
-    peerDependenciesMeta:
-      '@opentelemetry/api':
-        optional: true
-      sass:
-        optional: true
-    dependencies:
-      '@next/env': 13.4.16
-      '@opentelemetry/api': 1.4.1
-      '@swc/helpers': 0.5.1
-      busboy: 1.6.0
-      caniuse-lite: 1.0.30001521
-      postcss: 8.4.14
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      styled-jsx: 5.1.1(@babel/core@7.22.10)(react@18.2.0)
-      watchpack: 2.4.0
-      zod: 3.21.4
-    optionalDependencies:
-      '@next/swc-darwin-arm64': 13.4.16
-      '@next/swc-darwin-x64': 13.4.16
-      '@next/swc-linux-arm64-gnu': 13.4.16
-      '@next/swc-linux-arm64-musl': 13.4.16
-      '@next/swc-linux-x64-gnu': 13.4.16
-      '@next/swc-linux-x64-musl': 13.4.16
-      '@next/swc-win32-arm64-msvc': 13.4.16
-      '@next/swc-win32-ia32-msvc': 13.4.16
-      '@next/swc-win32-x64-msvc': 13.4.16
-    transitivePeerDependencies:
-      - '@babel/core'
-      - babel-plugin-macros
     dev: false
 
   /next@13.4.16(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0):
@@ -13699,7 +13689,7 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /next@13.4.19(react-dom@18.2.0)(react@18.2.0):
+  /next@13.4.19(@babel/core@7.22.10)(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-HuPSzzAbJ1T4BD8e0bs6B9C1kWQ6gv8ykZoRWs5AQoiIuqbGHHdQO7Ljuvg05Q0Z24E2ABozHe6FxDvI6HfyAw==}
     engines: {node: '>=16.8.0'}
     hasBin: true
@@ -13715,6 +13705,7 @@ packages:
         optional: true
     dependencies:
       '@next/env': 13.4.19
+      '@opentelemetry/api': 1.4.1
       '@swc/helpers': 0.5.1
       busboy: 1.6.0
       caniuse-lite: 1.0.30001522
@@ -17010,37 +17001,6 @@ packages:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: false
-
-  /ts-node@10.9.1(@types/node@20.4.7)(typescript@5.1.6):
-    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
-    hasBin: true
-    peerDependencies:
-      '@swc/core': '>=1.2.50'
-      '@swc/wasm': '>=1.2.50'
-      '@types/node': '*'
-      typescript: '>=2.7'
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      '@swc/wasm':
-        optional: true
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.9
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 20.4.7
-      acorn: 8.10.0
-      acorn-walk: 8.2.0
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 5.1.6
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    dev: true
 
   /ts-node@10.9.1(@types/node@20.5.3)(typescript@5.1.6):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}

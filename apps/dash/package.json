@@ -23,7 +23,7 @@
     "framer-motion": "^10.16.0",
     "inngest": "^2.5.0",
     "langchain": "^0.0.130",
-    "next": "^13.4.1",
+    "next": "^13.4.19",
     "next-themes": "^0.2.1",
     "openai": "^3.3.0",
     "openai-edge": "^1.2.2",
