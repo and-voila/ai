@@ -128,6 +128,7 @@ export const createWritingAnalysis = inngest.createFunction(
     await step.run('start analysis', async () => {
       await redis.set(userId, {
         status: 'pending',
+        messages: [],
       });
     });
 
@@ -206,6 +207,12 @@ export const createWritingAnalysis = inngest.createFunction(
         ],
       });
     });
+
+    await step.run('start blog', async () => {
+      await redis.set(userId, {
+        status: 'pending',
+      });
+    });
   },
 );
 
@@ -222,6 +229,12 @@ export const createBlogPostGenerator = inngest.createFunction(
       userId: string;
       idea: string;
     };
+
+    await step.run('start analysis', async () => {
+      await redis.set(userId, {
+        status: 'pending',
+      });
+    });
 
     const userData = await step.run('get user data', async () => {
       const res = (await redis.get(userId)) as ResponseRedis;
