@@ -3,6 +3,7 @@ import {
   cors,
   introspect,
 } from '@wundergraph/sdk';
+import { NextJsTemplate } from '@wundergraph/nextjs/dist/template';
 
 const prismaDB = introspect.prisma({
   apiNamespace: 'prisma',
@@ -22,6 +23,14 @@ configureWunderGraphApplication({
         },
       ],
     },
+  },
+  generate: {
+    codeGenerators: [
+      {
+        templates: [new NextJsTemplate()],
+        path: './generated',
+      },
+    ],
   },
   cors: {
     ...cors.allowAll,

@@ -10,10 +10,7 @@ import {
   writtingSampleSchema,
   writtingSampleSteps,
 } from '@/app/(dashboard)/learn/constant';
-import {
-  handleWritingAnalysis,
-  removeWrittingRedis,
-} from '@/lib/handleInngest';
+import { handleWritingAnalysis } from '@/lib/handleInngest';
 
 export function WrittingSample({
   analyzedSample,
@@ -34,7 +31,6 @@ export function WrittingSample({
   });
 
   async function onSubmit(values: WrittingSampleDataType) {
-    await removeWrittingRedis(userId);
     await handleWritingAnalysis({
       userId: userId,
       samples: [
@@ -44,7 +40,7 @@ export function WrittingSample({
         values.writtingSample4,
       ],
     });
-    await analyzedSample();
+    analyzedSample();
   }
 
   const currentStepConfig = writtingSampleSteps[currentStep];
@@ -59,16 +55,6 @@ export function WrittingSample({
       if (currentStep < writtingSampleSteps.length - 1) {
         form.setValue(writtingSampleSteps[currentStep + 1].fieldName, '');
         setCurrentStep((prevStep) => prevStep + 1);
-      }
-    }
-  };
-
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      if (currentStep === writtingSampleSteps.length - 1) {
-        form.handleSubmit(onSubmit)();
-      } else {
-        moveToNextStep();
       }
     }
   };
@@ -98,7 +84,6 @@ export function WrittingSample({
                       <Input
                         className="border-0 text-base outline-none focus-visible:ring-0 focus-visible:ring-offset-transparent"
                         placeholder={step.name}
-                        onKeyDown={handleKeyPress}
                         {...field}
                       />
                     </FormControl>
