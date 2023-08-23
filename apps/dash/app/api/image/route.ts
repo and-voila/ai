@@ -2,13 +2,11 @@ import { auth } from '@clerk/nextjs';
 import { checkApiLimit, increaseApiLimit } from 'lib/api-limit';
 import { checkSubscription } from 'lib/subscription';
 import { NextResponse } from 'next/server';
-import { Configuration, OpenAIApi } from 'openai';
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-const openai = new OpenAIApi(configuration);
 
 export async function POST(req: Request) {
   try {
@@ -20,7 +18,7 @@ export async function POST(req: Request) {
       return new NextResponse('Unauthorized', { status: 401 });
     }
 
-    if (!configuration.apiKey) {
+    if (!openai.apiKey) {
       return new NextResponse('OpenAI API Key not configured', { status: 500 });
     }
 
@@ -45,7 +43,7 @@ export async function POST(req: Request) {
       return new NextResponse('Free trial has expired', { status: 403 });
     }
 
-    const response = await openai.createImage({
+    const response = await openai.images.generate({
       prompt: prompt,
       n: parseInt(amount, 10),
       size: resolution,
@@ -55,7 +53,7 @@ export async function POST(req: Request) {
       await increaseApiLimit();
     }
 
-    return NextResponse.json(response.data.data);
+    return NextResponse.json(response.data);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log('[IMAGE_ERROR]', error);
