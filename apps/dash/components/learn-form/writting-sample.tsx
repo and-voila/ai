@@ -1,7 +1,7 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
 
@@ -13,9 +13,9 @@ import {
 import { handleWritingAnalysis } from '@/lib/handleInngest';
 
 export function WrittingSample({
-  analyzedSample,
+  setStep,
 }: {
-  analyzedSample: () => Promise<void>;
+  setStep: Dispatch<SetStateAction<number>>;
 }) {
   const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
@@ -40,7 +40,7 @@ export function WrittingSample({
         values.writtingSample4,
       ],
     });
-    analyzedSample();
+    setStep((prevStep) => prevStep + 1);
   }
 
   const currentStepConfig = writtingSampleSteps[currentStep];
