@@ -13,7 +13,7 @@
     "@hookform/resolvers": "^3.2.0",
     "@slack/web-api": "^6.9.0",
     "contentlayer": "^0.3.4",
-    "framer-motion": "^10.16.0",
+    "framer-motion": "^10.16.1",
     "next": "^13.4.16",
     "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
