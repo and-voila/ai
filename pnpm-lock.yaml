@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -2866,8 +2866,8 @@ packages:
       value-or-promise: 1.0.12
     dev: false
 
-  /@graphql-tools/batch-execute@9.0.1(graphql@16.8.0):
-    resolution: {integrity: sha512-cc96n/JNARtnYjru6KQl3u3MLrQLfFBu8VoDRRG2BQmShodw4QJ8fn7MzFABjkBHFQPydNGN1QOKBCjq6ui/3g==}
+  /@graphql-tools/batch-execute@9.0.2(graphql@16.8.0):
+    resolution: {integrity: sha512-Y2uwdZI6ZnatopD/SYfZ1eGuQFI7OU2KGZ2/B/7G9ISmgMl5K+ZZWz/PfIEXeiHirIDhyk54s4uka5rj2xwKqQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -2885,7 +2885,7 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-tools/batch-execute': 9.0.1(graphql@16.8.0)
+      '@graphql-tools/batch-execute': 9.0.2(graphql@16.8.0)
       '@graphql-tools/executor': 1.2.0(graphql@16.8.0)
       '@graphql-tools/schema': 10.0.0(graphql@16.8.0)
       '@graphql-tools/utils': 10.0.5(graphql@16.8.0)
