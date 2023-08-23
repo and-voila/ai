@@ -18,7 +18,7 @@
     "@upstash/redis": "^1.22.0",
     "@wundergraph/nextjs": "^0.13.9",
     "@wundergraph/sdk": "^0.174.4",
-    "ai": "^2.2.2",
+    "ai": "^2.2.8",
     "axios": "^1.4.0",
     "framer-motion": "^10.16.0",
     "inngest": "^2.5.0",

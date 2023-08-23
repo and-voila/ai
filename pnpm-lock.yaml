@@ -127,8 +127,8 @@ importers:
         specifier: ^0.174.4
         version: 0.174.4(react-native@0.72.4)
       ai:
-        specifier: ^2.2.2
-        version: 2.2.2(react@18.2.0)(solid-js@1.7.11)(svelte@4.2.0)(vue@3.3.4)
+        specifier: ^2.2.8
+        version: 2.2.8(react@18.2.0)(solid-js@1.7.11)(svelte@4.2.0)(vue@3.3.4)
       axios:
         specifier: ^1.4.0
         version: 1.4.0
@@ -6263,8 +6263,8 @@ packages:
       indent-string: 4.0.0
     dev: true
 
-  /ai@2.2.2(react@18.2.0)(solid-js@1.7.11)(svelte@4.2.0)(vue@3.3.4):
-    resolution: {integrity: sha512-0kNV5Lr39l6kpWTEFv+uT5LWkcgsaFE9mE8RkGwUVeuq8P3vTOxSLjsGGXcp8OfgvWWCgCIafBeO7hcNXaZqYw==}
+  /ai@2.2.8(react@18.2.0)(solid-js@1.7.11)(svelte@4.2.0)(vue@3.3.4):
+    resolution: {integrity: sha512-DzMqqXnKqcVlngznYwfyU/Z8ljpiaXCXlKVhkEVOkEpVEHN8K9eWgldhG7IavyFQjEpC+R2rnkXLEsrxV+yXcw==}
     engines: {node: '>=14.6'}
     peerDependencies:
       react: ^18.2.0
