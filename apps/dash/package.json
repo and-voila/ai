@@ -22,7 +22,7 @@
     "axios": "^1.4.0",
     "framer-motion": "^10.16.1",
     "inngest": "^2.5.2",
-    "langchain": "^0.0.130",
+    "langchain": "^0.0.132",
     "next": "^13.4.19",
     "next-themes": "^0.2.1",
     "openai": "^4.1.0",
@@ -35,10 +35,10 @@
     "react-markdown": "^8.0.7",
     "react-syntax-highlighter": "^15.5.0",
     "replicate": "^0.16.1",
-    "stripe": "^12.18.0",
+    "stripe": "^13.2.0",
     "swr": "^2.2.1",
     "ui": "workspace:*",
-    "valibot": "^0.12.0",
+    "valibot": "^0.13.0",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
