@@ -1,7 +1,7 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { Message } from 'ai';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { Avatar, Button, cn, Separator } from 'ui';
 
 import { WritingStyleType } from '@/inngest/functions';
@@ -112,51 +112,27 @@ export function ChatList() {
   const { userId } = useAuth();
   const [learnMessages, setLearnMessages] = useState<Message[]>([]);
   const [sampleAnalysisDone, setSampleAnalysisDone] = useState(false);
-  const [processedMessageIds, setProcessedMessageIds] = useState<
-    Record<string, boolean>
-  >({});
 
-  const analyzedSample = useCallback(async () => {
-    let response: ResponseRedis | null = null; // Initialize response as null
+  async function analyzedSample() {
+    let response: ResponseRedis | null = null;
+
     do {
       const res = await getUserWrittingRedis(userId);
-      if (res?.status === 'completed') {
-        response = res;
-      }
+      response = res; // Update the response based on API result
+
       if (response?.status === 'pending') {
         await new Promise((resolve) => setTimeout(resolve, 10000));
       }
-    } while (response?.status !== 'completed');
+    } while (response?.status === 'pending');
 
     if (response) {
-      const newMessages = response.messages.filter(
-        (message) => !processedMessageIds[message.id],
-      );
-
-      if (newMessages.length > 0) {
-        const newProcessedIds: Record<string, boolean> = {};
-        newMessages.forEach((message) => {
-          newProcessedIds[message.id] = true;
-        });
-
-        setProcessedMessageIds((prevIds) => ({
-          ...prevIds,
-          ...newProcessedIds,
-        }));
-
-        setLearnMessages((prev) => [
-          ...prev,
-          ...newMessages.map((message) => ({
-            id: message.id,
-            role: message.role,
-            content: message.content,
-          })),
-        ]);
-
-        setSampleAnalysisDone(true);
-      }
+      setLearnMessages((prevMessages) => [
+        ...prevMessages,
+        ...response.messages!,
+      ]);
+      setSampleAnalysisDone(true);
     }
-  }, [userId, processedMessageIds]);
+  }
 
   return (
     <div className="relative mx-auto px-4">
