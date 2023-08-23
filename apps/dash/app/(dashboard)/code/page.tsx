@@ -4,7 +4,7 @@
 import { valibotResolver } from '@hookform/resolvers/valibot';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { ChatCompletionRequestMessage } from 'openai';
+import OpenAI from 'openai';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -27,7 +27,9 @@ import { CodeFormDataType, codeFormSchema } from './constants';
 const CodePage = () => {
   const proModal = useProModal();
   const router = useRouter();
-  const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+  const [messages, setMessages] = useState<
+    OpenAI.Chat.CreateChatCompletionRequestMessage[]
+  >([]);
 
   const form = useForm<CodeFormDataType>({
     resolver: valibotResolver(codeFormSchema),
@@ -38,7 +40,7 @@ const CodePage = () => {
   // eslint-disable-next-line space-before-function-paren
   const onSubmit = async (values: CodeFormDataType) => {
     try {
-      const userMessage: ChatCompletionRequestMessage = {
+      const userMessage: OpenAI.Chat.CreateChatCompletionRequestMessage = {
         role: 'user',
         content: values.prompt,
       };

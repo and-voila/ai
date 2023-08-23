@@ -54,6 +54,8 @@ function TextInput({ label, className, error, ...props }: TextInputProps) {
 
 export default function ContactForm() {
   const form = useForm<ContactFormDataType>({
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     resolver: valibotResolver(contactFormSchema),
   });
   const [verified, setVerified] = useState<boolean>(false);
@@ -96,7 +98,7 @@ export default function ContactForm() {
                       <TextInput
                         label="Name"
                         {...field}
-                        error={form.formState.errors.name?.message}
+                        error={form.formState.errors.name?.message as string}
                         className="!rounded-t-2xl"
                       />
                     </FormControl>
