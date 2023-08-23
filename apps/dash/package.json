@@ -21,7 +21,7 @@
     "ai": "^2.2.8",
     "axios": "^1.4.0",
     "framer-motion": "^10.16.1",
-    "inngest": "^2.5.0",
+    "inngest": "^2.5.2",
     "langchain": "^0.0.130",
     "next": "^13.4.19",
     "next-themes": "^0.2.1",

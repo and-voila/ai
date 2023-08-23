@@ -136,8 +136,8 @@ importers:
         specifier: ^10.16.1
         version: 10.16.1(react-dom@18.2.0)(react@18.2.0)
       inngest:
-        specifier: ^2.5.0
-        version: 2.5.0(typescript@5.1.6)
+        specifier: ^2.5.2
+        version: 2.5.2(typescript@5.1.6)
       langchain:
         specifier: ^0.0.130
         version: 0.0.130(@upstash/redis@1.22.0)(axios@1.4.0)(replicate@0.16.1)
@@ -10875,8 +10875,8 @@ packages:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
     dev: false
 
-  /inngest@2.5.0(typescript@5.1.6):
-    resolution: {integrity: sha512-Y552/twzPCXY5dAUdA6ub9iFvzmaAZRoH8XzeEGEJdIyC5a8tFO0nuAr/uNmsON3ZB0xmOL2oEoeRoJr4MWDFw==}
+  /inngest@2.5.2(typescript@5.1.6):
+    resolution: {integrity: sha512-rXbkoMqijcucNCdwwyMQbSW6Q+LWZpvgcHRwSV1XIADI8MgndI7m2e0Yz7ih9xgnKIZVm+57AQ2VNwznHL4BLw==}
     engines: {node: '>=14'}
     requiresBuild: true
     peerDependencies:
