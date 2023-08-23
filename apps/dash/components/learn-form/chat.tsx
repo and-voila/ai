@@ -1,18 +1,13 @@
 'use client';
-import { useAuth } from '@clerk/nextjs';
 import { Message } from 'ai';
 import { useState } from 'react';
-import { Avatar, Button, cn, Separator } from 'ui';
-
-import { WritingStyleType } from '@/inngest/functions';
-import {
-  getUserWrittingRedis,
-  handleBlogPostGenerator,
-} from '@/lib/handleInngest';
+import { Avatar, cn, Separator } from 'ui';
 
 import { Logomark } from '../logo';
 import { MemoizedReactMarkdown } from '../markdown';
+import GenerateBlog from './generate-blog';
 import { WrittingSample } from './writting-sample';
+import ConfirmComponent from './confirm';
 
 export interface ChatMessageProps {
   message: Message;
@@ -24,24 +19,6 @@ export interface ChatList {
     content: string;
   }[];
 }
-
-type ResponseRedis = {
-  status: 'pending' | 'completed';
-  writtingAnalysis: WritingStyleType;
-  messages?: {
-    id: string;
-    role: 'system' | 'user';
-    content: string;
-  }[];
-};
-
-const TOPIC_ONE = `
-Create a well-structured blog post of 750 words or less on the topic: "Empowering Creators with AI: A New Dawn of Possibilities". The blog post should discuss the following:
-
-1. Introduction: Brief overview of AI and its relevance in today's world.
-2. Body: Explain how AI is empowering creators, providing examples of AI tools and platforms that creators are using to enhance their creativity and efficiency. Discuss the impact of AI on different domains of creativity like art, music, writing, and more.
-3. Conclusion: Forecast on the future implications of AI for creators and how it will revolutionize creativity.
-`;
 
 export function ChatMessage({ message, ...props }: ChatMessageProps) {
   return (
@@ -93,75 +70,35 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
   );
 }
 
-const generateOptions = [
-  {
-    event: 'app/generate-blogpost',
-    label: 'Generate Blog',
-  },
-  {
-    event: 'app/generate-email-template',
-    label: 'Email Template',
-  },
-  {
-    event: 'app/generate-twitter-thread',
-    label: 'Twitter Thread',
-  },
-];
-
 export function ChatList() {
-  const { userId } = useAuth();
   const [learnMessages, setLearnMessages] = useState<Message[]>([]);
-  const [sampleAnalysisDone, setSampleAnalysisDone] = useState(false);
+  const [step, setStep] = useState(0);
 
-  async function analyzedSample() {
-    let response: ResponseRedis | null = null;
+  function renderStep() {
+    switch (step) {
+      case 0:
+        return <WrittingSample setStep={setStep} />;
+      case 1:
+        return (
+          <ConfirmComponent
+            setLearnMessages={setLearnMessages}
+            setStep={setStep}
+          />
+        );
+      case 2:
+        return (
+          <GenerateBlog setLearnMessages={setLearnMessages} setStep={setStep} />
+        );
 
-    do {
-      const res = await getUserWrittingRedis(userId);
-      response = res; // Update the response based on API result
-
-      if (response?.status === 'pending') {
-        await new Promise((resolve) => setTimeout(resolve, 10000));
-      }
-    } while (response?.status === 'pending');
-
-    if (response) {
-      setLearnMessages((prevMessages) => [
-        ...prevMessages,
-        ...response.messages!,
-      ]);
-      setSampleAnalysisDone(true);
+      default:
+        break;
     }
   }
 
   return (
     <div className="relative mx-auto px-4">
-      <div className="px-4 lg:px-8">
-        <WrittingSample analyzedSample={analyzedSample} />
-      </div>
-      <div
-        className={cn(
-          sampleAnalysisDone
-            ? 'mx-auto block grid max-w-2xl grid-cols-3 gap-4 px-4 py-4 lg:px-16'
-            : 'hidden',
-        )}
-      >
-        {generateOptions.map((option) => (
-          <Button
-            key={option.event}
-            className="cursor-pointer rounded-md border bg-muted p-4 text-center hover:animate-none hover:bg-primary hover:text-white"
-            onClick={async () => {
-              await handleBlogPostGenerator({
-                userId,
-                idea: TOPIC_ONE,
-              });
-              await analyzedSample();
-            }}
-          >
-            {option.label}
-          </Button>
-        ))}
-      </div>
+      {renderStep()}
+
       {learnMessages
         .filter(
           (message, index, self) =>
