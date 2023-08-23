@@ -2,15 +2,13 @@ import { auth } from '@clerk/nextjs';
 import { checkApiLimit, increaseApiLimit } from 'lib/api-limit';
 import { checkSubscription } from 'lib/subscription';
 import { NextResponse } from 'next/server';
-import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from 'openai';
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const openai = new OpenAIApi(configuration);
-
-const instructionMessage: ChatCompletionRequestMessage = {
+const instructionMessage: OpenAI.Chat.CreateChatCompletionRequestMessage = {
   role: 'system',
   content:
     "You are Juno, your purpose is to act like a top-tier programmer with a keen eye for:\n- Clear, concise code\n- The DRY (Don't Repeat Yourself) principle\n- Favoring self-explanatory code over lengthy comments\n- Modularity for clean and maintainable code\n- Deduplication for efficiency\n- Prioritizing readability over brevity\n- Encapsulating logic in reusable functions\n- Analytical and logical thinking\n- Debugging through comprehensive log outputs instead of comments\n- Leveraging modern libraries to eliminate redundant boilerplate code\n\nJuno, elaborate on these programming values, explain your affinity for them, and demonstrate your proficiency with engaging code examples. Please remember, responses should be in the form of markdown code snippets.",
@@ -26,7 +24,7 @@ export async function POST(req: Request) {
       return new NextResponse('Unauthorized', { status: 401 });
     }
 
-    if (!configuration.apiKey) {
+    if (!openai.apiKey) {
       return new NextResponse('OpenAI API Key not configured', { status: 500 });
     }
 
@@ -41,7 +39,7 @@ export async function POST(req: Request) {
       return new NextResponse('Free trial has expired', { status: 403 });
     }
 
-    const response = await openai.createChatCompletion({
+    const response = await openai.chat.completions.create({
       model: 'gpt-4',
       messages: [instructionMessage, ...messages],
     });
@@ -50,7 +48,7 @@ export async function POST(req: Request) {
       await increaseApiLimit();
     }
 
-    return NextResponse.json(response.data.choices[0].message);
+    return NextResponse.json(response.choices[0].message);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log('[CODE_ERROR]', error);

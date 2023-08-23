@@ -11,7 +11,7 @@ import { Loader } from 'components/loader';
 import { UserAvatar } from 'components/user-avatar';
 import { useProModal } from 'hooks/use-pro-modal';
 import { useRouter } from 'next/navigation';
-import { ChatCompletionRequestMessage } from 'openai';
+import OpenAI from 'openai';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -27,7 +27,9 @@ import { WriteFormDataType, writeFormSchema } from './constants';
 const WritePage = () => {
   const proModal = useProModal();
   const router = useRouter();
-  const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
+  const [messages, setMessages] = useState<
+    OpenAI.Chat.CreateChatCompletionRequestMessage[]
+  >([]);
 
   const form = useForm<WriteFormDataType>({
     resolver: valibotResolver(writeFormSchema),
@@ -41,7 +43,7 @@ const WritePage = () => {
   // eslint-disable-next-line space-before-function-paren
   const onSubmit = async (values: WriteFormDataType) => {
     try {
-      const userMessage: ChatCompletionRequestMessage = {
+      const userMessage: OpenAI.Chat.CreateChatCompletionRequestMessage = {
         role: 'user',
         content: values.prompt,
       };
