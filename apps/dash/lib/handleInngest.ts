@@ -9,13 +9,16 @@ const inngest = new Inngest({
   eventKey: process.env.INNGEST_EVENT_KEY!,
 });
 
-type ResponseRedis = {
+export type ResponseRedis = {
   status: 'pending' | 'completed';
   writingAnalysis: WritingStyleType;
+  combinedAnalysisInput: string;
+
   messages?: {
     id: string;
     role: 'system' | 'user';
     content: string;
+    createdAt: Date;
   }[];
 };
 
@@ -36,22 +39,6 @@ export async function handleWritingAnalysis({
     data: {
       userId: userId,
       samples: samples,
-    },
-  });
-}
-
-export async function handleBlogPostGenerator({
-  idea,
-  userId,
-}: {
-  idea: string;
-  userId: string;
-}) {
-  await inngest.send({
-    name: 'app/generate-blogpost',
-    data: {
-      idea: idea,
-      userId,
     },
   });
 }
