@@ -59,13 +59,12 @@ avatar: {
 Utilize the useFileUpload hook for handling uploads to the provider. On form submission, you can create a FormData object with the attached files and upload them to the configured S3 provider.
 
 ```tsx
-import { useState } from "react";
-import { useFileUpload, withWunderGraph } from "../components/generated/nextjs";
+import { useState } from 'react';
+import { useFileUpload, withWunderGraph } from '../components/generated/nextjs';
 
 const Home: NextPage = () => {
-	// ... file handling and form submission code
+  // ... file handling and form submission code
 };
 
 export default withWunderGraph(Home);
-
 ```

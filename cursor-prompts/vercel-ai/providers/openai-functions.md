@@ -113,22 +113,22 @@ The handler will be called when the function is invoked. Here's a sample functio
 ```tsx
 const functionCallHandler: FunctionCallHandler = async (
   chatMessages,
-  functionCall
+  functionCall,
 ) => {
   if (functionCall.name === 'get_current_weather') {
     if (functionCall.arguments) {
-      const parsedFunctionCallArguments = JSON.parse(functionCall.arguments)
+      const parsedFunctionCallArguments = JSON.parse(functionCall.arguments);
       // You now have access to the parsed arguments here (assuming the JSON was valid)
       // If JSON is invalid, return an appropriate message to the model so that it may retry?
-      console.log(parsedFunctionCallArguments)
+      console.log(parsedFunctionCallArguments);
     }
 
     // Generate a fake temperature
-    const temperature = Math.floor(Math.random() * (100 - 30 + 1) + 30)
+    const temperature = Math.floor(Math.random() * (100 - 30 + 1) + 30);
     // Generate random weather condition
     const weather = ['sunny', 'cloudy', 'rainy', 'snowy'][
       Math.floor(Math.random() * 4)
-    ]
+    ];
 
     const functionResponse: ChatRequest = {
       messages: [
@@ -140,22 +140,22 @@ const functionCallHandler: FunctionCallHandler = async (
           content: JSON.stringify({
             temperature,
             weather,
-            info: 'This data is randomly generated and came from a fake weather API!'
-          })
-        }
-      ]
-    }
-    return functionResponse
+            info: 'This data is randomly generated and came from a fake weather API!',
+          }),
+        },
+      ],
+    };
+    return functionResponse;
   }
-}
+};
 ```
 
 Then just pass the handler to the hook:
 
 ```tsx
 const { messages, input, handleInputChange, handleSubmit } = useChat({
-  experimental_onFunctionCall: functionCallHandler
-})
+  experimental_onFunctionCall: functionCallHandler,
+});
 ```
 
 Now, when the model calls the `get_current_weather` function, the OpenAI API will return a specially formatted message with the arguments and the name of the function to call.
@@ -189,7 +189,7 @@ So you can interact with the function call:
       <p>Function name: {message.function_call.name}</p>
       <p>Function arguments: {message.function_call.arguments}</p>
     </div>
-  )
+  );
 }
 ```
 
@@ -201,7 +201,7 @@ if (m.function_call) {
   const functionCallString =
     typeof m.function_call === 'string'
       ? m.function_call
-      : JSON.stringify(m.function_call)
+      : JSON.stringify(m.function_call);
 
   return (
     <>
@@ -209,9 +209,9 @@ if (m.function_call) {
         <p key={index}>{line}</p>
       ))}
     </>
-  )
+  );
 } else {
-  return m.content
+  return m.content;
 }
 ```
 

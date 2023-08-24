@@ -1,0 +1,26 @@
+---
+title: 'Named Exports: A Uniform Approach'
+date: '08-23-2023'
+description: 'Guide to consistent and error-free code with named exports, including handling exceptions.'
+---
+
+## Named Export
+
+Utilize named exports to ensure that all imports follow a consistent pattern ([eslint rule](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-default-export.md)). This approach maintains uniformity across variable and function names throughout the codebase, enhancing readability and maintainability.
+
+### Benefits of named exports
+
+- **Consistency**: Forces the use of declared names, preventing errors.
+- **Exceptions Handling**: Specific rules can be disabled when necessary, such as for Next.js:
+
+```ts
+// .eslintrc.js
+overrides: [
+  {
+    files: ["apps/dash/app/**/*"],
+    rules: { "import/no-default-export": "off" },
+  },
+],
+```
+
+By adhering to this practice, you pave the way for cleaner, more coherent code that is easier to maintain and less prone to errors.
