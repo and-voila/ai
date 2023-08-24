@@ -50,9 +50,9 @@ export async function POST(req: Request) {
   const stream = OpenAIStream(response, {
     async onCompletion(completion) {
       const redisData = (await redis.get(userId)) as ResponseRedis;
+      console.log('completion', completion);
       await redis.set(userId, {
-        writingAnalysis: redisData.writingAnalysis,
-        combinedAnalysisInput: messages.map((message) => message.content),
+        ...redisData,
         messages: [
           ...redisData.messages,
           {
