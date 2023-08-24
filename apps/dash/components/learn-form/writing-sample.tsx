@@ -46,9 +46,9 @@ export function WritingSample({
       userId: userId,
       samples: [
         values.writingSample1,
-        // values.writingSample2,
-        // values.writingSample3,
-        // values.writingSample4,
+        values.writingSample2,
+        values.writingSample3,
+        values.writingSample4,
       ],
     });
     setStep((prevStep) => prevStep + 1);
