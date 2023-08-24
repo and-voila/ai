@@ -26,12 +26,5 @@ export async function POST(req: Request) {
     messages,
   });
   const stream = OpenAIStream(response);
-  console.log(
-    'streaming chunks',
-    stream
-      .getReader()
-      .read()
-      .then(({ value }) => value.toString()),
-  );
   return new StreamingTextResponse(stream);
 }
