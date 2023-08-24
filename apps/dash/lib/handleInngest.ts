@@ -11,7 +11,7 @@ const inngest = new Inngest({
 
 type ResponseRedis = {
   status: 'pending' | 'completed';
-  writtingAnalysis: WritingStyleType;
+  writingAnalysis: WritingStyleType;
   messages?: {
     id: string;
     role: 'system' | 'user';
@@ -35,7 +35,7 @@ export async function handleWritingAnalysis({
     name: 'app/writing-analysis',
     data: {
       userId: userId,
-      samples: [samples[0]],
+      samples: samples,
     },
   });
 }
@@ -56,14 +56,14 @@ export async function handleBlogPostGenerator({
   });
 }
 
-export async function getUserWrittingRedis(userId: string) {
+export async function getUserWritingRedis(userId: string) {
   const res = (await redis.get(userId)) as ResponseRedis;
   // eslint-disable-next-line no-console
   console.log(res);
   return res;
 }
 
-export async function removeWrittingRedis(userId: string) {
+export async function removeWritingRedis(userId: string) {
   const res = await redis.del(userId);
   return res;
 }

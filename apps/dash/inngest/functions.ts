@@ -61,7 +61,7 @@ const parserString = (key: string) =>
 
 export type WritingStyleType = {
   [key: string]: string[];
-  writtingTones: string[];
+  writingTones: string[];
   sentenceStructure: string[];
   vocabularySturcture: string[];
   grammarSynatx: string[];
@@ -74,7 +74,7 @@ export type WritingStyleType = {
 };
 
 const parser = StructuredOutputParser.fromNamesAndDescriptions({
-  writtingTones: parserString('Writting tones'),
+  writingTones: parserString('Writing tones'),
   sentenceStructure: parserString('Sentence structure'),
   vocabularySturcture: parserString('Vocabulary structure'),
   grammarSynatx: parserString('Grammar & synatx'),
@@ -96,13 +96,13 @@ const prompt = new PromptTemplate({
 });
 
 const promptGenerateBlogpost = new PromptTemplate({
-  template: '{writtingstyle} {idea}',
-  inputVariables: ['writtingstyle', 'idea'],
+  template: '{writingstyle} {idea}',
+  inputVariables: ['writingstyle', 'idea'],
 });
 
 type ResponseRedis = {
   status: 'pending' | 'completed';
-  writtingAnalysis: WritingStyleType;
+  writingAnalysis: WritingStyleType;
   messages?: {
     id: string;
     role: 'system' | 'user';
@@ -128,6 +128,7 @@ export const createWritingAnalysis = inngest.createFunction(
     await step.run('start analysis', async () => {
       await redis.set(userId, {
         status: 'pending',
+        messages: [],
       });
     });
 
@@ -150,8 +151,8 @@ export const createWritingAnalysis = inngest.createFunction(
 
     // save analysized samples to KV
     await step.run('save post', async () => {
-      const writtingAnalysis: WritingStyleType = {
-        writtingTones: [],
+      const writingAnalysis: WritingStyleType = {
+        writingTones: [],
         sentenceStructure: [],
         vocabularySturcture: [],
         grammarSynatx: [],
@@ -167,11 +168,11 @@ export const createWritingAnalysis = inngest.createFunction(
         try {
           const parsedSample = JSON.parse(sample.trim());
           for (const key in parsedSample) {
-            if (writtingAnalysis.hasOwnProperty(key)) {
+            if (writingAnalysis.hasOwnProperty(key)) {
               const writingKey = key as keyof WritingStyleType;
               parsedSample[key].forEach((value: string) => {
-                if (!writtingAnalysis[writingKey].includes(value)) {
-                  writtingAnalysis[writingKey].push(value);
+                if (!writingAnalysis[writingKey].includes(value)) {
+                  writingAnalysis[writingKey].push(value);
                 }
               });
             }
@@ -181,8 +182,8 @@ export const createWritingAnalysis = inngest.createFunction(
         }
       });
 
-      const writtingAnalysisString = await Promise.all(
-        Object.entries(writtingAnalysis).map(async ([key, values]) => {
+      const writingAnalysisString = await Promise.all(
+        Object.entries(writingAnalysis).map(async ([key, values]) => {
           const formattedValues = values.map((value) =>
             value.replace(/ \(excerpt\)/g, ''),
           );
@@ -192,11 +193,11 @@ export const createWritingAnalysis = inngest.createFunction(
         }),
       );
 
-      const formattedAnalysis = writtingAnalysisString.join('\n\n');
+      const formattedAnalysis = writingAnalysisString.join('\n\n');
 
       await redis.set(userId, {
         status: 'completed',
-        writtingAnalysis: writtingAnalysis,
+        writingAnalysis: writingAnalysis,
         messages: [
           {
             id: nanoid(),
@@ -225,11 +226,15 @@ export const createBlogPostGenerator = inngest.createFunction(
 
     const userData = await step.run('get user data', async () => {
       const res = (await redis.get(userId)) as ResponseRedis;
+      await redis.set(userId, {
+        status: 'pending',
+        messages: res.messages,
+      });
       return res;
     });
 
-    const writtingAnalysis = await Promise.all(
-      Object.entries(userData.writtingAnalysis).map(async ([key, values]) => {
+    const writingAnalysis = await Promise.all(
+      Object.entries(userData.writingAnalysis).map(async ([key, values]) => {
         const formattedValues = values.map((value) =>
           value.replace(/ \(excerpt\)/g, ''),
         );
@@ -240,17 +245,19 @@ export const createBlogPostGenerator = inngest.createFunction(
     );
 
     await step.run('generate blog post', async () => {
-      const formattedPrompt = writtingAnalysis.join('\n\n');
+      const formattedPrompt = writingAnalysis.join('\n\n');
+
+      console.log('writtingstyle', formattedPrompt);
 
       const input = await promptGenerateBlogpost.format({
-        writtingstyle: formattedPrompt,
+        writingstyle: formattedPrompt,
         idea: idea,
       });
       const response = await llm.call(input);
 
       await redis.set(userId, {
         status: 'completed',
-        writtingAnalysis: userData.writtingAnalysis,
+        writingAnalysis: userData.writingAnalysis,
         messages: [
           ...(userData.messages || []),
           {
