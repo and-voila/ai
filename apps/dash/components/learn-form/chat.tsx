@@ -87,7 +87,13 @@ export function ChatList() {
   function renderStep() {
     switch (step) {
       case 0:
-        return <WritingSample setStep={setStep} setLoading={setLoading} />;
+        return (
+          <WritingSample
+            setLearnMessages={setLearnMessages}
+            setStep={setStep}
+            setLoading={setLoading}
+          />
+        );
       case 1:
         return (
           <ConfirmComponent
@@ -109,7 +115,7 @@ export function ChatList() {
   }
 
   return (
-    <div className="relative mx-auto max-w-7xl px-16">
+    <div className="relative mx-auto px-16">
       {learnMessages
         .sort((a, b) => {
           if (!a.createdAt || !b.createdAt) {
@@ -132,9 +138,8 @@ export function ChatList() {
             )}
           </div>
         ))}
-      <div className="fixed bottom-0 mx-auto w-[60%] bg-gradient-to-b from-muted/10 from-10% to-muted/30 to-50%">
-        {renderStep()}
-      </div>
+      <div className="mb-54" />
+      <div className="fixed bottom-0 w-3/4">{renderStep()}</div>
     </div>
   );
 }
