@@ -2,7 +2,7 @@
 import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
 import { Message } from 'ai';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
 
@@ -11,7 +11,7 @@ import {
   writingSampleSchema,
   writingSampleSteps,
 } from '@/app/(dashboard)/learn/constant';
-import { handleWritingAnalysis } from '@/lib/handleInngest';
+import { handleWritingAnalysis, removeWritingRedis } from '@/lib/handleInngest';
 
 export function WritingSample({
   setStep,
@@ -69,6 +69,12 @@ export function WritingSample({
       }
     }
   };
+
+  useEffect(() => {
+    (async () => {
+      await removeWritingRedis(userId);
+    })();
+  }, [userId]);
 
   return (
     <Form {...form}>

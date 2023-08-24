@@ -106,30 +106,31 @@ export function ChatList() {
   }
 
   return (
-    <div className="relative mx-auto px-16">
-      {learnMessages
-        .sort((a, b) => {
-          if (!a.createdAt || !b.createdAt) {
-            return 0;
-          }
-          return (
-            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-          );
-        })
-        .filter(
-          (message, index, self) =>
-            index == self.findIndex((m) => m.id === message.id),
-        )
-        .map((message, index) => (
-          <div key={index} className="mx-auto">
-            <ChatMessage message={message} />
+    <div className="relative mx-auto px-16 ">
+      <div className="mb-54 !max-h-90 pb-[200px] pt-4">
+        {learnMessages
+          .sort((a, b) => {
+            if (!a.createdAt || !b.createdAt) {
+              return 0;
+            }
+            return (
+              new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+            );
+          })
+          .filter(
+            (message, index, self) =>
+              index == self.findIndex((m) => m.id === message.id),
+          )
+          .map((message, index) => (
+            <div key={index} className="mx-auto">
+              <ChatMessage message={message} />
 
-            {index < learnMessages.length - 1 && (
-              <Separator className="my-4 md:my-8" />
-            )}
-          </div>
-        ))}
-      <div className="mb-54" />
+              {index < learnMessages.length - 1 && (
+                <Separator className="my-4 md:my-8" />
+              )}
+            </div>
+          ))}
+      </div>
       <div className="fixed bottom-0 w-3/4">{renderStep()}</div>
     </div>
   );
