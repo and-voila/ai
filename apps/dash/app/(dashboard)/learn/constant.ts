@@ -1,37 +1,37 @@
 import { minLength, object, Output, string } from 'valibot';
 
-export const writtingSampleSchema = object({
-  writtingSample1: string([minLength(3, 'writting sample is required')]),
-  writtingSample2: string([minLength(3, 'writting sample is required')]),
-  writtingSample3: string([minLength(3, 'writting sample is required')]),
-  writtingSample4: string([minLength(3, 'writting sample is required')]),
+export const writingSampleSchema = object({
+  writingSample1: string([minLength(3, 'writing sample is required')]),
+  writingSample2: string([minLength(3, 'writing sample is required')]),
+  writingSample3: string([minLength(3, 'writing sample is required')]),
+  writingSample4: string([minLength(3, 'writing sample is required')]),
 });
 
-export type WrittingSampleDataType = Output<typeof writtingSampleSchema>;
+export type WritingSampleDataType = Output<typeof writingSampleSchema>;
 
-export const writtingSampleSteps: {
+export const writingSampleSteps: {
   name: string;
-  fieldName: keyof WrittingSampleDataType;
+  fieldName: keyof WritingSampleDataType;
   description: string;
 }[] = [
   {
     name: 'Writing Sample One',
-    fieldName: 'writtingSample1',
-    description: 'writting sample one',
+    fieldName: 'writingSample1',
+    description: 'writing sample one',
   },
   {
     name: 'Writing Sample Two',
-    fieldName: 'writtingSample2',
+    fieldName: 'writingSample2',
     description: 'Writing Sample Two',
   },
   {
     name: 'Writing Sample Three',
-    fieldName: 'writtingSample3',
+    fieldName: 'writingSample3',
     description: 'Writing Sample Three',
   },
   {
     name: 'Writing Sample Four',
-    fieldName: 'writtingSample4',
+    fieldName: 'writingSample4',
     description: 'Writing Sample Four',
   },
 ];
