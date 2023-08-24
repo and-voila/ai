@@ -1,14 +1,11 @@
+/* eslint-disable no-unused-vars */
 'use client';
 import { useAuth } from '@clerk/nextjs';
-import { Message } from 'ai';
-import React, { Dispatch, SetStateAction } from 'react';
+import { ChatRequestOptions, CreateMessage, Message, nanoid } from 'ai';
+import React from 'react';
 import { Button } from 'ui';
 
-import { WritingStyleType } from '@/inngest/functions';
-import {
-  getUserWritingRedis,
-  handleBlogPostGenerator,
-} from '@/lib/handleInngest';
+import { getUserWritingRedis } from '@/lib/handleInngest';
 
 const TOPIC_ONE = `
 Create a well-structured blog post of 750 words or less on the topic: "Empowering Creators with AI: A New Dawn of Possibilities". The blog post should discuss the following:
@@ -32,61 +29,31 @@ const generateOptions = [
   },
 ];
 
-type ResponseRedis = {
-  status: 'pending' | 'completed';
-  writingAnalysis: WritingStyleType;
-  messages?: {
-    id: string;
-    role: 'system' | 'user';
-    content: string;
-  }[];
-};
+export const GENERATE_BLOG_POST =
+  "You are a blog post generator. Base on the outline user shared and there writting style, generate a blog post. Only return the blog post. Don't say anything beside the blog post. RETURN MARKDOWN! Use H tags for headings. Use tables for lists. Use links for links. Use images for images. Use bold for bold. Use italics for italics. Use blockquotes for blockquotes. Use code for code. Use code block for code block. Use horizontal rule for horizontal rule. Use line break for line break. Use strikethrough for strikethrough. Use superscript for superscript. Use subscript for subscript. Use math for math. Use latex for latex. Use latex block for latex block. Use latex inline for latex inline. Use latex display for latex display. Use latex environment for latex environment. Use latex command for latex command. Use latex argument for latex argument. Use latex argument";
 
 function GenerateBlog({
-  setLearnMessages,
+  append,
+  isLoading,
 }: {
-  setLearnMessages: Dispatch<SetStateAction<Message[]>>;
+  isLoading: boolean;
+  append: (
+    message: Message | CreateMessage,
+    chatRequestOptions?: ChatRequestOptions,
+  ) => Promise<string>;
 }) {
   const { userId } = useAuth();
 
-  async function analyzedSample() {
-    let response: ResponseRedis | null = null;
-    await new Promise((resolve) => setTimeout(resolve, 10000));
-
-    do {
-      const res = await getUserWritingRedis(userId);
-      response = res; // Update the response based on API result
-      // eslint-disable-next-line no-console
-      console.log(response);
-
-      if (response?.status === 'pending') {
-        await new Promise((resolve) => setTimeout(resolve, 10000));
-      }
-    } while (response?.status === 'pending');
-
-    if (response) {
-      setLearnMessages((prevMessages) => [
-        ...prevMessages,
-        ...response.messages!,
-      ]);
-    }
-  }
-
   async function handlegenerate() {
-    setLearnMessages((prevMessages) => [
-      ...prevMessages,
-      {
-        id: 'blog-generator',
-        role: 'system',
-        content: 'loading...',
-        user: userId,
-      },
-    ]);
-    await handleBlogPostGenerator({
-      userId,
-      idea: TOPIC_ONE,
-    });
-    await analyzedSample();
+    const res = await getUserWritingRedis(userId);
+
+    if (res) {
+      append({
+        content: `${GENERATE_BLOG_POST} \n\n${TOPIC_ONE}`,
+        role: 'user',
+        id: nanoid(),
+      });
+    }
   }
 
   return (
@@ -98,6 +65,7 @@ function GenerateBlog({
           onClick={async () => {
             await handlegenerate();
           }}
+          disabled={isLoading}
         >
           {option.label}
         </Button>
