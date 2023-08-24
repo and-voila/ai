@@ -1,0 +1,60 @@
+---
+title: 'React: Data Management Guide'
+date: '08-23-2023'
+description: 'Detailed strategies for managing and passing data in React, including state handling, compound components, data fetching, and global state considerations.'
+---
+
+## Store & Pass Data in React
+
+### Storing State in URL
+
+Utilize the URL for storing state related to user interactions like filtering and sorting. It enhances user experience and bookmarking capabilities.
+
+- **Avoid Syncing with Local State**: This can create unnecessary complexity and lead to potential inconsistencies.
+
+### Passing Data
+
+Strategies for passing data within components.
+
+- **Props & URL**: Prefer simple mechanisms such as props or the URL for passing data between components.
+- **Global State**: Use global state management like Zustand or Context only when absolutely necessary, as it can add complexity.
+
+### Compound Components
+
+Use compound components when elements need to function together (e.g., menus, tabs).
+
+- **Exporting Strategy**: Export components in a way that maintains type integrity and clear usage:
+  ```tsx
+  export const PriceList = PriceListRoot as typeof PriceListRoot & {
+    Item: typeof PriceListItem;
+  };
+  PriceList.Item = PriceListItem;
+  ```
+
+### UI Components
+
+UI components should be kept simple and focused on their visual responsibilities.
+
+- **Derived State & Events**: They should only display derived state and send events, avoiding business logic or state management.
+
+### Prop Drilling
+
+Managing how properties are passed through a component tree.
+
+- **Embrace Prop Drilling**: It's a normal pattern in React, and issues can often be resolved through refactoring or composition rather than resorting to global state.
+
+### Data Fetching
+
+Strategies for retrieving data within your application.
+
+- **Container Components**: Limit data fetching to container components to separate concerns.
+- **Server-State Libraries**: Consider libraries like [react-query](https://github.com/tanstack/query), [apollo client](https://github.com/apollographql/apollo-client) to handle server state.
+
+### Global State
+
+Considerations for managing state that's shared across many parts of your application.
+
+- **Discouraged Generally**: Assess if something truly needs to be global, as it can add complexity.
+- **Use Zustand or Context if Needed**: If global state is necessary, prefer lighter solutions like [Zustand](https://github.com/pmndrs/zustand) or Context over heavier libraries like Redux.
+
+These guidelines provide a roadmap for managing data in React applications, balancing simplicity with flexibility to build scalable and maintainable code.

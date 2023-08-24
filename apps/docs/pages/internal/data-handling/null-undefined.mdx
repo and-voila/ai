@@ -1,0 +1,24 @@
+---
+title: 'Handling Null & Undefined in TypeScript'
+date: '08-23-2023'
+description: 'Explore best practices for utilizing null and undefined in TypeScript to enhance code readability and maintainability.'
+---
+
+## Null & Undefined in TypeScript: A Guided Approach
+
+In TypeScript, the types `null` and `undefined` often seem interchangeable. However, for the sake of consistency and clear communication, follow these guidelines:
+
+- Use `null` to clearly signal that a variable is intentionally without a value, whether in assignments or return types of functions.
+- Opt for `undefined` when you intend to exclude fields, such as in form fields, request payloads, or database queries. The difference can be crucial in certain scenarios like when using [Prisma](https://www.prisma.io/docs/concepts/components/prisma-client/null-and-undefined).
+
+### A brief example
+
+```ts
+// Using null for intentional absence
+const user: { name: string | null } = { name: null };
+
+// Using undefined to exclude fields
+const query = { name: undefined };
+```
+
+These distinctions might seem subtle, but they add clarity to your code and align with modern TypeScript practices.

@@ -1,0 +1,35 @@
+---
+title: 'React Testing: Naming Conventions'
+date: '08-23-2023'
+description: 'Enforcing a standardized naming convention for test descriptions in React using Eslint rules.'
+---
+
+## Test Description in React
+
+Proper naming conventions in testing help in understanding the purpose and scenario of the test. Implement a consistent pattern using the `it('should ... when ...')` format. This ensures that test descriptions clearly express the expected behavior and conditions.
+
+An [Eslint rule](https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/valid-title.md#mustmatch--mustnotmatch) can enforce this convention:
+
+```ts
+// .eslintrc.js
+'jest/valid-title': [
+  'error',
+  {
+    mustMatch: { it: [/should.*when/u.source, "Test title must include 'should' and 'when'"] },
+  },
+];
+```
+
+### Example:
+
+```ts
+// ❌ Avoid
+it('accepts ISO date format where date is parsed and formatted as YYYY-MM');
+it('after title is confirmed user description is rendered');
+
+// ✅ Correct
+it('should return parsed date as YYYY-MM when input is in ISO date format');
+it('should render user description when title is confirmed');
+```
+
+By following this convention, tests become more readable and maintainable, providing clear insight into what is being tested and under what conditions.

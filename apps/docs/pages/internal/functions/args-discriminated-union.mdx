@@ -1,0 +1,46 @@
+---
+title: 'Using Discriminated Union Types in Functions'
+date: '08-23-2023'
+description: 'Eliminate optional arguments with discriminated union types to create cleaner function APIs with clear intent and reduced complexity.'
+---
+
+## Arguments as Discriminated Union Types: A Smart Approach
+
+When dealing with functions, optional arguments may increase complexity in the API, often resulting in ambiguous and hard-to-maintain code. One of the smart ways to tackle this challenge is using **discriminated union types**.
+
+A discriminated union allows you to have a clear, explicit definition for the required arguments depending on the use case. This creates an API that's both cleaner and more understandable.
+
+### Here's an example
+
+```ts
+// ❌ Using optional args often increases complexity
+type StatusParams = {
+  data?: Products;
+  title?: string;
+  time?: number;
+  error?: string;
+};
+
+// ✅ A better approach: Use discriminated union types
+type StatusParamsSuccess = {
+  status: 'success';
+  data: Products;
+  title: string;
+};
+
+type StatusParamsLoading = {
+  status: 'loading';
+  time: number;
+};
+
+type StatusParamsError = {
+  status: 'error';
+  error: string;
+};
+
+type StatusParams = StatusParamsSuccess | StatusParamsLoading | StatusParamsError;
+
+export const parseStatus = (params: StatusParams) => {...
+```
+
+By using discriminated union types, you ensure that only necessary and required arguments are passed, making the code more robust and less prone to errors. This technique adheres to modern best practices, favoring clarity and reducing unnecessary complexity.

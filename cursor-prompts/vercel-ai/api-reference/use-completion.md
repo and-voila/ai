@@ -16,9 +16,9 @@ import { FrameworkTabs, Tab } from '@/components/framework-tabs'
 To use `useCompletion` in React projects, you can import it from the `ai/react` subpath. Here's an example demonstrating the use of `useCompletion` in a simple text completion interface:
 
 ```tsx filename="app/completion.tsx"
-'use client'
+'use client';
 
-import { useCompletion } from 'ai/react'
+import { useCompletion } from 'ai/react';
 
 export default function Completion() {
   const {
@@ -27,10 +27,10 @@ export default function Completion() {
     stop,
     isLoading,
     handleInputChange,
-    handleSubmit
+    handleSubmit,
   } = useCompletion({
-    api: '/api/completion'
-  })
+    api: '/api/completion',
+  });
 
   return (
     <div>
@@ -49,37 +49,37 @@ export default function Completion() {
         </button>
       </form>
     </div>
-  )
+  );
 }
 ```
 
 Depending on your code setup, you might want more granular control over the way the completion is executed. To achieve that, you can use the `complete` helper in the `useCompletion` hook, as well as the `onResponse` and `onFinish` options:
 
 ```tsx filename="app/completion.tsx"
-'use client'
+'use client';
 
-import { useCompletion } from 'ai/react'
-import { useDebouncedCallback } from 'use-debounce'
+import { useCompletion } from 'ai/react';
+import { useDebouncedCallback } from 'use-debounce';
 
 export default function Completion() {
   const { complete, completion, isLoading } = useCompletion({
     api: '/api/completion',
-    onResponse: res => {
+    onResponse: (res) => {
       // trigger something when the response starts streaming in
       // e.g. if the user is rate limited, you can show a toast
       if (res.status === 429) {
-        toast.error('You are being rate limited. Please try again later.')
+        toast.error('You are being rate limited. Please try again later.');
       }
     },
     onFinish: () => {
       // do something with the completion result
-      toast.success('Successfully generated completion!')
-    }
-  })
+      toast.success('Successfully generated completion!');
+    },
+  });
 
-  const handleInputChange = useDebouncedCallback(e => {
-    complete(e.target.value)
-  }, 500)
+  const handleInputChange = useDebouncedCallback((e) => {
+    complete(e.target.value);
+  }, 500);
 
   return (
     <div>
@@ -90,7 +90,7 @@ export default function Completion() {
       />
       <p>{completion}</p>
     </div>
-  )
+  );
 }
 ```
 
@@ -449,37 +449,37 @@ Here is an example of how to use `useCompletion` to build a simple blog post spe
 
 ```tsx
 // app/page.tsx
-'use client'
+'use client';
 
-import { useCompletion } from 'ai/react'
-import { useState, useCallback } from 'react'
+import { useCompletion } from 'ai/react';
+import { useState, useCallback } from 'react';
 
 export default function PostEditorPage() {
   // Locally store our blog posts content
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState('');
   const { complete } = useCompletion({
-    api: '/api/completion'
-  })
+    api: '/api/completion',
+  });
 
   const checkAndPublish = useCallback(
     async (c: string) => {
-      const completion = await complete(c)
-      if (!completion) throw new Error('Failed to check typos')
-      const typos = JSON.parse(completion)
+      const completion = await complete(c);
+      if (!completion) throw new Error('Failed to check typos');
+      const typos = JSON.parse(completion);
       // you should more validation here to make sure the response is valid
-      if (typos?.length && !window.confirm('Typos found… continue?')) return
-      else alert('Post published')
+      if (typos?.length && !window.confirm('Typos found… continue?')) return;
+      else alert('Post published');
     },
-    [complete]
-  )
+    [complete],
+  );
 
   return (
     <div>
       <h1>Post Editor</h1>
-      <textarea value={content} onChange={e => setContent(e.target.value)} />
+      <textarea value={content} onChange={(e) => setContent(e.target.value)} />
       <button onClick={() => checkAndPublish(content)}>Publish</button>
     </div>
-  )
+  );
 }
 ```
 
@@ -491,18 +491,18 @@ The server API formats the prompt for the AI model, and then it uses the [OpenAI
 ```tsx
 // app/api/completion/route.ts
 
-import OpenAI from 'openai'
-import { OpenAIStream, StreamingTextResponse } from 'ai'
+import OpenAI from 'openai';
+import { OpenAIStream, StreamingTextResponse } from 'ai';
 
-export const runtime = 'edge'
+export const runtime = 'edge';
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!
-})
+  apiKey: process.env.OPENAI_API_KEY!,
+});
 
 export async function POST(req: Request) {
   // Extract the `prompt` from the body of the request
-  const { prompt } = await req.json()
+  const { prompt } = await req.json();
 
   // Request the OpenAI API for the response based on the prompt
   const response = await openai.chat.completions.create({
@@ -516,18 +516,18 @@ export async function POST(req: Request) {
 Respond with a JSON array of typos ["typo1", "typo2", ...] or an empty [] if there's none. Only respond with an array. Post content:
 ${prompt}
 
-Output:\n`
-      }
+Output:\n`,
+      },
     ],
     max_tokens: 200,
     temperature: 0, // you want absolute certainty for spell check
     top_p: 1,
     frequency_penalty: 1,
-    presence_penalty: 1
-  })
+    presence_penalty: 1,
+  });
 
-  const stream = OpenAIStream(response)
+  const stream = OpenAIStream(response);
 
-  return new StreamingTextResponse(stream)
+  return new StreamingTextResponse(stream);
 }
 ```

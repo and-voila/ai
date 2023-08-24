@@ -1,6 +1,9 @@
 {
   "index": "Welcome",
-  "introduction": "Introduction",
-  "about": "About",
-  "tldr": "TLDR"
+  "data-handling": "Data Handling",
+  "functions": "Functions",
+  "naming-exporting": "Naming & Exporting",
+  "source-organization": "Source Organization",
+  "react-components": "React Components",
+  "testing": "Testing"
 }

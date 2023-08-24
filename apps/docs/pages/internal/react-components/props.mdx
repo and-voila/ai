@@ -1,0 +1,58 @@
+---
+title: 'React Props: Best Practices'
+date: '08-23-2023'
+description: 'A guide to using React props efficiently, with examples for required, optional, and discriminated types.'
+---
+
+## React
+
+Utilize function conventions in React components and hooks. Since they are functions, the respective function conventions must be applied for consistency and maintainability.
+
+### Props Type
+
+Use specific type declarations and avoid `React.FC` type.
+
+```tsx
+// ❌ Avoid using React.FC type
+type FooProps = {
+name: string;
+score: number;
+};
+
+export const Foo: React.FC<FooProps> = ({ name, score }) => { // ...
+
+// ✅ Use props argument with type
+type FooProps = Readonly<{
+name: string;
+score: number;
+}>;
+
+export const Foo = ({ name, score }: FooProps) => { // ...
+```
+
+### Props - Required & Optional
+
+Strive for required props and use optional ones sparingly.
+
+- **Create New Components with Required Props**: Most props should be required for new or single-use components.
+- **Introduce Optional Props with Caution**: For shared components or UI design system elements like `isDisabled` on buttons.
+- **Avoid Over-Complexity**: Break down complex components rather than accepting numerous optional props.
+
+### Use Discriminated Types
+
+Utilize discriminated types to eliminate optional props, reducing complexity.
+
+```ts
+// ❌ Avoid optional props
+type StatusProps = {
+data?: Products;
+title?: string;
+time?: number;
+error?: string;
+};
+
+// ✅ Strive for required props or use discriminated union
+type StatusProps = StatusSuccess | StatusLoading | StatusError;
+
+export const Status = (status: StatusProps) => { // ...
+```
