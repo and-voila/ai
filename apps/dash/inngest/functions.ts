@@ -100,6 +100,12 @@ const promptGenerateBlogpost = new PromptTemplate({
   inputVariables: ['writingstyle', 'idea'],
 });
 
+const promptCombineAnalyses = new PromptTemplate({
+  template:
+    'Combine the following analyses into a single comprehensive analysis:\n\n{analysis1}\n\n{analysis2}\n\n{analysis3}\n\n{analysis4}',
+  inputVariables: ['analysis1', 'analysis2', 'analysis3', 'analysis4'],
+});
+
 type ResponseRedis = {
   status: 'pending' | 'completed';
   writingAnalysis: WritingStyleType;
@@ -133,7 +139,7 @@ export const createWritingAnalysis = inngest.createFunction(
     });
 
     // map over samples and run analysis chain
-    const analysizedSamples = await Promise.all(
+    const analysedSamples = await Promise.all(
       samples.map(async (sample, i) => {
         const sampleAnalysis = await step.run(
           `sample analysis sample: ${i}`,
@@ -164,7 +170,7 @@ export const createWritingAnalysis = inngest.createFunction(
         uniqueVocabulary: [],
       };
 
-      analysizedSamples.forEach((sample) => {
+      analysedSamples.forEach((sample) => {
         try {
           const parsedSample = JSON.parse(sample.trim());
           for (const key in parsedSample) {
@@ -194,6 +200,27 @@ export const createWritingAnalysis = inngest.createFunction(
       );
 
       const formattedAnalysis = writingAnalysisString.join('\n\n');
+
+      await step.run('combine analysis', async () => {
+        const combinedAnalysisInput = await promptCombineAnalyses.format({
+          analysis1: analysedSamples[0],
+          analysis2: analysedSamples[1],
+          analysis3: analysedSamples[2],
+          analysis4: analysedSamples[3],
+        });
+        await fetch('/api/chat', {
+          method: 'POST',
+          body: JSON.stringify({
+            messages: [
+              {
+                role: 'system',
+                content: combinedAnalysisInput,
+                name: 'system',
+              },
+            ],
+          }),
+        });
+      });
 
       await redis.set(userId, {
         status: 'completed',
