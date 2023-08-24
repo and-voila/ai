@@ -1,5 +1,5 @@
 'use client';
-import { Message } from 'ai';
+import { Message, nanoid } from 'ai';
 import { useState } from 'react';
 import { Avatar, cn, Separator } from 'ui';
 
@@ -11,6 +11,7 @@ import { WritingSample } from './writing-sample';
 
 export interface ChatMessageProps {
   message: Message;
+  loading?: boolean;
 }
 
 export interface ChatList {
@@ -22,7 +23,8 @@ export interface ChatList {
 
 export function ChatMessage({ message, ...props }: ChatMessageProps) {
   return (
-    <div className={cn('my-10 flex')} {...props}>
+    <div className={cn('flex')} {...props}>
+      {props.loading && <>loading...</>}
       <div
         className={cn(
           'flex h-8 w-8 items-center justify-center rounded border border-primary-foreground ',
@@ -37,7 +39,6 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
       </div>
       <div className="ml-4 flex-1 space-y-2 overflow-hidden px-1">
         <MemoizedReactMarkdown
-          className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
           components={{
             p({ children }) {
               return <p className="mb-2 last:mb-0">{children}</p>;
@@ -71,48 +72,69 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
 }
 
 export function ChatList() {
-  const [learnMessages, setLearnMessages] = useState<Message[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [learnMessages, setLearnMessages] = useState<Message[]>([
+    {
+      content: 'Welcome we will need 5 of your right samples',
+      id: nanoid(),
+      role: 'system',
+      createdAt: new Date(),
+      name: 'system',
+    },
+  ]);
   const [step, setStep] = useState(0);
 
   function renderStep() {
     switch (step) {
       case 0:
-        return <WritingSample setStep={setStep} />;
+        return <WritingSample setStep={setStep} setLoading={setLoading} />;
       case 1:
         return (
           <ConfirmComponent
             setLearnMessages={setLearnMessages}
             setStep={setStep}
+            setLoading={setLoading}
           />
         );
       case 2:
         return (
-          <GenerateBlog setLearnMessages={setLearnMessages} setStep={setStep} />
+          <GenerateBlog
+            setLearnMessages={setLearnMessages}
+            setLoading={setLoading}
+          />
         );
-
       default:
         break;
     }
   }
 
   return (
-    <div className="relative mx-auto px-4">
-      {renderStep()}
-
+    <div className="relative mx-auto max-w-7xl px-16">
       {learnMessages
+        .sort((a, b) => {
+          if (!a.createdAt || !b.createdAt) {
+            return 0;
+          }
+          return (
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          );
+        })
         .filter(
           (message, index, self) =>
             index == self.findIndex((m) => m.id === message.id),
         )
         .map((message, index) => (
           <div key={index} className="mx-auto">
-            <ChatMessage message={message} />
+            <ChatMessage message={message} loading={loading} />
 
             {index < learnMessages.length - 1 && (
               <Separator className="my-4 md:my-8" />
             )}
           </div>
         ))}
+      <div className="fixed bottom-0 mx-auto w-[60%] bg-gradient-to-b from-muted/10 from-10% to-muted/30 to-50%">
+        {renderStep()}
+      </div>
     </div>
   );
 }
