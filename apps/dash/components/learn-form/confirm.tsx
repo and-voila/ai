@@ -19,11 +19,9 @@ type ResponseRedis = {
 const ConfirmComponent = ({
   setStep,
   setLearnMessages,
-  setLoading,
 }: {
   setStep: Dispatch<SetStateAction<number>>;
   setLearnMessages: Dispatch<SetStateAction<Message[]>>;
-  setLoading: Dispatch<SetStateAction<boolean>>;
 }) => {
   const { userId } = useAuth();
   const analyzedSample = useCallback(async () => {
@@ -44,8 +42,7 @@ const ConfirmComponent = ({
         ...response.messages!,
       ]);
     }
-    setLoading(false);
-  }, [setLoading, userId, setLearnMessages]);
+  }, [userId, setLearnMessages]);
 
   useEffect(() => {
     analyzedSample();

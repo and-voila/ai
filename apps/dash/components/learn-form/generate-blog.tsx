@@ -44,16 +44,13 @@ type ResponseRedis = {
 
 function GenerateBlog({
   setLearnMessages,
-  setLoading,
 }: {
   setLearnMessages: Dispatch<SetStateAction<Message[]>>;
-  setLoading: Dispatch<SetStateAction<boolean>>;
 }) {
   const { userId } = useAuth();
 
   async function analyzedSample() {
     let response: ResponseRedis | null = null;
-    setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 10000));
 
     do {
@@ -73,10 +70,18 @@ function GenerateBlog({
         ...response.messages!,
       ]);
     }
-    setLoading(false);
   }
 
   async function handlegenerate() {
+    setLearnMessages((prevMessages) => [
+      ...prevMessages,
+      {
+        id: 'blog-generator',
+        role: 'system',
+        content: 'loading...',
+        user: userId,
+      },
+    ]);
     await handleBlogPostGenerator({
       userId,
       idea: TOPIC_ONE,
@@ -91,14 +96,6 @@ function GenerateBlog({
           key={option.event}
           className="p-8 text-2xl"
           onClick={async () => {
-            setLearnMessages((prevMessages) => [
-              ...prevMessages,
-              {
-                id: 'writing-sample',
-                role: 'system',
-                content: 'loading...',
-              },
-            ]);
             await handlegenerate();
           }}
         >

@@ -15,11 +15,9 @@ import { handleWritingAnalysis } from '@/lib/handleInngest';
 
 export function WritingSample({
   setStep,
-  setLoading,
   setLearnMessages,
 }: {
   setStep: Dispatch<SetStateAction<number>>;
-  setLoading: Dispatch<SetStateAction<boolean>>;
   setLearnMessages: Dispatch<SetStateAction<Message[]>>;
 }) {
   const { userId } = useAuth();
@@ -54,7 +52,6 @@ export function WritingSample({
       ],
     });
     setStep((prevStep) => prevStep + 1);
-    setLoading(true);
   }
 
   const currentStepConfig = writingSampleSteps[currentStep];

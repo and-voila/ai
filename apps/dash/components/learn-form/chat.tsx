@@ -24,7 +24,6 @@ export interface ChatList {
 export function ChatMessage({ message, ...props }: ChatMessageProps) {
   return (
     <div className={cn('flex')} {...props}>
-      {props.loading && <>loading...</>}
       <div
         className={cn(
           'flex h-8 w-8 items-center justify-center rounded border border-primary-foreground ',
@@ -72,7 +71,6 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
 }
 
 export function ChatList() {
-  const [loading, setLoading] = useState(false);
   const [learnMessages, setLearnMessages] = useState<Message[]>([
     {
       content: 'Welcome we will need 5 of your right samples',
@@ -91,7 +89,6 @@ export function ChatList() {
           <WritingSample
             setLearnMessages={setLearnMessages}
             setStep={setStep}
-            setLoading={setLoading}
           />
         );
       case 1:
@@ -99,16 +96,10 @@ export function ChatList() {
           <ConfirmComponent
             setLearnMessages={setLearnMessages}
             setStep={setStep}
-            setLoading={setLoading}
           />
         );
       case 2:
-        return (
-          <GenerateBlog
-            setLearnMessages={setLearnMessages}
-            setLoading={setLoading}
-          />
-        );
+        return <GenerateBlog setLearnMessages={setLearnMessages} />;
       default:
         break;
     }
@@ -131,7 +122,7 @@ export function ChatList() {
         )
         .map((message, index) => (
           <div key={index} className="mx-auto">
-            <ChatMessage message={message} loading={loading} />
+            <ChatMessage message={message} />
 
             {index < learnMessages.length - 1 && (
               <Separator className="my-4 md:my-8" />
