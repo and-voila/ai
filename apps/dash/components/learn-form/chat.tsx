@@ -128,7 +128,19 @@ export function ChatList() {
               <Separator className="my-4 md:my-8" />
             </div>
           ))}
+        {isLoading && (
+          <ChatMessage
+            message={{
+              content: '▍',
+              id: nanoid(),
+              role: 'system',
+              createdAt: new Date(),
+              name: 'system',
+            }}
+          />
+        )}
       </div>
+
       <div className="fixed bottom-0 w-3/4">{renderStep()}</div>
     </div>
   );
