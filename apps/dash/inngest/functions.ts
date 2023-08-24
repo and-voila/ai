@@ -101,8 +101,7 @@ const promptGenerateBlogpost = new PromptTemplate({
 });
 
 const promptCombineAnalyses = new PromptTemplate({
-  template:
-    'Combine the following analyses into a single comprehensive analysis:\n\n{analysis1}\n\n{analysis2}\n\n{analysis3}\n\n{analysis4}',
+  template: `Combine the following analyses into a single comprehensive analysis:\n\n{analysis1}\n\n{analysis2}\n\n{analysis3}\n\n{analysis4} format should be the same as this ${PROMPT_SYSTEM_WRITING_ANALYSIS}`,
   inputVariables: ['analysis1', 'analysis2', 'analysis3', 'analysis4'],
 });
 
@@ -202,28 +201,30 @@ export const createWritingAnalysis = inngest.createFunction(
 
       const formattedAnalysis = writingAnalysisString.join('\n\n');
 
-      await step.run('combine analysis', async () => {
-        const combinedAnalysisInput = await promptCombineAnalyses.format({
-          analysis1: analysedSamples[0],
-          analysis2: analysedSamples[1],
-          analysis3: analysedSamples[2],
-          analysis4: analysedSamples[3],
-        });
-
-        await redis.set(userId, {
-          status: 'completed',
-          writingAnalysis: writingAnalysis,
-          combinedAnalysisInput: combinedAnalysisInput,
-          messages: [
-            {
-              id: nanoid(),
-              role: 'system',
-              content: formattedAnalysis,
-              createdAt: new Date(),
-            },
-          ],
-        });
+      const combinedAnalysisInput = await promptCombineAnalyses.format({
+        analysis1: analysedSamples[0],
+        analysis2: analysedSamples[1],
+        analysis3: analysedSamples[2],
+        analysis4: analysedSamples[3],
       });
+
+      console.log('combinedAnalysisInput', combinedAnalysisInput);
+
+      await redis.set(userId, {
+        status: 'completed',
+        writingAnalysis: writingAnalysis,
+        combinedAnalysisInput: combinedAnalysisInput,
+        messages: [
+          {
+            id: nanoid(),
+            role: 'system',
+            content: formattedAnalysis,
+            createdAt: new Date(),
+          },
+        ],
+      });
+
+      return combinedAnalysisInput;
     });
   },
 );
