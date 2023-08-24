@@ -1,0 +1,28 @@
+---
+title: 'Avoiding "any": Safe TypeScript Practices'
+date: '08-23-2023'
+description: 'A guide to avoiding the "any" data type in TypeScript, focusing on safer alternatives and best practices.'
+---
+
+## Avoiding the "any" Type in TypeScript
+
+The `any` data type in TypeScript should be avoided whenever possible. Representing literally "any" value, it allows the compiler to skip type checking, which can hide serious programming errors.
+
+Here's why you should steer clear of it, along with some safer alternatives:
+
+- **It Masks Errors**: Using `any` can hide problems in your code, leading to unexpected behaviors and bugs that are hard to trace.
+- **Safer Options Available**: If you truly cannot resolve an error, consider using the `unknown` type. Unlike `any`, `unknown` doesn't allow you to access any properties without type checking.
+- **Last Resort Measures**: If all else fails, you can use `@ts-expect-error` to suppress the error, but make sure to provide a reason. See [Type Error](#type-error) for more details.
+
+```ts
+// ❌ Avoid
+const something: any = getSomething();
+
+// ✅ Safer alternatives
+const something: unknown = getSomething();
+// or
+// @ts-expect-error: explanation of the error
+const something = getSomething();
+```
+
+By avoiding `any`, and embracing these practices, you can maintain a robust and more predictable codebase that leverages TypeScript's powerful type-checking capabilities.

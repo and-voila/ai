@@ -1,0 +1,25 @@
+---
+title: 'Handling TypeScript Errors: @ts-expect-error'
+date: '08-23-2023'
+description: 'Learn how to properly suppress TypeScript errors using @ts-expect-error and understand why @ts-ignore is disallowed.'
+---
+
+## Managing Type Errors
+
+When a TypeScript error is unresolvable, you may need to suppress it. The recommended approach is using `@ts-expect-error`, as it also checks if the suppressed line becomes error-free in the future ([eslint rule](https://typescript-eslint.io/rules/prefer-ts-expect-error/)).
+
+Avoid using `@ts-ignore`, as it lacks these checks. Instead, use `@ts-expect-error` with an accompanying description ([eslint rule](https://typescript-eslint.io/rules/ban-ts-comment/#allow-with-description)).
+
+Here's how to use it correctly:
+
+```ts
+// ❌ Avoid @ts-ignore
+// @ts-ignore
+const result = doSomething('hello');
+
+// ✅ Use @ts-expect-error with description
+// @ts-expect-error: the library definition is wrong
+const result = doSomething('hello');
+```
+
+Utilizing `@ts-expect-error` in the right way ensures a balance between suppressing necessary errors and maintaining code quality.

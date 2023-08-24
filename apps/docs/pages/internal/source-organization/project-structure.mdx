@@ -1,0 +1,57 @@
+---
+title: 'Monorepo Structure in Next JS: A Guided Tour'
+date: '08-23-2023'
+description: 'Explore the organization of a Next JS monorepo project, including applications, packages, and global assets. Learn how to structure your modules and common folders effectively.'
+---
+
+## Project Structure
+
+With the Next JS App Router, an example frontend monorepo project can be structured as follows:
+
+```shell
+apps/
+├─ product-manager/
+│ ├─ common/
+│ │ ├─ components/
+│ │ │ ├─ Button/
+│ │ │ ├─ ProductTitle/
+│ │ │ ├─ ...
+│ │ │ └─ index.tsx
+│ │ ├─ consts/
+│ │ │ ├─ paths.ts
+│ │ │ └─ ...
+│ │ ├─ hooks/
+│ │ └─ types/
+│ ├─ modules/
+│ │ ├─ HomePage/
+│ │ ├─ ProductAddPage/
+│ │ ├─ ProductPage/
+│ │ ├─ ProductsPage/
+│ │ │ ├─ api/
+│ │ │ │ └─ useGetProducts/
+│ │ │ ├─ components/
+│ │ │ │ ├─ ProductItem/
+│ │ │ │ ├─ ProductsStatistics/
+│ │ │ │ └─ ...
+│ │ │ ├─ utils/
+│ │ │ │ └─ filterProductsByType/
+│ │ │ └─ index.tsx
+│ │ ├─ ...
+│ │ └─ index.tsx
+│ ├─ eslintrc.js
+│ ├─ package.json
+│ └─ tsconfig.json
+├─ warehouse/
+├─ admin-dashboard/
+└─ ...
+```
+
+In this setup:
+
+- **`modules` Folder**: Manages the implementation of each individual page, encompassing all custom features for that page such as components, hooks, utility functions, etc.
+
+- **`common` Folder**: Contains truly cross-application implementations. Since it serves as a "global folder," it should be used sparingly. For instance, if a component like `common/components/ProductTitle` is used on more than one page, it shall be moved to the common folder.
+
+- **File-System Based Router**: If you're using a file-system based router (such as Next.js), the `pages` folder's sole responsibility is to define routes, without any business logic implementation.
+
+This structure ensures a clean and manageable codebase, providing a clear roadmap for your Next.js project.

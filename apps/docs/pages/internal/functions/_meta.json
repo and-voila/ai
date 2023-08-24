@@ -1,0 +1,6 @@
+{
+  "functions": "Functions General",
+  "single-object-arg": "Single Object Arg",
+  "required-optional-args": "Required & Optional Args",
+  "args-discriminated-union": "Args as Discriminated Union"
+}

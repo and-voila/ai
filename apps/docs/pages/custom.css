@@ -3,7 +3,16 @@
 @tailwind utilities;
 
 article {
-  @apply prose-slate dark:prose-invert lg:prose-lg;
+  @apply prose-slate p-6 dark:prose-invert lg:prose-lg lg:p-12;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  @apply font-display font-semibold;
 }
 
 @font-face {
@@ -25,8 +34,4 @@ body,
   font-style: normal;
   font-stretch: 75% 125%;
   src: url('../../../public/Mona-Sans.var.woff2') format('woff2');
-}
-
-article {
-  @apply prose-slate dark:prose-invert lg:prose-lg;
 }

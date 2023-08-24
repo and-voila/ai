@@ -18,16 +18,16 @@ import { FrameworkTabs, Tab } from '@/components/framework-tabs'
 To use `useChat` in React projects, you can import it from the `ai/react` subpath. Below is a usage example demonstrating a basic chat interface:
 
 ```tsx filename="app/chat.tsx" {6}
-'use client'
+'use client';
 
-import { useChat } from 'ai/react'
+import { useChat } from 'ai/react';
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat()
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   return (
     <div>
-      {messages.map(m => (
+      {messages.map((m) => (
         <div key={m.id}>
           {m.role === 'user' ? 'User: ' : 'AI: '}
           {m.content}
@@ -42,7 +42,7 @@ export default function Chat() {
         <button type="submit">Send</button>
       </form>
     </div>
-  )
+  );
 }
 ```
 

@@ -1,0 +1,39 @@
+---
+title: 'Const Assertion in TypeScript'
+date: '08-23-2023'
+description: 'An exploration of const assertions in TypeScript, illustrating how to narrow types and make properties readonly for more robust code.'
+---
+
+## Const Assertion - A TypeScript Best Practice
+
+Using const assertions in TypeScript (via `as const`) enhances code quality by ensuring:
+
+- **Type Narrowing:** The type is made more specific.
+- **Readonly Properties:** Objects are given `readonly` attributes.
+- **Readonly Tuples:** Arrays are transformed into `readonly` tuples.
+
+This practice reinforces immutability and adds an extra layer of protection against unintentional modifications.
+
+### Examples
+
+Here's how to apply const assertions:
+
+### Bad
+
+```ts
+// ❌ Avoid declaring constants without const assertion
+const BASE_LOCATION = { x: 50, y: 130 }; // Type { x: number; y: number; }
+BASE_LOCATION.x = 10;
+const BASE_LOCATION = [50, 130]; // Type number[]
+BASE_LOCATION.push(10);
+```
+
+### Good
+
+```ts
+// ✅ Use const assertion
+const BASE_LOCATION = { x: 50, y: 130 } as const; // Type '{ readonly x: 50; readonly y: 130; }'
+const BASE_LOCATION = [50, 130] as const; // Type 'readonly [10, 20]'
+```
+
+By adhering to const assertions, you can make your code more concise, expressive, and less prone to errors. It aligns well with principles of data immutability and type safety.
