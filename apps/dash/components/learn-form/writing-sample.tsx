@@ -1,7 +1,8 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Message } from 'ai';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
 
@@ -10,12 +11,14 @@ import {
   writingSampleSchema,
   writingSampleSteps,
 } from '@/app/(dashboard)/learn/constant';
-import { handleWritingAnalysis } from '@/lib/handleInngest';
+import { handleWritingAnalysis, removeWritingRedis } from '@/lib/handleInngest';
 
 export function WritingSample({
   setStep,
+  setLearnMessages,
 }: {
   setStep: Dispatch<SetStateAction<number>>;
+  setLearnMessages: Dispatch<SetStateAction<Message[]>>;
 }) {
   const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
@@ -31,6 +34,14 @@ export function WritingSample({
   });
 
   async function onSubmit(values: WritingSampleDataType) {
+    setLearnMessages((prevMessages) => [
+      ...prevMessages,
+      {
+        id: 'writing-sample',
+        role: 'system',
+        content: 'loading...',
+      },
+    ]);
     await handleWritingAnalysis({
       userId: userId,
       samples: [
@@ -59,19 +70,25 @@ export function WritingSample({
     }
   };
 
+  useEffect(() => {
+    (async () => {
+      await removeWritingRedis(userId);
+    })();
+  }, [userId]);
+
   return (
-    <div className="px-4 lg:px-8">
-      <Form {...form}>
+    <Form {...form}>
+      <div className="mb-10 flex grid w-full grid-cols-12 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6">
         <form
           noValidate
           onSubmit={form.handleSubmit(onSubmit)}
-          className="grid w-full grid-cols-12 gap-2 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6"
+          className="col-span-12 grid w-full grid-cols-12"
         >
           {writingSampleSteps.map((step, index) => (
             <div
               key={step.fieldName}
               className={cn(
-                'col-span-12 lg:col-span-10',
+                'col-span-12 w-full lg:col-span-10',
                 index === currentStep ? '' : 'hidden',
               )}
             >
@@ -108,7 +125,7 @@ export function WritingSample({
             </Button>
           )}
         </form>
-      </Form>
-    </div>
+      </div>
+    </Form>
   );
 }
