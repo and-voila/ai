@@ -14,8 +14,10 @@ import { handleWritingAnalysis } from '@/lib/handleInngest';
 
 export function WritingSample({
   setStep,
+  setLoading,
 }: {
   setStep: Dispatch<SetStateAction<number>>;
+  setLoading: Dispatch<SetStateAction<boolean>>;
 }) {
   const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
@@ -41,6 +43,7 @@ export function WritingSample({
       ],
     });
     setStep((prevStep) => prevStep + 1);
+    setLoading(true);
   }
 
   const currentStepConfig = writingSampleSteps[currentStep];
@@ -60,18 +63,18 @@ export function WritingSample({
   };
 
   return (
-    <div className="px-4 lg:px-8">
-      <Form {...form}>
+    <Form {...form}>
+      <div className="mb-10 flex grid w-full grid-cols-12 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6">
         <form
           noValidate
           onSubmit={form.handleSubmit(onSubmit)}
-          className="grid w-full grid-cols-12 gap-2 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6"
+          className="col-span-12 grid w-full grid-cols-12"
         >
           {writingSampleSteps.map((step, index) => (
             <div
               key={step.fieldName}
               className={cn(
-                'col-span-12 lg:col-span-10',
+                'col-span-12 w-full lg:col-span-10',
                 index === currentStep ? '' : 'hidden',
               )}
             >
@@ -108,7 +111,7 @@ export function WritingSample({
             </Button>
           )}
         </form>
-      </Form>
-    </div>
+      </div>
+    </Form>
   );
 }
