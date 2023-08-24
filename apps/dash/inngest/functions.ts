@@ -210,7 +210,7 @@ export const createWritingAnalysis = inngest.createFunction(
           analysis4: analysedSamples[3],
         });
 
-        redis.set(userId, {
+        await redis.set(userId, {
           status: 'completed',
           writingAnalysis: writingAnalysis,
           combinedAnalysisInput: combinedAnalysisInput,
