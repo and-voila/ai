@@ -1,7 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { useAuth } from '@clerk/nextjs';
 import { ChatRequestOptions, CreateMessage, Message, nanoid } from 'ai';
-import React, { Dispatch, SetStateAction, useCallback, useEffect } from 'react';
+import React, {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { Button } from 'ui';
 
 import { getUserWritingRedis, ResponseRedis } from '@/lib/handleInngest';
@@ -19,9 +25,9 @@ const ConfirmComponent = ({
   ) => Promise<string>;
 }) => {
   const { userId } = useAuth();
+  const [isAppended, setIsAppended] = useState(false);
   const analyzedSample = useCallback(async () => {
     let response: ResponseRedis | null = null;
-    let isAppended = false;
 
     do {
       const res = await getUserWritingRedis(userId);
@@ -37,7 +43,7 @@ const ConfirmComponent = ({
         role: 'user',
         id: nanoid(),
       });
-      isAppended = true;
+      setIsAppended(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
