@@ -1,0 +1,148 @@
+---
+title: 'Naming Conventions in Code: A Guide'
+date: '08-23-2023'
+description: 'Optimize code with consistent naming, treating acronyms as words. Learn how to enhance readability.'
+---
+
+## Naming Conventions
+
+Choosing the right name can be tough, but it's essential for clear and consistent code. Aim to optimize for future readers by following these conventions:
+
+### Abbreviations & Acronyms
+
+Treat acronyms as whole words, capitalizing only the first letter. This approach unifies naming styles and eases understanding.
+
+```ts
+// ❌ Avoid
+const FAQList = ['qa-1', 'qa-2'];
+const generateUserURL(params) => {...}
+
+// ✅ Use
+const FaqList = ['qa-1', 'qa-2'];
+const generateUserUrl(params) => {...}
+```
+
+In favor of readability, strive to avoid abbreviations, unless they are widely accepted and necessary.
+
+```ts
+// ❌ Avoid
+const GetWin(params) => {...}
+
+// ✅ Use
+const GetWindow(params) => {...}
+```
+
+### Variables
+
+- **Locals**:  
+  Camel case  
+  `products`, `productsFiltered`
+- **Booleans**:  
+  Prefixed with `is`, `has`, etc.  
+  `isDisabled`, `hasProduct`
+- **Constants**:  
+  Capitalized  
+  `PRODUCT_ID`
+- **Object constants**:  
+  Singular, capitalized with const assertion and optionally satisfies type (if there is one).
+
+  ```ts
+  const ORDER_STATUS = {
+    pending: 'pending',
+    fulfilled: 'fulfilled',
+    error: 'error',
+  } as const satisfies OrderStatus;
+  ```
+
+### Functions
+
+Camel case  
+`filterProductsByType`, `formatCurrency`
+
+### Generics
+
+A name starts with the capital letter T `TRequest`, `TFooBar` (similar to [.Net internal](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-5.0) implementation or [Google style guide](https://google.github.io/styleguide/javaguide.html#s5.2.8-type-variable-names)).  
+Avoid (popular convention) naming generics with one character `T`, `K` etc., the more variables we introduce, the easier it is to mistake them.
+
+```ts
+// ❌ Avoid naming generics with one character
+const createPair = <T, K extends string>(first: T, second: K): [T, K] => {
+  return [first, second];
+};
+const pair = createPair(1, 'a');
+
+// ✅ Name starts with the capital letter T
+const createPair = <TFirst, TSecond extends string>(
+  first: TFirst,
+  second: TSecond,
+): [TFirst, TSecond] => {
+  return [first, second];
+};
+const pair = createPair(1, 'a');
+```
+
+[Eslint rule](https://typescript-eslint.io/rules/naming-convention) implements:
+
+```ts
+// .eslintrc.js
+'@typescript-eslint/naming-convention': [
+  'error',
+  {
+    selector: 'typeParameter',
+    format: ['PascalCase'],
+    custom: { regex: '^T[A-Z]', match: true },
+  },
+],
+```
+
+### React Components
+
+Pascal case  
+`ProductItem`, `ProductsPage`
+
+### Prop Types
+
+React component name following "Props" postfix  
+`[ComponentName]Props` - `ProductItemProps`, `ProductsPageProps`
+
+### Callback Props
+
+Event handler (callback) props are prefixed as `on*` - e.g. `onClick`.  
+Event handler implementation functions are prefixed as `handle*` - e.g. `handleClick` ([eslint rule](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md)).
+
+```tsx
+// ❌ Avoid inconsistent callback prop naming
+<Button click={actionClick} />
+<MyComponent userSelectedOccurred={triggerUser} />
+
+// ✅ Use prop prefix 'on*' and handler prefix 'handle*'
+<Button onClick={handleClick} />
+<MyComponent onUserSelected={handleUserSelected} />
+```
+
+### Comments
+
+Comments in general should be avoided. Try to write expressive code and name things what they are before adding comments.
+
+As an exception use comments only when you need to add context or explain choices that cannot be expressed through code.  
+Comments should always be complete sentences. As rule of a thumb try to explain `why` in comments, not `how` and `what`.
+
+```ts
+// ❌ Avoid
+// convert to minutes
+const m = s * 60;
+// avg users per minute
+const myAvg = u / m;
+
+// ✅ Use
+const SECONDS_IN_MINUTE = 60;
+const minutes = seconds * SECONDS_IN_MINUTE;
+const averageUsersPerMinute = noOfUsers / minutes;
+
+// TODO: Filtering should be moved to the backend once API changes are released.
+// Issue/PR - https://github.com/foo/repo/pulls/55124
+const filteredUsers = frontendFiltering(selectedUsernames);
+
+// Use Fourier transformation to minimize information loss - https://github.com/dntj/jsfft#usage
+const frequencies = signal.FFT();
+```

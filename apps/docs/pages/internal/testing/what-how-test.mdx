@@ -1,0 +1,32 @@
+---
+title: 'Testing in React: What & How'
+date: '08-23-2023'
+description: 'Guidelines on implementing automated tests in React, focusing on best practices, what to test, and common pitfalls to avoid.'
+---
+
+## What & How To Test in React
+
+Automated testing enhances code quality and eases refactoring, catching bugs early. Balance what and how to test for confidence without slowing the team.
+
+### ✅ Do:
+
+- **Write Clear Tests**: Tests should be short, simple, and convey intent instantly.
+- **Test Business Logic**: Emulate user input and expected output rather than technical details.
+- **Isolated Execution**: Ensure tests run standalone and don't depend on others.
+- **Resilient Tests**: Query HTML elements by attributes unlikely to change. Follow [Testing Library](https://testing-library.com/docs/queries/about/#priority) query priority: [role](https://testing-library.com/docs/queries/byrole), [label](https://testing-library.com/docs/queries/bylabeltext), etc.
+
+### ❌ Don't:
+
+- **Avoid Testing Implementation**: Tests should remain intact when refactoring.
+- **Avoid Re-testing Libraries**: Don't re-test what's already tested in libraries or frameworks.
+- **Avoid 100% Code Coverage**: Strive for meaningful coverage, not just a percentage.
+- **Avoid Testing for the Sake of Testing**:
+  ```ts
+  // ❌ Avoid
+  it('should render user list', () => {
+    render(<UserList />);
+    expect(screen.getByText('Users List')).toBeInTheDocument();
+  });
+  ```
+
+These guidelines foster a testing culture that prioritizes meaningful tests over quantity, focusing on what genuinely contributes to the application's reliability.

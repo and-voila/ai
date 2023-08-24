@@ -33,59 +33,59 @@ Create a Next.js Route Handler that uses the Edge Runtime to generate a response
 For this example, we'll create a route handler at `app/api/chat/route.ts` that accepts a `POST` request with a `messages` array of strings:
 
 ```tsx filename="app/api/chat/route.ts" showLineNumbers
-import { AnthropicStream, StreamingTextResponse } from 'ai'
+import { AnthropicStream, StreamingTextResponse } from 'ai';
 
 // IMPORTANT! Set the runtime to edge
-export const runtime = 'edge'
+export const runtime = 'edge';
 
 // Build a prompt from the messages
 function buildPrompt(
-  messages: { content: string; role: 'system' | 'user' | 'assistant' }[]
+  messages: { content: string; role: 'system' | 'user' | 'assistant' }[],
 ) {
   return (
     messages
       .map(({ content, role }) => {
         if (role === 'user') {
-          return `Human: ${content}`
+          return `Human: ${content}`;
         } else {
-          return `Assistant: ${content}`
+          return `Assistant: ${content}`;
         }
       })
       .join('\n\n') + 'Assistant:'
-  )
+  );
 }
 
 export async function POST(req: Request) {
   // Extract the `messages` from the body of the request
-  const { messages } = await req.json()
+  const { messages } = await req.json();
 
   const response = await fetch('https://api.anthropic.com/v1/complete', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': process.env.ANTHROPIC_API_KEY
+      'x-api-key': process.env.ANTHROPIC_API_KEY,
     },
     body: JSON.stringify({
       prompt: buildPrompt(messages),
       model: 'claude-v1',
       max_tokens_to_sample: 300,
       temperature: 0.9,
-      stream: true
-    })
-  })
+      stream: true,
+    }),
+  });
 
   // Check for errors
   if (!response.ok) {
     return new Response(await response.text(), {
-      status: response.status
-    })
+      status: response.status,
+    });
   }
 
   // Convert the response into a friendly text-stream
-  const stream = AnthropicStream(response)
+  const stream = AnthropicStream(response);
 
   // Respond with the stream
-  return new StreamingTextResponse(stream)
+  return new StreamingTextResponse(stream);
 }
 ```
 
@@ -107,16 +107,16 @@ Create a Client component with a form that we'll use to gather the prompt from t
 By default, the [`useChat`](/docs/api-reference#usechat) hook will use the `POST` Route Handler we created above (it defaults to `/api/chat`). You can override this by passing a `api` prop to `useChat({ api: '...'})`.
 
 ```tsx filename="app/page.tsx" showLineNumbers
-'use client'
+'use client';
 
-import { useChat } from 'ai/react'
+import { useChat } from 'ai/react';
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat()
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   return (
-    <div className="mx-auto w-full max-w-md py-24 flex flex-col stretch">
-      {messages.map(m => (
+    <div className="stretch mx-auto flex w-full max-w-md flex-col py-24">
+      {messages.map((m) => (
         <div key={m.id}>
           {m.role === 'user' ? 'User: ' : 'AI: '}
           {m.content}
@@ -127,7 +127,7 @@ export default function Chat() {
         <label>
           Say something...
           <input
-            className="fixed w-full max-w-md bottom-0 border border-gray-300 rounded mb-8 shadow-xl p-2"
+            className="fixed bottom-0 mb-8 w-full max-w-md rounded border border-gray-300 p-2 shadow-xl"
             value={input}
             onChange={handleInputChange}
           />
@@ -135,7 +135,7 @@ export default function Chat() {
         <button type="submit">Send</button>
       </form>
     </div>
-  )
+  );
 }
 ```
 
@@ -150,35 +150,35 @@ export default function Chat() {
 Similar to the Chat Bot example above, we'll create a Next.js Route Handler that generates a text completion via the same Anthropic API that we'll then stream back to our Next.js. It accepts a `POST` request with a `prompt` string:
 
 ```tsx filename="app/api/completion/route.ts" showLineNumbers
-import { AnthropicStream, StreamingTextResponse } from 'ai'
+import { AnthropicStream, StreamingTextResponse } from 'ai';
 
 // IMPORTANT! Set the runtime to edge
-export const runtime = 'edge'
+export const runtime = 'edge';
 
 export async function POST(req: Request) {
   // Extract the `prompt` from the body of the request
-  const { prompt } = await req.json()
+  const { prompt } = await req.json();
 
   const response = await fetch('https://api.anthropic.com/v1/complete', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': process.env.ANTHROPIC_API_KEY
+      'x-api-key': process.env.ANTHROPIC_API_KEY,
     },
     body: JSON.stringify({
       prompt: `Human: ${prompt}\n\nAssistant:`,
       model: 'claude-v1',
       max_tokens_to_sample: 300,
       temperature: 0.9,
-      stream: true
-    })
-  })
+      stream: true,
+    }),
+  });
 
   // Convert the response into a friendly text-stream
-  const stream = AnthropicStream(response)
+  const stream = AnthropicStream(response);
 
   // Respond with the stream
-  return new StreamingTextResponse(stream)
+  return new StreamingTextResponse(stream);
 }
 ```
 
@@ -187,9 +187,9 @@ export async function POST(req: Request) {
 We can use the [`useCompletion`](/docs/api-reference#usecompletion) hook to make it easy to wire up the UI. By default, the `useCompletion` hook will use the `POST` Route Handler we created above (it defaults to `/api/completion`). You can override this by passing a `api` prop to `useCompletion({ api: '...'})`.
 
 ```tsx filename="app/page.tsx" showLineNumbers
-'use client'
+'use client';
 
-import { useCompletion } from 'ai/react'
+import { useCompletion } from 'ai/react';
 
 export default function Completion() {
   const {
@@ -198,18 +198,18 @@ export default function Completion() {
     stop,
     isLoading,
     handleInputChange,
-    handleSubmit
+    handleSubmit,
   } = useCompletion({
-    api: '/api/completion'
-  })
+    api: '/api/completion',
+  });
 
   return (
-    <div className="mx-auto w-full max-w-md py-24 flex flex-col stretch">
+    <div className="stretch mx-auto flex w-full max-w-md flex-col py-24">
       <form onSubmit={handleSubmit}>
         <label>
           Say something...
           <input
-            className="fixed w-full max-w-md bottom-0 border border-gray-300 rounded mb-8 shadow-xl p-2"
+            className="fixed bottom-0 mb-8 w-full max-w-md rounded border border-gray-300 p-2 shadow-xl"
             value={input}
             onChange={handleInputChange}
           />
@@ -223,7 +223,7 @@ export default function Completion() {
         </button>
       </form>
     </div>
-  )
+  );
 }
 ```
 
@@ -242,21 +242,21 @@ export async function POST(req: Request) {
     onStart: async () => {
       // This callback is called when the stream starts
       // You can use this to save the prompt to your database
-      await savePromptToDatabase(prompt)
+      await savePromptToDatabase(prompt);
     },
     onToken: async (token: string) => {
       // This callback is called for each token in the stream
       // You can use this to debug the stream or save the tokens to your database
-      console.log(token)
+      console.log(token);
     },
     onCompletion: async (completion: string) => {
       // This callback is called when the completion is ready
       // You can use this to save the final completion to your database
-      await saveCompletionToDatabase(completion)
-    }
-  })
+      await saveCompletionToDatabase(completion);
+    },
+  });
 
   // Respond with the stream
-  return new StreamingTextResponse(response)
+  return new StreamingTextResponse(response);
 }
 ```

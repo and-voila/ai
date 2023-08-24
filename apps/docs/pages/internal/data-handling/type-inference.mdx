@@ -1,0 +1,34 @@
+---
+title: 'Embracing Type Inference in TypeScript'
+date: '08-23-2023'
+description: 'Learn when and how to use type inference in TypeScript to make your code more readable and maintainable.'
+---
+
+## Leveraging Type Inference
+
+Type inference in TypeScript allows the compiler to deduce the types automatically. But knowing when to explicitly declare types and when to rely on inference is crucial. It can aid in code readability and better express the intent of your code.
+
+```ts
+// ❌ Avoid: No need to specify when type can be inferred
+const userRole: string = 'admin'; // Type 'string'
+const employees = new Map<string, number>([['gabriel', 32]]);
+const [isActive, setIsActive] = useState<boolean>(false);
+
+// Avoid: Type can be narrowed
+const employees = new Map(); // Type 'Map<any, any>'
+type UserRole = 'admin' | 'guest';
+const [userRole, setUserRole] = useState('admin'); // Type 'string'
+
+// ✅ Use: Let inference do the work
+const USER_ROLE = 'admin'; // Type 'admin'
+const employees = new Map([['gabriel', 32]]); // Type 'Map<string, number>'
+const [isActive, setIsActive] = useState(false); // Type 'boolean'
+
+// Use: Be explicit when it adds clarity
+const employees = new Map<string, number>(); // Type 'Map<string, number>'
+employees.set('gabriel', 32);
+type UserRole = 'admin' | 'guest';
+const [userRole, setUserRole] = useState<UserRole>('admin'); // Type 'UserRole'
+```
+
+In summary, leverage type inference when it naturally expresses the code, and don't hesitate to declare types explicitly when it narrows the type or enhances the readability.

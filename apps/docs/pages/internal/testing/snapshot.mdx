@@ -1,0 +1,25 @@
+---
+title: 'Snapshot Testing: Usage Guidelines'
+date: '08-23-2023'
+description: 'Understanding when to avoid snapshot testing in React and the exceptions where it might be applicable.'
+---
+
+## Snapshot Testing in React
+
+Snapshot tests, while convenient, are generally discouraged due to their fragility. They can lead to a mindset of "just update it" to pass the tests, undermining the purpose of testing.
+
+### Why Avoid Snapshot Tests?
+
+- **Fragility**: Small changes can lead to test failures, tempting developers to simply update the snapshot without proper review.
+- **Lack of Clarity**: It's often unclear what exactly is being tested, leading to false confidence.
+
+### Exceptions to the Rule
+
+Despite these challenges, exceptions can be made when:
+
+- **Clear Intent**: The test output is short and the intent of what's being tested is clear.
+- **Critical Elements**: For critical elements that must not deviate, such as in a design system library.
+
+In these scenarios, a strong rationale must back the use of snapshot tests to ensure that they add value and do not become a maintenance burden.
+
+By being mindful of when to use snapshot testing, developers can create more robust and meaningful test suites that truly verify the functionality of their code.

@@ -1,0 +1,34 @@
+---
+title: 'TypeScript: Choosing Between `type` and `interface`'
+date: '08-23-2023'
+description: 'Understand when and why to use `type` or `interface` in TypeScript, and the specific guideline to maintain consistency in your codebase.'
+---
+
+## Type Definition in TypeScript: A Unified Approach
+
+TypeScript provides two primary ways to define types - `type` and `interface`. While these options are functionally distinct, to maintain codebase consistency, we prefer one over the other.
+
+- **Use `type` Alias**: All types must be defined using the `type` alias, as per the [eslint rule](https://typescript-eslint.io/rules/consistent-type-definitions/#type). This approach minimizes syntax differences and maintains a unified coding style.
+
+  ```ts
+  // ✅ Preferred type definition
+  type UserInfo = {
+    name: string;
+  };
+  ```
+
+- **Consider Interfaces for Exceptions**: When developing a package that may be extended, or if your team prefers working with interfaces, exceptions can be made. In cases of type unions or other exceptions, disable the lint rule as necessary.
+
+  ```ts
+  // ❌ Generally avoid interface definitions
+  // ✅ But may use in specific cases
+  declare namespace NodeJS {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+    export interface ProcessEnv {
+      NODE_ENV: 'development' | 'production';
+      PORT: string;
+    }
+  }
+  ```
+
+  These guidelines strive to align your TypeScript code with modern best practices while allowing flexibility for specific use cases.
