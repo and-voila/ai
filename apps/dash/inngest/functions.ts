@@ -209,31 +209,20 @@ export const createWritingAnalysis = inngest.createFunction(
           analysis3: analysedSamples[2],
           analysis4: analysedSamples[3],
         });
-        await fetch('/api/chat', {
-          method: 'POST',
-          body: JSON.stringify({
-            messages: [
-              {
-                role: 'system',
-                content: combinedAnalysisInput,
-                name: 'system',
-              },
-            ],
-          }),
-        });
-      });
 
-      await redis.set(userId, {
-        status: 'completed',
-        writingAnalysis: writingAnalysis,
-        messages: [
-          {
-            id: nanoid(),
-            role: 'system',
-            content: formattedAnalysis,
-            createdAt: new Date(),
-          },
-        ],
+        redis.set(userId, {
+          status: 'completed',
+          writingAnalysis: writingAnalysis,
+          combinedAnalysisInput: combinedAnalysisInput,
+          messages: [
+            {
+              id: nanoid(),
+              role: 'system',
+              content: formattedAnalysis,
+              createdAt: new Date(),
+            },
+          ],
+        });
       });
     });
   },
