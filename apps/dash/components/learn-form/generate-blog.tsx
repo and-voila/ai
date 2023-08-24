@@ -12,7 +12,6 @@ import {
 
 const TOPIC_ONE = `
 Create a well-structured blog post of 750 words or less on the topic: "Empowering Creators with AI: A New Dawn of Possibilities". The blog post should discuss the following:
-
 1. Introduction: Brief overview of AI and its relevance in today's world.
 2. Body: Explain how AI is empowering creators, providing examples of AI tools and platforms that creators are using to enhance their creativity and efficiency. Discuss the impact of AI on different domains of creativity like art, music, writing, and more.
 3. Conclusion: Forecast on the future implications of AI for creators and how it will revolutionize creativity.
@@ -44,10 +43,8 @@ type ResponseRedis = {
 };
 
 function GenerateBlog({
-  setStep,
   setLearnMessages,
 }: {
-  setStep: Dispatch<SetStateAction<number>>;
   setLearnMessages: Dispatch<SetStateAction<Message[]>>;
 }) {
   const { userId } = useAuth();
@@ -72,11 +69,19 @@ function GenerateBlog({
         ...prevMessages,
         ...response.messages!,
       ]);
-      setStep((prevStep) => prevStep + 1);
     }
   }
 
   async function handlegenerate() {
+    setLearnMessages((prevMessages) => [
+      ...prevMessages,
+      {
+        id: 'blog-generator',
+        role: 'system',
+        content: 'loading...',
+        user: userId,
+      },
+    ]);
     await handleBlogPostGenerator({
       userId,
       idea: TOPIC_ONE,
@@ -85,11 +90,11 @@ function GenerateBlog({
   }
 
   return (
-    <div className="mx-auto block grid max-w-2xl grid-cols-3 gap-4 px-4 py-4 lg:px-16">
+    <div className="mb-10 block grid w-full grid-cols-3 gap-4">
       {generateOptions.map((option) => (
         <Button
           key={option.event}
-          className="cursor-pointer rounded-md border bg-muted p-4 text-center hover:animate-none hover:bg-primary hover:text-white"
+          className="p-8 text-2xl"
           onClick={async () => {
             await handlegenerate();
           }}
