@@ -1,0 +1,24 @@
+---
+title: 'Using Type & Non-nullability Assertions: When and Why'
+date: '08-23-2023'
+description: 'A cautionary guide to using type and non-nullability assertions in TypeScript, highlighting risks and when they might be necessary.'
+---
+
+## Understanding Type & Non-nullability Assertions
+
+Type assertions, like `brand as BrandType`, and non-nullability assertions, such as `brand!.name`, are potentially risky operations. These assertions only silence the TypeScript compiler and can lead to runtime errors that crash your application.
+
+While these tools exist, their use should be minimized and restricted to situations where they are an absolute necessity. For instance, a mismatch with third-party library types might necessitate an assertion.
+
+### Here's what you should be aware of
+
+- **Avoid Unnecessary Usage**: Limit the use of assertions to exceptional cases where no other safe alternatives are available.
+- **Provide Justification**: If an assertion is introduced into the codebase, it should be accompanied by a clear and strong rationale explaining why it is needed.
+
+```ts
+// ⚠️ Use with caution
+const brandType = brand as BrandType; // Type assertion
+const brandName = brand!.name; // Non-nullability assertion
+```
+
+By following these principles, you can maintain a more robust and reliable codebase that leverages TypeScript's type-checking capabilities without introducing unnecessary risks.

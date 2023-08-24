@@ -1,0 +1,21 @@
+{
+  "data-immutability": "Data Immutability",
+  "-- Variables": {
+    "type": "separator",
+    "title": "Variables"
+  },
+  "const-assertion": "Const Assertion",
+  "enums-consts-assertions": "Enums & Const Assertion",
+  "null-undefined": "Null & Undefined",
+  "-- Types": {
+    "type": "separator",
+    "title": "Types"
+  },
+  "type-definitions": "Type Definition",
+  "array-types": "Array Types",
+  "type-inference": "Type Inference",
+  "return-types": "Return Types",
+  "type-error": "Type Error",
+  "type-non-nullability": "Type & Non-nullability Assertions",
+  "any": "Any"
+}

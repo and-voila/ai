@@ -1,0 +1,23 @@
+---
+title: 'Array Types in TypeScript: A Guide'
+date: '08-23-2023'
+description: 'Discover how to use generic syntax for array types in TypeScript and align your code with modern best practices.'
+---
+
+## Defining Array Types Using Generic Syntax
+
+In TypeScript, defining array types with generic syntax is a widely-accepted practice. Following this pattern not only maintains code consistency but also adheres to the [eslint rule](https://typescript-eslint.io/rules/array-type/#generic) that encourages this syntax.
+
+Below, you'll find a comparison between the conventional array syntax and the preferred generic syntax:
+
+```ts
+// ❌ Avoid this
+const x: string[] = ['a', 'b'];
+const y: readonly string[] = ['a', 'b'];
+
+// ✅ Instead, use this
+const x: Array<string> = ['a', 'b'];
+const y: ReadonlyArray<string> = ['a', 'b'];
+```
+
+By employing the generic syntax for array types, you can make your TypeScript code more flexible, clear, and maintainable.

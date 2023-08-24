@@ -1,0 +1,59 @@
+---
+title: 'Guiding Component Types in React'
+date: '08-23-2023'
+description: 'Understanding Container, UI-Feature, and UI-Design system components in React, their structures, and best practices.'
+---
+
+## Component Types in React
+
+React components are divided into specific types, each serving a unique role within the application. Here's a guide to understanding these types.
+
+### Container Components
+
+Container components, often postfixed with "Container" or "Page," serve as the backbone of a feature within a React application.
+
+- **Naming Convention**: Use "Container" for generic containers, "Page" for web pages (e.g., `[ComponentName]Container|Page`).
+- **Examples**: `AddUserContainer.tsx`, `EditProductContainer.tsx`, `ProductsPage.tsx`.
+- **Responsibilities**: Business logic, API integration, coordination of child components.
+- **Directory Structure**:
+  ```
+  ProductsPage/
+  ├─ api/
+  │  └─ useGetProducts/
+  ├─ components/
+  │  └─ ProductItem/
+  ├─ utils/
+  │  └─ filterProductsByType/
+  └─ index.tsx
+  ```
+
+### UI - Feature Components
+
+These are representational components created to meet specific feature requirements within a container.
+
+- **Location**: Nested inside the container component folder.
+- **Conventions**: Should adhere to [functions conventions](#functions) for consistency.
+- **Structure**:
+  ```
+  ProductItem/
+  ├─ index.tsx
+  ├─ ProductItem.stories.tsx
+  └─ ProductItem.test.tsx
+  ```
+- **Note**: Unlike containers, these components don't handle API integrations.
+
+### UI - Design System Components
+
+These are global components that are reusable and shared across the entire codebase.
+
+- **Use**: Ideal for building a consistent UI design across various parts of the application.
+- **Structure**:
+  ```
+  Button/
+  ├─ index.tsx
+  ├─ Button.stories.tsx
+  └─ Button.test.tsx
+  ```
+- **Best Practice**: Maintain a library of these components for efficient development.
+
+By understanding these component types, developers can create well-structured, maintainable, and scalable React applications.

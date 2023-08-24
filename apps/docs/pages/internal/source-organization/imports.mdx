@@ -1,0 +1,31 @@
+---
+title: 'Guiding Imports: Relative vs Absolute Paths'
+date: '08-23-2023'
+description: 'Learn the best practices for using relative and absolute import paths in your codebase, ensuring readability and maintainability.'
+---
+
+## Imports
+
+Managing import paths efficiently plays a pivotal role in code readability and maintenance. Here's a guideline to make your import statements clear and consistent:
+
+- **Relative Imports**: Use relative imports, starting with `./` or `../`, when referring to files within the same feature or 'close' to each other. It makes the structure more flexible and allows moving features around without changing these imports. E.g., `./sortItems`.
+
+- **Absolute Imports**: Utilize absolute imports, like `@common/utils`, for all other cases. This practice helps avoid cumbersome paths and makes the codebase more transparent.
+
+- **Auto-Sorting Imports**: Implement tools like [prettier-plugin-sort-imports](https://github.com/trivago/prettier-plugin-sort-imports) or [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md) to automatically sort imports. It ensures uniformity across the codebase.
+
+### Example:
+
+```ts
+// ❌ Avoid
+import { bar, foo } from '../../../../../../distant-folder';
+
+// ✅ Use
+import { locationApi } from '@api/locationApi';
+
+import { foo } from '../../foo';
+import { bar } from '../bar';
+import { baz } from './baz';
+```
+
+By following these guidelines, you can maintain a more coherent and navigable code structure that aligns with modern best practices.

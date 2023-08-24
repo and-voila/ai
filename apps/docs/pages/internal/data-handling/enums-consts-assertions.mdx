@@ -1,0 +1,47 @@
+---
+title: 'Const Assertions vs Enums in TypeScript'
+date: '08-23-2023'
+description: 'Learn why const assertions are preferred over enums in TypeScript, along with practical examples to guide your coding practices.'
+---
+
+## Enums & Const Assertion: A Modern TypeScript Practice
+
+Const assertions are typically used over enums in TypeScript.
+
+While enums can serve similar purposes to const assertions, we generally avoid them for specific reasons outlined in the TypeScript documentation, including [Const enum pitfalls](https://www.typescriptlang.org/docs/handbook/enums.html#const-enum-pitfalls), [Objects vs Enums](https://www.typescriptlang.org/docs/handbook/enums.html#objects-vs-enums), and [Reverse mappings](https://www.typescriptlang.org/docs/handbook/enums.html#reverse-mappings).
+
+### Avoid Enums in Favor of Const Assertions
+
+```ts
+// ❌ Avoid using enums
+enum UserRole {
+  GUEST,
+  MODERATOR,
+  ADMINISTRATOR,
+}
+
+enum Color {
+  PRIMARY = '#B33930',
+  SECONDARY = '#113A5C',
+  BRAND = '#9C0E7D',
+}
+
+// ✅ Use const assertion
+const USER_ROLES = ['guest', 'moderator', 'administrator'] as const;
+type UserRole = (typeof USER_ROLES)[number]; // Type "guest" | "moderator" | "administrator"
+
+// Use satisfies if UserRole type is already defined - e.g. database schema model
+type UserRoleDB = ReadonlyArray<'guest' | 'moderator' | 'administrator'>;
+const AVAILABLE_ROLES = ['guest', 'moderator'] as const satisfies UserRoleDB;
+
+const COLOR = {
+  primary: '#B33930',
+  secondary: '#113A5C',
+  brand: '#9C0E7D',
+} as const;
+type Color = typeof COLOR;
+type ColorKey = keyof Color; // Type "primary" | "secondary" | "brand"
+type ColorValue = Color[ColorKey]; // Type "#B33930" | "#113A5C" | "#9C0E7D"
+```
+
+The shift from enums to const assertions aligns with modern TypeScript best practices, enhancing code readability and maintainability.

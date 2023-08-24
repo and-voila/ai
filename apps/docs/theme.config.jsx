@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useConfig } from 'nextra-theme-docs';
-import { Logomark, Logo } from '@/components/logo';
+
+import { Logo } from '@/components/logo';
 
 const HeadComponent = () => {
   const { asPath, defaultLocale, locale } = useRouter();
@@ -27,7 +28,7 @@ const HeadComponent = () => {
   );
 };
 
-export default {
+const config = {
   head: HeadComponent,
   logo: (
     <div>
@@ -58,6 +59,9 @@ export default {
       </svg>
     ),
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 1,
+  },
   darkMode: true,
   banner: {
     key: 'announce',
@@ -83,3 +87,5 @@ export default {
   },
   navigation: true,
 };
+
+export default config;
