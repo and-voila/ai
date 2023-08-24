@@ -17,14 +17,9 @@ const redis = new Redis({
 });
 
 export async function POST(req: Request) {
+  const json = await req.json();
   const { userId } = auth();
-  const { messages } = (await req.json()) as {
-    messages: {
-      role: 'system' | 'user' | 'assistant' | 'function';
-      content: string | null;
-      name: string;
-    }[];
-  };
+  const { messages } = json;
 
   if (!messages) {
     return new Response('Invalid request', { status: 400 });
@@ -43,6 +38,7 @@ export async function POST(req: Request) {
         ...redisData,
         messages: [
           ...redisData.messages,
+          ...messages,
           {
             id: nanoid(),
             role: 'system',
