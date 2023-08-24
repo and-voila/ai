@@ -1,6 +1,6 @@
 import { useAuth } from '@clerk/nextjs';
 import { Message } from 'ai';
-import React, { Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction, useCallback, useEffect } from 'react';
 import { Button } from 'ui';
 
 import { WritingStyleType } from '@/inngest/functions';
@@ -24,13 +24,13 @@ const ConfirmComponent = ({
   setLearnMessages: Dispatch<SetStateAction<Message[]>>;
 }) => {
   const { userId } = useAuth();
-  async function analyzedSample() {
+  const analyzedSample = useCallback(async () => {
     let response: ResponseRedis | null = null;
 
     do {
       const res = await getUserWritingRedis(userId);
       response = res; // Update the response based on API result
-
+      // console.log(response);
       if (response?.status === 'pending') {
         await new Promise((resolve) => setTimeout(resolve, 10000));
       }
@@ -41,19 +41,23 @@ const ConfirmComponent = ({
         ...prevMessages,
         ...response.messages!,
       ]);
-      setStep((prevStep) => prevStep + 1);
     }
-  }
+  }, [userId, setLearnMessages]);
+
+  useEffect(() => {
+    analyzedSample();
+  }, [analyzedSample]);
 
   return (
-    <div>
+    <div className="mb-10 grid w-full grid-cols-12 gap-2 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6">
+      <div className="col-span-12 lg:col-span-10" />
       <Button
-        className="text-primary-background rounded-md bg-primary-foreground px-4 py-2"
+        className="col-span-12 w-full lg:col-span-2 "
         onClick={() => {
-          analyzedSample();
+          setStep(2);
         }}
       >
-        hey
+        Confirm and Continue
       </Button>
     </div>
   );

@@ -107,6 +107,7 @@ type ResponseRedis = {
     id: string;
     role: 'system' | 'user';
     content: string;
+    createdAt: Date;
   }[];
 };
 
@@ -203,6 +204,7 @@ export const createWritingAnalysis = inngest.createFunction(
             id: nanoid(),
             role: 'system',
             content: formattedAnalysis,
+            createdAt: new Date(),
           },
         ],
       });
@@ -264,6 +266,7 @@ export const createBlogPostGenerator = inngest.createFunction(
             id: nanoid(),
             role: 'system',
             content: response,
+            createdAt: new Date(),
           },
         ],
       });
