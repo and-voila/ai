@@ -91,9 +91,16 @@ function GenerateBlog({
           key={option.event}
           className="p-8 text-2xl"
           onClick={async () => {
+            setLearnMessages((prevMessages) => [
+              ...prevMessages,
+              {
+                id: 'writing-sample',
+                role: 'system',
+                content: 'loading...',
+              },
+            ]);
             await handlegenerate();
           }}
-          disabled={true}
         >
           {option.label}
         </Button>
