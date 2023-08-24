@@ -37,7 +37,7 @@ export async function POST(req: Request) {
       await redis.set(userId, {
         ...redisData,
         messages: [
-          ...redisData.messages,
+          ...redisData?.messages,
           ...messages,
           {
             id: nanoid(),

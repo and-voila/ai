@@ -117,7 +117,6 @@ export const createWritingAnalysis = inngest.createFunction(
     await step.run('start analysis', async () => {
       await redis.set(userId, {
         status: 'pending',
-        messages: [],
       });
     });
 
@@ -188,8 +187,6 @@ export const createWritingAnalysis = inngest.createFunction(
         analysis3: writingAnalysisString[2],
         analysis4: writingAnalysisString[3],
       });
-
-      console.log('combinedAnalysisInput', combinedAnalysisInput);
 
       await redis.set(userId, {
         status: 'completed',

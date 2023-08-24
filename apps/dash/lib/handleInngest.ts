@@ -1,13 +1,7 @@
 'use server';
 import { Redis } from '@upstash/redis/nodejs';
-import { Inngest } from 'inngest';
 
-import { WritingStyleType } from '@/inngest/functions';
-
-const inngest = new Inngest({
-  name: 'Writing assistant',
-  eventKey: process.env.INNGEST_EVENT_KEY!,
-});
+import { inngest, WritingStyleType } from '@/inngest/functions';
 
 export type ResponseRedis = {
   status: 'pending' | 'completed';

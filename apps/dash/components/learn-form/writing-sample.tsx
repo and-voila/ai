@@ -39,6 +39,9 @@ export function WritingSample({
         values.writingSample3,
         values.writingSample4,
       ],
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err);
     });
     setStep(1);
   }
