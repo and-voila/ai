@@ -1,6 +1,7 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
+import { Message } from 'ai';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
@@ -15,9 +16,11 @@ import { handleWritingAnalysis } from '@/lib/handleInngest';
 export function WritingSample({
   setStep,
   setLoading,
+  setLearnMessages,
 }: {
   setStep: Dispatch<SetStateAction<number>>;
   setLoading: Dispatch<SetStateAction<boolean>>;
+  setLearnMessages: Dispatch<SetStateAction<Message[]>>;
 }) {
   const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
@@ -33,6 +36,14 @@ export function WritingSample({
   });
 
   async function onSubmit(values: WritingSampleDataType) {
+    setLearnMessages((prevMessages) => [
+      ...prevMessages,
+      {
+        id: 'writing-sample',
+        role: 'system',
+        content: 'loading...',
+      },
+    ]);
     await handleWritingAnalysis({
       userId: userId,
       samples: [
