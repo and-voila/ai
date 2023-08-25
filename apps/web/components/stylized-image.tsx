@@ -45,7 +45,7 @@ export function StylizedImage({
             <foreignObject width={width} height={height}>
               <Image
                 alt={alt}
-                className="w-full bg-slate-100 object-cover"
+                className="w-full bg-brand object-cover"
                 style={{ aspectRatio: `${width} / ${height}` }}
                 {...props}
                 width={width}
@@ -56,7 +56,7 @@ export function StylizedImage({
           <use
             href={`#${id}-shape`}
             strokeWidth="2"
-            className="stroke-slate-950/10"
+            className="stroke-border"
           />
         </g>
         <defs>

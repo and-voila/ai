@@ -28,10 +28,9 @@ const navigation: {
   {
     title: 'Developers',
     links: [
-      { title: 'Docs', href: '/' },
-      { title: 'Open Source', href: '/' },
-      { title: 'Research', href: '/' },
-    ].map((link) => ({ ...link, external: false })),
+      { title: 'Docs', href: 'https://docs.andvoila.ai' },
+      { title: 'Open Source', href: 'https://github.com/and-voila/and-voila' },
+    ].map((link) => ({ ...link, external: true })),
   },
   {
     title: 'Company',
@@ -59,7 +58,10 @@ const navigation: {
 function Navigation() {
   return (
     <nav>
-      <ul role="list" className="grid grid-cols-2 gap-28 sm:grid-cols-5">
+      <ul
+        role="list"
+        className="grid grid-cols-2 gap-8 p-6 md:grid-cols-5 lg:gap-28"
+      >
         {navigation.map((section) => (
           <li key={section.title}>
             <div className="font-display font-semibold tracking-wider text-foreground">
@@ -88,8 +90,8 @@ function Navigation() {
 
 function NewsletterForm() {
   return (
-    <form className="max-w-sm">
-      <h2 className="font-display text-sm font-semibold tracking-wider text-foreground">
+    <form className="max-w-sm p-6">
+      <h2 className="font-display font-semibold tracking-wider text-foreground">
         Sign up for our newsletter
       </h2>
       <p className="mt-4 text-sm text-foreground">

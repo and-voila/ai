@@ -1,6 +1,6 @@
-const TailwindRwd = () => {
+export const TailwindRwd = () => {
   return (
-    <div className="fixed bottom-2 right-2 z-50 w-20 rounded-full bg-blue-100 py-2 text-center font-semibold text-blue-700">
+    <div className="fixed bottom-2 right-2 z-50 w-20 rounded-lg bg-lime-500 py-2 text-center font-semibold text-slate-950">
       <span className="block md:hidden">sm</span>
       <span className="hidden md:block lg:hidden">md</span>
       <span className="hidden lg:block xl:hidden">lg</span>
@@ -9,5 +9,3 @@ const TailwindRwd = () => {
     </div>
   );
 };
-
-export default TailwindRwd;

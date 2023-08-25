@@ -38,7 +38,7 @@ const Cta: React.FC<CtaProps> = ({
                 <Button
                   variant="cta"
                   size="lg"
-                  className="mt-4 w-full justify-between font-display font-semibold"
+                  className="mt-4 w-full justify-between"
                 >
                   <div className="flex items-center text-lg">
                     <div className="mr-4">{buttonText}</div>

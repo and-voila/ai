@@ -30,10 +30,10 @@ export default function AiPartners() {
     <div className="mt-32 rounded-[40px] bg-primary py-20 sm:py-32 md:mt-56 lg:mt-72">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-lg font-semibold tracking-wider text-slate-50 sm:text-left">
+          <h2 className="text-center font-display text-base font-semibold tracking-wider text-slate-50 sm:text-left lg:text-lg">
             Private access by default, not at a premium.
           </h2>
-          <div className="h-px flex-auto bg-slate-500" />
+          <div className="hidden h-px flex-auto bg-muted-foreground md:flex" />
         </FadeIn>
         <FadeInStagger faster>
           <ul

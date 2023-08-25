@@ -14,6 +14,7 @@ export * from './components/ui/separator';
 export * from './components/ui/sheet';
 export * from './components/ui/skeleton';
 export * from './components/ui/tabs';
+export * from './components/ui/tailwind-rwd';
 export * from './lib/utils';
 export * from '@radix-ui/react-icons';
 export * as ReactIcon from '@radix-ui/react-icons';
