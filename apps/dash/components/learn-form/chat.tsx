@@ -107,7 +107,7 @@ export function ChatList() {
   }
 
   return (
-    <div className="relative mx-auto px-16 ">
+    <div className="relative mx-auto">
       <div className="mb-54 !max-h-90 pb-[200px] pt-4">
         {messages
           .sort((a, b) => {
@@ -122,7 +122,7 @@ export function ChatList() {
             (message, index, self) =>
               index == self.findIndex((m) => m.id === message.id),
           )
-          // .filter((message) => message.role !== 'user')
+          .filter((message) => message.role !== 'user')
           .map((message, index) => (
             <div key={index} className="mx-auto">
               <ChatMessage message={message} />

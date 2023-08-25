@@ -110,7 +110,23 @@ export const createWritingAnalysis = inngest.createFunction(
 
       await redisClient.set(userId, {
         status: 'completed',
-        writingAnalysis: combinedAnalysisInput,
+        writingAnalysis: `${combinedAnalysisInput} combine analysis in to this format 
+                          \n
+                          [Writing Tone]
+                          [Sentence Structure]
+                                
+                          [Vocabulary Choice]
+                          [Grammar & Syntax]
+                          [Descriptive Language]
+                          [Pacing]
+                          [Perspective]
+                                
+                          [Structure/Organization]
+                          [Humor]
+                                
+                          no reptuation
+                          only 1 excerpt per keyword category
+                          `,
         combinedAnalysisInput: combinedAnalysisInput,
       });
 
