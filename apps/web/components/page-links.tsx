@@ -72,7 +72,7 @@ export function PageLinks({ title, intro, pages, className }: PageLinksProps) {
     <div className={cn('relative pt-24 sm:pt-32 lg:pt-40', className)}>
       <div className="bg-gradient-to-background absolute inset-x-0 top-0 -z-10 min-h-[700px] overflow-hidden rounded-t-4xl from-slate-50">
         <GridPattern
-          className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-slate-100 stroke-slate-100 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] dark:fill-primary dark:stroke-slate-500 dark:opacity-10"
+          className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-indigo-50 stroke-slate-100 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] dark:fill-primary dark:stroke-slate-500 dark:opacity-20"
           yOffset={-270}
           interactive
         />

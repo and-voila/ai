@@ -26,7 +26,7 @@ export function Testimonial({ children, client, className }: TestimonialProps) {
       )}
     >
       <GridPattern
-        className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-slate-400/25 stroke-slate-950/10 [mask-image:linear-gradient(to_bottom_left,white_30%,transparent_40%)] dark:fill-slate-950/10 dark:stroke-slate-900/10"
+        className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-slate-400/25 stroke-slate-800/10 [mask-image:linear-gradient(to_bottom_left,white_30%,transparent_40%)] dark:fill-slate-950/10"
         yOffset={-96}
         interactive
       />
