@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
 import LandingLayout from '@/components/landing-layout';
+import TailwindRwd from '@/components/tailwind-rwd';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
@@ -100,6 +101,7 @@ export default function RootLayout({
               <main>{children}</main>
             </Suspense>
           </LandingLayout>
+          <TailwindRwd />
         </ThemeProvider>
       </body>
     </html>
