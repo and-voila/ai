@@ -122,7 +122,7 @@ export function ChatList() {
             (message, index, self) =>
               index == self.findIndex((m) => m.id === message.id),
           )
-          .filter((message) => message.role !== 'user')
+          // .filter((message) => message.role !== 'user')
           .map((message, index) => (
             <div key={index} className="mx-auto">
               <ChatMessage message={message} />
