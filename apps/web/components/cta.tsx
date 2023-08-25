@@ -35,12 +35,8 @@ const Cta: React.FC<CtaProps> = ({
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link href={linkHref}>
-                <Button
-                  variant="cta"
-                  size="lg"
-                  className="mt-4 w-full justify-between"
-                >
-                  <div className="flex items-center text-lg">
+                <Button variant="cta" className="mt-4 w-full justify-between">
+                  <div className="flex items-center">
                     <div className="mr-4">{buttonText}</div>
                     {buttonIcon}
                   </div>

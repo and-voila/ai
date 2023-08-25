@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import React, { Suspense } from 'react';
-import { FaceIcon } from 'ui';
+import { HomeIcon } from 'ui';
 
 import { allPosts } from '@/.contentlayer/generated';
 import { Container } from '@/components/container';
@@ -41,21 +41,21 @@ export function generateMetadata(): Metadata {
 }
 
 const featuresSection = {
-  eyebrow: 'We Stand for Transparency and Sustainability',
-  title: 'Not Just Talking the Talk',
+  eyebrow: 'Transparency and Sustainability',
+  title: 'Not just talking the talk',
   className: 'mt-24 sm:mt-32 lg:mt-40',
   intro: [
-    ' Enough with the status quo. At Voila AI, we&apos;re disrupting tech with our unique blend of 100% open-source and team ownership. Profit matters, but not at the expense of our stakeholders or the planet. We proudly commit 1% of our gross revenue to fight climate change.',
+    ' Enough with the status quo. At And Voila AI, we&apos;re disrupting tech with our unique blend of 100% open-source and team ownership. Profit matters, but not at the expense of our stakeholders or the planet. We proudly commit 1% of our gross revenue to fight climate change.',
     'After all, doing good is the first step to doing well.',
   ],
   listItems: [
     {
-      title: 'Open Source',
+      title: 'Open source',
       content:
         "We're 100% open source, embracing transparency and community collaboration. Our code is your code.",
     },
     {
-      title: 'Team Owned',
+      title: 'Team owned',
       content:
         'Ownership extends to every team member, aligning our goals and fostering pride and responsibility.',
     },
@@ -65,7 +65,7 @@ const featuresSection = {
         "Work where you thrive. We support flexibility, whether it's at home or a beachside café.",
     },
     {
-      title: 'For the Climate',
+      title: 'For the environment',
       content:
         'We pledge 1% of our revenue to fight global warming. Success shouldn’t compromise the planet.',
     },
@@ -76,7 +76,7 @@ function About() {
   return (
     <main>
       <Suspense>
-        <PageIntro eyebrow="About" title="A World Where Imagination Thrives">
+        <PageIntro eyebrow="About" title="A world where imagination thrives">
           <p className="text-muted-foreground">
             We live in an era of exponential technological change. Recent
             advances in AI and generative media promise to reshape our world yet
@@ -116,11 +116,11 @@ function About() {
         </Suspense>
         <Container>
           <Cta
-            title="Join the Change"
-            text="Ready to make a real impact? Join our team and contribute to a more open and sustainable tech future. Check out our open roles today."
+            title="Join the change"
+            text="Ready to make a real impact? Join our team and contribute to a more open and sustainable future."
             linkHref="https://jobs.andvoila.ai"
             buttonText="See Open Roles"
-            buttonIcon={<FaceIcon />}
+            buttonIcon={<HomeIcon />}
             footerText="Be part of our mission"
           />
         </Container>
