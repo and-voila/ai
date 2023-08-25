@@ -43,7 +43,7 @@ const Features: React.FC<FeaturesProps> = ({ section }) => {
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
           <div className="my-24 flex justify-center lg:w-1/2 lg:justify-end lg:pr-12">
-            <FadeIn className="w-[20rem] flex-none md:w-[30rem] lg:w-[40rem]">
+            <FadeIn className="w-[20rem] flex-none md:w-[28rem] lg:w-[36rem]">
               <React.Suspense fallback={<div>Loading image...</div>}>
                 <StylizedImage
                   alt="An illustration like Where's Waldo to find the cute Shih Tzu dog."

@@ -4,16 +4,15 @@ import { TagList, TagListItem } from '@/components/tag-list';
 export default function CoCreator() {
   return (
     <Section
-      title="Your AI Co-Creator"
+      title="Your AI co-creator"
       image={{
         alt: "An illustration like Where's Waldo to find the cute Shih Tzu Poodle mix dog.",
         sizes: '(min-width: 1024px) 41rem, 31rem',
         className: 'justify-center lg:justify-end',
         src: '/images/features-co-creator.jpg',
-        shape: 1,
       }}
     >
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-base text-muted-foreground md:text-lg">
         <p>
           And Voila operates as the fastest learner at your side, intuitively
           grasping your workflow needs. It fills the gaps in your process,

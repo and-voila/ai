@@ -4,16 +4,15 @@ import { TagList, TagListItem } from '@/components/tag-list';
 export default function Multiplayer() {
   return (
     <Section
-      title="Multiplayer Collaboration"
+      title="Multiplayer collaboration"
       image={{
         alt: "An illustration like Where's Waldo to find the cute Shih Tzu dog",
         sizes: '(min-width: 1024px) 41rem, 31rem',
         className: 'justify-center lg:justify-end',
         src: '/images/features-multiplayer.jpg',
-        shape: 2,
       }}
     >
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-base text-muted-foreground md:text-lg">
         <p>
           And Voila&apos;s platform enables streamlined team collaboration
           without compromising privacy. Granular access controls and permissions
