@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 'use client';
-import { useAuth } from '@clerk/nextjs';
 import { ChatRequestOptions, CreateMessage, Message, nanoid } from 'ai';
 import React from 'react';
 import { Button } from 'ui';
@@ -40,14 +39,12 @@ function GenerateBlog({
     chatRequestOptions?: ChatRequestOptions,
   ) => Promise<string>;
 }) {
-  const { userId } = useAuth();
-
   async function handlegenerate() {
-      append({
-        content: `${GENERATE_BLOG_POST} \n\n${TOPIC_ONE}`,
-        role: 'user',
-        id: nanoid(),
-      });
+    append({
+      content: `${GENERATE_BLOG_POST} \n\n${TOPIC_ONE}`,
+      role: 'user',
+      id: nanoid(),
+    });
   }
 
   return (
