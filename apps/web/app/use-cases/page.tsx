@@ -38,7 +38,7 @@ export function generateMetadata(): Metadata {
 function UseCase() {
   return (
     <main>
-      <Suspense fallback={<div>waiting for samuel to push a commit</div>}>
+      <Suspense fallback={<div>Waiting for samuel to push a commit...</div>}>
         <PageIntro
           eyebrow="Use Cases"
           title="AI that amplifies human creativity"

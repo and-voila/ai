@@ -33,6 +33,7 @@ interface GridListItemProps {
   className?: string;
   titleColor?: string;
   textColor?: string;
+  textSize?: string;
 }
 
 export function GridListItem({
@@ -41,6 +42,7 @@ export function GridListItem({
   className,
   titleColor = 'text-foreground',
   textColor = 'text-muted-foreground',
+  textSize = 'text-base lg:text-lg',
 }: GridListItemProps) {
   return (
     <li
@@ -60,10 +62,13 @@ export function GridListItem({
         >
           {title && (
             <strong
-              className={cn('font-display text-lg font-medium', titleColor)}
+              className={cn(
+                'font-display text-base font-medium lg:text-lg',
+                titleColor,
+              )}
             >{`${title}. `}</strong>
           )}
-          {children}
+          <span className={cn(textSize)}>{children}</span>
         </Divider>
       </FadeIn>
     </li>

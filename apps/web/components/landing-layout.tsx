@@ -214,7 +214,7 @@ function LandingLayoutInner({ children }: RootLayoutInnerProps) {
             className="relative isolate flex w-full flex-col pt-9"
           >
             <GridPattern
-              className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-slate-100 stroke-slate-100 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] dark:fill-primary dark:stroke-slate-500 dark:opacity-10"
+              className="absolute inset-x-0 -top-14 -z-10 h-[1000px] w-full fill-indigo-50 stroke-slate-100 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)] dark:fill-primary dark:stroke-slate-500 dark:opacity-20"
               yOffset={-96}
               interactive
             />

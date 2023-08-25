@@ -35,9 +35,9 @@ export const FreeCounter = ({
 
   return (
     <div className="px-3">
-      <Card className="border-0 bg-primary dark:bg-primary-foreground">
+      <Card className="border bg-sidebar">
         <CardContent className="py-6">
-          <div className="mb-4 space-y-2 text-center text-sm text-primary-foreground dark:text-primary">
+          <div className="mb-4 space-y-2 text-center text-sm text-foreground">
             <p>
               You&apos;ve used {apiLimitCount} / {MAX_FREE_COUNTS} free tricks
             </p>

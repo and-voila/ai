@@ -53,7 +53,7 @@ function Accessibility() {
           </FadeIn>
 
           <FadeIn>
-            <div className="prose mx-auto mt-24 dark:prose-invert md:prose-lg sm:mt-32 lg:mt-40">
+            <div className="prose prose-slate mx-auto mt-24 dark:prose-invert md:prose-lg sm:mt-32 lg:mt-40">
               <Mdx code={accessibility?.body.code ?? ''} />
             </div>
           </FadeIn>
