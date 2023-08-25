@@ -104,7 +104,7 @@ function UseCaseSlugPage({ params }: UseCaseSlugPageProps) {
 
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <FadeIn>
-            <div className="prose mx-auto dark:prose-invert md:prose-lg">
+            <div className="prose prose-slate mx-auto dark:prose-invert md:prose-lg">
               <Mdx code={doc?.body.code ?? ''} />
             </div>
           </FadeIn>

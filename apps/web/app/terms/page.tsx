@@ -52,7 +52,7 @@ function Terms() {
           </FadeIn>
 
           <FadeIn>
-            <div className="prose mx-auto mt-24 dark:prose-invert md:prose-lg sm:mt-32 lg:mt-40">
+            <div className="prose prose-slate mx-auto mt-24 dark:prose-invert md:prose-lg sm:mt-32 lg:mt-40">
               <Mdx code={terms?.body.code ?? ''} />
             </div>
           </FadeIn>

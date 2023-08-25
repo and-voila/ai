@@ -3,7 +3,7 @@ import { Button } from 'ui';
 export default function Page() {
   return (
     <div className="bg-background px-6 py-24 sm:py-32 lg:px-8">
-      <div className="prose mx-auto max-w-2xl dark:prose-invert lg:prose-lg">
+      <div className="prose prose-slate mx-auto max-w-2xl dark:prose-invert lg:prose-lg">
         <h1>Admin App - Turbo Repo</h1>
         <p>
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
