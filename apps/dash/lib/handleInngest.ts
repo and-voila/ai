@@ -1,12 +1,11 @@
 'use server';
 
-import { inngest, WritingStyleType } from '@/inngest/functions';
+import { inngest } from '@/inngest/functions';
 
 import redisClient from './upstash-redis';
 
 export type ResponseRedis = {
   status: 'pending' | 'completed';
-  writingAnalysis: WritingStyleType;
   combinedAnalysisInput: string;
 
   messages?: {
