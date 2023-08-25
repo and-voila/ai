@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
-import { Redis } from '@upstash/redis';
 import { Inngest } from 'inngest';
 import { OpenAI } from 'langchain/llms/openai';
 import { StructuredOutputParser } from 'langchain/output_parsers';
 import { PromptTemplate } from 'langchain/prompts';
+
+import redisClient from '@/lib/upstash-redis';
 
 // this server function will be deployed to edge
 export const runtime = 'edge';
@@ -48,11 +49,6 @@ const llm = new OpenAI({
 export const inngest = new Inngest({
   name: 'Writing assistant',
   eventKey: process.env.INNGEST_EVENT_KEY!,
-});
-
-const redis = new Redis({
-  url: 'https://adapted-feline-44562.upstash.io',
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
 const parserString = (key: string) =>
@@ -115,7 +111,7 @@ export const createWritingAnalysis = inngest.createFunction(
     };
 
     await step.run('start analysis', async () => {
-      await redis.set(userId, {
+      await redisClient.set(userId, {
         status: 'pending',
       });
     });
@@ -188,7 +184,7 @@ export const createWritingAnalysis = inngest.createFunction(
         analysis4: writingAnalysisString[3],
       });
 
-      await redis.set(userId, {
+      await redisClient.set(userId, {
         status: 'completed',
         writingAnalysis: writingAnalysis,
         combinedAnalysisInput: combinedAnalysisInput,
