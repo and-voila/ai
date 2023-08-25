@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { HeartFilledIcon } from 'ui';
 
 import { Divider } from '@/components/divider';
 import { FadeIn } from '@/components/fade-in';
@@ -54,11 +53,8 @@ export default function ContactDetails() {
         Our offices
       </h2>
       <p className="mt-6 text-base text-muted-foreground lg:text-lg">
-        Our company is based in Los Angeles. And Voila AI is made with{' '}
-        <span className="inline-flex items-center">
-          <HeartFilledIcon className="mr-1 h-4 w-4 text-primary" /> from around
-          the world.
-        </span>
+        Our company is based in Los Angeles. And Voila AI is made with &hearts;
+        from around the world.
       </p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
@@ -84,7 +80,7 @@ export default function ContactDetails() {
                     href={href}
                     target={isExternal ? '_blank' : undefined}
                     rel={isExternal ? 'noopener noreferrer' : undefined}
-                    className="text-base text-muted-foreground hover:text-foreground"
+                    className="text-base text-muted-foreground hover:text-foreground lg:text-lg"
                   >
                     {linkText}
                     <span className="ml-1">&rarr;</span>
