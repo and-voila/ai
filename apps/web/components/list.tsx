@@ -32,9 +32,11 @@ export function ListItem({ title, children }: ListItemProps) {
       <FadeIn>
         <Divider className="pt-10 group-first:pt-0 group-first:before:hidden group-first:after:hidden">
           {title && (
-            <strong className="font-display text-lg font-semibold text-foreground">{`${title}. `}</strong>
+            <strong className="font-display text-base font-semibold text-foreground lg:text-lg">{`${title}. `}</strong>
           )}
-          <span className="text-lg text-muted-foreground">{children}</span>
+          <span className="text-base text-muted-foreground lg:text-lg">
+            {children}
+          </span>
         </Divider>
       </FadeIn>
     </li>

@@ -4,16 +4,15 @@ import { TagList, TagListItem } from '@/components/tag-list';
 export default function Coding() {
   return (
     <Section
-      title="Coding Productivity Unlocked"
+      title="Coding powers unlocked"
       image={{
         alt: "An illustration like Where's Waldo to find the cute Shih Tzu Poodle mix dog.",
         sizes: '(min-width: 1024px) 41rem, 31rem',
         className: 'justify-center lg:justify-end',
         src: '/images/features-coding.jpg',
-        shape: 2,
       }}
     >
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-base text-muted-foreground md:text-lg">
         <p>
           Collaborate with And Voila to boost your coding productivity. Explain
           your logic through comments, and it generates clean code adhering to

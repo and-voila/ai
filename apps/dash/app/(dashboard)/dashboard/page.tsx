@@ -93,7 +93,10 @@ const DashboardPage = () => {
               <p>{tool.description}</p>
             </CardContent>
             <CardFooter className="mt-auto justify-end">
-              <Button className="mt-4 w-full justify-between font-bold">
+              <Button
+                variant="secondary"
+                className="mt-4 w-full justify-between font-bold"
+              >
                 {tool.cta}
                 {''}
                 <ArrowRightIcon className="h-5 w-5 justify-end" />

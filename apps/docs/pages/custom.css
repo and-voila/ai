@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 article {
-  @apply prose-slate p-6 dark:prose-invert lg:prose-lg lg:p-12;
+  @apply prose prose-slate m-4 dark:prose-invert lg:prose-lg md:m-8 lg:m-12 xl:m-16;
 }
 
 article h1,

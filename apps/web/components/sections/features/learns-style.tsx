@@ -4,7 +4,7 @@ import { TagList, TagListItem } from '@/components/tag-list';
 export default function Learns() {
   return (
     <Section
-      title="AI That Learns Your Creative Spirit"
+      title="AI that learns your creative spirit"
       image={{
         alt: "An illustration like Where's Waldo to find the cute Chihuahua dog",
         sizes: '(min-width: 1024px) 41rem, 31rem',

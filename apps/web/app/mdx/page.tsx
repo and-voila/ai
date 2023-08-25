@@ -67,14 +67,14 @@ export default function MdxPage() {
                   <Divider className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                        <h2 className="font-display text-2xl font-medium text-foreground">
+                        <h2 className="font-display text-4xl font-medium text-foreground">
                           <Link href={`/mdx/${article.slug}`}>
                             {article.title}
                           </Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
-                          <dd className="absolute left-0 top-0 text-sm text-muted-foreground lg:static">
+                          <dd className="absolute left-0 top-0 text-sm text-muted-foreground lg:static lg:text-base">
                             {article.date && (
                               <time dateTime={article.date}>
                                 {formattedDate(article.date)}{' '}
@@ -83,16 +83,16 @@ export default function MdxPage() {
                           </dd>
                           <dt className="sr-only">Author</dt>
                           <dd className="mt-6 flex gap-x-4">
-                            <div className="flex-none overflow-hidden rounded-xl bg-slate-800">
+                            <div className="max-h-12 flex-none overflow-hidden rounded-lg bg-slate-500 dark:bg-slate-800">
                               <Image
                                 alt="And Voila Team Icon"
                                 src="/av-icon-light.png"
-                                className="h-12 w-12 object-cover grayscale"
+                                className="h-12 w-12 object-cover p-2 grayscale"
                                 width={48}
                                 height={48}
                               />
                             </div>
-                            <div className="text-sm text-foreground">
+                            <div className="text-sm text-foreground lg:text-base">
                               <div className="font-medium ">And Voila AI</div>
                               <div className="text-muted-foreground">
                                 Communications
@@ -100,7 +100,7 @@ export default function MdxPage() {
                             </div>
                           </dd>
                         </dl>
-                        <p className="mt-6 max-w-2xl text-base text-muted-foreground">
+                        <p className="mt-6 max-w-2xl text-base text-muted-foreground lg:text-lg">
                           {article.description}
                         </p>
                         <Button

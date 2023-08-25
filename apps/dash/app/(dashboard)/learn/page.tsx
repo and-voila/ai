@@ -9,7 +9,7 @@ function Learn() {
     <div className="md:mt-8">
       <Heading
         title="Learn"
-        description="let's learn something new about you today!"
+        description="Let's train And Voila on your creative style "
         icon={ReaderIcon}
       />
 

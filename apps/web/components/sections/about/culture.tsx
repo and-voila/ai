@@ -8,7 +8,7 @@ export default function Culture() {
       <SectionIntro
         eyebrow="Guiding Principles"
         eyebrowColor="text-muted-foreground"
-        title="How We Operate"
+        title="How we operate"
         titleColor="text-foreground"
       >
         <p className="text-muted-foreground">
@@ -25,42 +25,42 @@ export default function Culture() {
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Creators at Heart">
+          <GridListItem title="Creators at heart">
             Our creators are our lifeblood. We prioritize protecting,
             respecting, and nurturing their unique skills and talents.
           </GridListItem>
-          <GridListItem title="Inclusive by Design">
+          <GridListItem title="Inclusive by design">
             We foster a culture of accessibility, diversity, and belonging where
             all voices are heard and valued.
           </GridListItem>
-          <GridListItem title="Courage to Innovate">
+          <GridListItem title="Courage to innovate">
             Daring to responsibly explore the frontiers of human and AI
             potential, we challenge conventions and enable groundbreaking
             solutions.
           </GridListItem>
-          <GridListItem title="Transparent Practices">
+          <GridListItem title="Transparent practices">
             Clear, honest communication guides our path. We value transparency
             in all our dealings with candidates, customers, investors, and the
             press.
           </GridListItem>
-          <GridListItem title="Collective Brilliance & Unleashed Potential">
+          <GridListItem title="Collective brilliance & unleashed potential">
             We evolve through the alchemy of our diverse minds. Every team
             member is empowered to unlock their talents and reach new heights.
           </GridListItem>
-          <GridListItem title="Humanity Amid AI">
+          <GridListItem title="Humanity amid AI">
             Our AI is designed to empower human creativity and connections, not
             replace them. We celebrate the fusion of technology and the human
             spirit.
           </GridListItem>
-          <GridListItem title="Privacy and Trust">
+          <GridListItem title="Privacy and trust">
             Safety, trust, and user privacy are our core commitments. We
             safeguard them zealously.
           </GridListItem>
-          <GridListItem title="Shared Prosperity">
+          <GridListItem title="Shared prosperity">
             Fair equity distribution and cooperative decision-making fuel our
             commitment to shared success.
           </GridListItem>
-          <GridListItem title="Public Benefit Commitment">
+          <GridListItem title="Public benefit commitment">
             As a Public Benefit Corporation, we make choices that positively
             impact all stakeholders, fostering social good and ethical
             excellence.

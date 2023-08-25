@@ -11,9 +11,9 @@ interface SectionProp {
 export function Section({ title, image, children }: SectionProp) {
   return (
     <Container className="group/section [counter-increment:section]">
-      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
+      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-16">
         <div className="flex justify-center">
-          <FadeIn className="w-[22rem] flex-none md:w-[33.75rem] lg:w-[40rem]">
+          <FadeIn className="w-[20rem] flex-none md:w-[28rem] lg:w-[36rem]">
             <StylizedImage {...image} />
           </FadeIn>
         </div>

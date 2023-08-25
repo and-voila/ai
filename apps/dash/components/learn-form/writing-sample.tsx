@@ -70,7 +70,7 @@ export function WritingSample({
 
   return (
     <Form {...form}>
-      <div className="mb-10 flex grid w-full grid-cols-12 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6">
+      <div className="mb-10 flex grid w-full grid-cols-12 rounded-lg border bg-primary-foreground p-4 px-3 focus-within:shadow-sm md:px-6">
         <form
           noValidate
           onSubmit={form.handleSubmit(onSubmit)}

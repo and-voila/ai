@@ -4,16 +4,15 @@ import { TagList, TagListItem } from '@/components/tag-list';
 export default function Privacy() {
   return (
     <Section
-      title="Total Privacy and IP Control"
+      title="Total privacy and IP control"
       image={{
         alt: "An illustration like Where's Waldo to find the cute Shih Tzu Poodle mix dog.",
         sizes: '(min-width: 1024px) 41rem, 31rem',
         className: 'justify-center lg:justify-end',
         src: '/images/features-privacy.jpg',
-        shape: 1,
       }}
     >
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-base text-muted-foreground md:text-lg">
         <p>
           Rest assured your ideas stay safely yours with And Voila. Our
           blockchain-enabled platform cryptographically seals your work so

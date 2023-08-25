@@ -11,7 +11,7 @@ const Faq = () => {
   return (
     <div className="mx-auto mt-24 max-w-6xl">
       <SectionIntro
-        eyebrow="FAQs - Digging Deeper"
+        eyebrow="FAQ"
         title="Have questions?"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
@@ -20,7 +20,7 @@ const Faq = () => {
           We&apos;re all about transparency and we love curiosity.
         </p>
       </SectionIntro>
-      <div className="mx-auto mt-24 grid grid-cols-1 gap-4 p-8 sm:grid-cols-2">
+      <div className="mx-auto mt-8 grid grid-cols-1 gap-4 p-8 sm:grid-cols-2">
         <div>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-2">

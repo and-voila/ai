@@ -2,6 +2,7 @@ import '@ui/styles/globals.css';
 
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
+import { TailwindRwd } from 'ui';
 
 import LandingLayout from '@/components/landing-layout';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -100,6 +101,7 @@ export default function RootLayout({
               <main>{children}</main>
             </Suspense>
           </LandingLayout>
+          <TailwindRwd />
         </ThemeProvider>
       </body>
     </html>

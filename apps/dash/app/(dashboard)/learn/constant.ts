@@ -15,22 +15,22 @@ export const writingSampleSteps: {
   description: string;
 }[] = [
   {
-    name: 'Writing Sample One',
+    name: 'Paste your first writing sample here then click Next',
     fieldName: 'writingSample1',
     description: 'writing sample one',
   },
   {
-    name: 'Writing Sample Two',
+    name: 'OK great, now paste a second writing sample then click Next',
     fieldName: 'writingSample2',
     description: 'Writing Sample Two',
   },
   {
-    name: 'Writing Sample Three',
+    name: 'Alright, now paste a third writing sample then click Next',
     fieldName: 'writingSample3',
     description: 'Writing Sample Three',
   },
   {
-    name: 'Writing Sample Four',
+    name: 'Awesome, paste your fourth writing sample then Submit ',
     fieldName: 'writingSample4',
     description: 'Writing Sample Four',
   },

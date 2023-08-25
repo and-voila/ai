@@ -82,7 +82,7 @@ const Sidebar = ({ apiLimitCount, isPro = false }: SidebarProps) => {
               href={route.href}
               key={route.href}
               className={cn(
-                'group flex w-full cursor-pointer justify-start rounded-lg p-3 transition hover:bg-muted-foreground hover:text-primary-foreground',
+                'group flex w-full cursor-pointer justify-start rounded-lg p-3 transition hover:bg-muted hover:text-foreground',
                 pathname === route.href
                   ? 'bg-muted text-foreground'
                   : 'text-foreground',

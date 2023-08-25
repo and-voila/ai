@@ -39,6 +39,8 @@ export const tiers: Tier[] = [
       'Dedicated support',
       'Privacy by default, your data is yours',
       'Marketing automations',
+      'Billed monthly',
+      'Cancel anytime',
       '100% Delight Guaranteed',
     ],
     planType: 'solo',
@@ -57,6 +59,8 @@ export const tiers: Tier[] = [
       'Dedicated support',
       'Privacy by default, your data is yours',
       'Marketing automations',
+      'Billed monthly',
+      'Cancel anytime',
       '100% Delight Guaranteed',
     ],
     planType: 'team',
@@ -75,6 +79,8 @@ export const tiers: Tier[] = [
       'Dedicated support',
       'Privacy by default, your data is yours',
       'Marketing automations',
+      'Billed annually',
+      'Save 20%',
       '100% Delight Guaranteed',
     ],
     planType: 'solo',
@@ -85,13 +91,16 @@ export const tiers: Tier[] = [
     id: 'team-annual',
     href: '#',
     priceMonthly: '$239',
-    description: 'Unlock team collaboration at a discounted price.',
+    description:
+      'Unlock teams and multiplayer collaboration at a discounted price.',
     features: [
       'Includes everything, no limits for teams',
       'Advanced analytics',
       'Dedicated support',
       'Privacy by default, your data is yours',
       'Marketing automations',
+      'Billed annually',
+      'Save 20%',
       '100% Delight Guaranteed',
     ],
     planType: 'team',
@@ -112,7 +121,7 @@ const PricingTier: FC<PricingTierProps> = ({ tier }) => (
         {tier.name}
       </CardTitle>
       <CardDescription className="mt-4 flex items-baseline gap-x-2">
-        <span className="text-5xl font-semibold tracking-tight text-foreground">
+        <span className="font-display text-5xl font-semibold tracking-tight text-foreground">
           {tier.priceMonthly}
         </span>
         <span className="text-base text-muted-foreground">/month</span>
@@ -160,7 +169,7 @@ export const DiscountedTier: FC<DiscountedTierProps> = ({
   description,
   href,
 }) => (
-  <div className="mx-auto mt-24 flex max-w-4xl flex-col items-start gap-x-8 gap-y-6 rounded-md bg-muted ring-1 ring-muted-foreground sm:gap-y-10 sm:p-6 lg:col-span-2 lg:flex-row lg:items-center">
+  <div className="mx-auto mt-24 flex max-w-4xl flex-col items-start gap-x-8 gap-y-6 rounded-md bg-muted p-6 ring-1 ring-muted-foreground sm:gap-y-10 sm:p-8 lg:col-span-2 lg:flex-row lg:items-center">
     <div className="lg:min-w-0 lg:flex-1">
       <h3 className="font-display text-lg font-medium text-foreground">
         {title}

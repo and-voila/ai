@@ -43,10 +43,10 @@ function BlockquoteWithImage({
         />
       </div>
       <figcaption className="text-sm text-foreground sm:col-span-7 sm:row-start-3 sm:text-base md:text-lg">
-        <span className="font-semibold">{author.name}</span>
+        <span className="font-display font-semibold">{author.name}</span>
         <span className="hidden font-semibold sm:inline">, </span>
         <br className="sm:hidden" />
-        <span className="sm:font-semibold">{author.role}</span>
+        <span className="font-display sm:font-semibold">{author.role}</span>
       </figcaption>
     </figure>
   );
@@ -60,10 +60,10 @@ function BlockquoteWithoutImage({
   return (
     <Divider position="left" className={cn('pl-8', className)}>
       <figure className="text-sm">
-        <blockquote className="text-foreground md:text-base [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']">
+        <blockquote className="text-base text-foreground md:text-lg [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']">
           {typeof children === 'string' ? <p>{children}</p> : children}
         </blockquote>
-        <figcaption className="mt-6 font-semibold text-foreground">
+        <figcaption className="mt-6 font-display font-semibold text-foreground">
           {author.name}, {author.role}
         </figcaption>
       </figure>

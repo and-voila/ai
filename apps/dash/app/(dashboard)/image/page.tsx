@@ -80,7 +80,7 @@ const ImagePage = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="grid w-full grid-cols-12 gap-2 rounded-lg border p-4 px-3 focus-within:shadow-sm md:px-6"
+            className="grid w-full grid-cols-12 gap-2 rounded-lg border bg-primary-foreground p-4 px-3 focus-within:shadow-sm md:px-6"
           >
             <FormField
               name="prompt"
@@ -101,7 +101,7 @@ const ImagePage = () => {
               control={form.control}
               name="amount"
               render={({ field }) => (
-                <FormItem className="col-span-12 lg:col-span-2">
+                <FormItem className="col-span-12 bg-background lg:col-span-2">
                   <Select
                     disabled={isLoading}
                     onValueChange={field.onChange}
@@ -128,7 +128,7 @@ const ImagePage = () => {
               control={form.control}
               name="resolution"
               render={({ field }) => (
-                <FormItem className="col-span-12 lg:col-span-2">
+                <FormItem className="col-span-12 bg-background lg:col-span-2">
                   <Select
                     disabled={isLoading}
                     onValueChange={field.onChange}

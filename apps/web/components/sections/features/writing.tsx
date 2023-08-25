@@ -4,16 +4,15 @@ import { TagList, TagListItem } from '@/components/tag-list';
 export default function Writing() {
   return (
     <Section
-      title="Writing Uniquely Yours"
+      title="Writing that's uniquely yours"
       image={{
         alt: 'laptop',
         sizes: '(min-width: 1024px) 41rem, 31rem',
         className: 'justify-center lg:justify-end',
         src: '/images/features-writing.jpg',
-        shape: 2,
       }}
     >
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-base text-muted-foreground md:text-lg">
         <p>
           Import your sitemap or upload content samples, and And Voila studies
           your work to learn your distinctive writing style. Connect your social

@@ -4,16 +4,15 @@ import { TagList, TagListItem } from '@/components/tag-list';
 export default function Multimedia() {
   return (
     <Section
-      title="Multimedia Made Your Way"
+      title="Multimedia made your way"
       image={{
         alt: "An illustration like Where's Waldo to find the cute Chihuahua dog.",
         sizes: '(min-width: 1024px) 41rem, 31rem',
         className: 'justify-center lg:justify-end',
         src: '/images/features-multimedia.jpg',
-        shape: 1,
       }}
     >
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-base text-muted-foreground md:text-lg">
         <p>
           Expand beyond text with And Voila&apos;s multimedia creation
           capabilities. You can craft enthralling custom images, edit engaging
