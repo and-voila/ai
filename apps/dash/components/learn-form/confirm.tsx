@@ -1,48 +1,52 @@
+/* eslint-disable no-unused-vars */
 import { useAuth } from '@clerk/nextjs';
-import { Message } from 'ai';
-import React, { Dispatch, SetStateAction, useCallback, useEffect } from 'react';
+import { ChatRequestOptions, CreateMessage, Message, nanoid } from 'ai';
+import React, {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { Button } from 'ui';
 
-import { WritingStyleType } from '@/inngest/functions';
-import { getUserWritingRedis } from '@/lib/handleInngest';
-
-type ResponseRedis = {
-  status: 'pending' | 'completed';
-  writingAnalysis: WritingStyleType;
-  messages?: {
-    id: string;
-    role: 'system' | 'user';
-    content: string;
-  }[];
-};
+import { getUserWritingRedis, ResponseRedis } from '@/lib/handleInngest';
 
 const ConfirmComponent = ({
   setStep,
-  setLearnMessages,
+  append,
+  isLoading,
 }: {
+  isLoading: boolean;
   setStep: Dispatch<SetStateAction<number>>;
-  setLearnMessages: Dispatch<SetStateAction<Message[]>>;
+  append: (
+    message: Message | CreateMessage,
+    chatRequestOptions?: ChatRequestOptions,
+  ) => Promise<string>;
 }) => {
   const { userId } = useAuth();
+  const [isAppended, setIsAppended] = useState(false);
   const analyzedSample = useCallback(async () => {
     let response: ResponseRedis | null = null;
 
     do {
       const res = await getUserWritingRedis(userId);
-      response = res; // Update the response based on API result
-      // console.log(response);
+      response = res;
       if (response?.status === 'pending') {
         await new Promise((resolve) => setTimeout(resolve, 10000));
       }
     } while (response?.status === 'pending');
 
-    if (response) {
-      setLearnMessages((prevMessages) => [
-        ...prevMessages,
-        ...response.messages!,
-      ]);
+    if (response && !isAppended) {
+      append({
+        content: response.combinedAnalysisInput,
+        role: 'user',
+        id: nanoid(),
+      });
+      setIsAppended(true);
     }
-  }, [userId, setLearnMessages]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     analyzedSample();
@@ -51,11 +55,11 @@ const ConfirmComponent = ({
   return (
     <div className="mb-10 grid w-full grid-cols-12 gap-2 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6">
       <div className="col-span-12 lg:col-span-10" />
+
       <Button
         className="col-span-12 w-full lg:col-span-2 "
-        onClick={() => {
-          setStep(2);
-        }}
+        onClick={() => setStep(2)}
+        disabled={isLoading}
       >
         Confirm and Continue
       </Button>
