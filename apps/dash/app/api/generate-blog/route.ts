@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { auth } from '@clerk/nextjs';
 import { Redis } from '@upstash/redis';
 import { nanoid, OpenAIStream, StreamingTextResponse } from 'ai';
@@ -29,7 +30,8 @@ type ResponseRedis = {
 
 export async function POST(req: Request) {
   const { userId } = auth();
-  const { messages } = (await req.json()) as {
+  const { prompt, messages } = (await req.json()) as {
+    prompt: string;
     messages: {
       role: 'system' | 'user' | 'assistant' | 'function';
       content: string | null;
@@ -37,34 +39,35 @@ export async function POST(req: Request) {
     }[];
   };
 
-  if (!messages) {
+  if (!prompt) {
     return new Response('Invalid request', { status: 400 });
   }
 
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4',
-    stream: true,
-    messages,
-  });
-
-  const stream = OpenAIStream(response, {
-    async onCompletion(completion) {
-      const redisData = (await redis.get(userId)) as ResponseRedis;
-      console.log('completion', completion);
-      await redis.set(userId, {
-        ...redisData,
-        messages: [
-          ...redisData.messages,
-          {
-            id: nanoid(),
-            role: 'system',
-            content: completion,
-            createdAt: new Date(),
-          },
-        ],
-      });
+  const stream = OpenAIStream(
+    await openai.chat.completions.create({
+      model: 'gpt-4',
+      stream: true,
+      messages,
+    }),
+    {
+      async onCompletion(completion) {
+        const redisData = (await redis.get(userId)) as ResponseRedis;
+        console.log('completion', completion);
+        await redis.set(userId, {
+          ...redisData,
+          messages: [
+            ...redisData.messages,
+            {
+              id: nanoid(),
+              role: 'system',
+              content: completion,
+              createdAt: new Date(),
+            },
+          ],
+        });
+      },
     },
-  });
+  );
 
   return new StreamingTextResponse(stream);
 }
