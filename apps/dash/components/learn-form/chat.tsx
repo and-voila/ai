@@ -74,7 +74,8 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
 export function ChatList() {
   const [learnMessages] = useState<Message[]>([
     {
-      content: 'Welcome we will need 5 of your right samples',
+      content:
+        'To start, we need 4 unique writing samples (min 500 words each). Paste them in the chat input below.',
       id: nanoid(),
       role: 'system',
       createdAt: new Date(),

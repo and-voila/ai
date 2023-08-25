@@ -39,7 +39,6 @@
         "WG_PUBLIC_NODE_URL",
         "UPSTASH_REDIS_REST_TOKEN",
         "CLERK_JWKS_URL",
-        "UPSTASH_REDIS_REST_TOKEN",
         "INNGEST_EVENT_KEY",
         "INNGEST_SIGNING_KEY"
       ],

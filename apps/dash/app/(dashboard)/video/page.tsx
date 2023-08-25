@@ -64,7 +64,7 @@ const VideoPage = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="grid w-full grid-cols-12 gap-2 rounded-lg border bg-background p-4 px-3 focus-within:shadow-sm md:px-6"
+            className="grid w-full grid-cols-12 gap-2 rounded-lg border bg-primary-foreground p-4 px-3 focus-within:shadow-sm md:px-6"
           >
             <FormField
               name="prompt"
