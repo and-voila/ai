@@ -5,8 +5,6 @@ import { ChatRequestOptions, CreateMessage, Message, nanoid } from 'ai';
 import React from 'react';
 import { Button } from 'ui';
 
-import { getUserWritingRedis } from '@/lib/handleInngest';
-
 const TOPIC_ONE = `
 Create a well-structured blog post of 750 words or less on the topic: "Empowering Creators with AI: A New Dawn of Possibilities". The blog post should discuss the following:
 1. Introduction: Brief overview of AI and its relevance in today's world.
@@ -45,15 +43,11 @@ function GenerateBlog({
   const { userId } = useAuth();
 
   async function handlegenerate() {
-    const res = await getUserWritingRedis(userId);
-
-    if (res) {
       append({
         content: `${GENERATE_BLOG_POST} \n\n${TOPIC_ONE}`,
         role: 'user',
         id: nanoid(),
       });
-    }
   }
 
   return (
