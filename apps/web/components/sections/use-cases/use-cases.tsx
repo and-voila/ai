@@ -25,7 +25,7 @@ const UseCaseHeader: React.FC<{ useCase: UseCase }> = ({ useCase }) => {
         {useCase.feature}
       </h3>
       <div className="mt-1 flex gap-x-4 sm:mt-0 lg:block">
-        <p className="text-sm text-muted-foreground lg:mt-2">
+        <p className="text-sm text-muted-foreground lg:mt-2 lg:text-base">
           {useCase.date && (
             <time dateTime={useCase.date}>{formattedDate(useCase.date)}</time>
           )}
@@ -41,12 +41,12 @@ const UseCaseContent: React.FC<{ useCase: UseCase }> = ({ useCase }) => {
       <p className="font-display text-4xl font-medium text-foreground">
         <Link href={`/use-cases/${useCase.slug}`}>{useCase.title}</Link>
       </p>
-      <div className="mt-6 space-y-6 text-base text-muted-foreground md:text-lg">
+      <div className="mt-6 space-y-6 text-base text-muted-foreground lg:text-lg">
         <p>{useCase.description}</p>
       </div>
       <div className="mt-8 flex">
         <Button
-          variant="premium"
+          variant="default"
           aria-label={`Read case study: ${useCase.title}`}
         >
           <Link href={`/use-cases/${useCase.slug}`}>{useCase.buttonText}</Link>
