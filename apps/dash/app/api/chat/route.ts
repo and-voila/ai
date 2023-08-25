@@ -3,7 +3,7 @@ import { Redis } from '@upstash/redis';
 import { nanoid, OpenAIStream, StreamingTextResponse } from 'ai';
 import OpenAI from 'openai';
 
-import { WritingStyleType } from '@/inngest/functions';
+import { ResponseRedis } from '@/lib/handleInngest';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -16,26 +16,10 @@ const redis = new Redis({
   token: process.env.UPSTASH_REDIS_REST_TOKEN,
 });
 
-type ResponseRedis = {
-  status: 'pending' | 'completed';
-  writingAnalysis: WritingStyleType;
-  messages?: {
-    id: string;
-    role: 'system' | 'user';
-    content: string;
-    createdAt: Date;
-  }[];
-};
-
 export async function POST(req: Request) {
+  const json = await req.json();
   const { userId } = auth();
-  const { messages } = (await req.json()) as {
-    messages: {
-      role: 'system' | 'user' | 'assistant' | 'function';
-      content: string | null;
-      name: string;
-    }[];
-  };
+  const { messages } = json;
 
   if (!messages) {
     return new Response('Invalid request', { status: 400 });
@@ -50,11 +34,11 @@ export async function POST(req: Request) {
   const stream = OpenAIStream(response, {
     async onCompletion(completion) {
       const redisData = (await redis.get(userId)) as ResponseRedis;
-      console.log('completion', completion);
       await redis.set(userId, {
         ...redisData,
         messages: [
-          ...redisData.messages,
+          ...redisData?.messages,
+          ...messages,
           {
             id: nanoid(),
             role: 'system',

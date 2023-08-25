@@ -1,21 +1,18 @@
 'use server';
 import { Redis } from '@upstash/redis/nodejs';
-import { Inngest } from 'inngest';
 
-import { WritingStyleType } from '@/inngest/functions';
+import { inngest, WritingStyleType } from '@/inngest/functions';
 
-const inngest = new Inngest({
-  name: 'Writing assistant',
-  eventKey: process.env.INNGEST_EVENT_KEY!,
-});
-
-type ResponseRedis = {
+export type ResponseRedis = {
   status: 'pending' | 'completed';
   writingAnalysis: WritingStyleType;
+  combinedAnalysisInput: string;
+
   messages?: {
     id: string;
     role: 'system' | 'user';
     content: string;
+    createdAt: Date;
   }[];
 };
 
@@ -36,22 +33,6 @@ export async function handleWritingAnalysis({
     data: {
       userId: userId,
       samples: samples,
-    },
-  });
-}
-
-export async function handleBlogPostGenerator({
-  idea,
-  userId,
-}: {
-  idea: string;
-  userId: string;
-}) {
-  await inngest.send({
-    name: 'app/generate-blogpost',
-    data: {
-      idea: idea,
-      userId,
     },
   });
 }

@@ -1,7 +1,6 @@
 'use client';
 import { useAuth } from '@clerk/nextjs';
 import { valibotResolver } from '@hookform/resolvers/valibot';
-import { Message } from 'ai';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, cn, Form, FormControl, FormField, FormItem, Input } from 'ui';
@@ -15,10 +14,8 @@ import { handleWritingAnalysis, removeWritingRedis } from '@/lib/handleInngest';
 
 export function WritingSample({
   setStep,
-  setLearnMessages,
 }: {
   setStep: Dispatch<SetStateAction<number>>;
-  setLearnMessages: Dispatch<SetStateAction<Message[]>>;
 }) {
   const { userId } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
@@ -34,14 +31,6 @@ export function WritingSample({
   });
 
   async function onSubmit(values: WritingSampleDataType) {
-    setLearnMessages((prevMessages) => [
-      ...prevMessages,
-      {
-        id: 'writing-sample',
-        role: 'system',
-        content: 'loading...',
-      },
-    ]);
     await handleWritingAnalysis({
       userId: userId,
       samples: [
@@ -50,8 +39,11 @@ export function WritingSample({
         values.writingSample3,
         values.writingSample4,
       ],
+    }).catch((err) => {
+      // eslint-disable-next-line no-console
+      console.error(err);
     });
-    setStep((prevStep) => prevStep + 1);
+    setStep(1);
   }
 
   const currentStepConfig = writingSampleSteps[currentStep];

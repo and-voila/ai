@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { Redis } from '@upstash/redis';
-import { nanoid } from 'ai';
 import { Inngest } from 'inngest';
 import { OpenAI } from 'langchain/llms/openai';
 import { StructuredOutputParser } from 'langchain/output_parsers';
@@ -95,26 +94,10 @@ const prompt = new PromptTemplate({
   partialVariables: { format_instructions: formatInstructions },
 });
 
-const promptGenerateBlogpost = new PromptTemplate({
-  template: '{writingstyle} {idea}',
-  inputVariables: ['writingstyle', 'idea'],
-});
-
 const promptCombineAnalyses = new PromptTemplate({
   template: `Combine the following analyses into a single comprehensive analysis:\n\n{analysis1}\n\n{analysis2}\n\n{analysis3}\n\n{analysis4} format should be the same as this ${PROMPT_SYSTEM_WRITING_ANALYSIS}`,
   inputVariables: ['analysis1', 'analysis2', 'analysis3', 'analysis4'],
 });
-
-type ResponseRedis = {
-  status: 'pending' | 'completed';
-  writingAnalysis: WritingStyleType;
-  messages?: {
-    id: string;
-    role: 'system' | 'user';
-    content: string;
-    createdAt: Date;
-  }[];
-};
 
 // first step analysis four blog posts
 export const createWritingAnalysis = inngest.createFunction(
@@ -134,7 +117,6 @@ export const createWritingAnalysis = inngest.createFunction(
     await step.run('start analysis', async () => {
       await redis.set(userId, {
         status: 'pending',
-        messages: [],
       });
     });
 
@@ -199,95 +181,20 @@ export const createWritingAnalysis = inngest.createFunction(
         }),
       );
 
-      const formattedAnalysis = writingAnalysisString.join('\n\n');
-
       const combinedAnalysisInput = await promptCombineAnalyses.format({
-        analysis1: analysedSamples[0],
-        analysis2: analysedSamples[1],
-        analysis3: analysedSamples[2],
-        analysis4: analysedSamples[3],
+        analysis1: writingAnalysisString[0],
+        analysis2: writingAnalysisString[1],
+        analysis3: writingAnalysisString[2],
+        analysis4: writingAnalysisString[3],
       });
-
-      console.log('combinedAnalysisInput', combinedAnalysisInput);
 
       await redis.set(userId, {
         status: 'completed',
         writingAnalysis: writingAnalysis,
         combinedAnalysisInput: combinedAnalysisInput,
-        messages: [
-          {
-            id: nanoid(),
-            role: 'system',
-            content: formattedAnalysis,
-            createdAt: new Date(),
-          },
-        ],
       });
 
       return combinedAnalysisInput;
-    });
-  },
-);
-
-// second step generate blog post
-export const createBlogPostGenerator = inngest.createFunction(
-  {
-    name: 'Generate blog post',
-  },
-  {
-    event: 'app/generate-blogpost',
-  },
-  async ({ event, step }) => {
-    const { idea, userId } = event.data as {
-      userId: string;
-      idea: string;
-    };
-
-    const userData = await step.run('get user data', async () => {
-      const res = (await redis.get(userId)) as ResponseRedis;
-      await redis.set(userId, {
-        status: 'pending',
-        messages: res.messages,
-      });
-      return res;
-    });
-
-    const writingAnalysis = await Promise.all(
-      Object.entries(userData.writingAnalysis).map(async ([key, values]) => {
-        const formattedValues = values.map((value) =>
-          value.replace(/ \(excerpt\)/g, ''),
-        );
-        return `${key
-          .replace(/([A-Z])/g, ' $1')
-          .trim()}: ${formattedValues.join(', ')}`;
-      }),
-    );
-
-    await step.run('generate blog post', async () => {
-      const formattedPrompt = writingAnalysis.join('\n\n');
-
-      console.log('writtingstyle', formattedPrompt);
-
-      const input = await promptGenerateBlogpost.format({
-        writingstyle: formattedPrompt,
-        idea: idea,
-      });
-      const response = await llm.call(input);
-
-      await redis.set(userId, {
-        status: 'completed',
-        writingAnalysis: userData.writingAnalysis,
-        messages: [
-          ...(userData.messages || []),
-          {
-            id: nanoid(),
-            role: 'system',
-            content: response,
-            createdAt: new Date(),
-          },
-        ],
-      });
-      return response;
     });
   },
 );

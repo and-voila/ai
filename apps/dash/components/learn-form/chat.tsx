@@ -1,5 +1,6 @@
 'use client';
-import { Message, nanoid } from 'ai';
+import { nanoid } from 'ai';
+import { type Message, useChat } from 'ai/react';
 import { useState } from 'react';
 import { Avatar, cn, Separator } from 'ui';
 
@@ -71,7 +72,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
 }
 
 export function ChatList() {
-  const [learnMessages, setLearnMessages] = useState<Message[]>([
+  const [learnMessages] = useState<Message[]>([
     {
       content: 'Welcome we will need 5 of your right samples',
       id: nanoid(),
@@ -80,26 +81,25 @@ export function ChatList() {
       name: 'system',
     },
   ]);
+  const { messages, append, isLoading } = useChat({
+    initialMessages: learnMessages,
+  });
   const [step, setStep] = useState(0);
 
   function renderStep() {
     switch (step) {
       case 0:
-        return (
-          <WritingSample
-            setLearnMessages={setLearnMessages}
-            setStep={setStep}
-          />
-        );
+        return <WritingSample setStep={setStep} />;
       case 1:
         return (
           <ConfirmComponent
-            setLearnMessages={setLearnMessages}
+            append={append}
             setStep={setStep}
+            isLoading={isLoading}
           />
         );
       case 2:
-        return <GenerateBlog setLearnMessages={setLearnMessages} />;
+        return <GenerateBlog append={append} isLoading={isLoading} />;
       default:
         break;
     }
@@ -108,7 +108,7 @@ export function ChatList() {
   return (
     <div className="relative mx-auto px-16 ">
       <div className="mb-54 !max-h-90 pb-[200px] pt-4">
-        {learnMessages
+        {messages
           .sort((a, b) => {
             if (!a.createdAt || !b.createdAt) {
               return 0;
@@ -121,16 +121,26 @@ export function ChatList() {
             (message, index, self) =>
               index == self.findIndex((m) => m.id === message.id),
           )
+          .filter((message) => message.role !== 'user')
           .map((message, index) => (
             <div key={index} className="mx-auto">
               <ChatMessage message={message} />
-
-              {index < learnMessages.length - 1 && (
-                <Separator className="my-4 md:my-8" />
-              )}
+              <Separator className="my-4 md:my-8" />
             </div>
           ))}
+        {isLoading && (
+          <ChatMessage
+            message={{
+              content: '▍',
+              id: nanoid(),
+              role: 'system',
+              createdAt: new Date(),
+              name: 'system',
+            }}
+          />
+        )}
       </div>
+
       <div className="fixed bottom-0 w-3/4">{renderStep()}</div>
     </div>
   );
