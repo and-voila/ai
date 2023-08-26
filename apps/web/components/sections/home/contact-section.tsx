@@ -15,7 +15,7 @@ export function ContactSection() {
               Have a question?
             </h2>
             <div className="mt-6 flex">
-              <Button variant="default" className="rounded-md">
+              <Button variant="navbar" className="rounded-md">
                 <Link href="/contact">Say Aloha</Link>
               </Button>
             </div>
