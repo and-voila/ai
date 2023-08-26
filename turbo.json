@@ -36,10 +36,7 @@
         "REPLICATE_API_KEY",
         "STRIPE_API_KEY",
         "STRIPE_WEBHOOK_SECRET",
-        "UPSTASH_REDIS_REST_TOKEN",
-        "CLERK_JWKS_URL",
-        "INNGEST_EVENT_KEY",
-        "INNGEST_SIGNING_KEY"
+        "CLERK_JWKS_URL"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
