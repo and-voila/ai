@@ -38,7 +38,7 @@ const navigation: {
       { title: 'Blog', href: '/mdx' },
       { title: 'About', href: '/about' },
       { title: 'Contact', href: '/contact' },
-      { title: 'Built With', href: '/' },
+      { title: 'Stack', href: '/stack' },
     ].map((link) => ({ ...link, external: false })),
   },
   {
