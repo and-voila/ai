@@ -6,6 +6,8 @@ import { NextResponse } from 'next/server';
 
 const settingsUrl = absoluteUrl('/settings');
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const { userId } = auth();
