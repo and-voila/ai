@@ -32,7 +32,6 @@ module.exports = {
   },
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
-    'no-unused-vars': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     'prettier/prettier': 'error',
     semi: ['error', 'always'],
