@@ -1,20 +1,15 @@
 import { auth } from '@clerk/nextjs';
-import { Redis } from '@upstash/redis';
 import { nanoid, OpenAIStream, StreamingTextResponse } from 'ai';
 import OpenAI from 'openai';
 
 import { ResponseRedis } from '@/lib/handleInngest';
+import redisClient from '@/lib/upstash-redis';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 export const runtime = 'edge';
-
-const redis = new Redis({
-  url: 'https://adapted-feline-44562.upstash.io',
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
 
 export async function POST(req: Request) {
   const json = await req.json();
@@ -33,8 +28,8 @@ export async function POST(req: Request) {
 
   const stream = OpenAIStream(response, {
     async onCompletion(completion) {
-      const redisData = (await redis.get(userId)) as ResponseRedis;
-      await redis.set(userId, {
+      const redisData = (await redisClient.get(userId)) as ResponseRedis;
+      await redisClient.set(userId, {
         ...redisData,
         messages: [
           ...redisData?.messages,

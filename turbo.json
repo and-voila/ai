@@ -36,7 +36,6 @@
         "REPLICATE_API_KEY",
         "STRIPE_API_KEY",
         "STRIPE_WEBHOOK_SECRET",
-        "WG_PUBLIC_NODE_URL",
         "UPSTASH_REDIS_REST_TOKEN",
         "CLERK_JWKS_URL",
         "INNGEST_EVENT_KEY",
