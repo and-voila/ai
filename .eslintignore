@@ -3,4 +3,3 @@ target/
 .next/
 build/
 dist/
-apps/dash/.wundergraph/generated/

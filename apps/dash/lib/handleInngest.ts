@@ -1,11 +1,11 @@
 'use server';
-import { Redis } from '@upstash/redis/nodejs';
 
-import { inngest, WritingStyleType } from '@/inngest/functions';
+import { inngest } from '@/inngest/functions';
+
+import redisClient from './upstash-redis';
 
 export type ResponseRedis = {
   status: 'pending' | 'completed';
-  writingAnalysis: WritingStyleType;
   combinedAnalysisInput: string;
 
   messages?: {
@@ -15,11 +15,6 @@ export type ResponseRedis = {
     createdAt: Date;
   }[];
 };
-
-const redis = new Redis({
-  url: 'https://adapted-feline-44562.upstash.io',
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
 
 export async function handleWritingAnalysis({
   userId,
@@ -38,13 +33,13 @@ export async function handleWritingAnalysis({
 }
 
 export async function getUserWritingRedis(userId: string) {
-  const res = (await redis.get(userId)) as ResponseRedis;
+  const res = (await redisClient.get(userId)) as ResponseRedis;
   // eslint-disable-next-line no-console
   console.log(res);
   return res;
 }
 
 export async function removeWritingRedis(userId: string) {
-  const res = await redis.del(userId);
+  const res = await redisClient.del(userId);
   return res;
 }

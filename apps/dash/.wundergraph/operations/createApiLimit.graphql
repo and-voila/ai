@@ -1,5 +1,0 @@
-mutation CreateApiLimit($userId: String!, $count: Int!) {
-  prisma_createOneUserApiLimit(data: { userId: $userId, count: $count }) {
-    id
-  }
-}
