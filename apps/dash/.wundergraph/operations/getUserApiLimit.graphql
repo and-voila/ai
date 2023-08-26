@@ -1,9 +1,0 @@
-query GetUserApiLimit($userId: String!) {
-  apiLimit: prisma_findUniqueUserApiLimit(where: { userId: $userId }) {
-    id
-    userId
-    count
-    createdAt
-    updatedAt
-  }
-}
