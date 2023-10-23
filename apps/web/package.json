@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.23.2",
+    "@clerk/nextjs": "^4.25.6",
     "@hookform/resolvers": "^3.2.0",
     "@slack/web-api": "^6.9.0",
     "contentlayer": "^0.3.4",
